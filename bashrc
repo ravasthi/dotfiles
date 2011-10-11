@@ -65,8 +65,11 @@ fi
 ##############
 # Postgresql #
 
-if [ -d /opt/local/lib/postgresql83/bin ]; then
-  export PATH=/opt/local/lib/postgresql83/bin:$PATH
+# if [ -d /opt/local/lib/postgresql83/bin ]; then
+#   export PATH=/opt/local/lib/postgresql83/bin:$PATH
+# fi
+if [ -d /opt/local/lib/postgresql84/bin ]; then
+  export PATH=/opt/local/lib/postgresql84/bin:$PATH
 fi
 
 ########
@@ -97,8 +100,8 @@ if [ -f /usr/local/bin/virtualenvwrapper_bashrc ]; then
   . /usr/local/bin/virtualenvwrapper_bashrc
 fi
 
-##############
-# Subversion #
+########################
+# Subversion/Mercurial #
 
 if [ -x ~/.bin/edit ]; then
   export SVN_EDITOR=~/.bin/edit
