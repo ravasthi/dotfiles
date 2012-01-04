@@ -20,13 +20,13 @@ include = "{$include,$myExtraIncludes}"
 # Hide certain directories from search popups.
 #
 myExtraExcludes = "log,vendor,tmp,target"
-excludeInFileChooser  = "{$excludeInFileChooser,$myExtraExcludes}" 
-excludeInFolderSearch = "{$excludeInFolderSearch,$myExtraExcludes}" 
+excludeInFileChooser  = "{$excludeInFileChooser,$myExtraExcludes}"
+excludeInFolderSearch = "{$excludeInFolderSearch,$myExtraExcludes}"
 
 # If you also want to hide them from your project manager pane, add
 # the following line to your project's local .tm_properties.
 #
-# excludeInBrowser      = "{$excludeInBrowser,log,vendor,tmp,target}" 
+# excludeInBrowser      = "{$excludeInBrowser,log,vendor,tmp,target}"
 
 
 # Configure git and hg
