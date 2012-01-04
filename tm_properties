@@ -2,14 +2,14 @@
 
 # Basic Settings
 #
-fontName         = "Menlo"
-fontSize         = 14
+fontName         = "Espresso Mono"
+fontSize         = 12
 
 # Include abbreviated path in window title
-#   1. Strip out leading /Users/<username>/Work/
+#   1. Strip out leading /Users/<username>/code/
 #   2. Show remaining two directories of context
 #
-windowTitle = "$TM_DISPLAYNAME – ${TM_DIRECTORY/^(?:\/Users\/[^\/]+\/Work\/).*?((?:[^\/]+\/)?[^\/]+)$/$1/i}"
+windowTitle = "$TM_DISPLAYNAME – ${TM_DIRECTORY/^(?:\/Users\/[^\/]+\/(?:code|dev)\/).*?((?:[^\/]+\/)?[^\/]+)$/$1/i}"
 
 # Extra files to include
 #
@@ -64,6 +64,9 @@ tabSize          = 2
 tabSize          = 4
 
 [ source.python ]
+tabSize          = 4
+
+[ source.javascript ]
 tabSize          = 4
 
 [ "{README,INSTALL,LICENSE,TODO,NOTICE,HISTORY}" ]
