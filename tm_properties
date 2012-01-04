@@ -40,6 +40,7 @@ TM_JAVA_SOURCE_FOLDER_REGEX = java
 
 # Default editing configuration
 #
+showInvisibles   = true
 softWrap         = false
 softTabs         = true
 tabSize          = 2
@@ -47,7 +48,7 @@ tabSize          = 2
 # File type specific configuration
 #
 [ text ]
-showInvisibles   = true
+softWrap         = true
 
 [ .git/COMMIT_EDITMSG ]
 spellChecking    = true
