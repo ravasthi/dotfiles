@@ -43,7 +43,12 @@ if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
   hostname=" `hostname -s` "
 fi
 
-# Include git goodies if possible
+export PS1='\[\e[0;30;43m\]$hostname\[\e[0m\]\[\e[1m\]\w$ \[\e[0m\]'
+
+#######
+# Git #
+
+# Include git goodies in PS1 if possible
 if [ "`type -t __git_ps1`" == 'function' ]; then
   export GIT_PS1_SHOWDIRTYSTATE=true     # '*' for unstaged changes, '+' for staged
   export GIT_PS1_SHOWSTASHSTATE=true     # '$' if smth is stashed
@@ -80,12 +85,22 @@ if [ -d ~/.rbenv ]; then
   eval "$(rbenv init -)"
 fi
 
-# Shortcut for `bundle exec rails` and `bundle exec rake`
+# Shortcut for `bundle exec rails` and `bundle exec rake`.
+# If script/rails and script/rake are available, use them instead as they are much
+# faster to execute than `bundle exec`.
 function r() {
   if [[ "g|generate|c|console|s|server|db|dbconsole|new" =~ $1 ]]; then
-    bundle exec rails $@
+    if [ -x script/rails ]; then
+      script/rails $@
+    else
+      bundle exec rails $@
+    fi
   else
-    bundle exec rake $@
+    if [ -x script/rake ]; then
+      script/rake $@
+    else
+      bundle exec rake $@
+    fi
   fi
 }
 
@@ -106,6 +121,9 @@ fi
 if [ -x ~/.bin/edit ]; then
   export SVN_EDITOR=~/.bin/edit
   export HGEDITOR=~/.bin/edit
+fi
+if [ -f ~/.svn_color ]; then
+  source ~/.svn_color
 fi
 
 ####################
