@@ -3,7 +3,7 @@
 # Basic Settings
 #
 fontName         = "Espresso Mono"
-fontSize         = 12
+fontSize         = 13
 
 # Include abbreviated path in window title
 #   1. Strip out leading /Users/<username>/code/
