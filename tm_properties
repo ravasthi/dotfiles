@@ -61,14 +61,24 @@ binary           = true
 softTabs         = true
 tabSize          = 2
 
+[ source.css, source.scss ]
+TM_CSS_SPACE     = " "
+
 [ source.java ]
 tabSize          = 4
+
+[ source.js ]
+tabSize                    = 4
+TM_JAVASCRIPT_BRACE_PREFIX = '
+'
 
 [ source.python ]
 tabSize          = 4
 
-[ source.javascript ]
-tabSize          = 4
-
 [ "{README,INSTALL,LICENSE,TODO,NOTICE,HISTORY}" ]
 fileType         = "text.plain"
+
+[ text.html ]
+TM_XHTML         = "/"
+
+
