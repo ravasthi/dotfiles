@@ -78,6 +78,9 @@ tabSize          = 4
 [ "{README,INSTALL,LICENSE,TODO,NOTICE,HISTORY}" ]
 fileType         = "text.plain"
 
+[ "Vendorfile"]
+fileType         = "source.ruby"
+
 [ text.html ]
 TM_XHTML         = "/"
 
