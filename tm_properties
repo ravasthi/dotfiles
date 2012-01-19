@@ -61,7 +61,7 @@ binary           = true
 softTabs         = true
 tabSize          = 2
 
-[ source.css, source.scss ]
+[ source.{css,scss} ]
 TM_CSS_SPACE     = " "
 
 [ source.java ]
