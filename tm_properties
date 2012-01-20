@@ -49,6 +49,7 @@ tabSize          = 2
 #
 [ text ]
 softWrap         = true
+wrapColumn       = 80
 
 [ .git/COMMIT_EDITMSG ]
 spellChecking    = true
