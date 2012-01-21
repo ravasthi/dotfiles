@@ -49,6 +49,8 @@ tabSize          = 2
 #
 [ text ]
 softWrap         = true
+
+[ text.plain ]
 wrapColumn       = 80
 
 [ .git/COMMIT_EDITMSG ]
@@ -88,3 +90,4 @@ TM_XHTML         = "/"
 
 [ text.{haml,html} ]
 wrapColumn       = 100
+
