@@ -61,6 +61,7 @@ binary           = true
 [ source ]
 softTabs         = true
 tabSize          = 2
+wrapColumn       = 100
 
 [ source.{css,scss} ]
 TM_CSS_SPACE     = " "
