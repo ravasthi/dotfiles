@@ -50,9 +50,6 @@ tabSize          = 2
 [ text ]
 softWrap         = true
 
-[ text.plain ]
-wrapColumn       = 80
-
 [ .git/COMMIT_EDITMSG ]
 spellChecking    = true
 spellingLanguage = 'en'
@@ -90,4 +87,7 @@ TM_XHTML         = "/"
 
 [ text.{haml,html} ]
 wrapColumn       = 100
+
+[ text.plain ]
+wrapColumn       = 80
 
