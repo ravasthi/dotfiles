@@ -7,7 +7,7 @@
 Choose a place to store the dotfiles, like `~/Library/dotfiles`.
 
 ```
-git clone git://github.com/mbrictson/dotfiles ~/Library/dotfiles
+git clone git://github.com/ravasthi/dotfiles ~/Library/dotfiles
 cd ~/Library/dotfiles
 rake install
 ```
@@ -34,7 +34,7 @@ When logged into a remote machine, you'll be reminded with the hostname:
 
 Fancy git status is automatically included in the prompt:
 
-    ~/.../mbrictson/dotfiles (master *%)$ 
+    ~/.../ravasthi/dotfiles (master *%)$
 
 An `edit` shim will launch `mate` (TextMate) if you are on your local Mac, and fall back to `vi` if you are logged in via ssh. This shim is used as the git editor and svn editor.
 
@@ -43,3 +43,5 @@ The `mp` script (short for "(Text)Mate project") opens a directory in TextMate. 
 ## Credits
 
 Inspired by dotfiles from [Ryan Bates](https://github.com/ryanb/dotfiles) and [thoughtbot](http://github.com/thoughtbot/dotfiles).
+
+Tweaked from [Matt's version](https://github.com/mbrictson/dotfiles).
