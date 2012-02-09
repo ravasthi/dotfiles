@@ -65,18 +65,19 @@ wrapColumn       = 100
 [ source.{css,scss} ]
 TM_CSS_SPACE     = " "
 
-[ source.java ]
-tabSize          = 4
-
 [ source.js ]
 tabSize                    = 4
 TM_JAVASCRIPT_BRACE_PREFIX = '
 '
 
-[ source.python ]
+[ source.{java,python,js} ]
 tabSize          = 4
 
-[ "{README,INSTALL,LICENSE,TODO,NOTICE,HISTORY}" ]
+[ source.js ]
+TM_JAVASCRIPT_BRACE_PREFIX = '
+'
+
+[ "{README,INSTALL,LICENSE,TODO,NOTICE,HISTORY,CHANGES,CHANGELOG}" ]
 fileType         = "text.plain"
 
 [ "Vendorfile"]
