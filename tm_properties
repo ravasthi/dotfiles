@@ -62,7 +62,13 @@ softTabs         = true
 tabSize          = 2
 wrapColumn       = 100
 
-[ source.{css,scss} ]
+# Brace expansion is not supported for file types. Eventually
+# [ "filetype1, filetype2" ] will be supported, but until then, just repeat
+# settings per file type.
+[ source.css ]
+TM_CSS_SPACE     = " "
+
+[ source.scss ]
 TM_CSS_SPACE     = " "
 
 [ source.js ]
@@ -70,7 +76,16 @@ tabSize                    = 4
 TM_JAVASCRIPT_BRACE_PREFIX = '
 '
 
-[ source.{java,python,js} ]
+# Brace expansion is not supported for file types. Eventually
+# [ "filetype1, filetype2" ] will be supported, but until then, just repeat
+# settings per file type.
+[ source.java ]
+tabSize          = 4
+
+[ source.python ]
+tabSize          = 4
+
+[ source.js ]
 tabSize          = 4
 
 [ source.js ]
@@ -86,7 +101,13 @@ fileType         = "source.ruby"
 [ text.html ]
 TM_XHTML         = "/"
 
-[ text.{haml,html} ]
+# Brace expansion is not supported for file types. Eventually
+# [ "filetype1, filetype2" ] will be supported, but until then, just repeat
+# settings per file type.
+[ text.haml ]
+wrapColumn       = 100
+
+[ text.html ]
 wrapColumn       = 100
 
 [ text.plain ]
