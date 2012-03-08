@@ -19,7 +19,7 @@ include = "{$include,$myExtraIncludes}"
 
 # Hide certain directories from search popups.
 #
-myExtraExcludes = "log,vendor,tmp,target"
+myExtraExcludes = "log,vendor,tmp,target,_tmp"
 excludeInFileChooser  = "{$excludeInFileChooser,$myExtraExcludes}"
 excludeInFolderSearch = "{$excludeInFolderSearch,$myExtraExcludes}"
 
@@ -42,6 +42,7 @@ TM_JAVA_SOURCE_FOLDER_REGEX = java
 #
 showInvisibles   = true
 softWrap         = false
+showWrapColumn   = true
 softTabs         = true
 tabSize          = 2
 
