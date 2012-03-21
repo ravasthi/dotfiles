@@ -1,0 +1,40 @@
+#!/usr/bin/env ruby
+
+require 'optparse'
+
+options = {}
+arguments = ARGV
+
+optparse = OptionParser.new do |opts|
+  # Set the banner displayed on the help screen
+  opts.banner = "Usage: setbasedir [options] [dir]"
+  
+  # Define the options
+  opts.on("-v", "--verbose", "Display verbose output") do |v|
+    options[:verbose] = v
+  end
+
+  opts.on("-h", "--help", "Display this message") do
+    puts opts
+    exit
+  end
+end
+
+begin
+  optparse.parse!(arguments)
+rescue OptionParser::ParseError => e
+  puts "ParseError!"
+  puts e
+end
+
+if arguments.length == 0
+  if options[:verbose]
+    puts "No arguments. Using current directory."
+  end
+  wd = `pwd`.chomp
+elsif File.directory?(arguments[0])
+  wd = File.expand_path(arguments[0])
+end
+
+puts wd
+  

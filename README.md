@@ -1,4 +1,4 @@
-# mbrictson's dotfiles
+# ravasthi's dotfiles
 
 **Please note that the TextMate features of these dotfiles require TextMate 2, currently in alpha.**
 
@@ -14,9 +14,9 @@ rake install
 
 Some features of the `bashrc` may work only with bash version 4.2, which is not installed by default on the Mac. Consider using these steps to get it:
 
-* `sudo port install bash`
-* Add `/opt/local/bin/bash` to `/etc/shells`
-* Change your shell to `/opt/local/bin/bash` by running `chsh`
+* `brew install bash`
+* Add `/usr/local/bin/bash` to `/etc/shells`
+* Change your shell to `/usr/local/bin/bash` by running `chsh`
 
 ## Notable features
 

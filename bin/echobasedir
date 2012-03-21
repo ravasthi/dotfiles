@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+if [ -n "${WORKING_BASE_DIRECTORY:+x}" ]; then
+    echo "Current base directory is: " $WORKING_BASE_DIRECTORY
+else
+    echo "No base directory has been set."
+fi
+

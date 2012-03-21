@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+if [ -z "$1" ]; then
+  WD=".";
+else
+  WD="$1";
+fi
+echo "Removing Windows files in " $WD
+
+find "$WD" -name "Thumbs.db" -delete

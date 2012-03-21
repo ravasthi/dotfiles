@@ -27,8 +27,8 @@ bind '"\e[A"':history-search-backward # up arrow
 bind '"\e[B"':history-search-forward  # down arrow
 
 # Note that bash_completion is necessary for __git_ps1 magic
-if [ -f /opt/local/etc/bash_completion ]; then
-  . /opt/local/etc/bash_completion
+if [ -f `brew --prefix`/etc/bash_completion ]; then
+  . `brew --prefix`/etc/bash_completion
 fi
 
 #######
@@ -58,24 +58,6 @@ if [ "`type -t __git_ps1`" == 'function' ]; then
   export PS1='\[\e[0;33m\]\u@\h: \[\e[0m\]\[\e[1m\]\w\[\e[0m\]$(__git_ps1 " (%s)")\[\e[1m\]$ \[\e[0m\]'
 else
   export PS1='\[\e[0;33m\]\u@\h: \[\e[0m\]\[\e[1m\]\w$ \[\e[0m\]'
-fi
-
-#############
-# Mac Ports #
-
-if [ -x /opt/local/bin/port ]; then
-  export MANPATH=/opt/local/share/man:$MANPATH
-  export PATH=/opt/local/bin:/opt/local/sbin:$PATH
-fi
-
-##############
-# Postgresql #
-
-# if [ -d /opt/local/lib/postgresql83/bin ]; then
-#   export PATH=/opt/local/lib/postgresql83/bin:$PATH
-# fi
-if [ -d /opt/local/lib/postgresql84/bin ]; then
-  export PATH=/opt/local/lib/postgresql84/bin:$PATH
 fi
 
 ########
@@ -113,7 +95,7 @@ if [ -d ~/.virtualenvs ]; then
   export PIP_VIRTUALENV_BASE=$WORKON_HOME
   export VIRTUALENV_USE_DISTRIBUTE=true
   export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
-  [[ -f /opt/local/bin/virtualenvwrapper.sh ]] && . /opt/local/bin/virtualenvwrapper.sh
+  [[ -f /usr/local/bin/virtualenvwrapper.sh ]] && . /usr/local/bin/virtualenvwrapper.sh
 fi
 
 ########################
@@ -137,20 +119,20 @@ export MAVEN_OPTS="-Xmx512m -XX:+HeapDumpOnOutOfMemoryError"
 # Oracle Client #
 
 # Assume Oracle Instant Client is installed in /opt/custom/oracle
-if [ -d /opt/custom/oracle ]; then
-  export ORACLE_CLIENT_HOME=/opt/custom/oracle
-  export PATH=$ORACLE_CLIENT_HOME:$PATH
-  export DYLD_LIBRARY_PATH=$ORACLE_CLIENT_HOME
-  export NLS_LANG=AMERICAN_AMERICA.UTF8
-  export TWO_TASK=DEVDB
-  export SQLPATH=${ORACLE_CLIENT_HOME}
-
-  # User scripts can be placed in ~/Library/Oracle/
-  if [ -d ${HOME}/Library/Oracle/ ]; then
-    export SQLPATH=${SQLPATH}:${HOME}/Library/Oracle/Scripts
-    export TNS_ADMIN=${HOME}/Library/Oracle/Admin
-  fi
-fi
+# if [ -d /opt/custom/oracle ]; then
+#   export ORACLE_CLIENT_HOME=/opt/custom/oracle
+#   export PATH=$ORACLE_CLIENT_HOME:$PATH
+#   export DYLD_LIBRARY_PATH=$ORACLE_CLIENT_HOME
+#   export NLS_LANG=AMERICAN_AMERICA.UTF8
+#   export TWO_TASK=DEVDB
+#   export SQLPATH=${ORACLE_CLIENT_HOME}
+#
+#   # User scripts can be placed in ~/Library/Oracle/
+#   if [ -d ${HOME}/Library/Oracle/ ]; then
+#     export SQLPATH=${SQLPATH}:${HOME}/Library/Oracle/Scripts
+#     export TNS_ADMIN=${HOME}/Library/Oracle/Admin
+#   fi
+# fi
 
 ##################
 # Custom Scripts #

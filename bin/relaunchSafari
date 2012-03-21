@@ -1,0 +1,4 @@
+#!/bin/sh
+
+killall Safari; sleep 1; open /Applications/Safari.app
+

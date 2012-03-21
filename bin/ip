@@ -1,0 +1,25 @@
+#!/usr/bin/env ruby -w
+
+# Get output of ifconfig from the shell
+output = `ifconfig`
+
+# Create new array to put separate lines of output in
+lines = Array.new
+
+# Split output on newline and put individual lines in array
+lines = output.split(/\n/)
+
+# For each line
+lines.each { |line|
+  # Print the adapter ID
+  if line =~ /^(en\d):/
+    print $1 + ": "
+  end
+  
+  # Print the IP address
+  if line =~ /inet (\d{1,3}(\.\d{1,3}){3}) netmask 0x[\da-fA-F]{8} broadcast \d{1,3}(\.\d{1,3}){3}/
+    print $1 + "\n"
+  end
+}
+
+print "\n"
