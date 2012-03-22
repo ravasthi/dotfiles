@@ -20,7 +20,7 @@ Some features of the `bashrc` may work only with bash version 4.2, which is not 
 
 ## Notable features
 
-These dotfiles assume a Mac setup that uses `rbenv` and MacPorts, with the `bash-completion` and `git-core +bash_completion` ports installed. However, it should degrade gracefully if these aren't present.
+These dotfiles assume a Mac setup that uses `rvm` and Homebrew, with the `bash-completion` and `git` brews installed. However, it should degrade gracefully if these aren't present.
 
 An `r` command serves as a shortcut for running `bundle exec rake` or `bundle exec rails`. It's pretty smart, so `r s` will expand to `bundle exec rails server`, and `r db` will expand to `bundle exec rake db:console`. No more fat-finger mistakes of `rails` vs `rake`!
 
@@ -30,7 +30,7 @@ On your local Mac the prompt will be nice and concise. Notice that deep paths ar
 
 When logged into a remote machine, you'll be reminded with the hostname:
 
-     myserver /opt/local$
+     myserver /usr/local$
 
 Fancy git status is automatically included in the prompt:
 
