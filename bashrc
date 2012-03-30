@@ -27,7 +27,7 @@ bind '"\e[A"':history-search-backward # up arrow
 bind '"\e[B"':history-search-forward  # down arrow
 
 # Note that bash_completion is necessary for __git_ps1 magic
-if [ -f `brew --prefix`/etc/bash_completion ]; then
+if [[ -f `brew --prefix`/etc/bash_completion ]]; then
   . `brew --prefix`/etc/bash_completion
 fi
 
@@ -40,7 +40,7 @@ export PROMPT_DIRTRIM=2
 
 # Omit the hostname from PS1 if we are on the local console
 hostname=""
-if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
+if [[ "$TERM_PROGRAM" != "Apple_Terminal" ]]; then
   hostname=" `hostname -s` "
 fi
 
@@ -50,7 +50,7 @@ export PS1='\[\e[0;30;43m\]$hostname\[\e[0m\]\[\e[1m\]\w$ \[\e[0m\]'
 # Git #
 
 # Include git goodies in PS1 if possible
-if [ "`type -t __git_ps1`" == 'function' ]; then
+if [[ "`type -t __git_ps1`" == 'function' ]]; then
   export GIT_PS1_SHOWDIRTYSTATE=true     # '*' for unstaged changes, '+' for staged
   export GIT_PS1_SHOWSTASHSTATE=true     # '$' if smth is stashed
   export GIT_PS1_SHOWUNTRACKEDFILES=true # '%' if un-tracked files
@@ -63,9 +63,16 @@ fi
 ########
 # Ruby #
 
-if [ -d ~/.rbenv ]; then
-  export PATH=~/.rbenv/bin:$PATH
+# Rbenv #
+if [[ -d $HOME/.rbenv ]]; then
+  export PATH=$HOME/.rbenv/bin:$PATH
   eval "$(rbenv init -)"
+fi
+
+# RVM #
+if [[ -d $HOME/.rvm ]] && [[ -s "$HOME/.rvm/scripts/rvm" ]]; then
+  export PATH=$HOME/.rvm/bin:$PATH
+  source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 fi
 
 # Shortcut for `bundle exec rails` and `bundle exec rake`.
@@ -73,13 +80,13 @@ fi
 # faster to execute than `bundle exec`.
 function r() {
   if [[ "g|generate|c|console|s|server|db|dbconsole|new" =~ $1 ]]; then
-    if [ -x script/rails ]; then
+    if [[ -x script/rails ]]; then
       script/rails $@
     else
       bundle exec rails $@
     fi
   else
-    if [ -x script/rake ]; then
+    if [[ -x script/rake ]]; then
       script/rake $@
     else
       bundle exec rake $@
@@ -90,7 +97,7 @@ function r() {
 #####################
 # Python virtualenv #
 
-if [ -d ~/.virtualenvs ]; then
+if [[ -d ~/.virtualenvs ]]; then
   export WORKON_HOME=$HOME/.virtualenvs
   export PIP_VIRTUALENV_BASE=$WORKON_HOME
   export VIRTUALENV_USE_DISTRIBUTE=true
@@ -101,18 +108,18 @@ fi
 ########################
 # Subversion/Mercurial #
 
-if [ -x ~/.bin/edit ]; then
+if [[ -x ~/.bin/edit ]]; then
   export SVN_EDITOR=~/.bin/edit
   export HGEDITOR=~/.bin/edit
 fi
-if [ -f ~/.svn_color ]; then
+if [[ -f ~/.svn_color ]]; then
   source ~/.svn_color
 fi
 
 ####################
 # Java Environment #
 
-if [ -d /System/Library/Frameworks/JavaVM.framework/Versions/1.6 ]; then
+if [[ -d /System/Library/Frameworks/JavaVM.framework/Versions/1.6 ]]; then
   export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Versions/1.6/Home
   export MAVEN_OPTS="-Xmx512m -XX:+HeapDumpOnOutOfMemoryError"
 fi
@@ -121,7 +128,7 @@ fi
 # Oracle Client #
 
 # Assume Oracle Instant Client is installed in /opt/custom/oracle
-# if [ -d /opt/custom/oracle ]; then
+# if [[ -d /opt/custom/oracle ]]; then
 #   export ORACLE_CLIENT_HOME=/opt/custom/oracle
 #   export PATH=$ORACLE_CLIENT_HOME:$PATH
 #   export DYLD_LIBRARY_PATH=$ORACLE_CLIENT_HOME
@@ -130,7 +137,7 @@ fi
 #   export SQLPATH=${ORACLE_CLIENT_HOME}
 #
 #   # User scripts can be placed in ~/Library/Oracle/
-#   if [ -d ${HOME}/Library/Oracle/ ]; then
+#   if [[ -d ${HOME}/Library/Oracle/ ]]; then
 #     export SQLPATH=${SQLPATH}:${HOME}/Library/Oracle/Scripts
 #     export TNS_ADMIN=${HOME}/Library/Oracle/Admin
 #   fi
@@ -139,11 +146,12 @@ fi
 ##################
 # Custom Scripts #
 
-if [ -d ~/.bin ]; then
+if [[ -d ~/.bin ]]; then
   export PATH=~/.bin:$PATH
 fi
 
 # use .localrc for settings specific to one system
-if [ -f ~/.localrc ]; then
+if [[ -f ~/.localrc ]]; then
   source ~/.localrc
 fi
+
