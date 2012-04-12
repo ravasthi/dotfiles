@@ -13,7 +13,7 @@ windowTitle = "$TM_DISPLAYNAME – ${TM_DIRECTORY/^(?:\/Users\/[^\/]+\/(?:code|d
 
 # Extra files to include
 #
-myExtraIncludes = ".tm_properties,.htaccess,.gitignore,.rvmrc,.rbenv-version"
+myExtraIncludes = ".tm_properties,.htaccess,.gitignore,.rvmrc,.rbenv-version,.deployrc"
 fileBrowserGlob  = "{*,$myExtraIncludes}"
 include = "{$include,$myExtraIncludes}"
 
