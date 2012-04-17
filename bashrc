@@ -39,12 +39,17 @@ export LSCOLORS=Dxxxxxxxxxxxxxxxxxxxxx
 export PROMPT_DIRTRIM=2
 
 # Omit the hostname from PS1 if we are on the local console
-hostname=""
+userhost=""
 if [[ "$TERM_PROGRAM" != "Apple_Terminal" ]]; then
-  hostname=" `hostname -s` "
+  userhost=" `hostname -s` "
 fi
 
-export PS1='\[\e[0;30;43m\]$hostname\[\e[0m\]\[\e[1m\]\w$ \[\e[0m\]'
+export PS1='\[\e[0;30;43m\]$userhost\[\e[0m\]\[\e[1m\]\w$ \[\e[0m\]'
+
+############
+# Homebrew #
+
+export PATH=/usr/local/bin:$PATH
 
 #######
 # Git #
@@ -75,6 +80,10 @@ if [[ -d $HOME/.rvm ]] && [[ -s "$HOME/.rvm/scripts/rvm" ]]; then
   source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 fi
 
+# OS X has its own way of setting LANG, but only at the console.
+# By declaring here in .bashrc, daemons like Pow will also pick it up.
+export LANG=en_US.UTF-8
+
 # Shortcut for `bundle exec rails` and `bundle exec rake`.
 # If script/rails and script/rake are available, use them instead as they are much
 # faster to execute than `bundle exec`.
@@ -98,6 +107,7 @@ function r() {
 # Python virtualenv #
 
 export PATH=/usr/local/share/python:$PATH
+
 if [[ -d ~/.virtualenvs ]]; then
   export WORKON_HOME=$HOME/.virtualenvs
   export PIP_VIRTUALENV_BASE=$WORKON_HOME

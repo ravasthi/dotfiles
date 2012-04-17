@@ -31,8 +31,8 @@ excludeInFolderSearch = "{$excludeInFolderSearch,$myExtraExcludes}"
 
 # Configure git and hg
 #
-TM_HG  = "/opt/local/bin/hg"
-TM_GIT = "/opt/local/bin/git"
+TM_HG  = "/usr/local/bin/hg"
+TM_GIT = "/usr/local/bin/git"
 
 # Ensure "Create Package Declaration" command works with Maven-style projects
 #
@@ -72,26 +72,16 @@ TM_CSS_SPACE     = " "
 [ source.scss ]
 TM_CSS_SPACE     = " "
 
+[ source.java ]
+tabSize          = 4
+
 [ source.js ]
 tabSize                    = 4
 TM_JAVASCRIPT_BRACE_PREFIX = '
 '
 
-# Brace expansion is not supported for file types. Eventually
-# [ "filetype1, filetype2" ] will be supported, but until then, just repeat
-# settings per file type.
-[ source.java ]
-tabSize          = 4
-
 [ source.python ]
 tabSize          = 4
-
-[ source.js ]
-tabSize          = 4
-
-[ source.js ]
-TM_JAVASCRIPT_BRACE_PREFIX = '
-'
 
 [ "{README,INSTALL,LICENSE,TODO,NOTICE,HISTORY,CHANGES,CHANGELOG}" ]
 fileType         = "text.plain"
