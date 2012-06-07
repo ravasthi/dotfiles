@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+#
+# git-export
+#
+git archive master | tar -x -C "$@"
