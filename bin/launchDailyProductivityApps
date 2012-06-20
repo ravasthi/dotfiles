@@ -1,4 +1,4 @@
 #!/bin/sh
 
-killall Things; killall iChat; killall BreakTime; sleep 1; open /Applications/Things.app; open /Applications/iChat.app; open /Applications/BreakTime.app
+killall Things; killall iChat; killall BreakTime; killall Tictoc; sleep 1; open /Applications/Things.app; open /Applications/iChat.app; open /Applications/BreakTime.app; open /Applications/Tictoc.app
 
