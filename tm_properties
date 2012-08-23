@@ -28,7 +28,6 @@ excludeInFolderSearch = "{$excludeInFolderSearch,$myExtraExcludes}"
 #
 # excludeInBrowser      = "{$excludeInBrowser,log,vendor,tmp,target}"
 
-
 # Configure git and hg
 #
 TM_HG  = "/usr/local/bin/hg"
@@ -45,6 +44,8 @@ softWrap         = false
 showWrapColumn   = true
 softTabs         = true
 tabSize          = 2
+
+TM_STRIP_WHITESPACE_ON_SAVE = true
 
 # File type specific configuration
 #
