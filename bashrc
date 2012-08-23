@@ -153,6 +153,13 @@ fi
 #   fi
 # fi
 
+#########
+# MySQL #
+
+if [[ -d /usr/local/mysql/bin ]]; then
+  export PATH=/usr/local/mysql/bin:$PATH
+fi
+
 ##################
 # Custom Scripts #
 
