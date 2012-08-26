@@ -290,6 +290,14 @@ nnoremap <silent> <leader>ssc :Sscratch<cr>
 """
 
 """
+"  XMLedit
+"  xmledit.vim
+"  http://www.vim.org/scripts/script.php?script_id=301
+"
+"  XML/SGML/HTML conveniences
+"""
+
+"""
 "  YankRing
 "  yankring.vim
 "  http://www.vim.org/scripts/script.php?script_id=1234
