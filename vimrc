@@ -141,13 +141,21 @@ nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """
+"  Abolish
+"  abolish.vim
+"  http://www.vim.org/scripts/script.php?script_id=1545
+"
+"  easily search for, substitute, and abbreviate multiple variants of a word
+"""
+
+"""
 "  Ack
 "  ack.vim
-"  http://www.vim.org/scripts/script.php?script_id=42
+"  http://www.vim.org/scripts/script.php?script_id=2572
 "
 "  Ack is way faster than grep
 """
-nnoremap <leader>a :Ack
+nnoremap <silent> <leader>a :Ack<CR>
 
 """
 "  BufExplorer
@@ -178,11 +186,27 @@ let g:ctrlp_max_height = 30           " maximum size of match window
 nnoremap <silent> <leader>t :CtrlP<CR>
 
 """
+"  Fugitive
+"  fugitive.vim
+"  http://www.vim.org/scripts/script.php?script_id=2975
+"""
+nnoremap <silent> <leader>gst :Gstatus<CR>
+nnoremap <silent> <leader>gci :Gcommit<CR>
+nnoremap <silent> <leader>gmv :Gmove<CR>
+nnoremap <silent> <leader>grm :Gremove<CR>
+
+"""
 "  Indent guides
 "  vim-indent-guides.vim
 "  http://www.vim.org/scripts/script.php?script_id=3361
 """
 " let g:indent_guides_guide_size=1
+
+"""
+"  The NERD commenter
+"  NERD_commenter.vim
+"  http://www.vim.org/scripts/script.php?script_id=1218
+"""
 
 """
 "  The NERD tree
@@ -195,6 +219,14 @@ let g:NERDTreeHijackNetrw=0 " for now, don't use it for directory browsing
 nnoremap <silent> <leader>d :NERDTreeToggle<CR>
 
 """
+"  Repeat
+"  repeat.vim
+"  http://www.vim.org/scripts/script.php?script_id=2136
+"
+"  Open a temporary scratch buffer
+"""
+
+"""
 "  Scratch
 "  scratch.vim
 "  http://www.vim.org/scripts/script.php?script_id=664
@@ -203,6 +235,59 @@ nnoremap <silent> <leader>d :NERDTreeToggle<CR>
 """
 nnoremap <silent> <leader>sc :Scratch<cr>
 nnoremap <silent> <leader>ssc :Sscratch<cr>
+
+"""
+"  Speed-dating
+"  speeddating.vim
+"  http://www.vim.org/scripts/script.php?script_id=2120
+"
+"  use CTRL-A/CTRL-X to increment dates, times, and more
+"""
+
+"""
+"  Sparkup
+"  sparkup.vim
+"  https://github.com/rstacruz/sparkup
+"
+"  A souped-up version of Zen-coding
+"""
+
+"""
+"  Surround
+"  surround.vim
+"  http://www.vim.org/scripts/script.php?script_id=1697
+"
+"  A souped-up version of Zen-coding
+"""
+
+"""
+"  Vim Markdown
+"  https://github.com/tpope/vim-markdown
+"""
+
+"""
+"  Vim Bundler
+"  bundler.vim
+"  https://github.com/tpope/vim-bundler
+"
+"  Bundler
+"""
+
+"""
+"  Vim Haml
+"  haml.vim
+"  https://github.com/tpope/vim-haml
+"
+"  Haml, Sass, SCSS support
+"""
+
+"""
+"  Vim Rails
+"  rails.vim
+"  http://www.vim.org/scripts/script.php?script_id=1567
+"
+"  Rails power tools
+"""
 
 """
 "  YankRing

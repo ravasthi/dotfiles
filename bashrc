@@ -169,7 +169,6 @@ fi
 # Pear #
 if [[ -x $HOME/pear/bin/pear ]]; then
   export PATH=$HOME/pear/bin:$PATH
->>>>>>> Add node/pear to bashrc, strip whitespace on save in TM2.
 fi
 
 ##################
