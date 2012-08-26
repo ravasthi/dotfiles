@@ -158,6 +158,18 @@ fi
 
 if [[ -d /usr/local/mysql/bin ]]; then
   export PATH=/usr/local/mysql/bin:$PATH
+
+########
+# Node #
+if [[ -x /usr/local/bin/node ]]; then
+  export NODE_PATH="/usr/local/lib/node_modules"
+fi
+
+########
+# Pear #
+if [[ -x $HOME/pear/bin/pear ]]; then
+  export PATH=$HOME/pear/bin:$PATH
+>>>>>>> Add node/pear to bashrc, strip whitespace on save in TM2.
 fi
 
 ##################
