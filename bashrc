@@ -158,6 +158,7 @@ fi
 
 if [[ -d /usr/local/mysql/bin ]]; then
   export PATH=/usr/local/mysql/bin:$PATH
+fi
 
 ########
 # Node #
