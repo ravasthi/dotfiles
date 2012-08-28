@@ -33,6 +33,9 @@ set noswapfile
 " Create undo files
 set undofile
 
+" Reload your vimrc with <leader>vr
+map <leader>vr :source $MYVIMRC<CR>:echoe "Vimrc Reloaded!"<CR>
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " User interface
@@ -43,11 +46,15 @@ nnoremap ; :
 
 " GUI and colors
 set guifont=EspressoMono-Regular:h14
-colorscheme desertedoceanburnt
+if !has("gui_running")
+  autocmd VimEnter * GuiColorScheme desertedoceanburnt
+else
+  colorscheme desertedoceanburnt
+endif
 
 " Show invisibles like TextMate
 set list
-set listchars=tab:▸\ ,eol:¬
+set listchars=tab:▸\ ,eol:¬,trail:·
 
 " Height of the command bar
 set cmdheight=2
@@ -66,9 +73,10 @@ set showmatch
 
 " Show line numbers
 set number
+set numberwidth=5
 
 " Don't blink cursor
-set guicursor+=a:blinkon0
+set guicursor=a:blinkon0
 
 " Use Perl-compatible regex formatting
 nnoremap / /\v
@@ -132,6 +140,11 @@ set nolist
 set textwidth=0
 set wrapmargin=0
 
+" Show a vertical line/guard at column 120
+if exists('+colorcolumn')
+  set colorcolumn=120
+endif
+
 " Strip trailing whitespace
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 
@@ -164,9 +177,17 @@ nnoremap <silent> <leader>a :Ack<CR>
 "
 "  Really useful.
 """
-let g:bufExplorerSortBy='fullpath'   " Sort by full file path name.
-let g:bufExplorerShowRelativePath=1  " Show relative paths.
-let g:bufExplorerSplitOutPathName=0  " Don't split the path and file
+let g:bufExplorerSortBy = 'fullpath'   " Sort by full file path name.
+let g:bufExplorerShowRelativePath = 1  " Show relative paths.
+let g:bufExplorerSplitOutPathName = 0  " Don't split the path and file
+
+"""
+"  Coffeescript
+"  coffeescript.vim
+"  http://www.vim.org/scripts/script.php?script_id=3590
+"
+"  Tools for working with CoffeeScript
+"""
 
 """
 "  CtrlP
@@ -200,7 +221,7 @@ nnoremap <silent> <leader>grm :Gremove<CR>
 "  vim-indent-guides.vim
 "  http://www.vim.org/scripts/script.php?script_id=3361
 """
-" let g:indent_guides_guide_size=1
+" let g:indent_guides_guide_size = 1
 
 """
 "  The NERD commenter
@@ -215,7 +236,7 @@ nnoremap <silent> <leader>grm :Gremove<CR>
 "
 "  Trying to use this, but not convinced yet.
 """
-let g:NERDTreeHijackNetrw=0 " for now, don't use it for directory browsing
+let g:NERDTreeHijackNetrw = 0 " for now, don't use it for directory browsing
 nnoremap <silent> <leader>d :NERDTreeToggle<CR>
 
 """
