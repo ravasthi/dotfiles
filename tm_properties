@@ -78,7 +78,7 @@ TM_CSS_SPACE     = " "
 tabSize          = 4
 
 [ source.js ]
-tabSize                    = 4
+tabSize                    = 2
 TM_JAVASCRIPT_BRACE_PREFIX = '
 '
 
