@@ -46,10 +46,12 @@ nnoremap ; :
 
 " GUI and colors
 set guifont=EspressoMono-Regular:h14
-if !has("gui_running")
-  autocmd VimEnter * GuiColorScheme desertedoceanburnt
+set t_Co=256 " use 256 colors
+if (&t_Co == 256 || &t_Co == 88) && !has('gui_running') &&
+  \ filereadable(expand("$HOME/.vim/plugin/guicolorscheme.vim"))
+  autocmd VimEnter * GuiColorScheme dusk
 else
-  colorscheme desertedoceanburnt
+  colorscheme dusk
 endif
 
 " Show invisibles like TextMate
