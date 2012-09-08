@@ -108,7 +108,7 @@ set visualbell
 set wildmenu
 set wildmode=list,longest
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.o,*~,*.pyc
-set wildignore+=.git,.hg,.svn
+set wildignore+=.git,.hg,.svn,.sass-cache
 
 " Use w!! when you forget to use sudo before editing a root-privilege-only
 " file.
@@ -172,7 +172,7 @@ nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 "
 "  Ack is way faster than grep
 """
-nnoremap <silent> <leader>a :Ack<CR>
+nnoremap <silent> <leader>a :Ack
 
 """
 "  BufExplorer
