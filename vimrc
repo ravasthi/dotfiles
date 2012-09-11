@@ -177,6 +177,14 @@ nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 nnoremap <silent> <leader>a :Ack
 
 """
+"  AutoTag
+"  AutoTag.vim
+"  https://github.com/vim-scripts/AutoTag
+"
+"  Automatically update your ctags file on save.
+"""
+
+"""
 "  BufExplorer
 "  bufexplorer.vim
 "  http://www.vim.org/scripts/script.php?script_id=42
