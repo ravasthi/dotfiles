@@ -223,6 +223,13 @@ nnoremap <silent> <leader>gmv :Gmove<CR>
 nnoremap <silent> <leader>grm :Gremove<CR>
 
 """
+"  Gundo
+"  gundo.vim
+"  https://github.com/sjl/gundo.vim
+"""
+nnoremap <silent> <leader>u :GundoToggle<CR>
+
+"""
 "  Indent guides
 "  vim-indent-guides.vim
 "  http://www.vim.org/scripts/script.php?script_id=3361
@@ -278,6 +285,15 @@ nnoremap <silent> <leader>ssc :Sscratch<cr>
 "
 "  A souped-up version of Zen-coding
 """
+
+"""
+"  TagBar
+"  tagbar.vim
+"  https://github.com/majutsushi/tagbar
+"
+"  Symbol browser (à la TextMate)
+"""
+nnoremap <silent> <leader><S-t> :TagbarToggle<CR>
 
 """
 "  Surround
