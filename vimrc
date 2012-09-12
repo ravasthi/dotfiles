@@ -151,7 +151,7 @@ endif
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 
 " Open current file in Marked
-:nnoremap <leader>m :silent !open -a Marked.app '%:p'<cr>
+nnoremap <leader>m :silent !open -a Marked.app '%:p'<cr>
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
