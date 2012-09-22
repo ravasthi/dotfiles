@@ -162,9 +162,21 @@ fi
 
 ########
 # Node #
-if [[ -x /usr/local/bin/node ]]; then
-  export NODE_PATH="/usr/local/lib/node_modules"
+
+# NVM #
+if [[ -x $HOME/.nvm ]]; then
+  source $HOME/.nvm/nvm.sh
 fi
+
+if [[ -r $NVM_DIR/bash_completion ]]; then
+  source $NVM_DIR/bash_completion
+fi
+
+# NPM #
+if [[ -r $HOME/node_modules ]]; then
+  export PATH=$HOME/node_modules/.bin:$PATH
+fi
+
 
 ########
 # Pear #
