@@ -246,14 +246,6 @@ nnoremap <silent> <leader>grm :Gremove<CR>
 nnoremap <silent> <leader>u :GundoToggle<CR>
 
 """
-"  HTML auto close tag
-"  html-auto-close-tag.vim
-"  http://www.vim.org/scripts/script.php?script_id=2591
-"
-"  Automatically close HTML tags.
-"""
-
-"""
 "  Indent guides
 "  vim-indent-guides.vim
 "  http://www.vim.org/scripts/script.php?script_id=3361
