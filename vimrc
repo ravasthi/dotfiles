@@ -49,9 +49,9 @@ set guifont=EspressoMono-Regular:h14
 set t_Co=256 " use 256 colors
 if (&t_Co == 256 || &t_Co == 88) && !has('gui_running') &&
   \ filereadable(expand("$HOME/.vim/plugin/guicolorscheme.vim"))
-  autocmd VimEnter * GuiColorScheme dusk
+  autocmd VimEnter * GuiColorScheme tutticolori
 else
-  colorscheme dusk
+  colorscheme tutticolori
 endif
 
 " Show invisibles like TextMate
@@ -174,7 +174,15 @@ nnoremap <leader>m :silent !open -a Marked.app '%:p'<cr>
 "
 "  Ack is way faster than grep
 """
-nnoremap <silent> <leader>a :Ack
+nnoremap <silent> <leader>a :Ack<space>
+
+"""
+"  Auto-Pairs
+"  auto-pairs.vim
+"  http://www.vim.org/scripts/script.php?script_id=3599
+"
+"  Automatically pair quotes, parens, brackets, braces.
+"""
 
 """
 "  AutoTag
@@ -238,6 +246,14 @@ nnoremap <silent> <leader>grm :Gremove<CR>
 nnoremap <silent> <leader>u :GundoToggle<CR>
 
 """
+"  HTML auto close tag
+"  html-auto-close-tag.vim
+"  http://www.vim.org/scripts/script.php?script_id=2591
+"
+"  Automatically close HTML tags.
+"""
+
+"""
 "  Indent guides
 "  vim-indent-guides.vim
 "  http://www.vim.org/scripts/script.php?script_id=3361
@@ -259,6 +275,7 @@ nnoremap <silent> <leader>u :GundoToggle<CR>
 """
 let g:NERDTreeHijackNetrw = 0 " for now, don't use it for directory browsing
 nnoremap <silent> <leader>d :NERDTreeToggle<CR>
+nnoremap <leader>r :NERDTreeFind<cr>
 
 """
 "  Repeat
