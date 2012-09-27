@@ -1,0 +1,19 @@
+# Always sort
+--sort-files
+
+# Types
+--type-add
+ruby=.rake
+--type-add
+html=.haml,.erb
+--type-add
+css=.sass,.scss,.less
+--type-add
+js=.ejs,.coffee
+--type-add
+rack=.ru
+
+# Ignores
+--ignore-dir=.sass-cache
+--type-set=undo=.un~
+--noundo
