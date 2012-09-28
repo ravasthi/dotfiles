@@ -1,6 +1,18 @@
 # Always sort
 --sort-files
 
+# Always color
+--color
+
+# Print one line of context around matches
+--context=1
+
+# Group the results by file
+--group
+
+# Follow symlinks
+--follow
+
 # Types
 --type-add
 ruby=.rake
@@ -12,8 +24,14 @@ css=.sass,.scss,.less
 js=.ejs,.coffee
 --type-add
 rack=.ru
+--type-set
+log=.log,.log.1,.log.2,.log.3
+--type-set
+undo=.un~
 
 # Ignores
---ignore-dir=.sass-cache
---type-set=undo=.un~
---noundo
+--ignore-dir=.sass-cache,target,CACHE
+--type=noundo
+--type=nolog
+--type=nobinary
+
