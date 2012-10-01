@@ -8,7 +8,7 @@ arguments = ARGV
 optparse = OptionParser.new do |opts|
   # Set the banner displayed on the help screen
   opts.banner = "Usage: setbasedir [options] [dir]"
-  
+
   # Define the options
   opts.on("-v", "--verbose", "Display verbose output") do |v|
     options[:verbose] = v
@@ -37,4 +37,4 @@ elsif File.directory?(arguments[0])
 end
 
 puts wd
-  
+
