@@ -21,9 +21,13 @@ fi
 ###########################
 # History and Completions #
 
-export HISTIGNORE="&:ls:l:la:ll:exit"
-bind '"\e[A"':history-search-backward # up arrow
-bind '"\e[B"':history-search-forward  # down arrow
+export HISTIGNORE="&:ls:l:la:ll:ls -al:exit"
+export HISTCONTROL=erasedups
+shopt -s histappend
+if [[ $- == *i* ]]; then
+  bind '"\e[A"':history-search-backward # up arrow
+  bind '"\e[B"':history-search-forward  # down arrow
+fi
 
 # Note that bash_completion is necessary for __git_ps1 magic
 if [[ -f `brew --prefix`/etc/bash_completion ]]; then
