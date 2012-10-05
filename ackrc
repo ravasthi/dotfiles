@@ -22,7 +22,7 @@ html=.haml,.erb
 css=.sass,.scss,.less
 --type-add
 js=.ejs,.coffee
---type-add
+--type-set
 rack=.ru
 --type-set
 log=.log,.log.1,.log.2,.log.3
