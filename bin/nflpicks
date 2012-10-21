@@ -1,0 +1,67 @@
+#!/usr/bin/env ruby
+
+require 'optparse'
+require 'date'
+
+options = {}
+arguments = ARGV
+
+optparse = OptionParser.new do |opts|
+  # Set the banner displayed on the help screen
+  opts.banner = "Usage: nflpicks [season] [week]"
+
+  # Define the options
+  opts.on("-v", "--verbose", "Display verbose output") do |v|
+    options[:verbose] = v
+  end
+
+  opts.on("-h", "--help", "Display this message") do
+    puts opts
+    exit
+  end
+end
+
+begin
+  optparse.parse!(arguments)
+rescue OptionParser::ParseError => e
+  puts "ParseError!"
+  puts e
+end
+
+def valid_year(year)
+  if Date.parse("1/1/#{year}").year.to_s == year
+    return year
+  else
+    raise ArgumentError, "Invalid year! Please enter a valid year."
+  end
+end
+
+def valid_week(week)
+  if week.to_i.between?(1,17)
+    return week
+  else
+    raise ArgumentError, "Invalid week number! Please pick a week between 1 and 17."
+  end
+end
+
+begin
+  case arguments.length
+  when 1
+    year = Date.today.year
+    week = valid_week(arguments[0])
+  when 2
+    year = valid_year(arguments[0])
+    week = valid_week(arguments[1])
+  else
+    raise ArgumentError, "Wrong number of arguments: 1 or 2 arguments required."
+    exit
+  end
+
+  exec "open -a safari 'https://encrypted.google.com/search?q=nfl+#{year}+week+#{week}+picks+against+the+spread&ie=utf-8&oe=utf-8'"
+rescue Exception => e
+  puts e.message
+  exit
+end
+
+
+
