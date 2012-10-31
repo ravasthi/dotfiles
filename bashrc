@@ -63,9 +63,9 @@ if [[ "`type -t __git_ps1`" == 'function' ]]; then
   export GIT_PS1_SHOWSTASHSTATE=true     # '$' if smth is stashed
   export GIT_PS1_SHOWUNTRACKEDFILES=true # '%' if un-tracked files
 
-  export PS1='\[\e[0;33m\]\u@\h: \[\e[0m\]\[\e[1m\]\w\[\e[0m\]$(__git_ps1 " (%s)")\[\e[1m\]$ \[\e[0m\]'
+  export PS1='\[\e[0;35m\]\u@\h: \[\e[0m\]\[\e[1;34m\]\w\[\e[0m\]\[\e[0;37m\]$(__git_ps1 " (%s)")\[\e[0m\]\[\e[1m\]$ \[\e[0m\]'
 else
-  export PS1='\[\e[0;33m\]\u@\h: \[\e[0m\]\[\e[1m\]\w$ \[\e[0m\]'
+  export PS1='\[\e[0;35m\]\u@\h: \[\e[0m\]\[\e[1;34m\]\w$ \[\e[0m\]'
 fi
 
 ########
