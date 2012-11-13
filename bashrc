@@ -68,21 +68,6 @@ else
   export PS1='\[\e[0;35m\]\u@\h: \[\e[0m\]\[\e[1;34m\]\w$ \[\e[0m\]'
 fi
 
-########
-# Ruby #
-
-# Rbenv #
-if [[ -d $HOME/.rbenv ]]; then
-  export PATH=$HOME/.rbenv/bin:$PATH
-  eval "$(rbenv init -)"
-fi
-
-# RVM #
-if [[ -d $HOME/.rvm ]] && [[ -s "$HOME/.rvm/scripts/rvm" ]]; then
-  export PATH=$HOME/.rvm/bin:$PATH
-  source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-fi
-
 # OS X has its own way of setting LANG, but only at the console.
 # By declaring here in .bashrc, daemons like Pow will also pick it up.
 export LANG=en_US.UTF-8
@@ -198,5 +183,20 @@ fi
 # use .localrc for settings specific to one system
 if [[ -f $HOME/.localrc ]]; then
   source $HOME/.localrc
+fi
+
+########
+# Ruby #
+
+# Rbenv #
+if [[ -d $HOME/.rbenv ]]; then
+  export PATH=$HOME/.rbenv/bin:$PATH
+  eval "$(rbenv init -)"
+fi
+
+# RVM #
+if [[ -d $HOME/.rvm ]] && [[ -s "$HOME/.rvm/scripts/rvm" ]]; then
+  export PATH=$HOME/.rvm/bin:$PATH
+  source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 fi
 
