@@ -1,0 +1,102 @@
+# Configs
+config defaultToCurrentScreen true
+config nudgePercentOf screenSize
+config resizePercentOf screenSize
+config secondsBetweenRepeat 0.1
+config checkDefaultsOnLoad true
+config focusCheckWidthMax 3000
+config keyboardLayout qwerty
+config windowHintsShowIcons true
+config windowHintsIgnoreHiddenWindows false
+#config windowHintsDuration 5
+config windowHintsSpread true
+#config windowHintsOrder persist
+
+# Monitor Aliases
+alias mon-laptop  0
+alias mon-dell    1
+
+# Misc Aliases
+alias showHintsLeftHand hint QWERTASDFGZXCVB
+alias showNormalHint hint QWERTYUIOPASDFGHJKLZXCVBNM
+alias browser 'WebKit'
+alias editor 'TextMate'
+
+# Window positions/sizes
+alias full            move screenOriginX;screenOriginY                             screenSizeX;screenSizeY
+alias middle          move screenOriginX+screenSizeX/6;screenOriginY+screenSizeY/6 screenSizeX*2/3;screenSizeY*2/3
+alias leftHalf        move screenOriginX;screenOriginY                             screenSizeX/2;screenSizeY
+alias rightHalf       move screenOriginX+screenSizeX/2;screenOriginY               screenSizeX/2;screenSizeY
+alias topHalf         move screenOriginX;screenOriginY                             screenSizeX;screenSizeY/2
+alias bottomHalf      move screenOriginX;screenOriginY+screenSizeY/2               screenSizeX;screenSizeY/2
+alias oneThirdLeft    move screenOriginX;screenOriginY                             screenSizeX*3;screenSizeY
+alias oneThirdRight   move screenOriginX+screenSizeX*2/3;screenOriginY             screenSizeX*3;screenSizeY
+alias twoThirdsLeft   move screenOriginX;screenOriginY                             screenSizeX*2/3;screenSizeY
+alias twoThirdsRight  move screenOriginX+screenSizeX/3;screenOriginY               screenSizeX*2/3;screenSizeY
+alias oneSixthLeft    move screenOriginX;screenOriginY                             screenSizeX/6;screenSizeY
+alias oneSixthRight   move screenOriginX+screenSizeX*5/6;screenOriginY             screenSizeX/6;screenSizeY
+alias fiveSixthsLeft  move screenOriginX;screenOriginY                             screenSizeX*5/6;screenSizeY
+alias fiveSixthsRight move screenOriginX+screenSizeX/6;screenOriginY               screenSizeX*5/6;screenSizeY
+
+# Window positions/sizes + monitor locations
+alias 1-full            full            ${mon-laptop}
+alias 1-fiveSixthsRight fiveSixthsRight ${mon-laptop}
+alias 1-left            leftHalf        ${mon-laptop}
+alias 1-right           rightHalf       ${mon-laptop}
+alias 2-full            full            ${mon-dell}
+alias 2-left            leftHalf        ${mon-dell}
+alias 2-right           rightHalf       ${mon-dell}
+alias 2-twoThirdsLeft   twoThirdsLeft   ${mon-dell}
+alias 2-oneThirdRight   oneThirdRight   ${mon-dell}
+
+# 2-monitor layout
+layout 2monitors 'Terminal':REPEAT            ${2-oneThirdRight}
+layout 2monitors 'Safari':REPEAT              ${2-twoThirdsLeft}
+layout 2monitors 'WebKit':REPEAT              ${2-twoThirdsLeft}
+layout 2monitors 'Google Chrome':REPEAT       ${2-twoThirdsLeft}
+layout 2monitors 'Firefox':REPEAT             ${2-twoThirdsLeft}
+layout 2monitors 'TextMate':REPEAT            ${2-twoThirdsLeft}
+layout 2monitors 'Sublime Text 2':REPEAT      ${2-twoThirdsLeft}
+layout 2monitors 'MacVim':REPEAT              ${2-twoThirdsLeft}
+layout 2monitors 'Adobe Photoshop CS6':REPEAT ${2-full}
+layout 2monitors 'Mail':REPEAT                ${1-full}
+layout 2monitors 'iTunes':REPEAT              ${1-full}
+layout 2monitors 'Pocket':REPEAT              ${1-full}
+layout 2monitors 'Reeder':REPEAT              ${1-full}
+
+# 1-monitor layout
+layout 1monitor 'Terminal':REPEAT             ${1-right}
+layout 1monitor 'Safari':REPEAT               ${1-full}
+layout 1monitor 'WebKit':REPEAT               ${1-full}
+layout 1monitor 'Google Chrome':REPEAT        ${1-full}
+layout 1monitor 'Firefox':REPEAT              ${1-full}
+layout 1monitor 'TextMate':REPEAT             ${1-full}
+layout 1monitor 'Sublime Text 2':REPEAT       ${1-full}
+layout 1monitor 'MacVim':REPEAT               ${1-full}
+layout 1monitor 'Adobe Photoshop CS6':REPEAT  ${1-full}
+layout 1monitor 'Mail':REPEAT                 ${1-full}
+layout 1monitor 'iTunes':REPEAT               ${1-full}
+layout 1monitor 'Pocket':REPEAT               ${1-full}
+layout 1monitor 'Reeder':REPEAT               ${1-full}
+
+# Default layouts
+default 2monitors count:2
+default 1monitor  count:1
+
+# Location bindings
+bind 1:fn   ${full}
+bind 1:ctrl ${middle}
+bind 2:fn   ${leftHalf}
+bind 2:ctrl ${rightHalf}
+bind 3:fn   ${topHalf}
+bind 3:ctrl ${bottomHalf}
+bind 4:fn   ${twoThirdsLeft}
+bind 4:ctrl ${oneThirdRight}
+bind 5:fn   ${oneThirdLeft}
+bind 5:ctrl ${twoThirdsRight}
+bind 6:fn   ${fiveSixthsLeft}
+bind 6:ctrl ${fiveSixthsRight}
+bind 0:fn   layout 2monitors
+bind 0:ctrl layout 1monitor
+
+bind e:cmd,ctrl  ${showNormalHint}

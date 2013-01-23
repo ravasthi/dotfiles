@@ -49,9 +49,9 @@ set guifont=EspressoMono-Regular:h14
 set t_Co=256 " use 256 colors
 if (&t_Co == 256 || &t_Co == 88) && !has('gui_running') &&
   \ filereadable(expand("$HOME/.vim/plugin/guicolorscheme.vim"))
-  autocmd VimEnter * GuiColorScheme tutticolori
+  autocmd VimEnter * GuiColorScheme tomorrow
 else
-  colorscheme tutticolori
+  colorscheme tomorrow
 endif
 
 " Show invisibles like TextMate
