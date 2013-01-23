@@ -6,11 +6,12 @@ config secondsBetweenRepeat 0.1
 config checkDefaultsOnLoad true
 config focusCheckWidthMax 3000
 config keyboardLayout qwerty
+config windowHintsBackgroundColor
 config windowHintsShowIcons true
 config windowHintsIgnoreHiddenWindows false
 #config windowHintsDuration 5
 config windowHintsSpread true
-#config windowHintsOrder persist
+config windowHintsOrder leftToRight
 
 # Monitor Aliases
 alias mon-laptop  0
@@ -39,15 +40,15 @@ alias fiveSixthsLeft  move screenOriginX;screenOriginY                          
 alias fiveSixthsRight move screenOriginX+screenSizeX/6;screenOriginY               screenSizeX*5/6;screenSizeY
 
 # Window positions/sizes + monitor locations
-alias 1-full            full            ${mon-laptop}
-alias 1-fiveSixthsRight fiveSixthsRight ${mon-laptop}
-alias 1-left            leftHalf        ${mon-laptop}
-alias 1-right           rightHalf       ${mon-laptop}
-alias 2-full            full            ${mon-dell}
-alias 2-left            leftHalf        ${mon-dell}
-alias 2-right           rightHalf       ${mon-dell}
-alias 2-twoThirdsLeft   twoThirdsLeft   ${mon-dell}
-alias 2-oneThirdRight   oneThirdRight   ${mon-dell}
+alias 1-full            ${full}            ${mon-laptop}
+alias 1-fiveSixthsRight ${fiveSixthsRight} ${mon-laptop}
+alias 1-left            ${leftHalf}        ${mon-laptop}
+alias 1-right           ${rightHalf}       ${mon-laptop}
+alias 2-full            ${full}            ${mon-dell}
+alias 2-left            ${leftHalf}        ${mon-dell}
+alias 2-right           ${rightHalf}       ${mon-dell}
+alias 2-twoThirdsLeft   ${twoThirdsLeft}   ${mon-dell}
+alias 2-oneThirdRight   ${oneThirdRight}   ${mon-dell}
 
 # 2-monitor layout
 layout 2monitors 'Terminal':REPEAT            ${2-oneThirdRight}
@@ -84,19 +85,19 @@ default 2monitors count:2
 default 1monitor  count:1
 
 # Location bindings
-bind 1:fn   ${full}
-bind 1:ctrl ${middle}
-bind 2:fn   ${leftHalf}
-bind 2:ctrl ${rightHalf}
-bind 3:fn   ${topHalf}
-bind 3:ctrl ${bottomHalf}
-bind 4:fn   ${twoThirdsLeft}
-bind 4:ctrl ${oneThirdRight}
-bind 5:fn   ${oneThirdLeft}
-bind 5:ctrl ${twoThirdsRight}
-bind 6:fn   ${fiveSixthsLeft}
-bind 6:ctrl ${fiveSixthsRight}
-bind 0:fn   layout 2monitors
-bind 0:ctrl layout 1monitor
+bind 1:fn           ${full}
+bind 1:ctrl         ${middle}
+bind 2:fn           ${leftHalf}
+bind 2:ctrl         ${rightHalf}
+bind 3:fn           ${topHalf}
+bind 3:ctrl         ${bottomHalf}
+bind 4:fn           ${twoThirdsLeft}
+bind 4:ctrl         ${oneThirdRight}
+bind 5:fn           ${oneThirdLeft}
+bind 5:ctrl         ${twoThirdsRight}
+bind 6:fn           ${fiveSixthsLeft}
+bind 6:ctrl         ${fiveSixthsRight}
+bind backslash:fn   layout 2monitors
+bind backslash:ctrl layout 1monitor
 
 bind e:cmd,ctrl  ${showNormalHint}
