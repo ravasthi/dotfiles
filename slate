@@ -6,7 +6,7 @@ config secondsBetweenRepeat 0.1
 config checkDefaultsOnLoad true
 config focusCheckWidthMax 3000
 config keyboardLayout qwerty
-config windowHintsBackgroundColor
+config windowHintsBackgroundColor 0;0;0;0.8
 config windowHintsShowIcons true
 config windowHintsIgnoreHiddenWindows false
 #config windowHintsDuration 5
