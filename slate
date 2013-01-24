@@ -15,7 +15,7 @@ config windowHintsOrder leftToRight
 
 # Monitor Aliases
 alias mon-laptop  0
-alias mon-dell    1
+alias mon-appletb 1
 
 # Misc Aliases
 alias showHintsLeftHand hint QWERTASDFGZXCVB
@@ -44,11 +44,11 @@ alias 1-full            ${full}            ${mon-laptop}
 alias 1-fiveSixthsRight ${fiveSixthsRight} ${mon-laptop}
 alias 1-left            ${leftHalf}        ${mon-laptop}
 alias 1-right           ${rightHalf}       ${mon-laptop}
-alias 2-full            ${full}            ${mon-dell}
-alias 2-left            ${leftHalf}        ${mon-dell}
-alias 2-right           ${rightHalf}       ${mon-dell}
-alias 2-twoThirdsLeft   ${twoThirdsLeft}   ${mon-dell}
-alias 2-oneThirdRight   ${oneThirdRight}   ${mon-dell}
+alias 2-full            ${full}            ${mon-appletb}
+alias 2-left            ${leftHalf}        ${mon-appletb}
+alias 2-right           ${rightHalf}       ${mon-appletb}
+alias 2-twoThirdsLeft   ${twoThirdsLeft}   ${mon-appletb}
+alias 2-oneThirdRight   ${oneThirdRight}   ${mon-appletb}
 
 # 2-monitor layout
 layout 2monitors 'Terminal':REPEAT            ${2-oneThirdRight}
