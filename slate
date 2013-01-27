@@ -38,6 +38,10 @@ alias oneSixthLeft    move screenOriginX;screenOriginY                          
 alias oneSixthRight   move screenOriginX+screenSizeX*5/6;screenOriginY             screenSizeX/6;screenSizeY
 alias fiveSixthsLeft  move screenOriginX;screenOriginY                             screenSizeX*5/6;screenSizeY
 alias fiveSixthsRight move screenOriginX+screenSizeX/6;screenOriginY               screenSizeX*5/6;screenSizeY
+alias topLeft         corner top-left
+alias topRight        corner top-right
+alias bottomLeft      corner bottom-right
+alias bottomRight     corner bottom-right
 
 # Window positions/sizes + monitor locations
 alias 1-full            ${full}            ${mon-laptop}
@@ -82,25 +86,44 @@ layout 1monitor 'iTunes':REPEAT               ${1-full}
 layout 1monitor 'Pocket':REPEAT               ${1-full}
 layout 1monitor 'Reeder':REPEAT               ${1-full}
 
+# iMac layout
+layout imac 'Terminal':REPEAT                 ${bottomRight}
+layout imac 'Preview':REPEAT                  ${full}
+layout imac 'Safari':REPEAT                   ${twoThirdsLeft}
+layout imac 'WebKit':REPEAT                   ${twoThirdsLeft}
+layout imac 'Google Chrome':REPEAT            ${twoThirdsLeft}
+layout imac 'Firefox':REPEAT                  ${twoThirdsLeft}
+layout imac 'TextMate':REPEAT                 ${twoThirdsLeft}
+layout imac 'Sublime Text 2':REPEAT           ${twoThirdsLeft}
+layout imac 'MacVim':REPEAT                   ${twoThirdsLeft}
+layout imac 'Adobe Photoshop CS6':REPEAT      ${twoThirdsLeft}
+layout imac 'nvALT':REPEAT                    ${oneThirdRight}
+layout imac 'Mail':REPEAT                     ${twoThirdsLeft}
+layout imac 'iTunes':REPEAT                   ${twoThirdsLeft}
+layout imac 'Pocket':REPEAT                   ${twoThirdsLeft}
+layout imac 'Reeder':REPEAT                   ${twoThirdsLeft}
+
 # Default layouts
 default 2monitors count:2
-default 1monitor  count:1
+default 1monitor  resolutions:1440x900
+default imac      resolutions:1920x1080
 
 # Location bindings
-bind 1:ctrl               ${full}
-bind 1:ctrl,shift         ${middle}
-bind 2:ctrl               ${leftHalf}
-bind 2:ctrl,shift         ${rightHalf}
-bind 3:ctrl               ${topHalf}
-bind 3:ctrl,shift         ${bottomHalf}
-bind 4:ctrl               ${twoThirdsLeft}
-bind 4:ctrl,shift         ${oneThirdRight}
-bind 5:ctrl               ${oneThirdLeft}
-bind 5:ctrl,shift         ${twoThirdsRight}
-bind 6:ctrl               ${fiveSixthsLeft}
-bind 6:ctrl,shift         ${fiveSixthsRight}
+bind 1:ctrl                   ${full}
+bind 1:ctrl,shift             ${middle}
+bind 2:ctrl                   ${leftHalf}
+bind 2:ctrl,shift             ${rightHalf}
+bind 3:ctrl                   ${topHalf}
+bind 3:ctrl,shift             ${bottomHalf}
+bind 4:ctrl                   ${twoThirdsLeft}
+bind 4:ctrl,shift             ${oneThirdRight}
+bind 5:ctrl                   ${oneThirdLeft}
+bind 5:ctrl,shift             ${twoThirdsRight}
+bind 6:ctrl                   ${fiveSixthsLeft}
+bind 6:ctrl,shift             ${fiveSixthsRight}
 
-bind backslash:ctrl       layout 2monitors
-bind backslash:ctrl,shift layout 1monitor
+bind backslash:ctrl           layout 2monitors
+bind backslash:ctrl,shift     layout 1monitor
+bind backslash:cmd,ctrl,shift layout imac
 
-bind e:cmd,ctrl           ${showNormalHint}
+bind e:cmd,ctrl               ${showNormalHint}
