@@ -14,8 +14,8 @@ config windowHintsSpread true
 config windowHintsOrder leftToRight
 
 # Monitor Aliases
-alias mon-laptop  0
-alias mon-appletb 1
+alias mon-main     0
+alias mon-external 1
 
 # Misc Aliases
 alias showHintsLeftHand hint QWERTASDFGZXCVB
@@ -34,6 +34,10 @@ alias oneThirdLeft    move screenOriginX;screenOriginY                          
 alias oneThirdRight   move screenOriginX+screenSizeX*2/3;screenOriginY             screenSizeX/3;screenSizeY
 alias twoThirdsLeft   move screenOriginX;screenOriginY                             screenSizeX*2/3;screenSizeY
 alias twoThirdsRight  move screenOriginX+screenSizeX/3;screenOriginY               screenSizeX*2/3;screenSizeY
+alias twoFifthsLeft   move screenOriginX;screenOriginY                             screenSizeX*2/5;screenSizeY
+alias twoFifthsRight  move screenOriginX+screenSizeX*3/5;screenOriginY             screenSizeX*2/5;screenSizeY
+alias fourFifthsLeft  move screenOriginX;screenOriginY                             screenSizeX*4/5;screenSizeY
+alias fourFifthsRight move screenOriginX+screenSizeX*2/5;screenOriginY             screenSizeX*4/5;screenSizeY
 alias oneSixthLeft    move screenOriginX;screenOriginY                             screenSizeX/6;screenSizeY
 alias oneSixthRight   move screenOriginX+screenSizeX*5/6;screenOriginY             screenSizeX/6;screenSizeY
 alias fiveSixthsLeft  move screenOriginX;screenOriginY                             screenSizeX*5/6;screenSizeY
@@ -44,47 +48,65 @@ alias bottomLeft      corner bottom-right
 alias bottomRight     corner bottom-right
 
 # Window positions/sizes + monitor locations
-alias 1-full            ${full}            ${mon-laptop}
-alias 1-fiveSixthsRight ${fiveSixthsRight} ${mon-laptop}
-alias 1-left            ${leftHalf}        ${mon-laptop}
-alias 1-right           ${rightHalf}       ${mon-laptop}
-alias 2-full            ${full}            ${mon-appletb}
-alias 2-left            ${leftHalf}        ${mon-appletb}
-alias 2-right           ${rightHalf}       ${mon-appletb}
-alias 2-twoThirdsLeft   ${twoThirdsLeft}   ${mon-appletb}
-alias 2-oneThirdRight   ${oneThirdRight}   ${mon-appletb}
+alias main-full            ${full}            ${mon-main}
+alias main-fiveSixthsRight ${fiveSixthsRight} ${mon-main}
+alias main-left            ${leftHalf}        ${mon-main}
+alias main-right           ${rightHalf}       ${mon-main}
+alias ext-full             ${full}            ${mon-external}
+alias ext-left             ${leftHalf}        ${mon-external}
+alias ext-right            ${rightHalf}       ${mon-external}
+alias ext-twoThirdsLeft    ${twoThirdsLeft}   ${mon-external}
+alias ext-twoFifthsRight   ${twoFifthsRight}  ${mon-external}
+alias ext-fourFifthsLeft   ${fourFifthsLeft}  ${mon-external}
+alias ext-oneThirdRight    ${oneThirdRight}   ${mon-external}
 
-# 2-monitor layout
-layout 2monitors 'Terminal':REPEAT            ${2-oneThirdRight}
-layout 2monitors 'Safari':REPEAT              ${2-twoThirdsLeft}
-layout 2monitors 'WebKit':REPEAT              ${2-twoThirdsLeft}
-layout 2monitors 'Google Chrome':REPEAT       ${2-twoThirdsLeft}
-layout 2monitors 'Firefox':REPEAT             ${2-twoThirdsLeft}
-layout 2monitors 'TextMate':REPEAT            ${2-twoThirdsLeft}
-layout 2monitors 'Sublime Text 2':REPEAT      ${2-twoThirdsLeft}
-layout 2monitors 'MacVim':REPEAT              ${2-twoThirdsLeft}
-layout 2monitors 'Adobe Photoshop CS6':REPEAT ${2-full}
-layout 2monitors 'nvALT':REPEAT               ${2-right}
-layout 2monitors 'Mail':REPEAT                ${1-full}
-layout 2monitors 'iTunes':REPEAT              ${1-full}
-layout 2monitors 'Pocket':REPEAT              ${1-full}
-layout 2monitors 'Reeder':REPEAT              ${1-full}
+# work 2-monitor layout
+layout work-2mon 'Terminal':REPEAT            ${ext-oneThirdRight}
+layout work-2mon 'Safari':REPEAT              ${ext-twoThirdsLeft}
+layout work-2mon 'WebKit':REPEAT              ${ext-twoThirdsLeft}
+layout work-2mon 'Google Chrome':REPEAT       ${ext-twoThirdsLeft}
+layout work-2mon 'Firefox':REPEAT             ${ext-twoThirdsLeft}
+layout work-2mon 'TextMate':REPEAT            ${ext-twoThirdsLeft}
+layout work-2mon 'Sublime Text 2':REPEAT      ${ext-twoThirdsLeft}
+layout work-2mon 'MacVim':REPEAT              ${ext-twoThirdsLeft}
+layout work-2mon 'Adobe Photoshop CS6':REPEAT ${ext-full}
+layout work-2mon 'nvALT':REPEAT               ${ext-right}
+layout work-2mon 'Mail':REPEAT                ${main-full}
+layout work-2mon 'iTunes':REPEAT              ${main-full}
+layout work-2mon 'Pocket':REPEAT              ${main-full}
+layout work-2mon 'Reeder':REPEAT              ${main-full}
 
-# 1-monitor layout
-layout 1monitor 'Terminal':REPEAT             ${1-right}
-layout 1monitor 'Safari':REPEAT               ${1-full}
-layout 1monitor 'WebKit':REPEAT               ${1-full}
-layout 1monitor 'Google Chrome':REPEAT        ${1-full}
-layout 1monitor 'Firefox':REPEAT              ${1-full}
-layout 1monitor 'TextMate':REPEAT             ${1-full}
-layout 1monitor 'Sublime Text 2':REPEAT       ${1-full}
-layout 1monitor 'MacVim':REPEAT               ${1-full}
-layout 1monitor 'Adobe Photoshop CS6':REPEAT  ${1-full}
-layout 1monitor 'nvALT':REPEAT                ${1-right}
-layout 1monitor 'Mail':REPEAT                 ${1-full}
-layout 1monitor 'iTunes':REPEAT               ${1-full}
-layout 1monitor 'Pocket':REPEAT               ${1-full}
-layout 1monitor 'Reeder':REPEAT               ${1-full}
+# home 2-monitor layout
+layout home-2mon 'Terminal':REPEAT            ${ext-twoFifthsRight}
+layout home-2mon 'Safari':REPEAT              ${ext-fourFifthsLeft}
+layout home-2mon 'WebKit':REPEAT              ${ext-fourFifthsLeft}
+layout home-2mon 'Google Chrome':REPEAT       ${ext-fourFifthsLeft}
+layout home-2mon 'Firefox':REPEAT             ${ext-fourFifthsLeft}
+layout home-2mon 'TextMate':REPEAT            ${ext-fourFifthsLeft}
+layout home-2mon 'Sublime Text 2':REPEAT      ${ext-fourFifthsLeft}
+layout home-2mon 'MacVim':REPEAT              ${ext-fourFifthsLeft}
+layout home-2mon 'Adobe Photoshop CS6':REPEAT ${ext-full}
+layout home-2mon 'nvALT':REPEAT               ${ext-right}
+layout home-2mon 'Mail':REPEAT                ${main-full}
+layout home-2mon 'iTunes':REPEAT              ${main-full}
+layout home-2mon 'Pocket':REPEAT              ${main-full}
+layout home-2mon 'Reeder':REPEAT              ${main-full}
+
+# laptop-only layout
+layout laptop 'Terminal':REPEAT             ${main-right}
+layout laptop 'Safari':REPEAT               ${main-full}
+layout laptop 'WebKit':REPEAT               ${main-full}
+layout laptop 'Google Chrome':REPEAT        ${main-full}
+layout laptop 'Firefox':REPEAT              ${main-full}
+layout laptop 'TextMate':REPEAT             ${main-full}
+layout laptop 'Sublime Text 2':REPEAT       ${main-full}
+layout laptop 'MacVim':REPEAT               ${main-full}
+layout laptop 'Adobe Photoshop CS6':REPEAT  ${main-full}
+layout laptop 'nvALT':REPEAT                ${main-right}
+layout laptop 'Mail':REPEAT                 ${main-full}
+layout laptop 'iTunes':REPEAT               ${main-full}
+layout laptop 'Pocket':REPEAT               ${main-full}
+layout laptop 'Reeder':REPEAT               ${main-full}
 
 # iMac layout
 layout imac 'Terminal':REPEAT                 ${bottomRight}
@@ -104,8 +126,9 @@ layout imac 'Pocket':REPEAT                   ${twoThirdsLeft}
 layout imac 'Reeder':REPEAT                   ${twoThirdsLeft}
 
 # Default layouts
-default 2monitors count:2
-default 1monitor  resolutions:1440x900
+default work-2mon resolutions:1440x900;2560x1440
+default home-2mon resolutions:1440x900;1680x1050
+default laptop    resolutions:1440x900
 default imac      resolutions:1920x1080
 
 # Location bindings
@@ -122,8 +145,9 @@ bind 5:ctrl,shift             ${twoThirdsRight}
 bind 6:ctrl                   ${fiveSixthsLeft}
 bind 6:ctrl,shift             ${fiveSixthsRight}
 
-bind backslash:ctrl           layout 2monitors
-bind backslash:ctrl,shift     layout 1monitor
+bind backslash:ctrl           layout work-2mon
+bind /:ctrl                   layout home-2mon
+bind backslash:ctrl,shift     layout laptop
 bind backslash:cmd,ctrl,shift layout imac
 
 bind e:cmd,ctrl               ${showNormalHint}
