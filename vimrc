@@ -191,6 +191,8 @@ Bundle "tpope/vim-endwise"
 Bundle "tpope/vim-fugitive"
 " Gist
 Bundle "mattn/gist-vim"
+" GUI colorscheme
+Bundle "vim-scripts/guicolorscheme.vim"
 " Gundo
 Bundle "sjl/gundo.vim"
 " HAML, Sass, SCSS
