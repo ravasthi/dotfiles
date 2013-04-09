@@ -2,15 +2,19 @@
 " Basic settings
 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Turn on syntax highlighting
-syntax enable
-
-" Enable Pathogen
-call pathogen#infect()
-filetype plugin indent on
-
 " Turn off vi-compatibility
 set nocompatible
+
+" Required by Vundle
+filetype off
+filetype plugin indent on
+
+" Setup vundle
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" Turn on syntax highlighting
+syntax enable
 
 " Secure against modelines exploits
 set modelines=0
@@ -74,8 +78,13 @@ set showcmd
 set showmatch
 
 " Show line numbers
-set number
+set relativenumber
 set numberwidth=5
+
+" Highlight cursor line number
+set cursorline
+hi CursorLine cterm=NONE ctermbg=254 guibg=#eeeeee
+hi clear CursorLineNr
 
 " Don't blink cursor
 set guicursor=a:blinkon0
@@ -153,74 +162,83 @@ nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 " Open current file in Marked
 nnoremap <leader>m :silent !open -a Marked.app '%:p'<cr>
 
+" Adds a global snippet for ^L to insert a hash rocket
+imap <C-L> <Space>=><Space>
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins
 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" ack.vim
+" requires 'brew install ack'
+Bundle "mileszs/ack.vim"
+" Auto-pairs
+Bundle "jiangmiao/auto-pairs"
+" AutoTag
+Bundle "vim-scripts/AutoTag"
+" BufExplorer
+Bundle "firat/vim-bufexplorer"
+" Bundler integration
+Bundle "tpope/vim-bundler"
+" Coffeescript
+Bundle "kchmck/vim-coffee-script"
+" Fuzzy file search
+Bundle "kien/ctrlp.vim"
+" Add your ends
+Bundle "tpope/vim-endwise"
+" Git integration
+Bundle "tpope/vim-fugitive"
+" Gist
+Bundle "mattn/gist-vim"
+" Gundo
+Bundle "sjl/gundo.vim"
+" HAML, Sass, SCSS
+Bundle "tpope/vim-haml"
+" Markdown
+Bundle "tpope/vim-markdown"
+" Mustache
+Bundle "juvenn/mustache.vim"
+" Handlebars
+Bundle "nono/vim-handlebars"
+" The NERD commenter
+Bundle "scrooloose/nerdcommenter"
+" File tree explorer
+Bundle "scrooloose/nerdtree"
+" Rails integration
+Bundle "tpope/vim-rails"
+" Repeat even through mappings
+Bundle "tpope/vim-repeat"
+" Open a temporary scratch buffer
+Bundle "duff/vim-scratch"
+" Sparkup
+Bundle "rstacruz/sparkup"
+" Speed-dating
+Bundle "tpope/vim-speeddating"
+" Surround things with other things
+Bundle "tpope/vim-surround"
+" Text filtering and alignment
+Bundle "godlygeek/tabular"
+" TagBar (symbol browser like TextMate)
+Bundle "majutsushi/tagbar"
+" YankRing
+Bundle "vim-scripts/YankRing.vim"
 
-"""
-"  Abolish
-"  abolish.vim
-"  http://www.vim.org/scripts/script.php?script_id=1545
-"
-"  easily search for, substitute, and abbreviate multiple variants of a word
-"""
 
-"""
-"  Ack
-"  ack.vim
-"  http://www.vim.org/scripts/script.php?script_id=2572
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Plugin configuration
 "
-"  Ack is way faster than grep
-"""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Ack
 nnoremap <silent> <leader>a :Ack<space>
 
-"""
-"  Auto-Pairs
-"  auto-pairs.vim
-"  http://www.vim.org/scripts/script.php?script_id=3599
-"
-"  Automatically pair quotes, parens, brackets, braces.
-"""
-
-"""
-"  AutoTag
-"  AutoTag.vim
-"  https://github.com/vim-scripts/AutoTag
-"
-"  Automatically update your ctags file on save.
-"""
-
-"""
-"  BufExplorer
-"  bufexplorer.vim
-"  http://www.vim.org/scripts/script.php?script_id=42
-"
-"  Really useful.
-"""
+" BufExplorer
 let g:bufExplorerSortBy = 'fullpath'   " Sort by full file path name.
 let g:bufExplorerShowRelativePath = 1  " Show relative paths.
 let g:bufExplorerSplitOutPathName = 0  " Don't split the path and file
 
-"""
-"  Coffeescript
-"  coffeescript.vim
-"  http://www.vim.org/scripts/script.php?script_id=3590
-"
-"  Tools for working with CoffeeScript
-"""
-
-"""
-"  CtrlP
-"  ctrlp.vim
-"  http://www.vim.org/scripts/script.php?script_id=3736
-"
-"  Fast file finding, like fuzzy_finder.
-"  Better version of command-t:
-"    - no external ruby compilation needed
-"    - accommodates different working directory styles
-"""
+" CtrlP
 let g:ctrlp_map = '<leader>p'         " command to invoke the plugin
 let g:ctrlp_working_path_mode = 'rc'  " don't manage working directory
 let g:ctrlp_max_height = 30           " maximum size of match window
@@ -228,142 +246,70 @@ let g:ctrlp_max_height = 30           " maximum size of match window
 " Bind leader-t to ctrlp to reduce transition pain
 nnoremap <silent> <leader>t :CtrlP<CR>
 
-"""
-"  Fugitive
-"  fugitive.vim
-"  http://www.vim.org/scripts/script.php?script_id=2975
-"""
+" Fugitive
 nnoremap <silent> <leader>gst :Gstatus<CR>
 nnoremap <silent> <leader>gci :Gcommit<CR>
 nnoremap <silent> <leader>gmv :Gmove<CR>
 nnoremap <silent> <leader>grm :Gremove<CR>
 
-"""
-"  Gundo
-"  gundo.vim
-"  https://github.com/sjl/gundo.vim
-"""
+" Gundo
 nnoremap <silent> <leader>u :GundoToggle<CR>
 
-"""
-"  Indent guides
-"  vim-indent-guides.vim
-"  http://www.vim.org/scripts/script.php?script_id=3361
-"""
-" let g:indent_guides_guide_size = 1
-
-"""
-"  The NERD commenter
-"  NERD_commenter.vim
-"  http://www.vim.org/scripts/script.php?script_id=1218
-"""
-
-"""
-"  The NERD tree
-"  NERD_tree.vim
-"  http://www.vim.org/scripts/script.php?script_id=1658
-"
-"  Trying to use this, but not convinced yet.
-"""
+" The NERD tree
 let g:NERDTreeHijackNetrw = 0 " for now, don't use it for directory browsing
 nnoremap <silent> <leader>d :NERDTreeToggle<CR>
 nnoremap <leader>r :NERDTreeFind<cr>
 
-"""
-"  Repeat
-"  repeat.vim
-"  http://www.vim.org/scripts/script.php?script_id=2136
-"
-"  Open a temporary scratch buffer
-"""
-
-"""
-"  Scratch
-"  scratch.vim
-"  http://www.vim.org/scripts/script.php?script_id=664
-"
-"  Open a temporary scratch buffer
-"""
+" Scratch
 nnoremap <silent> <leader>sc :Scratch<cr>
 nnoremap <silent> <leader>ssc :Sscratch<cr>
 
-"""
-"  Speed-dating
-"  speeddating.vim
-"  http://www.vim.org/scripts/script.php?script_id=2120
-"
-"  use CTRL-A/CTRL-X to increment dates, times, and more
-"""
+"************************************************
+" Tabularize
 
-"""
-"  Sparkup
-"  sparkup.vim
-"  https://github.com/rstacruz/sparkup
-"
-"  A souped-up version of Zen-coding
-"""
+  "*********************
+  " Keymappings
+  "
+  nnoremap <leader>tb,    :Tabularize /,\zs<CR>
+  vnoremap <leader>tb,    :Tabularize /,\zs<CR>
+  nnoremap <leader>tb::   :Tabularize /\s:<CR>
+  vnoremap <leader>tb::   :Tabularize /\s:<CR>
+  nnoremap <leader>tb=    :Tabularize /=>\@!<CR>
+  vnoremap <leader>tb=    :Tabularize /=>\@!<CR>
+  nnoremap <leader>tb=>   :Tabularize /=><CR>
+  vnoremap <leader>tb=>   :Tabularize /=><CR>
+  nnoremap <leader>tb->   :Tabularize /-><CR>
+  vnoremap <leader>tb->   :Tabularize /-><CR>
+  nnoremap <leader>tb{    :Tabularize /{<CR>
+  vnoremap <leader>tb{    :Tabularize /{<CR>
+  nnoremap <leader>tb}    :Tabularize /}<CR>
+  vnoremap <leader>tb}    :Tabularize /}<CR>
+  nnoremap <leader>tb:    :Tabularize /:\zs<CR>
+  vnoremap <leader>tb:    :Tabularize /:\zs<CR>
 
-"""
-"  TagBar
-"  tagbar.vim
-"  https://github.com/majutsushi/tagbar
-"
-"  Symbol browser (à la TextMate)
-"""
+  "*********************
+  " Custom Functions
+  "
+  " Tabularize Auto Table Styling:
+  inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
+
+  " Tabularize Auto Table Styling:
+  function! s:align()
+    let p = '^\s*|\s.*\s|\s*$'
+    if getline('.') =~# '^\s*|' && (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
+      let column = strlen(substitute(getline('.')[0:col('.')],'[^|]','','g'))
+      let position = strlen(matchstr(getline('.')[0:col('.')],'.*|\s*\zs.*'))
+      Tabularize/|/l1
+      normal! 0
+      call search(repeat('[^|]*|',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
+    endif
+  endfunction
+"************************************************
+
+" TagBar
 nnoremap <silent> <leader><S-t> :TagbarToggle<CR>
 
-"""
-"  Surround
-"  surround.vim
-"  http://www.vim.org/scripts/script.php?script_id=1697
-"
-"  A souped-up version of Zen-coding
-"""
-
-"""
-"  Vim Markdown
-"  https://github.com/tpope/vim-markdown
-"""
-
-"""
-"  Vim Bundler
-"  bundler.vim
-"  https://github.com/tpope/vim-bundler
-"
-"  Bundler
-"""
-
-"""
-"  Vim Haml
-"  haml.vim
-"  https://github.com/tpope/vim-haml
-"
-"  Haml, Sass, SCSS support
-"""
-
-"""
-"  Vim Rails
-"  rails.vim
-"  http://www.vim.org/scripts/script.php?script_id=1567
-"
-"  Rails power tools
-"""
-
-"""
-"  XMLedit
-"  xmledit.vim
-"  http://www.vim.org/scripts/script.php?script_id=301
-"
-"  XML/SGML/HTML conveniences
-"""
-
-"""
-"  YankRing
-"  yankring.vim
-"  http://www.vim.org/scripts/script.php?script_id=1234
-"
-"  Yank history
-"""
+" YankRing
 nnoremap <silent> <leader>yr :YRShow<cr>
 inoremap <silent> <leader>yr <ESC>:YRShow<cr>
 
