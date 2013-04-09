@@ -79,8 +79,7 @@ tabSize          = 4
 
 [ source.js ]
 tabSize                    = 2
-TM_JAVASCRIPT_BRACE_PREFIX = '
-'
+TM_JAVASCRIPT_BRACE_PREFIX = "\n"
 
 [ source.python ]
 tabSize          = 4
