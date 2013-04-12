@@ -170,6 +170,8 @@ imap <C-L> <Space>=><Space>
 " Plugins
 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Vundle: required
+Bundle "gmarik/vundle"
 " ack.vim
 " requires 'brew install ack'
 Bundle "mileszs/ack.vim"
