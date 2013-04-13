@@ -19,7 +19,7 @@ include = "{$include,$myExtraIncludes}"
 
 # Hide certain directories from search popups.
 #
-myExtraExcludes = "log,vendor,tmp,target,_tmp"
+myExtraExcludes = "log,tmp,target,_tmp"
 excludeInFileChooser  = "{$excludeInFileChooser,$myExtraExcludes}"
 excludeInFolderSearch = "{$excludeInFolderSearch,$myExtraExcludes}"
 
