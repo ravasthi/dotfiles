@@ -93,20 +93,20 @@ layout home-2mon 'Pocket':REPEAT              ${main-full}
 layout home-2mon 'Reeder':REPEAT              ${main-full}
 
 # laptop-only layout
-layout laptop 'Terminal':REPEAT             ${main-right}
-layout laptop 'Safari':REPEAT               ${main-full}
-layout laptop 'WebKit':REPEAT               ${main-full}
-layout laptop 'Google Chrome':REPEAT        ${main-full}
-layout laptop 'Firefox':REPEAT              ${main-full}
-layout laptop 'TextMate':REPEAT             ${main-full}
-layout laptop 'Sublime Text 2':REPEAT       ${main-full}
-layout laptop 'MacVim':REPEAT               ${main-full}
-layout laptop 'Adobe Photoshop CS6':REPEAT  ${main-full}
-layout laptop 'nvALT':REPEAT                ${main-right}
-layout laptop 'Mail':REPEAT                 ${main-full}
-layout laptop 'iTunes':REPEAT               ${main-full}
-layout laptop 'Pocket':REPEAT               ${main-full}
-layout laptop 'Reeder':REPEAT               ${main-full}
+layout laptop 'Terminal':REPEAT               ${main-right}
+layout laptop 'Safari':REPEAT                 ${main-full}
+layout laptop 'WebKit':REPEAT                 ${main-full}
+layout laptop 'Google Chrome':REPEAT          ${main-full}
+layout laptop 'Firefox':REPEAT                ${main-full}
+layout laptop 'TextMate':REPEAT               ${main-full}
+layout laptop 'Sublime Text 2':REPEAT         ${main-full}
+layout laptop 'MacVim':REPEAT                 ${main-full}
+layout laptop 'Adobe Photoshop CS6':REPEAT    ${main-full}
+layout laptop 'nvALT':REPEAT                  ${main-right}
+layout laptop 'Mail':REPEAT                   ${main-full}
+layout laptop 'iTunes':REPEAT                 ${main-full}
+layout laptop 'Pocket':REPEAT                 ${main-full}
+layout laptop 'Reeder':REPEAT                 ${main-full}
 
 # iMac layout
 layout imac 'Terminal':REPEAT                 ${bottomRight}
@@ -144,6 +144,8 @@ bind 5:ctrl                   ${oneThirdLeft}
 bind 5:ctrl,shift             ${twoThirdsRight}
 bind 6:ctrl                   ${fiveSixthsLeft}
 bind 6:ctrl,shift             ${fiveSixthsRight}
+bind right:alt,cmd            ${ext-twoThirdsLeft}
+bind left:alt,cmd             ${main-full}
 
 bind backslash:ctrl           layout work-2mon
 bind /:ctrl                   layout home-2mon
