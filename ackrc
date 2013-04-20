@@ -15,23 +15,26 @@
 
 # Types
 --type-add
-ruby=.rake
+ruby:ext:rake
 --type-add
-html=.haml,.erb
+html:ext:haml,erb
 --type-add
-css=.sass,.scss,.less
+css:ext:sass,scss,less
 --type-add
-js=.ejs,.coffee
+js:ext:ejs,coffee
 --type-set
-rack=.ru
+rack:ext:ru
 --type-set
-log=.log,.log.1,.log.2,.log.3
+log:ext:log,log.1,log.2,log.3
 --type-set
-undo=.un~
+undo:ext:un~
 
 # Ignores
---ignore-dir=.sass-cache,target,CACHE
+--ignore-dir=.sass-cache
+--ignore-dir=cache
+--ignore-dir=CACHE
+--ignore-dir=target
+--ignore-dir=tmp
 --type=noundo
 --type=nolog
---type=nobinary
 
