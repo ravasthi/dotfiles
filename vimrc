@@ -246,6 +246,7 @@ let g:bufExplorerSplitOutPathName = 0  " Don't split the path and file
 let g:ctrlp_map = '<leader>p'         " command to invoke the plugin
 let g:ctrlp_working_path_mode = 'rc'  " don't manage working directory
 let g:ctrlp_max_height = 30           " maximum size of match window
+let g:ctrlp_show_hidden = 1           " include dotfiles and dotdirs in search
 
 " Bind leader-t to ctrlp to reduce transition pain
 nnoremap <silent> <leader>t :CtrlP<CR>
