@@ -17,7 +17,7 @@
 --type-add
 ruby:ext:rake
 --type-add
-html:ext:haml,erb
+html:ext:haml,erb,mustache
 --type-add
 css:ext:sass,scss,less
 --type-add
