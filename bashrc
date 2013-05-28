@@ -10,6 +10,7 @@ alias l='ls'
 alias la='ls -la'
 alias ll='ls -l'
 alias top='top -s 5 -o cpu -stats pid,user,command,cpu,rsize,vsize,threads,state'
+alias vi='vim'
 
 # Use Apple's man page viewer if we are on a local console
 if [ "$TERM_PROGRAM" == "Apple_Terminal" ]; then
