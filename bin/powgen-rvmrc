@@ -1,6 +1,12 @@
 #!/usr/bin/env ruby -w
 
-if File.exists?('.rbenv-version') and File.exists?('.ruby-gemset')
-  print "rvm --rvmrc --create #{File.open('.rbenv-version').gets.chomp}@#{File.open('.ruby-gemset').gets.chomp}"
+if File.exists?('.rbenv-version')
+  filename = '.rbenv-version'
+elsif File.exists?('.ruby-version')
+  filename = '.ruby-version'
+end
+
+if filename and File.exists?('.ruby-gemset')
+  print "rvm --rvmrc --create #{File.open(filename).gets.chomp}@#{File.open('.ruby-gemset').gets.chomp}"
   print "\n"
 end
