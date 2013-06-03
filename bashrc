@@ -9,7 +9,7 @@ alias ls='ls -hFG'
 alias l='ls'
 alias la='ls -la'
 alias ll='ls -l'
-alias 'remove-all-gems'='gem list | cut -d" " -f1 | xargs gem uninstall -aIx'
+alias removeallgems='gem list | cut -d" " -f1 | xargs gem uninstall -aIx'
 alias top='top -s 5 -o cpu -stats pid,user,command,cpu,rsize,vsize,threads,state'
 alias vi='vim'
 
