@@ -1,4 +1,4 @@
 #!/bin/sh
 
-killall Things; killall Messages; killall Skype; killall BreakTime; killall Flint; killall Pivotal\ Tracker; killall Microsoft\ Lync; sleep 1; open /Applications/Things.app; open /Applications/Messages.app; open /Applications/Skype.app; open /Applications/BreakTime.app; open /Applications/Flint.app; open /Applications/Pivotal\ Tracker.app; open /Applications/Microsoft\ Lync.app
+killall Things; killall Skype; killall BreakTime; killall Pivotal\ Tracker; sleep 1; open /Applications/Things.app; open /Applications/Skype.app; open /Applications/BreakTime.app; open /Applications/Pivotal\ Tracker.app
 
