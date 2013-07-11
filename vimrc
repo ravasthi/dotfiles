@@ -53,9 +53,9 @@ set guifont=EspressoMono-Regular:h14
 set t_Co=256 " use 256 colors
 if (&t_Co == 256 || &t_Co == 88) && !has('gui_running') &&
   \ filereadable(expand("$HOME/.vim/bundle/guicolorscheme.vim"))
-  autocmd VimEnter * GuiColorScheme tomorrow
+  autocmd VimEnter * GuiColorScheme Tomorrow-Night
 else
-  colorscheme tomorrow
+  colorscheme Tomorrow-Night
 endif
 
 " Show invisibles like TextMate
@@ -80,11 +80,13 @@ set showmatch
 " Show line numbers
 set relativenumber
 set numberwidth=5
+hi LineNr cterm=NONE ctermfg=240 guifg=#606060
 
 " Highlight cursor line number
 set cursorline
-hi CursorLine cterm=NONE ctermbg=254 guibg=#eeeeee
+hi CursorLine cterm=NONE ctermbg=240 guibg=#606060
 hi clear CursorLineNr
+hi CursorLineNr cterm=NONE ctermfg=245 guifg=#909090
 
 " Don't blink cursor
 set guicursor=a:blinkon0
