@@ -80,13 +80,13 @@ set showmatch
 " Show line numbers
 set relativenumber
 set numberwidth=5
-hi LineNr cterm=NONE ctermfg=240 guifg=#606060
+hi LineNr cterm=NONE ctermfg=241 guifg=#606060
 
 " Highlight cursor line number
 set cursorline
 hi CursorLine cterm=NONE ctermbg=240 guibg=#606060
 hi clear CursorLineNr
-hi CursorLineNr cterm=NONE ctermfg=245 guifg=#909090
+hi CursorLineNr cterm=NONE ctermfg=247 guifg=#a0a0a0
 
 " Don't blink cursor
 set guicursor=a:blinkon0
@@ -174,9 +174,9 @@ imap <C-L> <Space>=><Space>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Vundle: required
 Bundle "gmarik/vundle"
-" ack.vim
-" requires 'brew install ack'
-Bundle "mileszs/ack.vim"
+" ag.vim
+" requires 'brew install the_silver_searcher'
+Bundle "rking/ag.vim"
 " Auto-pairs
 Bundle "jiangmiao/auto-pairs"
 " AutoTag
