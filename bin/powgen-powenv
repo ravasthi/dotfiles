@@ -7,6 +7,6 @@ elsif File.exists?('.ruby-version')
 end
 
 if filename and File.exists?('.ruby-gemset')
-  print "rvm --rvmrc --create #{File.open(filename).gets.chomp}@#{File.open('.ruby-gemset').gets.chomp}"
+  print "rvm env -- #{File.open(filename).gets.chomp}@#{File.open('.ruby-gemset').gets.chomp} > .powenv"
   print "\n"
 end
