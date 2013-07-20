@@ -8,7 +8,7 @@ task :install do
   replace_all = false
   Dir['*'].each do |file|
     next if %w[Rakefile README.md LICENSE].include? file
-    
+
     tgt = File.join(ENV['HOME'], ".#{file.sub('.erb', '')}")
     if File.exist?(tgt) || File.symlink?(tgt)
       if File.identical? file, File.join(ENV['HOME'], ".#{file.sub('.erb', '')}")
@@ -45,6 +45,11 @@ def link_file(file)
     puts "generating ~/.#{file.sub('.erb', '')}"
     File.open(File.join(ENV['HOME'], ".#{file.sub('.erb', '')}"), 'w') do |new_file|
       new_file.write ERB.new(File.read(file)).result(binding)
+    end
+  elsif file =~ /oh-my-zsh-custom/
+    puts "installing oh my zsh customizations"
+    Dir["#{file}/*"].each do |customization|
+      system %Q{ln -s "$PWD/#{customization}" "$HOME/.oh-my-zsh/custom/#{customization.split('/').last}"}
     end
   else
     puts "linking ~/.#{file}"
