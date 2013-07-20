@@ -2,42 +2,28 @@ grey='\e[0;90m'
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$grey%}("
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_DIRTY="%{$cyan%}) %{$fg[yellow]%}✗%{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_DIRTY="%{$cyan%}) %{%F{yellow}%}✗%{%f%}"
 ZSH_THEME_GIT_PROMPT_CLEAN="%{$grey%})"
 
-function josh_prompt {
-  (( spare_width = ${COLUMNS} ))
-  prompt=" "
+function richa_left_prompt {
+  prompt="
+%{%F{magenta}%}%n%{%f%} at %{%F{magenta}%}%m%{%f%} in %{%F{blue}%}%3~%{%f%}
+%(?,%{%F{green}%},%{%F{red}%})✽%{%f%} "
 
+  echo $prompt
+}
+
+function richa_right_prompt {
   branch=$(current_branch)
   ruby_version=$(rvm_prompt_info || rbenv_prompt_info)
-  path_size=${#PWD}
-  branch_size=${#branch}
-  ruby_size=${#ruby_version}
-  user_machine_size=${#${(%):-%n@%m-}}
 
-  if [[ ${#branch} -eq 0 ]]
-    then (( ruby_size = ruby_size + 1 ))
-  else
-    (( branch_size = branch_size + 4 ))
-    if [[ -n $(git status -s 2> /dev/null) ]]; then
-      (( branch_size = branch_size + 2 ))
-    fi
-  fi
-
-  (( spare_width = ${spare_width} - (${user_machine_size} + ${path_size} + ${branch_size} + ${ruby_size}) ))
-
-  while [ ${#prompt} -lt $spare_width ]; do
-    prompt=" $prompt"
-  done
-
-  prompt="%{%F{blue}%}$PWD$prompt%{%F{red}%}$(rvm_prompt_info || rbenv_prompt_info)%{$reset_color%} $(git_prompt_info)"
+  prompt="%{%F{red}%}$(rvm_prompt_info || rbenv_prompt_info)%{%f%} $(git_prompt_info)"
 
   echo $prompt
 }
 
 setopt prompt_subst
 
-PROMPT='
-%{$fg[magenta]%}%n@%m%{$reset_color%} $(josh_prompt)
-%(?,%{%F{green}%},%{%F{red}%})✽%{$reset_color%} '
+PROMPT='$(richa_left_prompt)'
+
+RPROMPT='$(richa_right_prompt)'
