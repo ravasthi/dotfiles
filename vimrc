@@ -149,7 +149,6 @@ set whichwrap+=<,>,h,l
 " Text wrapping
 set wrap
 set linebreak
-set nolist
 set textwidth=0
 set wrapmargin=0
 
@@ -227,6 +226,8 @@ Bundle "tpope/vim-surround"
 Bundle "godlygeek/tabular"
 " TagBar (symbol browser like TextMate)
 Bundle "majutsushi/tagbar"
+" Tmux syntax
+Bundle "zaiste/tmux.vim"
 " YankRing
 Bundle "vim-scripts/YankRing.vim"
 
