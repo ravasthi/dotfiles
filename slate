@@ -73,6 +73,7 @@ layout work-2mon 'Adobe Photoshop CS6':REPEAT ${ext-full}
 layout work-2mon 'nvALT':REPEAT               ${ext-right}
 layout work-2mon 'Mail':REPEAT                ${main-full}
 layout work-2mon 'iTunes':REPEAT              ${main-full}
+layout work-2mon 'Rdio':REPEAT                ${main-full}
 layout work-2mon 'Pocket':REPEAT              ${main-full}
 layout work-2mon 'Reeder':REPEAT              ${main-full}
 
@@ -89,6 +90,7 @@ layout home-2mon 'Adobe Photoshop CS6':REPEAT ${ext-full}
 layout home-2mon 'nvALT':REPEAT               ${ext-right}
 layout home-2mon 'Mail':REPEAT                ${main-full}
 layout home-2mon 'iTunes':REPEAT              ${main-full}
+layout home-2mon 'Rdio':REPEAT                ${main-full}
 layout home-2mon 'Pocket':REPEAT              ${main-full}
 layout home-2mon 'Reeder':REPEAT              ${main-full}
 
@@ -105,6 +107,7 @@ layout laptop 'Adobe Photoshop CS6':REPEAT    ${main-full}
 layout laptop 'nvALT':REPEAT                  ${main-right}
 layout laptop 'Mail':REPEAT                   ${main-full}
 layout laptop 'iTunes':REPEAT                 ${main-full}
+layout laptop 'Rdio':REPEAT                   ${main-full}
 layout laptop 'Pocket':REPEAT                 ${main-full}
 layout laptop 'Reeder':REPEAT                 ${main-full}
 
