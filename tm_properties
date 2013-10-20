@@ -40,6 +40,7 @@ TM_JAVA_SOURCE_FOLDER_REGEX = java
 # Default editing configuration
 #
 showInvisibles   = true
+invisiblesMap    = "~ \t‣\n↵"
 softWrap         = false
 showWrapColumn   = true
 softTabs         = true
