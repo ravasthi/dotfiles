@@ -12,6 +12,8 @@ alias ll='ls -l'
 alias removeallgems='gem list | cut -d" " -f1 | xargs gem uninstall -aIx'
 alias top='top -s 5 -o cpu -stats pid,user,command,cpu,rsize,vsize,threads,state'
 alias vi='vim'
+alias resetopenwith='/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/Support/lsregister -kill -r -domain local -domain user;killall Finder;echo "Open With has been rebuilt, Finder will relaunch"'
+
 
 # Use Apple's man page viewer if we are on a local console
 if [[ "$TERM_PROGRAM" == "Apple_Terminal" ]]; then
