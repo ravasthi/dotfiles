@@ -60,14 +60,12 @@ function r() {
 #####################
 # Python virtualenv #
 
-export PATH=/usr/local/share/python:$PATH
-
 if [[ -d ~/.virtualenvs ]]; then
   export WORKON_HOME=$HOME/.virtualenvs
   export PIP_VIRTUALENV_BASE=$WORKON_HOME
   export VIRTUALENV_USE_DISTRIBUTE=true
   export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
-  [[ -f /usr/local/share/python/virtualenvwrapper.sh ]] && . /usr/local/share/python/virtualenvwrapper.sh
+  [[ -f /usr/local/bin/virtualenvwrapper.sh ]] && . /usr/local/bin/virtualenvwrapper.sh
 fi
 
 ########################
