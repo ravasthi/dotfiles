@@ -1,0 +1,42 @@
+###########
+# Aliases #
+
+# General aliases
+alias b='bundle exec'
+# Change to the root level directory the current git repository
+alias cdg='cd $(git rev-parse --show-toplevel || pwd)'
+alias flushdns='dscacheutil -flushcache'
+alias get='git'
+alias ls='ls -hFG'
+alias l='ls'
+alias la='ls -la'
+alias ll='ls -l'
+alias marksafe='xattr -rd com.apple.quarantine "$@"'
+alias resetdns='sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder'
+alias resetopenwith='/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/Support/lsregister -kill -r -domain local -domain user;killall Finder;echo "Open With has been rebuilt, Finder will relaunch"'
+alias removeallgems='gem list | cut -d" " -f1 | xargs gem uninstall -aIx'
+alias top='top -s 5 -o cpu -stats pid,user,command,cpu,rsize,vsize,threads,state'
+alias vi='vim'
+
+# Other development aliases
+# -- Git -----------
+alias ga='git add '
+alias gb='git branch '
+alias gci='git commit'
+alias gco='git checkout '
+alias gd='git diff '
+alias gf='git fetch '
+alias gh='git hist'
+alias ghb='hub browse '
+alias gpl='git pull '
+alias gps='git push '
+alias grb='git rebase '
+alias gst='git status '
+alias gk='gitk --all&'
+alias gx='gitx --all'
+alias gt='cd $(git rev-parse --show-toplevel)'
+# Temporarily update the index to ignore all files in a directory
+alias gua='cd "$@"; git ls-files | tr "\n" " " | xargs git update-index --assume-unchanged'
+# Revert the index to its original state
+alias gnua='cd "$@"; git ls-files | tr "\n" " " | xargs git update-index --no-assume-unchanged'
+
