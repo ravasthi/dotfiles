@@ -6,10 +6,10 @@ fontName         = "Espresso Mono"
 fontSize         = 14
 
 # Include abbreviated path in window title
-#   1. Strip out leading /Users/<username>/code/
+#   1. Strip out leading /Users/.*/code/ or /Users/.*/dev/
 #   2. Show remaining two directories of context
 #
-windowTitle = "$TM_DISPLAYNAME – ${TM_DIRECTORY/^(?:\/Users\/[^\/]+\/(?:code|dev)\/).*?((?:[^\/]+\/)?[^\/]+)$/$1/i}"
+windowTitle = "$TM_DISPLAYNAME – ${TM_DIRECTORY/^(?:\/Users\/(?:[^\/]+\/)+(?:code|dev)\/).*?((?:[^\/]+\/)?[^\/]+)$/$1/i}"
 
 # Extra files to include
 #
@@ -40,7 +40,7 @@ TM_JAVA_SOURCE_FOLDER_REGEX = java
 # Default editing configuration
 #
 showInvisibles   = true
-invisiblesMap    = "~ \t‣\n↵"
+invisiblesMap    = "~ \t‣"
 softWrap         = false
 showWrapColumn   = true
 softTabs         = true
