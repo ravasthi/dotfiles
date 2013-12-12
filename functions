@@ -8,7 +8,7 @@ if [[ "$TERM_PROGRAM" == "Apple_Terminal" ]]; then
   }
 fi
 
-# Print all valid tmux colors and their names 
+# Print all valid tmux colors and their names
 
 function tmuxcolors {
   for i in {0..255} ; do
