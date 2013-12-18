@@ -1,4 +1,4 @@
 #!/bin/sh
 
-killall Things; killall Adium; killall Skype; killall BreakTime; killall Pivotal\ Tracker; sleep 1; open /Applications/Things.app; open /Applications/Adium.app; open /Applications/Skype.app; open /Applications/BreakTime.app; open /Applications/Pivotal\ Tracker.app
+killall Things; killall Adium; killall Skype; killall BreakTime; killall Pivotal\ Tracker; killall JIRA; sleep 1; open /Applications/Things.app; open /Applications/Adium.app; open /Applications/Skype.app; open /Applications/BreakTime.app; open /Applications/Pivotal\ Tracker.app; open /Applications/JIRA.app
 
