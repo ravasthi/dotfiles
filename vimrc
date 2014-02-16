@@ -137,6 +137,7 @@ set autoindent
 set smartindent
 
 " Automatically set paste mode
+" from: https://coderwall.com/p/if9mda
 function! WrapForTmux(s)
   if !exists('$TMUX')
     return a:s
