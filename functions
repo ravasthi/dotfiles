@@ -66,3 +66,8 @@ function mute {
   osascript -e 'set volume 0'
 }
 
+function allerb2html {
+  ack -g --nocolor erb | xargs ruby -e 'puts %Q(Converting: #{ARGV.join(", ")})'
+  ack -g --nocolor erb | xargs ruby -e 'ARGV.each { |i| puts %Q(html2haml -e #{i} #{i.sub(/erb$/,"haml")}) }' | bash
+  ack -g --nocolor erb | xargs trash
+}
