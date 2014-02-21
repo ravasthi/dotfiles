@@ -73,6 +73,7 @@ layout work-2mon 'Adobe Photoshop CS6':REPEAT ${ext-full}
 layout work-2mon 'nvALT':REPEAT               ${ext-right}
 layout work-2mon 'Pivotal Tracker':REPEAT     ${main-full}
 layout work-2mon 'JIRA':REPEAT                ${main-full}
+layout work-2mon 'Slack':REPEAT               ${main-full}
 layout work-2mon 'Calendar':REPEAT            ${main-full}
 layout work-2mon 'Mail':REPEAT                ${main-full}
 layout work-2mon 'iTunes':REPEAT              ${main-full}
@@ -93,6 +94,7 @@ layout home-2mon 'Adobe Photoshop CS6':REPEAT ${ext-full}
 layout home-2mon 'nvALT':REPEAT               ${ext-right}
 layout home-2mon 'Pivotal Tracker':REPEAT     ${main-full}
 layout home-2mon 'JIRA':REPEAT                ${main-full}
+layout home-2mon 'Slack':REPEAT               ${main-full}
 layout home-2mon 'Calendar':REPEAT            ${main-full}
 layout home-2mon 'Mail':REPEAT                ${main-full}
 layout home-2mon 'iTunes':REPEAT              ${main-full}
@@ -113,6 +115,7 @@ layout laptop 'Adobe Photoshop CS6':REPEAT    ${main-full}
 layout laptop 'nvALT':REPEAT                  ${main-right}
 layout laptop 'Pivotal Tracker':REPEAT        ${main-full}
 layout laptop 'JIRA':REPEAT                   ${main-full}
+layout laptop 'Slack':REPEAT                  ${main-full}
 layout laptop 'Calendar':REPEAT               ${main-full}
 layout laptop 'Mail':REPEAT                   ${main-full}
 layout laptop 'iTunes':REPEAT                 ${main-full}
@@ -130,6 +133,7 @@ layout imac 'Firefox':REPEAT                  ${twoThirdsLeft}
 layout imac 'TextMate':REPEAT                 ${twoThirdsLeft}
 layout imac 'Sublime Text 2':REPEAT           ${twoThirdsLeft}
 layout imac 'MacVim':REPEAT                   ${twoThirdsLeft}
+layout imac 'Slack':REPEAT                    ${twoThirdsLeft}
 layout imac 'Adobe Photoshop CS6':REPEAT      ${twoThirdsLeft}
 layout imac 'nvALT':REPEAT                    ${oneThirdRight}
 layout imac 'Mail':REPEAT                     ${twoThirdsLeft}
