@@ -257,6 +257,8 @@ Bundle "majutsushi/tagbar"
 Bundle "zaiste/tmux.vim"
 " YankRing
 Bundle "vim-scripts/YankRing.vim"
+" YouCompleteMe
+Bundle "Valloric/YouCompleteMe"
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
