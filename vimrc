@@ -74,6 +74,9 @@ set showmode
 " Show command I'm typing
 set showcmd
 
+" Show ruler
+set ruler
+
 " Show matching parentheses
 set showmatch
 
