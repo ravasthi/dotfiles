@@ -62,6 +62,7 @@ alias ext-oneThirdRight    ${oneThirdRight}   ${mon-external}
 
 # work 2-monitor layout
 layout work-2mon 'Terminal':REPEAT            ${ext-oneThirdRight}
+layout work-2mon 'iTerm':REPEAT               ${ext-oneThirdRight}
 layout work-2mon 'Safari':REPEAT              ${ext-twoThirdsLeft}
 layout work-2mon 'WebKit':REPEAT              ${ext-twoThirdsLeft}
 layout work-2mon 'Google Chrome':REPEAT       ${ext-twoThirdsLeft}
@@ -83,6 +84,7 @@ layout work-2mon 'Reeder':REPEAT              ${main-full}
 
 # home 2-monitor layout
 layout home-2mon 'Terminal':REPEAT            ${ext-twoFifthsRight}
+layout home-2mon 'iTerm':REPEAT               ${ext-twoFifthsRight}
 layout home-2mon 'Safari':REPEAT              ${ext-fourFifthsLeft}
 layout home-2mon 'WebKit':REPEAT              ${ext-fourFifthsLeft}
 layout home-2mon 'Google Chrome':REPEAT       ${ext-fourFifthsLeft}
@@ -104,6 +106,7 @@ layout home-2mon 'Reeder':REPEAT              ${main-full}
 
 # laptop-only layout
 layout laptop 'Terminal':REPEAT               ${main-right}
+layout laptop 'iTerm':REPEAT                  ${main-right}
 layout laptop 'Safari':REPEAT                 ${main-full}
 layout laptop 'WebKit':REPEAT                 ${main-full}
 layout laptop 'Google Chrome':REPEAT          ${main-full}
@@ -125,6 +128,7 @@ layout laptop 'Reeder':REPEAT                 ${main-full}
 
 # iMac layout
 layout imac 'Terminal':REPEAT                 ${bottomRight}
+layout imac 'iTerm':REPEAT                    ${bottomRight}
 layout imac 'Preview':REPEAT                  ${full}
 layout imac 'Safari':REPEAT                   ${twoThirdsLeft}
 layout imac 'WebKit':REPEAT                   ${twoThirdsLeft}
