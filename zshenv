@@ -76,15 +76,13 @@ if [[ -x $HOME/pear/bin/pear ]]; then
   export PATH=$HOME/pear/bin:$PATH
 fi
 
-##################
-# Custom Scripts #
-
-if [[ -d $HOME/.bin ]]; then
-  export PATH=$HOME/.bin:$PATH
-fi
-
 ########
 # Ruby #
+
+# Heroku Toolbelt #
+if [[ -d /usr/local/heroku/bin ]]; then
+  export PATH="/usr/local/heroku/bin:$PATH"
+fi
 
 # Rbenv #
 if [[ -d $HOME/.rbenv ]]; then
@@ -98,8 +96,9 @@ if [[ -d $HOME/.rvm ]] && [[ -s "$HOME/.rvm/scripts/rvm" ]]; then
   source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 fi
 
-# Heroku Toolbelt #
-if [[ -d /usr/local/heroku/bin ]]; then
-  export PATH="/usr/local/heroku/bin:$PATH"
-fi
+##################
+# Custom Scripts #
 
+if [[ -d $HOME/.bin ]]; then
+  export PATH=$HOME/.bin:$PATH
+fi
