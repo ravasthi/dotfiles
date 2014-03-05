@@ -2,7 +2,7 @@
 
 # Launch TextMate or vi depending on whether we're on a local Mac or in an SSH session
 if type mate &> /dev/null; then
-  if [ "$TERM_PROGRAM" == "Apple_Terminal" ]; then
+  if [ "$TERM_PROGRAM" == "Apple_Terminal" ] || [ "$TERM_PROGRAM" == "iTerm.app" ]; then
     exec mate -wl1 $@
   fi
 fi
