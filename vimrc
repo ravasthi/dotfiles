@@ -267,7 +267,7 @@ Bundle "Valloric/YouCompleteMe"
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Ack
-nnoremap <silent> <leader>a :Ack<space>
+nnoremap <silent> <leader>f :Ack<space>
 
 " BufExplorer
 let g:bufExplorerSortBy = 'fullpath'   " Sort by full file path name.
@@ -307,22 +307,22 @@ nnoremap <silent> <leader>ssc :Sscratch<cr>
   "*********************
   " Keymappings
   "
-  nnoremap <leader>tb,    :Tabularize /,\zs<CR>
-  vnoremap <leader>tb,    :Tabularize /,\zs<CR>
-  nnoremap <leader>tb::   :Tabularize /\s:<CR>
-  vnoremap <leader>tb::   :Tabularize /\s:<CR>
-  nnoremap <leader>tb=    :Tabularize /=>\@!<CR>
-  vnoremap <leader>tb=    :Tabularize /=>\@!<CR>
-  nnoremap <leader>tb=>   :Tabularize /=><CR>
-  vnoremap <leader>tb=>   :Tabularize /=><CR>
-  nnoremap <leader>tb->   :Tabularize /-><CR>
-  vnoremap <leader>tb->   :Tabularize /-><CR>
-  nnoremap <leader>tb{    :Tabularize /{<CR>
-  vnoremap <leader>tb{    :Tabularize /{<CR>
-  nnoremap <leader>tb}    :Tabularize /}<CR>
-  vnoremap <leader>tb}    :Tabularize /}<CR>
-  nnoremap <leader>tb:    :Tabularize /:\zs<CR>
-  vnoremap <leader>tb:    :Tabularize /:\zs<CR>
+  nnoremap <leader>al,    :Tabularize /,\zs<CR>
+  vnoremap <leader>al,    :Tabularize /,\zs<CR>
+  nnoremap <leader>al::   :Tabularize /\s:<CR>
+  vnoremap <leader>al::   :Tabularize /\s:<CR>
+  nnoremap <leader>al=    :Tabularize /=>\@!<CR>
+  vnoremap <leader>al=    :Tabularize /=>\@!<CR>
+  nnoremap <leader>al=>   :Tabularize /=><CR>
+  vnoremap <leader>al=>   :Tabularize /=><CR>
+  nnoremap <leader>al->   :Tabularize /-><CR>
+  vnoremap <leader>al->   :Tabularize /-><CR>
+  nnoremap <leader>al{    :Tabularize /{<CR>
+  vnoremap <leader>al{    :Tabularize /{<CR>
+  nnoremap <leader>al}    :Tabularize /}<CR>
+  vnoremap <leader>al}    :Tabularize /}<CR>
+  nnoremap <leader>al:    :Tabularize /:\zs<CR>
+  vnoremap <leader>al:    :Tabularize /:\zs<CR>
 
   "*********************
   " Custom Functions
