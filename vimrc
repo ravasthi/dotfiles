@@ -82,6 +82,7 @@ set showmatch
 
 " Show line numbers
 set relativenumber
+set number
 set numberwidth=5
 hi LineNr cterm=NONE ctermfg=241 guifg=#606060
 
