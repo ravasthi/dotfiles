@@ -267,8 +267,9 @@ Bundle "Valloric/YouCompleteMe"
 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Ack
-nnoremap <silent> <leader>f :Ack<space>
+" ag
+nnoremap <silent> <leader>f :Ag<space>
+let g:agprg = 'ag --column'
 
 " BufExplorer
 let g:bufExplorerSortBy = 'fullpath'   " Sort by full file path name.
