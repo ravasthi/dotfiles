@@ -82,27 +82,27 @@ layout work-2mon 'Rdio':REPEAT                ${main-full}
 layout work-2mon 'Pocket':REPEAT              ${main-full}
 layout work-2mon 'Reeder':REPEAT              ${main-full}
 
-# home 2-monitor layout
-layout home-2mon 'Terminal':REPEAT            ${ext-twoFifthsRight}
-layout home-2mon 'iTerm':REPEAT               ${ext-twoFifthsRight}
-layout home-2mon 'Safari':REPEAT              ${ext-fourFifthsLeft}
-layout home-2mon 'WebKit':REPEAT              ${ext-fourFifthsLeft}
-layout home-2mon 'Google Chrome':REPEAT       ${ext-fourFifthsLeft}
-layout home-2mon 'Firefox':REPEAT             ${ext-fourFifthsLeft}
-layout home-2mon 'TextMate':REPEAT            ${ext-fourFifthsLeft}
-layout home-2mon 'Sublime Text 2':REPEAT      ${ext-fourFifthsLeft}
-layout home-2mon 'MacVim':REPEAT              ${ext-fourFifthsLeft}
-layout home-2mon 'Adobe Photoshop CS6':REPEAT ${ext-full}
-layout home-2mon 'nvALT':REPEAT               ${ext-right}
-layout home-2mon 'Pivotal Tracker':REPEAT     ${main-full}
-layout home-2mon 'JIRA':REPEAT                ${main-full}
-layout home-2mon 'Slack':REPEAT               ${main-full}
-layout home-2mon 'Calendar':REPEAT            ${main-full}
-layout home-2mon 'Mail':REPEAT                ${main-full}
-layout home-2mon 'iTunes':REPEAT              ${main-full}
-layout home-2mon 'Rdio':REPEAT                ${main-full}
-layout home-2mon 'Pocket':REPEAT              ${main-full}
-layout home-2mon 'Reeder':REPEAT              ${main-full}
+# 2-monitor layout (projector)
+layout proj-2mon 'Terminal':REPEAT            ${main-right}
+layout proj-2mon 'iTerm':REPEAT               ${main-right}
+layout proj-2mon 'Safari':REPEAT              ${main-full}
+layout proj-2mon 'WebKit':REPEAT              ${main-full}
+layout proj-2mon 'Google Chrome':REPEAT       ${main-full}
+layout proj-2mon 'Firefox':REPEAT             ${main-full}
+layout proj-2mon 'TextMate':REPEAT            ${main-full}
+layout proj-2mon 'Sublime Text 2':REPEAT      ${main-full}
+layout proj-2mon 'MacVim':REPEAT              ${main-full}
+layout proj-2mon 'Adobe Photoshop CS6':REPEAT ${main-full}
+layout proj-2mon 'nvALT':REPEAT               ${main-fiveSixthsRight}
+layout proj-2mon 'Pivotal Tracker':REPEAT     ${main-full}
+layout proj-2mon 'JIRA':REPEAT                ${main-full}
+layout proj-2mon 'Slack':REPEAT               ${main-full}
+layout proj-2mon 'Calendar':REPEAT            ${main-full}
+layout proj-2mon 'Mail':REPEAT                ${main-full}
+layout proj-2mon 'iTunes':REPEAT              ${main-full}
+layout proj-2mon 'Rdio':REPEAT                ${main-full}
+layout proj-2mon 'Pocket':REPEAT              ${main-full}
+layout proj-2mon 'Reeder':REPEAT              ${main-full}
 
 # laptop-only layout
 layout laptop 'Terminal':REPEAT               ${main-right}
@@ -126,32 +126,10 @@ layout laptop 'Rdio':REPEAT                   ${main-full}
 layout laptop 'Pocket':REPEAT                 ${main-full}
 layout laptop 'Reeder':REPEAT                 ${main-full}
 
-# iMac layout
-layout imac 'Terminal':REPEAT                 ${bottomRight}
-layout imac 'iTerm':REPEAT                    ${bottomRight}
-layout imac 'Preview':REPEAT                  ${full}
-layout imac 'Safari':REPEAT                   ${twoThirdsLeft}
-layout imac 'WebKit':REPEAT                   ${twoThirdsLeft}
-layout imac 'Google Chrome':REPEAT            ${twoThirdsLeft}
-layout imac 'Firefox':REPEAT                  ${twoThirdsLeft}
-layout imac 'TextMate':REPEAT                 ${twoThirdsLeft}
-layout imac 'Sublime Text 2':REPEAT           ${twoThirdsLeft}
-layout imac 'MacVim':REPEAT                   ${twoThirdsLeft}
-layout imac 'Slack':REPEAT                    ${twoThirdsLeft}
-layout imac 'Adobe Photoshop CS6':REPEAT      ${twoThirdsLeft}
-layout imac 'nvALT':REPEAT                    ${oneThirdRight}
-layout imac 'Mail':REPEAT                     ${twoThirdsLeft}
-layout imac 'iTunes':REPEAT                   ${twoThirdsLeft}
-layout imac 'Rdio':REPEAT                     ${middle}
-layout imac 'Calendar':REPEAT                 ${middle}
-layout imac 'Pocket':REPEAT                   ${twoThirdsLeft}
-layout imac 'Reeder':REPEAT                   ${twoThirdsLeft}
-
 # Default layouts
 default work-2mon resolutions:1440x900;2560x1440
-default home-2mon resolutions:1440x900;1680x1050
+default proj-2mon resolutions:1440x900;1920x1080
 default laptop    resolutions:1440x900
-default imac      resolutions:1920x1080
 
 # Location bindings
 bind 1:ctrl                   ${full}
@@ -170,8 +148,7 @@ bind right:alt,cmd            ${ext-twoThirdsLeft}
 bind left:alt,cmd             ${main-full}
 
 bind backslash:ctrl           layout work-2mon
-bind /:ctrl                   layout home-2mon
+bind /:ctrl                   layout proj-2mon
 bind backslash:ctrl,shift     layout laptop
-bind backslash:cmd,ctrl,shift layout imac
 
 bind e:cmd,ctrl               ${showNormalHint}
