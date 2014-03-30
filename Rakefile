@@ -1,4 +1,4 @@
-# Courtesy of https://github.com/ryanb/dotfiles/
+# Modified from https://github.com/ryanb/dotfiles/
 
 require 'rake'
 require 'erb'
