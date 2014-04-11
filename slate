@@ -128,7 +128,7 @@ layout laptop 'Reeder':REPEAT                 ${main-full}
 
 # Default layouts
 default work-2mon resolutions:1440x900;2560x1440
-default proj-2mon resolutions:1440x900;1920x1080
+default proj-2mon resolutions:1920x1080;1440x900
 default laptop    resolutions:1440x900
 
 # Location bindings
