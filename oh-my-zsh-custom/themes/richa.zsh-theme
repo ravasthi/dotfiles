@@ -7,7 +7,7 @@ ZSH_THEME_GIT_PROMPT_CLEAN="%{$grey%})"
 
 function richa_left_prompt {
   prompt="
-%{%F{magenta}%}%n%{%f%} at %{%F{magenta}%}%m%{%f%} in %{%F{blue}%}%4(~:…:)%3~%{%f%}
+[%{%F{yellow}%}%T%{%f%}] %{%F{magenta}%}%n%{%f%} at %{%F{magenta}%}%m%{%f%} in %{%F{blue}%}%4(~:…:)%3~%{%f%}
 %(?,%{%F{green}%},%{%F{red}%})✽%{%f%} "
 
   echo $prompt
