@@ -47,6 +47,20 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 
+###########
+# Aliases #
+
+if [[ -f ~/.aliases ]]; then
+  source ~/.aliases
+fi
+
+#############
+# Functions #
+
+if [[ -f ~/.functions ]]; then
+  source ~/.functions
+fi
+
 # use .localrc for settings specific to one system
 if [[ -f $HOME/.localrc ]]; then
   source $HOME/.localrc

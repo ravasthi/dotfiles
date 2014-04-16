@@ -5,20 +5,6 @@ export LANG=en_US.UTF-8
 
 export PATH=/usr/local/bin:$PATH
 
-###########
-# Aliases #
-
-if [[ -f ~/.aliases ]]; then
-  source ~/.aliases
-fi
-
-#############
-# Functions #
-
-if [[ -f ~/.functions ]]; then
-  source ~/.functions
-fi
-
 #####################
 # Python virtualenv #
 
