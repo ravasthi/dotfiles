@@ -196,6 +196,16 @@ imap <C-L> <Space>=><Space>
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Custom syntax highlighing settings
+"
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+au BufWinEnter,BufRead,BufNewFile Guardfile set filetype=ruby
+au BufWinEnter,BufRead,BufNewFile Vendorfile set filetype=ruby
+au BufWinEnter,BufRead,BufNewFile .powenv set filetype=sh
+au BufWinEnter,BufRead,BufNewFile .powrc set filetype=sh
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins
 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
