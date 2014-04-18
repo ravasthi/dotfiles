@@ -296,6 +296,7 @@ nnoremap <silent> <leader>u :GundoToggle<CR>
 
 " The NERD tree
 let g:NERDTreeHijackNetrw = 0 " for now, don't use it for directory browsing
+let NERDTreeShowHidden=1
 nnoremap <silent> <leader>d :NERDTreeToggle<CR>
 nnoremap <leader>r :NERDTreeFind<cr>
 
