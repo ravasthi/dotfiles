@@ -182,7 +182,7 @@ set wrapmargin=0
 
 " Show a vertical line/guard at column 120
 if exists('+colorcolumn')
-  let &colorcolumn="80,".join(range(120,999),",")
+  let &colorcolumn="80,100,".join(range(120,999),",")
 endif
 
 " Strip trailing whitespace
