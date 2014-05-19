@@ -49,6 +49,9 @@ tabSize          = 2
 # Strip trailing whitespace on save, fix line endings
 TM_STRIP_WHITESPACE_ON_SAVE = true
 
+# Save on blur
+saveOnBlur = true
+
 # File type specific configuration
 #
 [ text ]
