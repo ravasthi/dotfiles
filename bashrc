@@ -2,6 +2,11 @@
 # By declaring here in .bashrc, daemons like Pow will also pick it up.
 export LANG=en_US.UTF-8
 
+# Set default paths explicitly, since it doesn't seem to be happening.
+if [ -x /usr/libexec/path_helper ]; then
+  eval `/usr/libexec/path_helper -s`
+fi
+
 ############
 # Homebrew #
 
