@@ -1,4 +1,4 @@
 #!/bin/sh
 
-killall Things; killall Adium; killall Skype; killall BreakTime; killall JIRA; killall Slack; sleep 1; open /Applications/Things.app; open /Applications/Adium.app; open /Applications/Skype.app; open /Applications/BreakTime.app; open /Applications/JIRA.app; open /Applications/Slack.app
+killall Things; killall Adium; killall Skype; killall Pro\ JIRA; killall Slack; sleep 1; open /Applications/Things.app; open /Applications/Adium.app; open /Applications/Skype.app; open /Applications/Pro\ JIRA.app; open /Applications/Slack.app
 
