@@ -73,7 +73,8 @@ layout work-2mon 'MacVim':REPEAT              ${ext-twoThirdsLeft}
 layout work-2mon 'Adobe Photoshop CS6':REPEAT ${ext-full}
 layout work-2mon 'nvALT':REPEAT               ${ext-right}
 layout work-2mon 'Pivotal Tracker':REPEAT     ${main-full}
-layout work-2mon 'JIRA':REPEAT                ${main-full}
+layout work-2mon 'Pro JIRA':REPEAT            ${main-full}
+layout work-2mon 'Outright JIRA':REPEAT       ${main-full}
 layout work-2mon 'Slack':REPEAT               ${main-full}
 layout work-2mon 'Calendar':REPEAT            ${main-full}
 layout work-2mon 'Mail':REPEAT                ${main-full}
@@ -95,7 +96,8 @@ layout proj-2mon 'MacVim':REPEAT              ${main-full}
 layout proj-2mon 'Adobe Photoshop CS6':REPEAT ${main-full}
 layout proj-2mon 'nvALT':REPEAT               ${main-fiveSixthsRight}
 layout proj-2mon 'Pivotal Tracker':REPEAT     ${main-full}
-layout proj-2mon 'JIRA':REPEAT                ${main-full}
+layout proj-2mon 'Pro JIRA':REPEAT            ${main-full}
+layout proj-2mon 'Outright JIRA':REPEAT       ${main-full}
 layout proj-2mon 'Slack':REPEAT               ${main-full}
 layout proj-2mon 'Calendar':REPEAT            ${main-full}
 layout proj-2mon 'Mail':REPEAT                ${main-full}
@@ -117,7 +119,8 @@ layout laptop 'MacVim':REPEAT                 ${main-full}
 layout laptop 'Adobe Photoshop CS6':REPEAT    ${main-full}
 layout laptop 'nvALT':REPEAT                  ${main-right}
 layout laptop 'Pivotal Tracker':REPEAT        ${main-full}
-layout laptop 'JIRA':REPEAT                   ${main-full}
+layout laptop 'Pro JIRA':REPEAT               ${main-full}
+layout laptop 'Outright JIRA':REPEAT          ${main-full}
 layout laptop 'Slack':REPEAT                  ${main-full}
 layout laptop 'Calendar':REPEAT               ${main-full}
 layout laptop 'Mail':REPEAT                   ${main-full}
