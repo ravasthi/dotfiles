@@ -82,6 +82,10 @@ if [[ -d ~/.virtualenvs ]]; then
   [[ -f /usr/local/bin/virtualenvwrapper.sh ]] && . /usr/local/bin/virtualenvwrapper.sh
 fi
 
+if [[ -x /usr/local/opt/autoenv/activate.sh ]]; then
+  source /usr/local/opt/autoenv/activate.sh
+fi
+
 ########################
 # Subversion/Mercurial #
 
