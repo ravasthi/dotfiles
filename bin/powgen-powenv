@@ -1,12 +1,12 @@
 #!/usr/bin/env ruby -w
 
-if File.exists?('.rbenv-version')
+if File.exist?('.rbenv-version')
   filename = '.rbenv-version'
-elsif File.exists?('.ruby-version')
+elsif File.exist?('.ruby-version')
   filename = '.ruby-version'
 end
 
-if filename and File.exists?('.ruby-gemset')
+if filename and File.exist?('.ruby-gemset')
   print "rvm env -- #{File.open(filename).gets.chomp}@#{File.open('.ruby-gemset').gets.chomp} > .powenv"
   print "\n"
 end
