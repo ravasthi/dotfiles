@@ -53,7 +53,7 @@ def link_file(source, destination)
     end
   else
     puts "linking #{destination}"
-    system %Q{ln -s #{source} #{destination}}
+    system %Q{ln -s #{File.absolute_path source} #{destination}}
   end
 end
 
