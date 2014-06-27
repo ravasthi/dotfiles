@@ -1,5 +1,8 @@
 # TextMate 2 global settings, courtesy https://github.com/hmans/homedir
 
+# Path
+PATH = $PATH:/usr/texbin:/Users/ravasthi/.rvm/bin
+
 # Basic Settings
 #
 fontName         = "Espresso Mono"
