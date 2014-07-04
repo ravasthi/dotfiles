@@ -35,7 +35,7 @@ set nobackup
 set noswapfile
 
 " Create undo files
-set undofile
+"set undofile
 
 " Reload your vimrc with <leader>vr
 map <leader>vr :source $MYVIMRC<CR>:echoe "Vimrc Reloaded!"<CR>
@@ -81,7 +81,7 @@ set ruler
 set showmatch
 
 " Show line numbers
-set relativenumber
+"set relativenumber
 set number
 set numberwidth=5
 hi LineNr cterm=NONE ctermfg=241 guifg=#606060
@@ -269,7 +269,7 @@ Bundle "zaiste/tmux.vim"
 " YankRing
 Bundle "vim-scripts/YankRing.vim"
 " YouCompleteMe
-Bundle "Valloric/YouCompleteMe"
+"Bundle "Valloric/YouCompleteMe"
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
