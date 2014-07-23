@@ -1,7 +1,8 @@
 ###########
 # Aliases #
+###########
 
-# General aliases
+# -----[ General aliases ]------------------------------------------------------
 alias b='bundle exec '
 # Change to the root level directory the current git repository
 alias cdg='cd $(git rev-parse --show-toplevel || pwd)'
@@ -18,8 +19,8 @@ alias removeallgems='gem list | cut -d" " -f1 | xargs gem uninstall -aIx'
 alias top='top -s 5 -o cpu -stats pid,user,command,cpu,rsize,vsize,threads,state'
 alias vi='vim'
 
-# Other development aliases
-# -- Git -----------
+# -----[ Other development aliases ]--------------------------------------------
+# ----------[ Git ]-------------------------------------------------------------
 alias ga='git add '
 alias gap='git add -p '
 alias gb='git branch '
@@ -40,4 +41,10 @@ alias gt='cd $(git rev-parse --show-toplevel)'
 alias gau='git ls-files | tr "\n" " " | xargs git update-index --assume-unchanged'
 # Revert the index to its original state
 alias gnau='git ls-files | tr "\n" " " | xargs git update-index --no-assume-unchanged'
+
+# ----------[ Django ]----------------------------------------------------------
+alias dj='./manage.py '
+alias djs='./manage.py runserver '
+alias djsdb='./manage.py syncdb'
+alias djm='./manage.py migrate'
 
