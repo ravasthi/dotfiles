@@ -1,0 +1,3 @@
+[submodule "grid"]
+	path = hydra/ext/grid
+	url = git@github.com:ravasthi/hydra-grid.git
