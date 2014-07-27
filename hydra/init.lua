@@ -6,6 +6,7 @@ hydra.alert("Hydra config loaded", 1.5)
 
 -- open a repl with mash-R; requires https://github.com/sdegutis/hydra-cli
 hotkey.bind({"cmd", "ctrl", "alt"}, "R", repl.open)
+hotkey.bind({"cmd", "ctrl", "alt"}, "1", hydra.reload)
 
 -- show a helpful menu
 hydra.menu.show(function()
@@ -156,4 +157,6 @@ hotkey.new({"ctrl"}, "7", quartertopleft):enable()
 hotkey.new({"ctrl", "shift"}, "7", quarterbottomleft):enable()
 hotkey.new({"ctrl"}, "8", quartertopright):enable()
 hotkey.new({"ctrl", "shift"}, "8", quarterbottomright):enable()
+hotkey.new({"ctrl", "shift"}, "left", ext.grid.pushwindow_prevscreen):enable()
+hotkey.new({"ctrl", "shift"}, "right", ext.grid.pushwindow_nextscreen):enable()
 
