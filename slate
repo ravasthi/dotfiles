@@ -35,6 +35,7 @@ alias quarterTopRight    move screenOriginX+screenSizeX/2;screenOriginY         
 alias quarterBottomLeft  move screenOriginX;screenOriginY+screenSizeY/2               screenSizeX/2;screenSizeY/2
 alias quarterBottomRight move screenOriginX+screenSizeX/2;screenOriginY+screenSizeY/2 screenSizeX/2;screenSizeY/2
 alias oneThirdLeft       move screenOriginX;screenOriginY                             screenSizeX/3;screenSizeY
+alias oneThirdMiddle     move screenOriginX+screenSizeX/3;screenOriginY               screenSizeX/3;screenSizeY
 alias oneThirdRight      move screenOriginX+screenSizeX*2/3;screenOriginY             screenSizeX/3;screenSizeY
 alias twoThirdsLeft      move screenOriginX;screenOriginY                             screenSizeX*2/3;screenSizeY
 alias twoThirdsRight     move screenOriginX+screenSizeX/3;screenOriginY               screenSizeX*2/3;screenSizeY
@@ -145,9 +146,10 @@ bind 2:ctrl                   ${leftHalf}
 bind 2:ctrl,shift             ${rightHalf}
 bind 3:ctrl                   ${topHalf}
 bind 3:ctrl,shift             ${bottomHalf}
-bind 4:ctrl                   ${twoThirdsLeft}
+bind 4:ctrl                   ${oneThirdLeft}
 bind 4:ctrl,shift             ${oneThirdRight}
-bind 5:ctrl                   ${oneThirdLeft}
+bind 4:ctrl,shift,alt         ${oneThirdMiddle}
+bind 5:ctrl                   ${twoThirdsLeft}
 bind 5:ctrl,shift             ${twoThirdsRight}
 bind 6:ctrl                   ${fiveSixthsLeft}
 bind 6:ctrl,shift             ${fiveSixthsRight}
