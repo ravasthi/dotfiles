@@ -1,0 +1,6 @@
+[submodule "grid"]
+	path = hydra/ext/grid
+	url = git@github.com:ravasthi/hydra-grid.git
+[submodule "appfinder"]
+	path = hydra/ext/appfinder
+	url = git@github.com:ravasthi/hydra-appfinder.git
