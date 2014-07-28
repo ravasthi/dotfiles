@@ -16,6 +16,9 @@ config windowHintsOrder leftToRight
 # Monitor Aliases
 alias mon-main     0
 alias mon-external 1
+alias mon-laptop   1440x900
+alias mon-4k       1920x1080
+alias mon-proj     1920x1080
 
 # Misc Aliases
 alias showHintsLeftHand hint QWERTASDFGZXCVB
@@ -134,9 +137,9 @@ layout laptop 'Pocket':REPEAT                 ${main-full}
 layout laptop 'Reeder':REPEAT                 ${main-full}
 
 # Default layouts
-default work-2mon resolutions:1440x900;2560x1440
-default proj-2mon resolutions:1920x1080;1440x900
-default laptop    resolutions:1440x900
+default work-2mon resolutions:${mon-4k};${mon-laptop}
+default proj-2mon resolutions:${mon-proj};${mon-laptop}
+default laptop    resolutions:${mon-laptop}
 
 # Location bindings
 bind 1:ctrl                   ${full}
