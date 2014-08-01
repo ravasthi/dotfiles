@@ -18,6 +18,7 @@ alias mon-main     0
 alias mon-external 1
 alias mon-laptop   1440x900
 alias mon-4k       1920x1080
+alias mon-tb       2560x1440
 alias mon-proj     1920x1080
 
 # Misc Aliases
@@ -138,7 +139,7 @@ layout laptop 'Pocket':REPEAT                 ${main-full}
 layout laptop 'Reeder':REPEAT                 ${main-full}
 
 # Default layouts
-default work-2mon resolutions:${mon-4k};${mon-laptop}
+default work-2mon resolutions:${mon-laptop};${mon-tb}
 default proj-2mon resolutions:${mon-proj};${mon-laptop}
 default laptop    resolutions:${mon-laptop}
 
