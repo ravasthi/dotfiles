@@ -51,12 +51,8 @@ nnoremap ; :
 " GUI and colors
 set guifont=EspressoMono-Regular:h14
 set t_Co=256 " use 256 colors
-if (&t_Co == 256 || &t_Co == 88) && !has('gui_running') &&
-  \ filereadable(expand("$HOME/.vim/bundle/guicolorscheme.vim"))
-  autocmd VimEnter * GuiColorScheme Tomorrow-Night
-else
-  colorscheme Tomorrow-Night
-endif
+let g:CSApprox_attr_map = { 'bold' : 'bold', 'italic' : '', 'sp' : '' }
+colorscheme Tomorrow-Night
 
 " Show invisibles like TextMate
 set list
@@ -224,6 +220,8 @@ Bundle "firat/vim-bufexplorer"
 Bundle "tpope/vim-bundler"
 " Coffeescript
 Bundle "kchmck/vim-coffee-script"
+" CSApprox
+Bundle "godlygeek/csapprox"
 " Fuzzy file search
 Bundle "kien/ctrlp.vim"
 " Add your ends
@@ -232,8 +230,6 @@ Bundle "tpope/vim-endwise"
 Bundle "tpope/vim-fugitive"
 " Gist
 Bundle "mattn/gist-vim"
-" GUI colorscheme
-Bundle "vim-scripts/guicolorscheme.vim"
 " Gundo
 Bundle "sjl/gundo.vim"
 " HAML, Sass, SCSS
@@ -285,6 +281,9 @@ let g:agprg = 'ag --column'
 let g:bufExplorerSortBy = 'fullpath'   " Sort by full file path name.
 let g:bufExplorerShowRelativePath = 1  " Show relative paths.
 let g:bufExplorerSplitOutPathName = 0  " Don't split the path and file
+
+" Colors
+nnoremap <silent> <leader>cs :colorscheme<space>
 
 " CtrlP
 let g:ctrlp_map = '<leader>p'         " command to invoke the plugin
