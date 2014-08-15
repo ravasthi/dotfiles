@@ -38,7 +38,7 @@ set noswapfile
 set undofile
 
 " Reload your vimrc with <leader>vr
-map <leader>vr :source $MYVIMRC<CR>:echoe "Vimrc Reloaded!"<CR>
+map <leader>vr :source $MYVIMRC<CR>:echoe "vimrc reloaded!"<CR>
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -283,7 +283,7 @@ let g:bufExplorerShowRelativePath = 1  " Show relative paths.
 let g:bufExplorerSplitOutPathName = 0  " Don't split the path and file
 
 " Colors
-nnoremap <silent> <leader>cs :colorscheme<space>
+nnoremap <silent> <leader>cls :colorscheme<space>
 
 " CtrlP
 let g:ctrlp_map = '<leader>p'         " command to invoke the plugin
