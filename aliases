@@ -47,4 +47,6 @@ alias dj='./manage.py '
 alias djs='./manage.py runserver '
 alias djsdb='./manage.py syncdb'
 alias djm='./manage.py migrate'
+alias djsh='./manage.py shell'
+alias djdbsh='./manage.py dbshell'
 
