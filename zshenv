@@ -8,7 +8,7 @@ fi
 ############
 # Homebrew #
 
-export PATH=/usr/local/bin:$PATH
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
 #####################
 # Python virtualenv #
