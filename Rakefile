@@ -27,7 +27,7 @@ def handle_file(file)
   elsif File.directory?(file) && file =~ /oh-my-zsh-custom/
     puts "installing oh my zsh customizations"
     Dir["#{file}/*"].each do |customization|
-      customization_source = File.join '$PWD', customization
+      customization_source = File.join `pwd`.chomp, customization
       customization_target = File.join ENV['HOME'], ".oh-my-zsh/custom/#{customization.split('/').last}"
       if File.exists?(customization_target)
         confirm_overwrite customization_source, customization_target, customization_target
