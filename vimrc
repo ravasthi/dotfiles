@@ -176,7 +176,7 @@ set linebreak
 set textwidth=0
 set wrapmargin=0
 
-" Show a vertical line/guard at column 120
+" Show a vertical line/guard at columns 80 and 100
 if exists('+colorcolumn')
   let &colorcolumn="80,100,".join(range(120,999),",")
 endif
@@ -287,7 +287,9 @@ nnoremap <silent> <leader>cls :colorscheme<space>
 
 " CtrlP
 let g:ctrlp_map = '<leader>p'         " command to invoke the plugin
-let g:ctrlp_working_path_mode = 'rc'  " don't manage working directory
+let g:ctrlp_working_path_mode = 'ra'  " set cwd to nearest vcs-repo ancestor, &
+                                      " directory of current file unless it's
+                                      " a subdirectory of the cwd
 let g:ctrlp_max_height = 30           " maximum size of match window
 let g:ctrlp_show_hidden = 1           " include dotfiles and dotdirs in search
 
