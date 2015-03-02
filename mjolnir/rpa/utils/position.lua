@@ -6,8 +6,9 @@
 local grid   = require "mjolnir.bg.grid"
 local window = require "mjolnir.window"
 
-local rpa.utils          = rpa.utils or {}
-local rpa.utils.position = {}
+local rpa          = rpa or {}
+rpa.utils          = rpa.utils or {}
+rpa.utils.position = {}
 
 grid.GRIDWIDTH  = 6
 grid.GRIDHEIGHT = 4
@@ -16,7 +17,7 @@ grid.MARGINY    = 0
 
 function rpa.utils.position.set_position(frame, not_on_grid)
   local win = window.focusedwindow()
-  if not_on_grid == true
+  if not_on_grid == true then
     win:setframe(frame)
   else
     grid.set(win, frame, win:screen())

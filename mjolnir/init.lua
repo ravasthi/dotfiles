@@ -5,41 +5,6 @@ local position = require "rpa.utils.position"
 
 
 -- Startup options -------------------------------------------------------------
--- -- show an alert to let you know Mjolnir's running
--- alert("Mjolnir config loaded", 1.5)
---
--- -- open a repl with mash-R; requires https://github.com/sdegutis/Mjolnir-cli
--- hotkey.bind({"cmd", "ctrl", "alt"}, "R", repl.open)
--- hotkey.bind({"cmd", "ctrl", "alt"}, "1", Mjolnir.reload)
---
--- -- show a helpful menu
--- mjolnir.menu.show(function()
---     local t = {
---       {title = "Reload config", fn = mjolnir.reload},
---       {title = "Open REPL", fn = repl.open},
---       {title = "-"},
---       {title = "About Mjolnir", fn = mjolnir.showabout},
---       {title = "Check for updates…", fn = function() Mjolnir.updates.check(nil, true) end},
---       {title = "Quit", fn = os.exit},
---     }
---
---     if not Mjolnir.license.haslicense() then
---       table.insert(t, 1, {title = "Buy or enter license…", fn = Mjolnir.license.enter})
---       table.insert(t, 2, {title = "-"})
---     end
---
---     return t
--- end)
---
--- -- uncomment this line if you want Mjolnir to make sure it launches at login
--- -- mjolnir.autolaunch.set(true)
---
--- -- when the "update is available" notification is clicked, open the website
--- notify.register("showupdate", function() os.execute('open https://github.com/sdegutis/Mjolnir/releases') end)
---
--- -- check for updates every week, and also right now (when first launching)
--- timer.new(timer.weeks(1), mjolnir.updates.check):start()
--- mjolnir.updates.check()
 
 
 -- Functions -------------------------------------------------------------------
