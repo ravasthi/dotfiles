@@ -2,6 +2,7 @@ local alert    = require "mjolnir.alert"
 local grid     = require "mjolnir.bg.grid"
 local hotkey   = require "mjolnir.hotkey"
 local position = require "rpa.utils.position"
+local window   = require "mjolnir.window"
 
 
 -- Startup options -------------------------------------------------------------
@@ -72,25 +73,53 @@ function fivesixthsright()
   position.set_position(position.fivesixthsright())
 end
 
+function pushwindow(win, screen)
+  if screen then
+    grid.set(win, grid.get(win), screen)
+  end
+end
+
+function pushup()
+  local win = window.focusedwindow()
+  pushwindow(win, win:screen():tonorth())
+end
+
+function pushright()
+  local win = window.focusedwindow()
+  pushwindow(win, win:screen():toeast())
+end
+
+function pushdown()
+  local win = window.focusedwindow()
+  pushwindow(win, win:screen():tosouth())
+end
+
+function pushleft()
+  local win = window.focusedwindow()
+  pushwindow(win, win:screen():towest())
+end
+
 
 -- Key bindings ----------------------------------------------------------------
-hotkey.bind({"ctrl"}, "1", grid.maximize_window)
-hotkey.bind({"ctrl", "shift"}, "1", small_center)
-hotkey.bind({"ctrl"}, "2", halfleft)
-hotkey.bind({"ctrl", "shift"}, "2", halfright)
-hotkey.bind({"ctrl"}, "3", halftop)
-hotkey.bind({"ctrl", "shift"}, "3", halfbottom)
-hotkey.bind({"ctrl"}, "4", thirdleft)
-hotkey.bind({"ctrl", "shift"}, "4", thirdright)
-hotkey.bind({"ctrl", "shift", "alt"}, "4", thirdmiddle)
-hotkey.bind({"ctrl"}, "5", twothirdsleft)
-hotkey.bind({"ctrl", "shift"}, "5", twothirdsright)
-hotkey.bind({"ctrl"}, "6", fivesixthsleft)
-hotkey.bind({"ctrl", "shift"}, "6", fivesixthsright)
-hotkey.bind({"ctrl"}, "7", quartertopleft)
-hotkey.bind({"ctrl", "shift"}, "7", quarterbottomleft)
-hotkey.bind({"ctrl"}, "8", quartertopright)
-hotkey.bind({"ctrl", "shift"}, "8", quarterbottomright)
-hotkey.bind({"cmd", "alt"}, "left", grid.pushwindow_prevscreen)
-hotkey.bind({"cmd", "alt"}, "right", grid.pushwindow_nextscreen)
+hotkey.bind({"ctrl"},                 "1",     grid.maximize_window)
+hotkey.bind({"ctrl", "shift"},        "1",     small_center)
+hotkey.bind({"ctrl"},                 "2",     halfleft)
+hotkey.bind({"ctrl", "shift"},        "2",     halfright)
+hotkey.bind({"ctrl"},                 "3",     halftop)
+hotkey.bind({"ctrl", "shift"},        "3",     halfbottom)
+hotkey.bind({"ctrl"},                 "4",     thirdleft)
+hotkey.bind({"ctrl", "shift"},        "4",     thirdright)
+hotkey.bind({"ctrl", "shift", "alt"}, "4",     thirdmiddle)
+hotkey.bind({"ctrl"},                 "5",     twothirdsleft)
+hotkey.bind({"ctrl", "shift"},        "5",     twothirdsright)
+hotkey.bind({"ctrl"},                 "6",     fivesixthsleft)
+hotkey.bind({"ctrl", "shift"},        "6",     fivesixthsright)
+hotkey.bind({"ctrl"},                 "7",     quartertopleft)
+hotkey.bind({"ctrl", "shift"},        "7",     quarterbottomleft)
+hotkey.bind({"ctrl"},                 "8",     quartertopright)
+hotkey.bind({"ctrl", "shift"},        "8",     quarterbottomright)
+hotkey.bind({"cmd", "alt"},           "up",    pushup)
+hotkey.bind({"cmd", "alt"},           "right", pushright)
+hotkey.bind({"cmd", "alt"},           "down",  pushdown)
+hotkey.bind({"cmd", "alt"},           "left",  pushleft)
 
