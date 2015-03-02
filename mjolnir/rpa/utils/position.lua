@@ -1,13 +1,13 @@
 -- Mjolnir utils - position
 -- richa@avasthi.name
 -- Utilities for setting positions of windows. Depends on:
---   * grid extension
+--   * mjolnir.bg.grid
 
 local grid   = require "mjolnir.bg.grid"
 local window = require "mjolnir.window"
 
-rpa.utils          = rpa.utils or {}
-rpa.utils.position = {}
+local rpa.utils          = rpa.utils or {}
+local rpa.utils.position = {}
 
 grid.GRIDWIDTH  = 6
 grid.GRIDHEIGHT = 4
@@ -168,3 +168,5 @@ function rpa.utils.position.fivesixthsright()
     h = grid.GRIDHEIGHT
   }
 end
+
+return rpa.utils.position
