@@ -1,12 +1,4 @@
--- Mjolnir utils - monitors
+-- Mjolnir utils - monitor
 -- richa@avasthi.name
--- Utilities for auto-detecting all monitors
-
-rpa.utils = rpa.utils or {}
-rpa.utils.monitors = {}
-
-function rpa.utils.monitors.find_all()
-  monitors = {}
-  screens = screen.allscreens()
-
-end
+-- Utilities for generating and enforcing window/monitor layouts. Depends on:
+--   * mjolnir.cmsj.appfinder
