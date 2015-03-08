@@ -1,16 +1,18 @@
-local alert    = require "mjolnir.alert"
-local grid     = require "mjolnir.bg.grid"
-local hotkey   = require "mjolnir.hotkey"
-local position = require "rpa.utils.position"
-local window   = require "mjolnir.window"
+local alert         = require "mjolnir.alert"
+local grid          = require "mjolnir.bg.grid"
+local hotkey        = require "mjolnir.hotkey"
+local monitors      = require "rpa.utils.monitors"
+local position      = require "rpa.utils.position"
+local screenwatcher = require "mjolnir._asm.watcher.screen"
+local window        = require "mjolnir.window"
 
 
 -- Startup options -------------------------------------------------------------
 
 
 -- Functions -------------------------------------------------------------------
-function small_center()
-  position.set_position(position.small_center(), true)
+function smallcenter()
+  position.set_position(position.smallcenter(), true)
 end
 
 function halfleft()
@@ -99,10 +101,114 @@ function pushleft()
   pushwindow(win, win:screen():towest())
 end
 
+-- Screen layouts --------------------------------------------------------------
+local laptop_dimensions         = {w = 1440, h = 900}
+local cinema_display_dimensions = {w = 2560, h = 1440}
+local tv_dimensions             = {w = 1920, h = 1080}
+
+local layout_laptop_only = {
+  -- Command line
+  {"Terminal", laptop_dimensions, position.halfright()},
+  {"iTerm", laptop_dimensions, position.halfright()},
+
+  -- Browsers
+  {"Safari", laptop_dimensions, position.maximized()},
+  {"Google Chrome", laptop_dimensions, position.maximized()},
+  {"Firefox", laptop_dimensions, position.maximized()},
+  {"WebKit", laptop_dimensions, position.maximized()},
+
+  -- Text editors
+  {"TextMate", laptop_dimensions, position.maximized()},
+  {"Sublime Text", laptop_dimensions, position.maximized()},
+  {"MacVim", laptop_dimensions, position.maximized()},
+
+  -- Productivity
+  {"Calendar", laptop_dimensions, position.maximized()},
+  {"Mail", laptop_dimensions, position.maximized()},
+  {"Slack", laptop_dimensions, position.maximized()},
+
+  -- Music
+  {"iTunes", laptop_dimensions, position.maximized()},
+  {"Rdio", laptop_dimensions, position.maximized()},
+  {"Spotify", laptop_dimensions, position.maximized()},
+
+  -- Misc
+  {"Marked 2", laptop_dimensions, position.halfright()},
+  {"nvALT", laptop_dimensions, position.halfright()},
+  {"Pocket", laptop_dimensions, position.maximized()},
+  {"Reeder", laptop_dimensions, position.maximized()},
+}
+
+local layout_with_cinema_display = {
+  -- Command line
+  {"Terminal", cinema_display_dimensions, position.thirdright()},
+  {"iTerm", cinema_display_dimensions, position.thirdright()},
+
+  -- Browsers
+  {"Safari", cinema_display_dimensions, position.twothirdsleft()},
+  {"Google Chrome", cinema_display_dimensions, position.twothirdsleft()},
+  {"Firefox", cinema_display_dimensions, position.twothirdsleft()},
+  {"WebKit", cinema_display_dimensions, position.twothirdsleft()},
+
+  -- Text editors
+  {"TextMate", cinema_display_dimensions, position.twothirdsleft()},
+  {"Sublime Text", cinema_display_dimensions, position.twothirdsleft()},
+  {"MacVim", cinema_display_dimensions, position.twothirdsleft()},
+
+  -- Productivity
+  {"Calendar", laptop_dimensions, position.maximized()},
+  {"Mail", laptop_dimensions, position.maximized()},
+  {"Slack", laptop_dimensions, position.maximized()},
+
+  -- Music
+  {"iTunes", laptop_dimensions, position.maximized()},
+  {"Rdio", laptop_dimensions, position.maximized()},
+  {"Spotify", laptop_dimensions, position.maximized()},
+
+  -- Misc
+  {"Marked 2", cinema_display_dimensions, position.thirdright()},
+  {"nvALT", cinema_display_dimensions, position.thirdright()},
+  {"Pocket", laptop_dimensions, position.maximized()},
+  {"Reeder", laptop_dimensions, position.maximized()},
+}
+
+local layout_with_tv = layout_laptop_only
+
+function do_layout_laptop_only()
+  monitors.do_layout(layout_laptop_only)
+end
+
+function do_layout_with_cinema_display()
+  monitors.do_layout(layout_with_cinema_display)
+end
+
+function do_layout_with_tv()
+  monitors.do_layout(layout_with_tv)
+end
+
+function handle_screen_changes()
+  local screens = monitors.screens_east_to_west()
+
+  if #screens == 1 then
+    do_layout_laptop_only()
+  else
+    local cinema_display = monitors.screens_matching_dimensions(cinema_display_dimensions)
+    local tv             = monitors.screens_matching_dimensions(tv_dimensions)
+
+    if #cinema_display > 0 then
+      do_layout_with_cinema_display()
+    elseif #tv > 0 then
+      do_layout_with_tv()
+    end
+  end
+end
+
+screenwatcher.new(handle_screen_changes):start()
+
 
 -- Key bindings ----------------------------------------------------------------
 hotkey.bind({"ctrl"},                 "1",     grid.maximize_window)
-hotkey.bind({"ctrl", "shift"},        "1",     small_center)
+hotkey.bind({"ctrl", "shift"},        "1",     smallcenter)
 hotkey.bind({"ctrl"},                 "2",     halfleft)
 hotkey.bind({"ctrl", "shift"},        "2",     halfright)
 hotkey.bind({"ctrl"},                 "3",     halftop)
@@ -122,4 +228,7 @@ hotkey.bind({"cmd", "alt"},           "up",    pushup)
 hotkey.bind({"cmd", "alt"},           "right", pushright)
 hotkey.bind({"cmd", "alt"},           "down",  pushdown)
 hotkey.bind({"cmd", "alt"},           "left",  pushleft)
+hotkey.bind({"ctrl", "shift"},        "\\",    do_layout_laptop_only)
+hotkey.bind({"ctrl"},                 "\\",    do_layout_with_cinema_display)
+hotkey.bind({"ctrl"},                 "/",     do_layout_with_tv)
 

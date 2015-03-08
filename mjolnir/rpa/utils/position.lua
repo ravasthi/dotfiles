@@ -24,7 +24,16 @@ function rpa.utils.position.set_position(frame, not_on_grid)
   end
 end
 
-function rpa.utils.position.small_center()
+function rpa.utils.position.maximized()
+  return {
+    x = 0,
+    y = 0,
+    w = grid.GRIDWIDTH,
+    h = grid.GRIDHEIGHT
+  }
+end
+
+function rpa.utils.position.smallcenter()
   local win = window.focusedwindow()
   local frame = win:screen():frame()
   return {
