@@ -2,6 +2,7 @@
 -- richa@avasthi.name
 -- Utilities for setting positions of windows. Depends on:
 --   * mjolnir.bg.grid
+--   * mjolnir.window
 
 local grid   = require "mjolnir.bg.grid"
 local window = require "mjolnir.window"

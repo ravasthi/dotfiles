@@ -39,11 +39,13 @@ function rpa.utils.monitors.move_app_to_screen_and_resize(app_name, screen, fram
   end
 end
 
+-- Return true if the specified screen has the specified dimensions
 function rpa.utils.monitors.screen_size_matches(screen, screen_dimensions)
   local frame = screen:fullframe()
   return frame.w == screen_dimensions.w and frame.h == screen_dimensions.h
 end
 
+-- Return a list of screens that match the specified dimensions
 function rpa.utils.monitors.screens_matching_dimensions(screen_dimensions)
   local screens = screen.allscreens()
 
@@ -52,7 +54,8 @@ function rpa.utils.monitors.screens_matching_dimensions(screen_dimensions)
     end)
 end
 
--- Return an east-to-west sorted list of all the screens
+-- Return an east-to-west sorted list of all the screens. If multiple screens are at the same
+-- east-west coordinate, the southernmost screen will be first.
 function rpa.utils.monitors.screens_east_to_west()
   local screens = screen.allscreens()
 
@@ -81,9 +84,9 @@ function rpa.utils.monitors.layout_items_matching_screen_dimensions(layout, scre
 end
 
 -- Lay out windows on screens based on the specified layout.
--- Currently won't work right if you have more than one screen with the same resolution; all layout
--- items for a screen of that resolution will be performed on the last screen in the list that
--- matches those screen dimensions.
+-- Currently won't work as expected if you have more than one screen with the same resolution; all
+-- layout items for a screen of that resolution will be performed on the last screen in the list
+-- that matches those screen dimensions.
 function rpa.utils.monitors.do_layout(layout)
   local screens = screen.allscreens()
 

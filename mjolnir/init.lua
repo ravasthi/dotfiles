@@ -133,10 +133,11 @@ local layout_laptop_only = {
   {"Spotify", laptop_dimensions, position.maximized()},
 
   -- Misc
+  {"Pro JIRA", laptop_dimensions, position.maximized()},
   {"Marked 2", laptop_dimensions, position.halfright()},
   {"nvALT", laptop_dimensions, position.halfright()},
   {"Pocket", laptop_dimensions, position.maximized()},
-  {"Reeder", laptop_dimensions, position.maximized()},
+  {"Reeder", laptop_dimensions, position.maximized()}
 }
 
 local layout_with_cinema_display = {
@@ -166,10 +167,11 @@ local layout_with_cinema_display = {
   {"Spotify", laptop_dimensions, position.maximized()},
 
   -- Misc
+  {"Pro JIRA", laptop_dimensions, position.maximized()},
   {"Marked 2", cinema_display_dimensions, position.thirdright()},
   {"nvALT", cinema_display_dimensions, position.thirdright()},
   {"Pocket", laptop_dimensions, position.maximized()},
-  {"Reeder", laptop_dimensions, position.maximized()},
+  {"Reeder", laptop_dimensions, position.maximized()}
 }
 
 local layout_with_tv = layout_laptop_only
@@ -199,6 +201,9 @@ function handle_screen_changes()
       do_layout_with_cinema_display()
     elseif #tv > 0 then
       do_layout_with_tv()
+    else
+      -- For other, unrecognized screens, leave all windows on main laptop screen
+      do_layout_laptop_only()
     end
   end
 end
