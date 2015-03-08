@@ -1,6 +1,6 @@
 # ravasthi's dotfiles
 
-**Please note that the TextMate features of these dotfiles require TextMate 2, currently in alpha.**
+**Please note that the TextMate features of these dotfiles require TextMate 2, currently in beta.**
 
 ## Installation
 
@@ -16,7 +16,7 @@ rake install
 
 This dotfiles repo currently supports both bash and oh my zsh, with bash support being deprecated sometime in the near future.
 
-Some features of the `bashrc` may work only with bash version 4.2, which is not installed by default on the Mac. Consider using these steps to get it:
+Some features of the `bashrc` may work only with bash version 4.2 and greater, which is not installed by default on the Mac. Consider using these steps to get it:
 
 * `brew install bash`
 * Add `/usr/local/bin/bash` to `/etc/shells`
