@@ -62,9 +62,11 @@ For oh my zsh setup, do the following:
     * Install Mjolnir:
         * Download and install the [latest release](https://github.com/sdegutis/mjolnir/releases/latest)
         * Install the dependencies
+
               ```
               brew install lua
               brew install luarocks
+
               luarocks install mjolnir._asm.watcher.screen
               luarocks install mjolnir.alert
               luarocks install mjolnir.application
