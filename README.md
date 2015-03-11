@@ -77,8 +77,6 @@ For oh my zsh setup, do the following:
               luarocks install mjolnir.screen
               ```
 
-
-
 ## Credits
 
 * Inspired by dotfiles from [Ryan Bates](https://github.com/ryanb/dotfiles) and [thoughtbot](http://github.com/thoughtbot/dotfiles).
