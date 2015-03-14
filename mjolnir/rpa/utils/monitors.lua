@@ -56,7 +56,7 @@ end
 
 -- Return an east-to-west sorted list of all the screens. If multiple screens are at the same
 -- east-west coordinate, the southernmost screen will be first.
-function rpa.utils.monitors.screens_east_to_west()
+function rpa.utils.monitors.screens_west_to_east()
   local screens = screen.allscreens()
 
   table.sort(screens, function(screen_a, screen_b)

@@ -189,7 +189,7 @@ function do_layout_with_tv()
 end
 
 function handle_screen_changes()
-  local screens = monitors.screens_east_to_west()
+  local screens = monitors.screens_west_to_east()
 
   if #screens == 1 then
     do_layout_laptop_only()
