@@ -54,7 +54,7 @@ function rpa.utils.monitors.screens_matching_dimensions(screen_dimensions)
     end)
 end
 
--- Return an east-to-west sorted list of all the screens. If multiple screens are at the same
+-- Return a west-to-east sorted list of all the screens. If multiple screens are at the same
 -- east-west coordinate, the southernmost screen will be first.
 function rpa.utils.monitors.screens_west_to_east()
   local screens = screen.allscreens()
