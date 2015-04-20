@@ -124,8 +124,10 @@ local layout_laptop_only = {
 
   -- Productivity
   {"Calendar", laptop_dimensions, position.maximized()},
+  {"Fantastical 2", laptop_dimensions, position.maximized()},
   {"Mail", laptop_dimensions, position.maximized()},
   {"Slack", laptop_dimensions, position.maximized()},
+  {"HipChat", laptop_dimensions, position.maximized()},
 
   -- Music
   {"iTunes", laptop_dimensions, position.maximized()},
@@ -158,8 +160,10 @@ local layout_with_cinema_display = {
 
   -- Productivity
   {"Calendar", laptop_dimensions, position.maximized()},
+  {"Fantastical 2", laptop_dimensions, position.maximized()},
   {"Mail", laptop_dimensions, position.maximized()},
   {"Slack", laptop_dimensions, position.maximized()},
+  {"HipChat", laptop_dimensions, position.maximized()},
 
   -- Music
   {"iTunes", laptop_dimensions, position.maximized()},

@@ -10,7 +10,7 @@ filetype off
 filetype plugin indent on
 
 " Setup vundle
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#rc()
 
 " Turn on syntax highlighting
