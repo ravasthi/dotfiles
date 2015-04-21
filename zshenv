@@ -39,8 +39,9 @@ fi
 ####################
 # Java Environment #
 
-if [[ -d /System/Library/Frameworks/JavaVM.framework/Versions/1.6 ]]; then
-  export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Versions/1.6/Home
+if [[ -d /Library/Java/JavaVirtualMachines/jdk1.8.0_45.jdk/Contents ]]; then
+  export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_45.jdk/Contents/Home
+  export JAVA_ROOT=/Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk/Contents
   export MAVEN_OPTS="-Xmx512m -XX:+HeapDumpOnOutOfMemoryError"
 fi
 
