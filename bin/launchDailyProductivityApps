@@ -1,4 +1,4 @@
 #!/bin/sh
 
-killall Things; killall Skype; killall JIRA; killall Slack; killall HipChat; sleep 1; open /Applications/Things.app; open /Applications/Skype.app; open /Applications/JIRA.app; open /Applications/Slack.app; open /Applications/HipChat.app
+killall Things; killall Slack; killall HipChat; sleep 1; open /Applications/Things.app; open /Applications/Slack.app; open /Applications/HipChat.app
 
