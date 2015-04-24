@@ -173,7 +173,7 @@ local layout_with_cinema_display = {
 
   -- Misc
   {"JIRA", laptop_dimensions, position.maximized()},
-  {"Dash", laptop_dimensions, position.maximized()},
+  {"Dash", cinema_display_dimensions, position.twothirdsleft()},
   {"Marked 2", cinema_display_dimensions, position.thirdright()},
   {"nvALT", cinema_display_dimensions, position.thirdright()},
   {"Pocket", laptop_dimensions, position.maximized()},
