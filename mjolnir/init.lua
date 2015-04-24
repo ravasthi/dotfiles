@@ -135,7 +135,8 @@ local layout_laptop_only = {
   {"Spotify", laptop_dimensions, position.maximized()},
 
   -- Misc
-  {"Pro JIRA", laptop_dimensions, position.maximized()},
+  {"JIRA", laptop_dimensions, position.maximized()},
+  {"Dash", laptop_dimensions, position.maximized()},
   {"Marked 2", laptop_dimensions, position.halfright()},
   {"nvALT", laptop_dimensions, position.halfright()},
   {"Pocket", laptop_dimensions, position.maximized()},
@@ -171,7 +172,8 @@ local layout_with_cinema_display = {
   {"Spotify", laptop_dimensions, position.maximized()},
 
   -- Misc
-  {"Pro JIRA", laptop_dimensions, position.maximized()},
+  {"JIRA", laptop_dimensions, position.maximized()},
+  {"Dash", laptop_dimensions, position.maximized()},
   {"Marked 2", cinema_display_dimensions, position.thirdright()},
   {"nvALT", cinema_display_dimensions, position.thirdright()},
   {"Pocket", laptop_dimensions, position.maximized()},
