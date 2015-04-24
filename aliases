@@ -17,7 +17,7 @@ alias resetdns='sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder'
 alias resetopenwith='/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/Support/lsregister -kill -r -domain local -domain user;killall Finder;echo "Open With has been rebuilt, Finder will relaunch"'
 alias removeallgems='gem list | cut -d" " -f1 | xargs gem uninstall -aIx'
 alias showzshprocs="ps -ef | grep 'zsh -c' | grep -v grep"
-alias killzshprocs="showzshprocs | ruby -ne 'puts ARGV.split[1]' | xargs kill -9; showzshprocs"
+alias killzshprocs="showzshprocs | ruby -ne 'line = gets; puts line.split[1] if line' | xargs kill -9; showzshprocs"
 alias top='top -s 5 -o cpu -stats pid,user,command,cpu,rsize,vsize,threads,state'
 alias vi='vim'
 
