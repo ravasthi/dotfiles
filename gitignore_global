@@ -40,3 +40,5 @@ __MACOSX
 .tm_properties
 .bundle/
 .powder
+config.codekit
+
