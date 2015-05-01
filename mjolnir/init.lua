@@ -117,10 +117,11 @@ local layout_laptop_only = {
   {"Firefox", laptop_dimensions, position.maximized()},
   {"WebKit", laptop_dimensions, position.maximized()},
 
-  -- Text editors
+  -- Development
   {"TextMate", laptop_dimensions, position.maximized()},
   {"Sublime Text", laptop_dimensions, position.maximized()},
   {"MacVim", laptop_dimensions, position.maximized()},
+  {"CodeKit", laptop_dimensions, position.maximized()},
 
   -- Productivity
   {"Calendar", laptop_dimensions, position.maximized()},
@@ -154,10 +155,11 @@ local layout_with_cinema_display = {
   {"Firefox", cinema_display_dimensions, position.twothirdsleft()},
   {"WebKit", cinema_display_dimensions, position.twothirdsleft()},
 
-  -- Text editors
+  -- Development
   {"TextMate", cinema_display_dimensions, position.twothirdsleft()},
   {"Sublime Text", cinema_display_dimensions, position.twothirdsleft()},
   {"MacVim", cinema_display_dimensions, position.twothirdsleft()},
+  {"CodeKit", cinema_display_dimensions, position.thirdright()},
 
   -- Productivity
   {"Calendar", laptop_dimensions, position.maximized()},
