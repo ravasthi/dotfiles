@@ -11,7 +11,7 @@ filetype plugin indent on
 
 " Setup vundle
 set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#rc()
+call vundle#begin()
 
 " Turn on syntax highlighting
 syntax enable
@@ -206,7 +206,7 @@ au BufWinEnter,BufRead,BufNewFile .powrc set filetype=sh
 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Vundle: required
-Bundle "gmarik/vundle"
+Bundle "gmarik/Vundle.vim"
 " ag.vim
 " requires 'brew install the_silver_searcher'
 Bundle "rking/ag.vim"
