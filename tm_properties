@@ -97,6 +97,9 @@ tabSize          = 4
 [ "{README,INSTALL,LICENSE,TODO,NOTICE,HISTORY,CHANGES,CHANGELOG}" ]
 fileType         = "text.plain"
 
+[ "Gruntfile"]
+fileType         = "source.js"
+
 [ "{Vendorfile, Guardfile}"]
 fileType         = "source.ruby"
 
