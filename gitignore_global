@@ -42,3 +42,8 @@ __MACOSX
 .powder
 config.codekit
 
+# Dependencies #
+################
+bower_components
+node_modules
+

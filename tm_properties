@@ -5,7 +5,8 @@ PATH = $PATH:/usr/texbin:/Users/ravasthi/.rvm/bin
 
 # Basic Settings
 #
-fontName         = "Espresso Mono"
+#fontName         = "Espresso Mono"
+fontName         = "Input Mono"
 fontSize         = 14
 
 # Include abbreviated path in window title
@@ -89,7 +90,7 @@ tabSize          = 4
 
 [ source.js ]
 tabSize                    = 2
-TM_JAVASCRIPT_BRACE_PREFIX = "\n"
+TM_JAVASCRIPT_BRACE_PREFIX = " "
 
 [ source.python ]
 tabSize          = 4
