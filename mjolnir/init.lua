@@ -121,6 +121,7 @@ local layout_laptop_only = {
   {"TextMate", laptop_dimensions, position.maximized()},
   {"Sublime Text", laptop_dimensions, position.maximized()},
   {"MacVim", laptop_dimensions, position.maximized()},
+  {"Atom", laptop_dimensions, position.maximized()},
   {"CodeKit", laptop_dimensions, position.maximized()},
 
   -- Productivity
@@ -159,6 +160,7 @@ local layout_with_cinema_display = {
   {"TextMate", cinema_display_dimensions, position.twothirdsleft()},
   {"Sublime Text", cinema_display_dimensions, position.twothirdsleft()},
   {"MacVim", cinema_display_dimensions, position.twothirdsleft()},
+  {"Atom", cinema_display_dimensions, position.twothirdsleft()},
   {"CodeKit", cinema_display_dimensions, position.thirdright()},
 
   -- Productivity
