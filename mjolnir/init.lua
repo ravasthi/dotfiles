@@ -130,6 +130,7 @@ local layout_laptop_only = {
   {"Mail", laptop_dimensions, position.maximized()},
   {"Slack", laptop_dimensions, position.maximized()},
   {"HipChat", laptop_dimensions, position.maximized()},
+  {"MindNode", laptop_dimensions, position.maximized()},
 
   -- Music
   {"iTunes", laptop_dimensions, position.maximized()},
@@ -169,6 +170,7 @@ local layout_with_cinema_display = {
   {"Mail", laptop_dimensions, position.maximized()},
   {"Slack", laptop_dimensions, position.maximized()},
   {"HipChat", laptop_dimensions, position.maximized()},
+  {"MindNode", cinema_display_dimensions, position.twothirdsleft()},
 
   -- Music
   {"iTunes", laptop_dimensions, position.maximized()},

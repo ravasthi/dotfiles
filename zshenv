@@ -13,6 +13,8 @@ export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 #####################
 # Python virtualenv #
 
+export PYTHONPATH=/Library/Python/2.7/site-packages
+
 if [[ -d ~/.virtualenvs ]]; then
   export WORKON_HOME=$HOME/.virtualenvs
   export PIP_VIRTUALENV_BASE=$WORKON_HOME
