@@ -17,68 +17,69 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " Vundle: required
-Bundle "gmarik/Vundle.vim"
+Plugin 'gmarik/Vundle.vim'
+
 " ag.vim
 " requires 'brew install the_silver_searcher'
-Bundle "rking/ag.vim"
+Plugin 'rking/ag.vim'
 " Auto-pairs
-Bundle "jiangmiao/auto-pairs"
+Plugin 'jiangmiao/auto-pairs'
 " AutoTag
-Bundle "vim-scripts/AutoTag"
+Plugin 'vim-scripts/AutoTag'
 " BufExplorer
-Bundle "firat/vim-bufexplorer"
+Plugin 'firat/vim-bufexplorer'
 " Bundler integration
-Bundle "tpope/vim-bundler"
+Plugin 'tpope/vim-bundler'
 " Coffeescript
-Bundle "kchmck/vim-coffee-script"
+Plugin 'kchmck/vim-coffee-script'
 " CSApprox
-Bundle "godlygeek/csapprox"
+Plugin 'godlygeek/csapprox'
 " Fuzzy file search
-Bundle "kien/ctrlp.vim"
+Plugin 'kien/ctrlp.vim'
 " Add your ends
-Bundle "tpope/vim-endwise"
+Plugin 'tpope/vim-endwise'
 " Git integration
-Bundle "tpope/vim-fugitive"
+Plugin 'tpope/vim-fugitive'
 " Gist
-Bundle "mattn/gist-vim"
+Plugin 'mattn/gist-vim'
 " Gundo
-Bundle "sjl/gundo.vim"
+Plugin 'sjl/gundo.vim'
 " HAML, Sass, SCSS
-Bundle "tpope/vim-haml"
+Plugin 'tpope/vim-haml'
 " Markdown
-Bundle "tpope/vim-markdown"
+Plugin 'tpope/vim-markdown'
 " Mustache
-Bundle "juvenn/mustache.vim"
+Plugin 'juvenn/mustache.vim'
 " Handlebars
-Bundle "nono/vim-handlebars"
+Plugin 'nono/vim-handlebars'
 " The NERD commenter
-Bundle "scrooloose/nerdcommenter"
+Plugin 'scrooloose/nerdcommenter'
 " File tree explorer
-Bundle "scrooloose/nerdtree"
+Plugin 'scrooloose/nerdtree'
 " Rails integration
-Bundle "tpope/vim-rails"
+Plugin 'tpope/vim-rails'
 " Repeat even through mappings
-Bundle "tpope/vim-repeat"
+Plugin 'tpope/vim-repeat'
 " Open a temporary scratch buffer
-Bundle "duff/vim-scratch"
+Plugin 'duff/vim-scratch'
 " Sparkup
-Bundle "rstacruz/sparkup"
+Plugin 'rstacruz/sparkup'
 " Speed-dating
-Bundle "tpope/vim-speeddating"
+Plugin 'tpope/vim-speeddating'
 " Surround things with other things
-Bundle "tpope/vim-surround"
+Plugin 'tpope/vim-surround'
 " Text filtering and alignment
-Bundle "godlygeek/tabular"
+Plugin 'godlygeek/tabular'
 " TagBar (symbol browser like TextMate)
-Bundle "majutsushi/tagbar"
+Plugin 'majutsushi/tagbar'
 " Tmux syntax
-Bundle "zaiste/tmux.vim"
+Plugin 'zaiste/tmux.vim'
 " xTerm color table (!!)
-Bundle "guns/xterm-color-table.vim"
+Plugin 'guns/xterm-color-table.vim'
 " YankRing
-Bundle "vim-scripts/YankRing.vim"
+Plugin 'vim-scripts/YankRing.vim'
 " YouCompleteMe
-Bundle "Valloric/YouCompleteMe"
+Plugin 'Valloric/YouCompleteMe'
 
 " Required by Vundle
 call vundle#end()
@@ -373,4 +374,8 @@ nnoremap <silent> <leader><S-t> :TagbarToggle<CR>
 " YankRing
 nnoremap <silent> <leader>yr :YRShow<cr>
 inoremap <silent> <leader>yr <ESC>:YRShow<cr>
+
+" YouCompleteMe
+let g:ycm_server_use_vim_stdout = 1
+let g:ycm_server_log_level = 'debug'
 
