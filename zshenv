@@ -101,8 +101,3 @@ if [[ -d $HOME/.bin ]]; then
   export PATH=$HOME/.bin:$PATH
 fi
 
-# use .localrc for settings specific to one system
-if [[ -f $HOME/.localrc ]]; then
-  source $HOME/.localrc
-fi
-
