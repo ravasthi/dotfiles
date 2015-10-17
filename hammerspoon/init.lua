@@ -11,68 +11,89 @@ local window        = require "hs.window"
 
 
 -- Functions -------------------------------------------------------------------
+function maximize()
+  local win = window.focusedWindow()
+  win:maximize()
+end
+
 function smallCenter()
-  window.moveToUnit(position.smallCenter())
+  local win = window.focusedWindow()
+  win:moveToUnit(position.smallCenter())
 end
 
 function halfLeft()
-  window.moveToUnit(position.halfLeft())
+  local win = window.focusedWindow()
+  win:moveToUnit(position.halfLeft())
 end
 
 function halfRight()
-  window.moveToUnit(position.halfRight())
+  local win = window.focusedWindow()
+  win:moveToUnit(position.halfRight())
 end
 
 function halfTop()
-  window.moveToUnit(position.halfTop())
+  local win = window.focusedWindow()
+  win:moveToUnit(position.halfTop())
 end
 
 function halfBottom()
-  window.moveToUnit(position.halfBottom())
+  local win = window.focusedWindow()
+  win:moveToUnit(position.halfBottom())
 end
 
 function quarterTopLeft()
-  window.moveToUnit(position.quarterTopLeft())
+  local win = window.focusedWindow()
+  win:moveToUnit(position.quarterTopLeft())
 end
 
 function quarterTopRight()
-  window.moveToUnit(position.quarterTopRight())
+  local win = window.focusedWindow()
+  win:moveToUnit(position.quarterTopRight())
 end
 
 function quarterBottomLeft()
-  window.moveToUnit(position.quarterBottomLeft())
+  local win = window.focusedWindow()
+  win:moveToUnit(position.quarterBottomLeft())
 end
 
 function quarterBottomRight()
-  window.moveToUnit(position.quarterBottomRight())
+  local win = window.focusedWindow()
+  win:moveToUnit(position.quarterBottomRight())
 end
 
 function thirdLeft()
-  window.moveToUnit(position.thirdLeft())
+  local win = window.focusedWindow()
+  win:moveToUnit(position.thirdLeft())
 end
 
 function thirdMiddle()
-  window.moveToUnit(position.thirdMiddle())
+  local win = window.focusedWindow()
+  win:moveToUnit(position.thirdMiddle())
 end
 
 function thirdRight()
-  window.moveToUnit(position.thirdRight())
+  local win = window.focusedWindow()
+  win:moveToUnit(position.thirdRight())
 end
 
 function twoThirdsLeft()
-  window.moveToUnit(position.twoThirdsLeft())
+  local win = window.focusedWindow()
+  win:moveToUnit(position.twoThirdsLeft())
 end
 
 function twoThirdsRight()
-  window.moveToUnit(position.twoThirdsRight())
+  local win = window.focusedWindow()
+  win:moveToUnit(position.twoThirdsRight())
 end
 
 function fiveSixthsLeft()
-  window.moveToUnit(position.fiveSixthsLeft())
+  local win = window.focusedWindow()
+  win:moveToUnit(position.fiveSixthsLeft())
 end
 
 function fiveSixthsRight()
-  window.moveToUnit(position.fiveSixthsRight())
+  local win = window.focusedWindow()
+  win:moveToUnit(position.fiveSixthsRight())
 end
 
 function pushUp()
