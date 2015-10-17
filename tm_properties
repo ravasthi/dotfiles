@@ -116,6 +116,9 @@ wrapColumn       = 100
 [ text.html ]
 wrapColumn       = 100
 
+[ text.html.markdown ]
+wrapColumn       = 80
+
 [ text.plain ]
 wrapColumn       = 80
 

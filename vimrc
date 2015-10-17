@@ -167,7 +167,23 @@ hi clear CursorLineNr
 hi CursorLineNr cterm=NONE ctermfg=247 guifg=#a0a0a0
 
 " Don't blink cursor
-set guicursor=a:blinkon0
+" set guicursor=a:blinkon0
+
+set guicursor=a:blinkwait500-blinkon800-blinkoff800
+set guicursor+=a:lCursor
+
+if &term =~ '^xterm\\|rxvt'
+  let &t_SI .= "\<Esc>[5 q"
+  let &t_EI .= "\<Esc>[1 q"
+
+  " 1 or 0 -> blinking block
+  " 2 -> solid block
+  " 3 -> blinking underscore
+  " 4 -> solid underscore
+  " Recent versions of xterm (282 or above) also support
+  " 5 -> blinking vertical bar
+  " 6 -> solid vertical bar
+endif
 
 " Use Perl-compatible regex formatting
 nnoremap / /\v
