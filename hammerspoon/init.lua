@@ -13,8 +13,19 @@ local window        = require "hs.window"
 
 
 -- Functions -------------------------------------------------------------------
+----- Misc ---------------------------------------------------------------------
+function showConsole()
+  hs.openConsole(true)
+end
+
+function reloadConfig()
+  hs.reload()
+  alert.show("Hammerspoon config reloaded.")
+end
+
+
 ----- Reload config automatically ----------------------------------------------
-function reloadConfig(files)
+function reloadConfigAuto(files)
     doReload = false
     for _, file in pairs(files) do
         if file:sub(-4) == ".lua" then
@@ -23,11 +34,11 @@ function reloadConfig(files)
     end
     if doReload then
         hs.reload()
-        alert.show("Hammerspoon config reloaded.")
+        alert.show("Hammerspoon config automatically reloaded.")
     end
 end
 
-pathwatcher.new(os.getenv("HOME") .. "/.hammerspoon/", reloadConfig):start()
+pathwatcher.new(os.getenv("HOME") .. "/.hammerspoon/", reloadConfigAuto):start()
 
 
 ----- Window manipulation ------------------------------------------------------
@@ -284,7 +295,7 @@ function handleScreenChanges()
   local screens = monitors.screensWestToEast()
 
   if #screens == 1 then
-    local frame = screens:fullFrame()
+    local frame = screens[1]:fullFrame()
 
     if frame.w == 2560 and frame.h == 1440 then
       doLayoutImac()
@@ -335,4 +346,6 @@ hotkey.bind({"ctrl", "shift"},        "\\",    nil, doLayoutLaptopOnly)
 hotkey.bind({"ctrl"},                 "\\",    nil, doLayoutWithThunderboltDisplay)
 hotkey.bind({"ctrl"},                 "/",     nil, doLayoutWithTv)
 hotkey.bind({"ctrl", "shift"},        "/",     nil, doLayoutImac)
+hotkey.bind({"cmd", "ctrl", "shift"}, "l",     nil, showConsole)
+hotkey.bind({"cmd", "ctrl", "shift"}, "r",     nil, showConsole)
 
