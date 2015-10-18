@@ -174,10 +174,10 @@ local layoutImac = {
   {"Spotify", nil, iMacDimensions, position.smallCenter(), nil, nil},
 
   -- Misc
-  {"JIRA",     nil, iMacDimensions, position.smallCenter(),   nil, nil},
   {"Dash",     nil, iMacDimensions, position.twoThirdsLeft(), nil, nil},
   {"Marked 2", nil, iMacDimensions, position.thirdRight(),    nil, nil},
   {"nvALT",    nil, iMacDimensions, position.thirdRight(),    nil, nil},
+  {"JIRA",     nil, iMacDimensions, position.smallCenter(),   nil, nil},
   {"Pocket",   nil, iMacDimensions, position.twoThirdsLeft(), nil, nil},
   {"Reeder",   nil, iMacDimensions, position.twoThirdsLeft(), nil, nil}
 }
@@ -214,10 +214,10 @@ local layoutLaptopOnly = {
   {"Spotify", nil, laptopDimensions, layout.maximized, nil, nil},
 
   -- Misc
-  {"JIRA",     nil, laptopDimensions, layout.maximized,     nil, nil},
   {"Dash",     nil, laptopDimensions, layout.maximized,     nil, nil},
   {"Marked 2", nil, laptopDimensions, position.halfRight(), nil, nil},
   {"nvALT",    nil, laptopDimensions, position.halfRight(), nil, nil},
+  {"JIRA",     nil, laptopDimensions, layout.maximized,     nil, nil},
   {"Pocket",   nil, laptopDimensions, layout.maximized,     nil, nil},
   {"Reeder",   nil, laptopDimensions, layout.maximized,     nil, nil}
 }
@@ -254,10 +254,10 @@ local layoutWithThunderboltDisplay = {
   {"Spotify", nil, laptopDimensions, layout.maximized, nil, nil},
 
   -- Misc
-  {"JIRA",     nil, laptopDimensions,             layout.maximized,         nil, nil},
   {"Dash",     nil, thunderboltDisplayDimensions, position.twoThirdsLeft(), nil, nil},
   {"Marked 2", nil, thunderboltDisplayDimensions, position.thirdRight(),    nil, nil},
   {"nvALT",    nil, thunderboltDisplayDimensions, position.thirdRight(),    nil, nil},
+  {"JIRA",     nil, laptopDimensions,             layout.maximized,         nil, nil},
   {"Pocket",   nil, laptopDimensions,             layout.maximized,         nil, nil},
   {"Reeder",   nil, laptopDimensions,             layout.maximized,         nil, nil}
 }
@@ -284,7 +284,7 @@ function handleScreenChanges()
   local screens = monitors.screensWestToEast()
 
   if #screens == 1 then
-    local frame = screens[0]:fullFrame()
+    local frame = screens:fullFrame()
 
     if frame.w == 2560 and frame.h == 1440 then
       doLayoutImac()
