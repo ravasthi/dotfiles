@@ -1,10 +1,8 @@
 -- Hammerspoon utils - monitors
 -- richa@avasthi.name
 -- Utilities for generating and enforcing window/monitor layouts. Depends on:
---   * hs.fnutils
 --   * hs.screen
 
-local fnutils = require "hs.fnutils"
 local screen  = require "hs.screen"
 
 local rpa          = rpa or {}

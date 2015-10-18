@@ -57,27 +57,9 @@ For oh my zsh setup, do the following:
     * `brew install tmux`
     * `brew install reattach-to-user-namespace`
 
-* Multi-monitor window management setup files are available for both [Slate](https://github.com/jigish/slate) and [Mjolnir](http://mjolnir.io):
-    * Install Slate by [downloading the binary](http://slate.ninjamonkeysoftware.com/Slate.dmg). Note that Slate is a discontinued open-source project and support for it will be removed from this repo soon.
-    * Install Mjolnir:
-        * Download and install the [latest release](https://github.com/sdegutis/mjolnir/releases/latest)
-        * Install the dependencies
-
-              ```
-              brew install lua
-              brew install luarocks
-
-              luarocks install mjolnir._asm.watcher.screen
-              luarocks install mjolnir.alert
-              luarocks install mjolnir.application
-              luarocks install mjolnir.bg.grid
-              luarocks install mjolnir.cmsj.appfinder
-              luarocks install mjolnir.fnutils
-              luarocks install mjolnir.geometry
-              luarocks install mjolnir.hotkey
-              luarocks install mjolnir.keycodes
-              luarocks install mjolnir.screen
-              ```
+* Multi-monitor window management setup files are available for [Hammerspoon](http://www.hammerspoon.org):
+    * Download and install the [latest release](https://github.com/Hammerspoon/hammerspoon/releases/latest)
+    * Tweak the configuration in `hammerspoon/init.lua` as you like
 
 ## Credits
 

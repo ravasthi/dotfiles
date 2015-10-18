@@ -1,7 +1,9 @@
+local alert         = require "hs.alert"
 local hotkey        = require "hs.hotkey"
 local layout        = require "hs.layout"
 local monitors      = require "rpa.utils.monitors"
 local position      = require "rpa.utils.position"
+local pathwatcher   = require "hs.pathwatcher"
 local screen        = require "hs.screen"
 local screenwatcher = require "hs.screen.watcher"
 local window        = require "hs.window"
@@ -11,6 +13,24 @@ local window        = require "hs.window"
 
 
 -- Functions -------------------------------------------------------------------
+----- Reload config automatically ----------------------------------------------
+function reloadConfig(files)
+    doReload = false
+    for _, file in pairs(files) do
+        if file:sub(-4) == ".lua" then
+            doReload = true
+        end
+    end
+    if doReload then
+        hs.reload()
+        alert.show("Hammerspoon config reloaded.")
+    end
+end
+
+pathwatcher.new(os.getenv("HOME") .. "/.hammerspoon/", reloadConfig):start()
+
+
+----- Window manipulation ------------------------------------------------------
 function maximize()
   local win = window.focusedWindow()
   win:maximize()
@@ -120,6 +140,47 @@ end
 local laptopDimensions             = "1440x900"
 local thunderboltDisplayDimensions = "2560x1440"
 local tvDimensions                 = "1920x1080"
+local iMacDimensions               = "2560x1440"
+
+local layoutImac = {
+  -- Command line
+  {"Terminal", nil, iMacDimensions, position.thirdRight(), nil, nil},
+  {"iTerm",    nil, iMacDimensions, position.thirdRight(), nil, nil},
+
+  -- Browsers
+  {"Safari",        nil, iMacDimensions, position.twoThirdsLeft(), nil, nil},
+  {"Google Chrome", nil, iMacDimensions, position.twoThirdsLeft(), nil, nil},
+  {"Firefox",       nil, iMacDimensions, position.twoThirdsLeft(), nil, nil},
+  {"WebKit",        nil, iMacDimensions, position.twoThirdsLeft(), nil, nil},
+
+  -- Development
+  {"TextMate",     nil, iMacDimensions, position.twoThirdsLeft(), nil, nil},
+  {"Sublime Text", nil, iMacDimensions, position.twoThirdsLeft(), nil, nil},
+  {"MacVim",       nil, iMacDimensions, position.twoThirdsLeft(), nil, nil},
+  {"Atom",         nil, iMacDimensions, position.twoThirdsLeft(), nil, nil},
+  {"CodeKit",      nil, iMacDimensions, position.thirdRight(),    nil, nil},
+
+  -- Productivity
+  {"Calendar",    nil, iMacDimensions, position.smallCenter(),   nil, nil},
+  {"Fantastical", nil, iMacDimensions, position.smallCenter(),   nil, nil},
+  {"Mail",        nil, iMacDimensions, position.twoThirdsLeft(), nil, nil},
+  {"Slack",       nil, iMacDimensions, position.twoThirdsLeft(), nil, nil},
+  {"HipChat",     nil, iMacDimensions, position.twoThirdsLeft(), nil, nil},
+  {"MindNode",    nil, iMacDimensions, position.twoThirdsLeft(), nil, nil},
+
+  -- Music
+  {"iTunes",  nil, iMacDimensions, position.smallCenter(), nil, nil},
+  {"Rdio",    nil, iMacDimensions, position.smallCenter(), nil, nil},
+  {"Spotify", nil, iMacDimensions, position.smallCenter(), nil, nil},
+
+  -- Misc
+  {"JIRA",     nil, iMacDimensions, position.smallCenter(),   nil, nil},
+  {"Dash",     nil, iMacDimensions, position.twoThirdsLeft(), nil, nil},
+  {"Marked 2", nil, iMacDimensions, position.thirdRight(),    nil, nil},
+  {"nvALT",    nil, iMacDimensions, position.thirdRight(),    nil, nil},
+  {"Pocket",   nil, iMacDimensions, position.twoThirdsLeft(), nil, nil},
+  {"Reeder",   nil, iMacDimensions, position.twoThirdsLeft(), nil, nil}
+}
 
 local layoutLaptopOnly = {
   -- Command line
@@ -203,6 +264,10 @@ local layoutWithThunderboltDisplay = {
 
 local layoutWithTv = layoutLaptopOnly
 
+function doLayoutImac()
+  layout.apply(layoutImac)
+end
+
 function doLayoutLaptopOnly()
   layout.apply(layoutLaptopOnly)
 end
@@ -219,7 +284,13 @@ function handleScreenChanges()
   local screens = monitors.screensWestToEast()
 
   if #screens == 1 then
-    doLayoutLaptopOnly()
+    local frame = screens[0]:fullFrame()
+
+    if frame.w == 2560 and frame.h == 1440 then
+      doLayoutImac()
+    else
+      doLayoutLaptopOnly()
+    end
   else
     local thunderboltDisplay = screen.find(thunderboltDisplayDimensions)
     local tv                 = screen.find(tvDimensions)
@@ -263,4 +334,5 @@ hotkey.bind({"cmd", "alt"},           "left",  nil, pushLeft)
 hotkey.bind({"ctrl", "shift"},        "\\",    nil, doLayoutLaptopOnly)
 hotkey.bind({"ctrl"},                 "\\",    nil, doLayoutWithThunderboltDisplay)
 hotkey.bind({"ctrl"},                 "/",     nil, doLayoutWithTv)
+hotkey.bind({"ctrl", "shift"},        "/",     nil, doLayoutImac)
 
