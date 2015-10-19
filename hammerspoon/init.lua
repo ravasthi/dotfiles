@@ -1,4 +1,5 @@
 local alert         = require "hs.alert"
+local geometry      = require "hs.geometry"
 local hotkey        = require "hs.hotkey"
 local layout        = require "hs.layout"
 local monitors      = require "rpa.utils.monitors"
@@ -21,6 +22,10 @@ end
 function reloadConfig()
   hs.reload()
   alert.show("Hammerspoon config reloaded.")
+end
+
+function findScreen(w, h)
+  return screen.find(geometry(nil, nil, w, h))
 end
 
 
@@ -148,129 +153,129 @@ function pushLeft()
 end
 
 -- Screen layouts --------------------------------------------------------------
-local laptopDimensions             = "1440x900"
-local thunderboltDisplayDimensions = "2560x1440"
-local tvDimensions                 = "1920x1080"
-local iMacDimensions               = "2560x1440"
+local laptop             = findScreen(1440, 900)
+local thunderboltDisplay = findScreen(2560, 1440)
+local tv                 = findScreen(1920, 1080)
+local iMac               = findScreen(2560, 1440)
 
 local layoutImac = {
   -- Command line
-  {"Terminal", nil, iMacDimensions, position.thirdRight(), nil, nil},
-  {"iTerm",    nil, iMacDimensions, position.thirdRight(), nil, nil},
+  {"Terminal", nil, iMac, position.thirdRight(), nil, nil},
+  {"iTerm",    nil, iMac, position.thirdRight(), nil, nil},
 
   -- Browsers
-  {"Safari",        nil, iMacDimensions, position.twoThirdsLeft(), nil, nil},
-  {"Google Chrome", nil, iMacDimensions, position.twoThirdsLeft(), nil, nil},
-  {"Firefox",       nil, iMacDimensions, position.twoThirdsLeft(), nil, nil},
-  {"WebKit",        nil, iMacDimensions, position.twoThirdsLeft(), nil, nil},
+  {"Safari",        nil, iMac, position.twoThirdsLeft(), nil, nil},
+  {"Google Chrome", nil, iMac, position.twoThirdsLeft(), nil, nil},
+  {"Firefox",       nil, iMac, position.twoThirdsLeft(), nil, nil},
+  {"WebKit",        nil, iMac, position.twoThirdsLeft(), nil, nil},
 
   -- Development
-  {"TextMate",     nil, iMacDimensions, position.twoThirdsLeft(), nil, nil},
-  {"Sublime Text", nil, iMacDimensions, position.twoThirdsLeft(), nil, nil},
-  {"MacVim",       nil, iMacDimensions, position.twoThirdsLeft(), nil, nil},
-  {"Atom",         nil, iMacDimensions, position.twoThirdsLeft(), nil, nil},
-  {"CodeKit",      nil, iMacDimensions, position.thirdRight(),    nil, nil},
+  {"TextMate",     nil, iMac, position.twoThirdsLeft(), nil, nil},
+  {"Sublime Text", nil, iMac, position.twoThirdsLeft(), nil, nil},
+  {"MacVim",       nil, iMac, position.twoThirdsLeft(), nil, nil},
+  {"Atom",         nil, iMac, position.twoThirdsLeft(), nil, nil},
+  {"CodeKit",      nil, iMac, position.thirdRight(),    nil, nil},
 
   -- Productivity
-  {"Calendar",    nil, iMacDimensions, position.smallCenter(),   nil, nil},
-  {"Fantastical", nil, iMacDimensions, position.smallCenter(),   nil, nil},
-  {"Mail",        nil, iMacDimensions, position.twoThirdsLeft(), nil, nil},
-  {"Slack",       nil, iMacDimensions, position.twoThirdsLeft(), nil, nil},
-  {"HipChat",     nil, iMacDimensions, position.twoThirdsLeft(), nil, nil},
-  {"MindNode",    nil, iMacDimensions, position.twoThirdsLeft(), nil, nil},
+  {"Calendar",    nil, iMac, position.smallCenter(),   nil, nil},
+  {"Fantastical", nil, iMac, position.smallCenter(),   nil, nil},
+  {"Mail",        nil, iMac, position.twoThirdsLeft(), nil, nil},
+  {"Slack",       nil, iMac, position.twoThirdsLeft(), nil, nil},
+  {"HipChat",     nil, iMac, position.twoThirdsLeft(), nil, nil},
+  {"MindNode",    nil, iMac, position.twoThirdsLeft(), nil, nil},
 
   -- Music
-  {"iTunes",  nil, iMacDimensions, position.smallCenter(), nil, nil},
-  {"Rdio",    nil, iMacDimensions, position.smallCenter(), nil, nil},
-  {"Spotify", nil, iMacDimensions, position.smallCenter(), nil, nil},
+  {"iTunes",  nil, iMac, position.smallCenter(), nil, nil},
+  {"Rdio",    nil, iMac, position.smallCenter(), nil, nil},
+  {"Spotify", nil, iMac, position.smallCenter(), nil, nil},
 
   -- Misc
-  {"Dash",     nil, iMacDimensions, position.twoThirdsLeft(), nil, nil},
-  {"Marked 2", nil, iMacDimensions, position.thirdRight(),    nil, nil},
-  {"nvALT",    nil, iMacDimensions, position.thirdRight(),    nil, nil},
-  {"JIRA",     nil, iMacDimensions, position.smallCenter(),   nil, nil},
-  {"Pocket",   nil, iMacDimensions, position.twoThirdsLeft(), nil, nil},
-  {"Reeder",   nil, iMacDimensions, position.twoThirdsLeft(), nil, nil}
+  {"Dash",     nil, iMac, position.twoThirdsLeft(), nil, nil},
+  {"Marked 2", nil, iMac, position.thirdRight(),    nil, nil},
+  {"nvALT",    nil, iMac, position.thirdRight(),    nil, nil},
+  {"JIRA",     nil, iMac, position.smallCenter(),   nil, nil},
+  {"Pocket",   nil, iMac, position.twoThirdsLeft(), nil, nil},
+  {"Reeder",   nil, iMac, position.twoThirdsLeft(), nil, nil}
 }
 
 local layoutLaptopOnly = {
   -- Command line
-  {"Terminal", nil, laptopDimensions, position.halfRight(), nil, nil},
-  {"iTerm",    nil, laptopDimensions, position.halfRight(), nil, nil},
+  {"Terminal", nil, laptop, position.halfRight(), nil, nil},
+  {"iTerm",    nil, laptop, position.halfRight(), nil, nil},
 
   -- Browsers
-  {"Safari",        nil, laptopDimensions, layout.maximized, nil, nil},
-  {"Google Chrome", nil, laptopDimensions, layout.maximized, nil, nil},
-  {"Firefox",       nil, laptopDimensions, layout.maximized, nil, nil},
-  {"WebKit",        nil, laptopDimensions, layout.maximized, nil, nil},
+  {"Safari",        nil, laptop, layout.maximized, nil, nil},
+  {"Google Chrome", nil, laptop, layout.maximized, nil, nil},
+  {"Firefox",       nil, laptop, layout.maximized, nil, nil},
+  {"WebKit",        nil, laptop, layout.maximized, nil, nil},
 
   -- Development
-  {"TextMate",     nil, laptopDimensions, layout.maximized, nil, nil},
-  {"Sublime Text", nil, laptopDimensions, layout.maximized, nil, nil},
-  {"MacVim",       nil, laptopDimensions, layout.maximized, nil, nil},
-  {"Atom",         nil, laptopDimensions, layout.maximized, nil, nil},
-  {"CodeKit",      nil, laptopDimensions, layout.maximized, nil, nil},
+  {"TextMate",     nil, laptop, layout.maximized, nil, nil},
+  {"Sublime Text", nil, laptop, layout.maximized, nil, nil},
+  {"MacVim",       nil, laptop, layout.maximized, nil, nil},
+  {"Atom",         nil, laptop, layout.maximized, nil, nil},
+  {"CodeKit",      nil, laptop, layout.maximized, nil, nil},
 
   -- Productivity
-  {"Calendar",    nil, laptopDimensions, layout.maximized, nil, nil},
-  {"Fantastical", nil, laptopDimensions, layout.maximized, nil, nil},
-  {"Mail",        nil, laptopDimensions, layout.maximized, nil, nil},
-  {"Slack",       nil, laptopDimensions, layout.maximized, nil, nil},
-  {"HipChat",     nil, laptopDimensions, layout.maximized, nil, nil},
-  {"MindNode",    nil, laptopDimensions, layout.maximized, nil, nil},
+  {"Calendar",    nil, laptop, layout.maximized, nil, nil},
+  {"Fantastical", nil, laptop, layout.maximized, nil, nil},
+  {"Mail",        nil, laptop, layout.maximized, nil, nil},
+  {"Slack",       nil, laptop, layout.maximized, nil, nil},
+  {"HipChat",     nil, laptop, layout.maximized, nil, nil},
+  {"MindNode",    nil, laptop, layout.maximized, nil, nil},
 
   -- Music
-  {"iTunes",  nil, laptopDimensions, layout.maximized, nil, nil},
-  {"Rdio",    nil, laptopDimensions, layout.maximized, nil, nil},
-  {"Spotify", nil, laptopDimensions, layout.maximized, nil, nil},
+  {"iTunes",  nil, laptop, layout.maximized, nil, nil},
+  {"Rdio",    nil, laptop, layout.maximized, nil, nil},
+  {"Spotify", nil, laptop, layout.maximized, nil, nil},
 
   -- Misc
-  {"Dash",     nil, laptopDimensions, layout.maximized,     nil, nil},
-  {"Marked 2", nil, laptopDimensions, position.halfRight(), nil, nil},
-  {"nvALT",    nil, laptopDimensions, position.halfRight(), nil, nil},
-  {"JIRA",     nil, laptopDimensions, layout.maximized,     nil, nil},
-  {"Pocket",   nil, laptopDimensions, layout.maximized,     nil, nil},
-  {"Reeder",   nil, laptopDimensions, layout.maximized,     nil, nil}
+  {"Dash",     nil, laptop, layout.maximized,     nil, nil},
+  {"Marked 2", nil, laptop, position.halfRight(), nil, nil},
+  {"nvALT",    nil, laptop, position.halfRight(), nil, nil},
+  {"JIRA",     nil, laptop, layout.maximized,     nil, nil},
+  {"Pocket",   nil, laptop, layout.maximized,     nil, nil},
+  {"Reeder",   nil, laptop, layout.maximized,     nil, nil}
 }
 
 local layoutWithThunderboltDisplay = {
   -- Command line
-  {"Terminal", nil, thunderboltDisplayDimensions, position.thirdRight(), nil, nil},
-  {"iTerm",    nil, thunderboltDisplayDimensions, position.thirdRight(), nil, nil},
+  {"Terminal", nil, thunderboltDisplay, position.thirdRight(), nil, nil},
+  {"iTerm",    nil, thunderboltDisplay, position.thirdRight(), nil, nil},
 
   -- Browsers
-  {"Safari",        nil, thunderboltDisplayDimensions, position.twoThirdsLeft(), nil, nil},
-  {"Google Chrome", nil, thunderboltDisplayDimensions, position.twoThirdsLeft(), nil, nil},
-  {"Firefox",       nil, thunderboltDisplayDimensions, position.twoThirdsLeft(), nil, nil},
-  {"WebKit",        nil, thunderboltDisplayDimensions, position.twoThirdsLeft(), nil, nil},
+  {"Safari",        nil, thunderboltDisplay, position.twoThirdsLeft(), nil, nil},
+  {"Google Chrome", nil, thunderboltDisplay, position.twoThirdsLeft(), nil, nil},
+  {"Firefox",       nil, thunderboltDisplay, position.twoThirdsLeft(), nil, nil},
+  {"WebKit",        nil, thunderboltDisplay, position.twoThirdsLeft(), nil, nil},
 
   -- Development
-  {"TextMate",     nil, thunderboltDisplayDimensions, position.twoThirdsLeft(), nil, nil},
-  {"Sublime Text", nil, thunderboltDisplayDimensions, position.twoThirdsLeft(), nil, nil},
-  {"MacVim",       nil, thunderboltDisplayDimensions, position.twoThirdsLeft(), nil, nil},
-  {"Atom",         nil, thunderboltDisplayDimensions, position.twoThirdsLeft(), nil, nil},
-  {"CodeKit",      nil, thunderboltDisplayDimensions, position.thirdRight(),    nil, nil},
+  {"TextMate",     nil, thunderboltDisplay, position.twoThirdsLeft(), nil, nil},
+  {"Sublime Text", nil, thunderboltDisplay, position.twoThirdsLeft(), nil, nil},
+  {"MacVim",       nil, thunderboltDisplay, position.twoThirdsLeft(), nil, nil},
+  {"Atom",         nil, thunderboltDisplay, position.twoThirdsLeft(), nil, nil},
+  {"CodeKit",      nil, thunderboltDisplay, position.thirdRight(),    nil, nil},
 
   -- Productivity
-  {"Calendar",    nil, laptopDimensions,             layout.maximized,         nil, nil},
-  {"Fantastical", nil, laptopDimensions,             layout.maximized,         nil, nil},
-  {"Mail",        nil, laptopDimensions,             layout.maximized,         nil, nil},
-  {"Slack",       nil, laptopDimensions,             layout.maximized,         nil, nil},
-  {"HipChat",     nil, laptopDimensions,             layout.maximized,         nil, nil},
-  {"MindNode",    nil, thunderboltDisplayDimensions, position.twoThirdsLeft(), nil, nil},
+  {"Calendar",    nil, laptop,             layout.maximized,         nil, nil},
+  {"Fantastical", nil, laptop,             layout.maximized,         nil, nil},
+  {"Mail",        nil, laptop,             layout.maximized,         nil, nil},
+  {"Slack",       nil, laptop,             layout.maximized,         nil, nil},
+  {"HipChat",     nil, laptop,             layout.maximized,         nil, nil},
+  {"MindNode",    nil, thunderboltDisplay, position.twoThirdsLeft(), nil, nil},
 
   -- Music
-  {"iTunes",  nil, laptopDimensions, layout.maximized, nil, nil},
-  {"Rdio",    nil, laptopDimensions, layout.maximized, nil, nil},
-  {"Spotify", nil, laptopDimensions, layout.maximized, nil, nil},
+  {"iTunes",  nil, laptop, layout.maximized, nil, nil},
+  {"Rdio",    nil, laptop, layout.maximized, nil, nil},
+  {"Spotify", nil, laptop, layout.maximized, nil, nil},
 
   -- Misc
-  {"Dash",     nil, thunderboltDisplayDimensions, position.twoThirdsLeft(), nil, nil},
-  {"Marked 2", nil, thunderboltDisplayDimensions, position.thirdRight(),    nil, nil},
-  {"nvALT",    nil, thunderboltDisplayDimensions, position.thirdRight(),    nil, nil},
-  {"JIRA",     nil, laptopDimensions,             layout.maximized,         nil, nil},
-  {"Pocket",   nil, laptopDimensions,             layout.maximized,         nil, nil},
-  {"Reeder",   nil, laptopDimensions,             layout.maximized,         nil, nil}
+  {"Dash",     nil, thunderboltDisplay, position.twoThirdsLeft(), nil, nil},
+  {"Marked 2", nil, thunderboltDisplay, position.thirdRight(),    nil, nil},
+  {"nvALT",    nil, thunderboltDisplay, position.thirdRight(),    nil, nil},
+  {"JIRA",     nil, laptop,             layout.maximized,         nil, nil},
+  {"Pocket",   nil, laptop,             layout.maximized,         nil, nil},
+  {"Reeder",   nil, laptop,             layout.maximized,         nil, nil}
 }
 
 local layoutWithTv = layoutLaptopOnly
@@ -303,10 +308,7 @@ function handleScreenChanges()
       doLayoutLaptopOnly()
     end
   else
-    local thunderboltDisplay = screen.find(thunderboltDisplayDimensions)
-    local tv                 = screen.find(tvDimensions)
-
-    if #cinema_display > 0 then
+    if #thunderboltDisplay > 0 then
       doLayoutWithThunderboltDisplay()
     elseif #tv > 0 then
       doLayoutWithTv()
@@ -347,5 +349,5 @@ hotkey.bind({"ctrl"},                 "\\",    nil, doLayoutWithThunderboltDispl
 hotkey.bind({"ctrl"},                 "/",     nil, doLayoutWithTv)
 hotkey.bind({"ctrl", "shift"},        "/",     nil, doLayoutImac)
 hotkey.bind({"cmd", "ctrl", "shift"}, "l",     nil, showConsole)
-hotkey.bind({"cmd", "ctrl", "shift"}, "r",     nil, showConsole)
+hotkey.bind({"cmd", "ctrl", "shift"}, "r",     nil, reloadConfig)
 
