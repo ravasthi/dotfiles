@@ -178,6 +178,7 @@ local layoutImac = {
   {"Slack",       nil, iMac, position.twoThirdsLeft(), nil, nil},
   {"HipChat",     nil, iMac, position.twoThirdsLeft(), nil, nil},
   {"MindNode",    nil, iMac, position.twoThirdsLeft(), nil, nil},
+  {"Ulysses",     nil, iMac, position.twoThirdsLeft(), nil, nil},
 
   -- Music
   {"iTunes",  nil, iMac, position.smallCenter(), nil, nil},
@@ -218,6 +219,7 @@ local layoutLaptopOnly = {
   {"Slack",       nil, laptop, layout.maximized, nil, nil},
   {"HipChat",     nil, laptop, layout.maximized, nil, nil},
   {"MindNode",    nil, laptop, layout.maximized, nil, nil},
+  {"Ulysses",     nil, laptop, layout.maximized, nil, nil},
 
   -- Music
   {"iTunes",  nil, laptop, layout.maximized, nil, nil},
@@ -258,6 +260,7 @@ local layoutWithThunderboltDisplay = {
   {"Slack",       nil, laptop,             layout.maximized,         nil, nil},
   {"HipChat",     nil, laptop,             layout.maximized,         nil, nil},
   {"MindNode",    nil, thunderboltDisplay, position.twoThirdsLeft(), nil, nil},
+  {"Ulysses",     nil, thunderboltDisplay, position.twoThirdsLeft(), nil, nil},
 
   -- Music
   {"iTunes",  nil, laptop, layout.maximized, nil, nil},
