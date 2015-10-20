@@ -1,5 +1,4 @@
 local alert         = require "hs.alert"
-local geometry      = require "hs.geometry"
 local hotkey        = require "hs.hotkey"
 local layout        = require "hs.layout"
 local monitors      = require "rpa.utils.monitors"
@@ -22,10 +21,6 @@ end
 function reloadConfig()
   hs.reload()
   alert.show("Hammerspoon config reloaded.")
-end
-
-function findScreen(w, h)
-  return screen.find(geometry(nil, nil, w, h))
 end
 
 
@@ -153,10 +148,10 @@ function pushLeft()
 end
 
 -- Screen layouts --------------------------------------------------------------
-local laptop             = findScreen(1440, 900)
-local thunderboltDisplay = findScreen(2560, 1440)
-local tv                 = findScreen(1920, 1080)
-local iMac               = findScreen(2560, 1440)
+local laptop             = function() return monitors.findScreen(1440, 900) end
+local thunderboltDisplay = function() return monitors.findScreen(2560, 1440) end
+local tv                 = function() return monitors.findScreen(1920, 1080) end
+local iMac               = function() return monitors.findScreen(2560, 1440) end
 
 local layoutImac = {
   -- Command line
