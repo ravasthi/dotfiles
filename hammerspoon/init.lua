@@ -148,10 +148,10 @@ function pushLeft()
 end
 
 -- Screen layouts --------------------------------------------------------------
-local laptop             = function() return monitors.findScreen(1440, 900) end
-local thunderboltDisplay = function() return monitors.findScreen(2560, 1440) end
-local tv                 = function() return monitors.findScreen(1920, 1080) end
-local iMac               = function() return monitors.findScreen(2560, 1440) end
+local laptop             = monitors.findScreen(1440, 900)
+local thunderboltDisplay = monitors.findScreen(2560, 1440)
+local tv                 = monitors.findScreen(1920, 1080)
+local iMac               = monitors.findScreen(2560, 1440)
 
 local layoutImac = {
   -- Command line
