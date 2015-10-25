@@ -36,6 +36,8 @@ Plugin 'kchmck/vim-coffee-script'
 Plugin 'godlygeek/csapprox'
 " Fuzzy file search
 Plugin 'kien/ctrlp.vim'
+" Dash
+Plugin 'rizzatti/dash.vim'
 " Add your ends
 Plugin 'tpope/vim-endwise'
 " Git integration
