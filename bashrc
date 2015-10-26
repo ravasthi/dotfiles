@@ -51,7 +51,7 @@ export PROMPT_DIRTRIM=2
 
 # Omit the hostname from PS1 if we are on the local console
 userhost=""
-if [[ "$TERM_PROGRAM" != "Apple_Terminal" ]]; then
+if [[ "$TERM_PROGRAM" != "Apple_Terminal" ]] && [[ "$TERM_PROGRAM" != "iTerm.app" ]]; then
   userhost=" `hostname -s` "
 fi
 
