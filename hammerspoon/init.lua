@@ -181,7 +181,7 @@ local layoutImac = {
   {"Ulysses",     nil, iMac, position.twoThirdsLeft(), nil, nil},
 
   -- Music
-  {"iTunes",  nil, iMac, position.smallCenter(), nil, nil},
+  {"iTunes",  nil, iMac, position.halfLeft(), nil, nil},
   {"Rdio",    nil, iMac, position.smallCenter(), nil, nil},
   {"Spotify", nil, iMac, position.smallCenter(), nil, nil},
 
