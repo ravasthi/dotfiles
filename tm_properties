@@ -122,3 +122,6 @@ wrapColumn       = 80
 [ text.plain ]
 wrapColumn       = 80
 
+[ text.git-commit ]
+wrapColumn       = 72
+

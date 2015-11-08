@@ -300,6 +300,7 @@ au BufWinEnter,BufRead,BufNewFile Vendorfile set filetype=ruby
 au BufWinEnter,BufRead,BufNewFile .powenv set filetype=sh
 au BufWinEnter,BufRead,BufNewFile .powrc set filetype=sh
 
+au Filetype gitcommit setlocal spell textwidth=72
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugin configuration
