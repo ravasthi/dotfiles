@@ -26,6 +26,8 @@ Plugin 'rking/ag.vim'
 Plugin 'jiangmiao/auto-pairs'
 " AutoTag
 Plugin 'vim-scripts/AutoTag'
+" Better whitespace
+Plugin 'ntpeters/vim-better-whitespace'
 " BufExplorer
 Plugin 'firat/vim-bufexplorer'
 " Bundler integration
@@ -279,6 +281,8 @@ endif
 
 " Strip trailing whitespace
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
+" Strip trailing whitespace on save
+au BufWritePre * StripWhitespace
 
 " Open current file in Marked
 nnoremap <leader>m :silent !open -a Marked.app '%:p'<cr>
