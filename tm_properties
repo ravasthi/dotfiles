@@ -23,7 +23,7 @@ include = "{$include,$myExtraIncludes}"
 
 # Hide certain directories from search popups.
 #
-myExtraExcludes = "log,_site,target,_tmp,tmp,config.codekit,bower_components,node_modules"
+myExtraExcludes = "log,_site,target,_tmp,tmp,config.codekit,bower_components,node_modules,venv"
 excludeInFileChooser  = "{$excludeInFileChooser,$myExtraExcludes}"
 excludeInFolderSearch = "{$excludeInFolderSearch,$myExtraExcludes}"
 
