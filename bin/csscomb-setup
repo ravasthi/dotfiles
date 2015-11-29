@@ -34,7 +34,7 @@ begin
   if options[:verbose]
     puts "Copying default settings to #{`pwd`.chomp}/.csscomb.json…"
   end
-  exec "cp ~/.csscomb.default.json `pwd`/.csscomb.json"
+  exec "cp ~/.csscomb.json `pwd`/.csscomb.json"
 rescue Exception => e
   puts e.message
   exit
