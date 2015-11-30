@@ -306,9 +306,9 @@ function handleScreenChanges()
       doLayoutLaptopOnly()
     end
   else
-    if #thunderboltDisplay > 0 then
+    if thunderboltDisplay then
       doLayoutWithThunderboltDisplay()
-    elseif #tv > 0 then
+    elseif tv then
       doLayoutWithTv()
     else
       -- For other, unrecognized screens, leave all windows on main laptop screen
