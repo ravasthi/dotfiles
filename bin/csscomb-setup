@@ -1,0 +1,41 @@
+#!/usr/bin/env ruby
+
+require 'optparse'
+
+options = {}
+arguments = ARGV
+
+optparse = OptionParser.new do |opts|
+  # Set the banner displayed on the help screen
+  opts.banner = """Copies the default CSScomb setup into the current directory.
+
+Usage: csscomb-setup
+"""
+
+  # Define the options
+  opts.on("-v", "--verbose", "Display verbose output") do |v|
+    options[:verbose] = v
+  end
+
+  opts.on("-h", "--help", "Display this message") do
+    puts opts
+    exit
+  end
+end
+
+begin
+  optparse.parse!(arguments)
+rescue OptionParser::ParseError => e
+  puts "ParseError!"
+  puts e
+end
+
+begin
+  if options[:verbose]
+    puts "Copying default settings to #{`pwd`.chomp}/.csscomb.json…"
+  end
+  exec "cp ~/.csscomb.json `pwd`/.csscomb.json"
+rescue Exception => e
+  puts e.message
+  exit
+end

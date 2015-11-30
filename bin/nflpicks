@@ -62,6 +62,3 @@ rescue Exception => e
   puts e.message
   exit
 end
-
-
-

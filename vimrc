@@ -36,6 +36,8 @@ Plugin 'tpope/vim-bundler'
 Plugin 'kchmck/vim-coffee-script'
 " CSApprox
 Plugin 'godlygeek/csapprox'
+" CSSComb
+Plugin 'csscomb/vim-csscomb'
 " Fuzzy file search
 Plugin 'kien/ctrlp.vim'
 " Dash
@@ -401,4 +403,3 @@ inoremap <silent> <leader>yr <ESC>:YRShow<cr>
 " YouCompleteMe
 let g:ycm_server_use_vim_stdout = 1
 let g:ycm_server_log_level = 'debug'
-

@@ -9,7 +9,6 @@ if [[ "$TERM_PROGRAM" == "Apple_Terminal" || "$TERM_PROGRAM" == "iTerm.app" ]]; 
 fi
 
 # Print all valid tmux colors and their names
-
 function tmuxcolors {
   for i in {0..255} ; do
     printf "\x1b[38;5;${i}mcolour${i}\n"
@@ -35,7 +34,7 @@ function r() {
   fi
 }
 
-# Function to copy contents of a file to a clipboard
+# Copy contents of a file to a clipboard
 function cb {
   if [ -e "$@" ]; then
     cat "$@" | pbcopy
@@ -44,7 +43,7 @@ function cb {
   fi
 }
 
-# Function to print the contents of a directory after changing into it.
+# Print the contents of a directory after changing into it.
 function cdls { cd "$@"; ls -p; }
 
 function setbasedir {
@@ -76,3 +75,8 @@ function proc {
   ps -ef | grep $1 | grep -v grep
 }
 
+# (Re)create softlink at $NVM_DIR/bin/node pointing to the current default node
+function relinknode {
+  trash $NVM_DIR/bin/node
+  ln -s $(nvm which default) $NVM_DIR/bin/node
+}
