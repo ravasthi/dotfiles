@@ -77,6 +77,6 @@ function proc {
 
 # (Re)create softlink at $NVM_DIR/bin/node pointing to the current default node
 function relinknode {
-  trash $NVM_DIR/bin/node
+  rm $NVM_DIR/bin/node
   ln -s $(nvm which default) $NVM_DIR/bin/node
 }
