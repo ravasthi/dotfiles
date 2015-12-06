@@ -17,7 +17,7 @@ windowTitle = "$TM_DISPLAYNAME – ${TM_DIRECTORY/^(?:\/Users\/(?:[^\/]+\/)+(?:c
 
 # Extra files to include
 #
-myExtraIncludes = ".tm_properties,.htaccess,.gitignore,.hgignore,.rvmrc,.rbenv-version,.ruby-version,.ruby-gemset,.deployrc,.powenv,.powrc, .rubocop.yml"
+myExtraIncludes = ".tm_properties,.htaccess,.gitignore,.hgignore,.rvmrc,.rbenv-version,.ruby-version,.ruby-gemset,.deployrc,.powenv,.powrc,.rubocop.yml,.csscomb.json"
 fileBrowserGlob  = "{*,$myExtraIncludes}"
 include = "{$include,$myExtraIncludes}"
 
