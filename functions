@@ -56,6 +56,7 @@ function setbasedir {
   export WORKING_BASE_DIRECTORY="$WD"
 }
 
+# Mark a file as safe so OS X doesn't ask for confirmation when opening
 function marksafe {
   echo "Marking items in" $@ "safe."
   xattr -rd com.apple.quarantine "$@"
@@ -71,6 +72,7 @@ function allerb2html {
   ack -g --nocolor erb | xargs trash
 }
 
+# Show any running processes matching input
 function proc {
   ps -ef | grep $1 | grep -v grep
 }
@@ -80,3 +82,14 @@ function relinknode {
   rm $NVM_DIR/bin/node
   ln -s $(nvm which default) $NVM_DIR/bin/node
 }
+
+# Show files changed in stash at specified position
+function showStashFilesAt {
+  git stash show stash@{$1}
+}
+
+# Show diff in stash at specified position
+function showStashPatchAt {
+  git stash show -p stash@{$1}
+}
+
