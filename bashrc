@@ -7,6 +7,11 @@ if [ -x /usr/libexec/path_helper ]; then
   eval `/usr/libexec/path_helper -s`
 fi
 
+###################
+# vi key bindings #
+
+set -o vi
+
 ############
 # Homebrew #
 
