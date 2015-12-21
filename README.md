@@ -1,6 +1,6 @@
 # ravasthi's dotfiles
 
-**Please note that the TextMate features of these dotfiles require TextMate 2, currently in beta.**
+**Please note that the TextMate features of these dotfiles are for TextMate 2, currently in beta.**
 
 ## Installation
 
@@ -9,6 +9,8 @@ Choose a place to store the dotfiles, like `~/Library/dotfiles`.
 ```
 git clone git://github.com/ravasthi/dotfiles ~/Library/dotfiles
 cd ~/Library/dotfiles
+git submodule init
+git submodule update
 rake install
 ```
 
@@ -16,9 +18,9 @@ rake install
 
 This dotfiles repo currently supports both bash and oh my zsh, with bash support being deprecated sometime in the near future.
 
-Some features of the `bashrc` may work only with bash version 4.2 and greater, which is not installed by default on the Mac. Consider using these steps to get it:
+Some features of the `bashrc` may work only with bash version 4.2 and greater with bash-completion, which is not installed by default on the Mac. Consider using these steps to get it:
 
-* `brew install bash`
+* `brew install bash bash-completion`
 * Add `/usr/local/bin/bash` to `/etc/shells`
 * Change your shell to `/usr/local/bin/bash` by running `chsh`
 
@@ -34,19 +36,9 @@ For oh my zsh setup, do the following:
 
 * An `r` command serves as a shortcut for running `bundle exec rake` or `bundle exec rails`. It's pretty smart, so `r s` will expand to `bundle exec rails server`, and `r db` will expand to `bundle exec rake db:console`. No more fat-finger mistakes of `rails` vs `rake`!
 
-* On your local Mac the Bash prompt will be nice and concise. Notice that deep paths are truncated to the last 2 segments:
+* A supercharged prompt for both bash and zsh with ruby and git information, with help from the [zsh-git-prompt](https://github.com/olivierverdier/zsh-git-prompt/blob/master/zshrc.sh) and [bash-git-prompt](https://github.com/magicmonty/bash-git-prompt) plugins. To tweak, change the configuration in `git-prompt-colors.sh` for bash and `oh-my-zsh-custom/themes/richa.zsh-theme` for zsh.
 
-        ~/.../Application Support/TextMate$
-
-    When logged into a remote machine, you'll be reminded with the hostname:
-
-        myserver /usr/local$
-
-    Fancy git status is automatically included in the prompt:
-
-        ~/.../ravasthi/dotfiles (master *%)$
-
-    For oh my zsh users, the prompt contains much the same information, along with the current ruby version and gemset.
+    ![fancy prompt](http://cloud.avasthi.name/0Z010Z173Q1o)
 
 * An `edit` shim will launch `mate` (TextMate) if you are on your local Mac, and fall back to `vi` if you are logged in via ssh. This shim is used as the git editor and svn editor.
 
