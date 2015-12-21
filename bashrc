@@ -57,23 +57,17 @@ export PROMPT_DIRTRIM=2
 # Omit the hostname from PS1 if we are on the local console
 userhost=""
 if [[ "$TERM_PROGRAM" != "Apple_Terminal" ]] && [[ "$TERM_PROGRAM" != "iTerm.app" ]]; then
-  userhost=" `hostname -s` "
+  userhost="@`hostname -s`"
 fi
 
-export PS1='\[\e[0;30;43m\]$userhost\[\e[0m\]\[\e[1m\]\w$ \[\e[0m\]'
+export PS1='\[\e[0;30;43m\]\u$userhost \[\e[0m\]\[\e[1m\]\w$ \[\e[0m\]'
 
 #######
 # Git #
 
-# Include git goodies in PS1 if possible
-if [[ "`type -t __git_ps1`" == 'function' ]]; then
-  export GIT_PS1_SHOWDIRTYSTATE=true     # '*' for unstaged changes, '+' for staged
-  export GIT_PS1_SHOWSTASHSTATE=true     # '$' if smth is stashed
-  export GIT_PS1_SHOWUNTRACKEDFILES=true # '%' if un-tracked files
-
-  export PS1='[\[\e[0;33m\]\A\[\e[0m\]] \[\e[0;35m\]\u@\h: \[\e[0m\]\[\e[1;34m\]\w\[\e[0m\]\[\e[0;37m\]$(__git_ps1 " (%s)")\[\e[0m\]\[\e[1m\]$ \[\e[0m\]'
-else
-  export PS1='[\[\e[0;33m\]\A\[\e[0m\]] \[\e[0;35m\]\u@\h: \[\e[0m\]\[\e[1;34m\]\w$ \[\e[0m\]'
+if [[ -f `readlink ~/.bash-git-prompt`/gitprompt.sh ]]; then
+  export GIT_PROMPT_THEME=Custom
+  source `readlink ~/.bash-git-prompt`/gitprompt.sh
 fi
 
 #####################
