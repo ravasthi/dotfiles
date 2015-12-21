@@ -5,6 +5,13 @@ if [ -x /usr/libexec/path_helper ]; then
   eval `/usr/libexec/path_helper -s`
 fi
 
+##############
+# Git prompt #
+
+if [[ -f `readlink ~/.zsh-git-prompt`/zshrc.sh ]]; then
+  source `readlink ~/.zsh-git-prompt`/zshrc.sh
+fi
+
 ############
 # Homebrew #
 
