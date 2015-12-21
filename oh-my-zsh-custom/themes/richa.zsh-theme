@@ -13,20 +13,25 @@ ZSH_THEME_GIT_PROMPT_CLEAN=" %{$fg_bold[green]%}%{✔%G%} "
 # For vi mode
 MODE_INDICATOR="%{$fg[green]%}[normal]%{$reset_color%}"
 
-
 function richa_left_prompt {
+  # Only show host if not on local machine
+  userhost="%{$fg[magenta]%}%n%{$reset_color%}"
+
+  if [[ "$TERM_PROGRAM" != "Apple_Terminal" ]] && [[ "$TERM_PROGRAM" != "iTerm.app" ]]; then
+    userhost="%{$fg[magenta]%}%n%{$reset_color%} at %{$fg[magenta]%}%m%{$reset_color%}"
+  fi
+
+  ruby_prompt_info=$(rvm_prompt_info || rbenv_prompt_info)
+
   prompt="
-[%{$fg[yellow]%}%T%{$reset_color%}] %{$fg[magenta]%}%n%{$reset_color%} at %{$fg[magenta]%}%m%{$reset_color%} in %{$fg[blue]%}%4(~:…:)%3~%{$reset_color%} $(vi_mode_prompt_info)
-%(?,%{$fg[green]%},%{$fg[red]%})✽%{$reset_color%} "
+$userhost in %{$fg[blue]%}%4(~:…:)%3~%{$reset_color%} %{$fg[red]%}$ruby_prompt_info%{$reset_color%} $(vi_mode_prompt_info)
+[%{$fg[yellow]%}%T%{$reset_color%}]%(?,%{$fg[green]%},%{$fg[red]%})✽%{$reset_color%} "
 
   echo $prompt
 }
 
 function richa_right_prompt {
-  branch=$(current_branch)
-  ruby_version=$(rvm_prompt_info || rbenv_prompt_info)
-
-  prompt="%{$fg[red]%}$(rvm_prompt_info || rbenv_prompt_info)%{$reset_color%} $(git_super_status)"
+  prompt="$(git_super_status)"
 
   echo $prompt
 }

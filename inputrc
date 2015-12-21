@@ -1,3 +1,5 @@
 set show-all-if-ambiguous on
 set completion-ignore-case on
 set match-hidden-files off
+set show-mode-in-prompt
+
