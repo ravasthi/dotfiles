@@ -38,7 +38,7 @@ For oh my zsh setup, do the following:
 
 * A supercharged prompt for both bash and zsh with ruby and git information, with help from the [zsh-git-prompt](https://github.com/olivierverdier/zsh-git-prompt/blob/master/zshrc.sh) and [bash-git-prompt](https://github.com/magicmonty/bash-git-prompt) plugins. To tweak, change the configuration in `git-prompt-colors.sh` for bash and `oh-my-zsh-custom/themes/richa.zsh-theme` for zsh.
 
-    ![fancy prompt](http://cloud.avasthi.name/0Z010Z173Q1o)
+    <img style="max-width: 100%;" src="http://cloud.avasthi.name/0Z010Z173Q1o" alt="fancy prompt!" />
 
 * An `edit` shim will launch `mate` (TextMate) if you are on your local Mac, and fall back to `vi` if you are logged in via ssh. This shim is used as the git editor and svn editor.
 
