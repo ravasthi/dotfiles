@@ -1,4 +1,4 @@
-# ravasthi's dotfiles
+# Richa’s dotfiles
 
 **Please note that the TextMate features of these dotfiles are for TextMate 2, currently in beta.**
 
@@ -16,7 +16,7 @@ rake install
 
 ### Shell support
 
-This dotfiles repo currently supports both bash and oh my zsh, with bash support being deprecated sometime in the near future.
+This dotfiles repo currently supports both bash and oh my zsh.
 
 Some features of the `bashrc` may work only with bash version 4.2 and greater with bash-completion, which is not installed by default on the Mac. Consider using these steps to get it:
 
@@ -32,7 +32,7 @@ For oh my zsh setup, do the following:
 
 ## Notable features
 
-* These dotfiles assume a Mac setup that uses `rvm` and Homebrew, with the `bash-completion` and `git` brews installed. See *Shell support* above for details.
+* These dotfiles assume a Mac setup that uses `rvm`/`rbenv` and Homebrew, with the `bash-completion` and `git` brews installed. See *Shell support* above for details.
 
 * An `r` command serves as a shortcut for running `bundle exec rake` or `bundle exec rails`. It's pretty smart, so `r s` will expand to `bundle exec rails server`, and `r db` will expand to `bundle exec rake db:console`. No more fat-finger mistakes of `rails` vs `rake`!
 
@@ -44,7 +44,14 @@ For oh my zsh setup, do the following:
 
 * The `mp` script (short for "(Text)Mate project") opens a directory in TextMate. But unlike the basic `mate` command, if the directory does not already have a `.tm_properties`, a basic one will be created.
 
-* This repo also comes with tmux and vim configurations, for you terminal purists. To use:
+* Vim configuration with support for selected plugins, with plugin management by [Vundle](https://github.com/VundleVim/Vundle.vim). To use:
+
+    * `git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim`
+    * If desired, tweak the font and colorscheme settings. The default colorscheme is [PaperColor](http://vimcolors.com/234/PaperColor/light). The default font is [Espresso Mono](https://twitter.com/chrisbowler/status/205688974369492992), a variant of [DejaVu Sans Mono](http://dejavu-fonts.org/wiki/Main_Page).
+    * Start vim
+    * Run `:PluginInstall`
+
+* This repo also comes with tmux configuration, for you terminal purists. To use:
 
     * `brew install tmux`
     * `brew install reattach-to-user-namespace`
