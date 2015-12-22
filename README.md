@@ -5,7 +5,7 @@ These are the command-line setup and configuration files I use for all my comput
 ## Credits
 
 * Inspired by dotfiles from [Ryan Bates](https://github.com/ryanb/dotfiles) and [thoughtbot](http://github.com/thoughtbot/dotfiles).
-* <span style="text-decoration: line-through;">Mostly stolen</span> Tweaked from [Matt’s dotfiles](https://github.com/mbrictson/dotfiles).
+* ~~Mostly stolen~~ Tweaked from [Matt’s dotfiles](https://github.com/mbrictson/dotfiles).
 * vim, tmux and zsh setup informed heavily by [Trae’s dotfiles](https://github.com/trobrock)
 * Other utilities repurposed, tweaked or outright stolen from around the internet.
 
