@@ -1,0 +1,34 @@
+#!/bin/bash
+
+set -e
+
+# Manually remove the brew cache, since that is the only way to force
+# `brew cask install` to grab the latest versions of its recipes.
+# https://github.com/phinze/homebrew-cask/issues/309#issuecomment-32470815
+rm -rf "$(brew --cache)" && mkdir -p "$(brew --cache)"
+
+brew cleanup --force
+brew update
+brew upgrade
+
+# Needed for Rails development
+brew install autoconf pkg-config git postgresql qt
+
+# Better versions of Mac built-ins
+brew install bash bash-completion colordiff zsh
+brew install homebrew/dupes/grep --default-names
+
+# Editors
+brew install vim macvim
+
+# More nice-to-haves and various development libraries
+brew install ack curl lua mercurial redis s3cmd sqlite ssh-copy-id \
+             the_silver_searcher trash tree wget
+
+# Quick Look plugins
+brew tap Caskroom/cask
+brew cask install --force qlcolorcode qlstephen qlmarkdown quicklook-json \
+                          qlprettypatch quicklook-csv webpquicklook
+qlmanage -r
+
+brew linkapps

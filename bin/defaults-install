@@ -1,0 +1,6 @@
+#!/bin/bash
+
+mkdir -p ~/Pictures/screenshots
+defaults write com.apple.screencapture location ~/Pictures/screenshots/
+defaults write com.apple.screencapture disable-shadow -bool true
+killall SystemUIServer
