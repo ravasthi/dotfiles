@@ -44,9 +44,9 @@ For oh my zsh setup, do the following:
 * Vim configuration with support for selected plugins, with plugin management by [Vundle](https://github.com/VundleVim/Vundle.vim). To use:
 
     * `git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim`
-    * If desired, tweak the font and colorscheme settings. The default colorscheme is [PaperColor](http://vimcolors.com/234/PaperColor/light). The default font is [Espresso Mono](https://twitter.com/chrisbowler/status/205688974369492992), a variant of [DejaVu Sans Mono](http://dejavu-fonts.org/wiki/Main_Page).
+    * If desired, tweak the font and color scheme settings. The default color scheme is [PaperColor](http://vimcolors.com/234/PaperColor/light). The default font is [Espresso Mono](https://twitter.com/chrisbowler/status/205688974369492992), a variant of [DejaVu Sans Mono](http://dejavu-fonts.org/wiki/Main_Page).
     * Start vim
-    * Run `:PluginInstall`
+    * Run `PluginInstall` in command mode.
 
 * An `edit` shim will launch `mate` (TextMate) if you are on your local Mac, and fall back to `vi` if you are logged in via ssh. This shim is used as the git editor and svn editor.
 
