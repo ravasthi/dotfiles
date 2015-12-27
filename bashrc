@@ -65,9 +65,9 @@ export PS1='\[\e[0;30;43m\]$userhost \[\e[0m\]\[\e[1m\]\w$ \[\e[0m\]'
 #######
 # Git #
 
-if [[ -f `readlink ~/.bash-git-prompt`/gitprompt.sh ]]; then
+if [[ -f `readlink ~/.bash-git-prompt/gitprompt.sh` ]]; then
   export GIT_PROMPT_THEME=Custom
-  source `readlink ~/.bash-git-prompt`/gitprompt.sh
+  source `readlink ~/.bash-git-prompt/gitprompt.sh`
 fi
 
 #####################
