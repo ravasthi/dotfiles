@@ -11,7 +11,7 @@ These are the command-line setup and configuration files I use for all my comput
 
 ## Prerequisites
 
-These dotfiles assume a Mac setup that uses `rvm`/`rbenv` and Homebrew, with the `bash`, `bash-completion` and `git` brews installed. See *Shell support* for details.
+These dotfiles assume a Mac with the Xcode command line tools, rvm or rbenv, and Homebrew with the `bash`, `bash-completion` and `git` brews installed. See *Shell support* for details. In addition, the `highline` gem is required to run the installation script.
 
 ## What’s in the box
 
@@ -70,18 +70,19 @@ An `r` command serves as a shortcut for running `bundle exec rake` or `bundle ex
     * Tweak the configuration in `hammerspoon/init.lua` as you like
 
 
-
-
-
 ## Installation
 
-Choose a place to store the dotfiles, like `~/Library/dotfiles`.
+1. Install the `highline` gem:
 
-```
-git clone git://github.com/ravasthi/dotfiles ~/Library/dotfiles
-cd ~/Library/dotfiles
-git submodule init
-git submodule update
-rake install
-```
+        gem install highline
+
+2. Choose a place to store the dotfiles, like `~/Library/dotfiles`.
+
+    ```
+    git clone git://github.com/ravasthi/dotfiles ~/Library/dotfiles
+    cd ~/Library/dotfiles
+    git submodule init
+    git submodule update
+    rake install
+    ```
 
