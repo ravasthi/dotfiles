@@ -40,7 +40,15 @@ __MACOSX
 .tm_properties
 .bundle/
 .powder
+.powenv
+.powrc
+.rvmrc
 config.codekit
+
+# Generated #
+#############
+tmp/
+.sass-cache/
 
 # Dependencies #
 ################
