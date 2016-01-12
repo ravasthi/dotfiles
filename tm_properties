@@ -105,7 +105,7 @@ fileType         = "source.js"
 fileType         = "source.ruby"
 
 [ text.html ]
-TM_XHTML         = "/"
+TM_XHTML         = ""
 
 # Brace expansion is not supported for file types. Eventually
 # [ "filetype1, filetype2" ] will be supported, but until then, just repeat
