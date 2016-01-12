@@ -89,7 +89,7 @@ TM_CSS_SPACE     = " "
 tabSize          = 4
 
 [ source.js ]
-tabSize                    = 2
+tabSize                    = 4
 TM_JAVASCRIPT_BRACE_PREFIX = " "
 
 [ source.python ]
