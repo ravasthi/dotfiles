@@ -180,6 +180,11 @@ local layoutImac = {
   {"MindNode",    nil, iMac, position.twoThirdsLeft(), nil, nil},
   {"Ulysses",     nil, iMac, position.twoThirdsLeft(), nil, nil},
 
+  -- Design
+  {"Sketch",            nil, iMac, position.twoThirdsLeft(), nil, nil},
+  {"Affinity Designer", nil, iMac, position.twoThirdsLeft(), nil, nil},
+  {"Affinity Photo",    nil, iMac, position.twoThirdsLeft(), nil, nil},
+
   -- Music
   {"iTunes",  nil, iMac, position.halfLeft(), nil, nil},
   {"Rdio",    nil, iMac, position.smallCenter(), nil, nil},
@@ -221,6 +226,11 @@ local layoutLaptopOnly = {
   {"MindNode",    nil, laptop, layout.maximized, nil, nil},
   {"Ulysses",     nil, laptop, layout.maximized, nil, nil},
 
+  -- Design
+  {"Sketch",            nil, laptop, layout.maximized, nil, nil},
+  {"Affinity Designer", nil, laptop, layout.maximized, nil, nil},
+  {"Affinity Photo",    nil, laptop, layout.maximized, nil, nil},
+
   -- Music
   {"iTunes",  nil, laptop, layout.maximized, nil, nil},
   {"Rdio",    nil, laptop, layout.maximized, nil, nil},
@@ -261,6 +271,11 @@ local layoutWithThunderboltDisplay = {
   {"HipChat",     nil, laptop,             layout.maximized,         nil, nil},
   {"MindNode",    nil, thunderboltDisplay, position.twoThirdsLeft(), nil, nil},
   {"Ulysses",     nil, thunderboltDisplay, position.twoThirdsLeft(), nil, nil},
+
+  -- Design
+  {"Sketch",            nil, thunderboltDisplay, position.twoThirdsLeft(), nil, nil},
+  {"Affinity Designer", nil, thunderboltDisplay, position.twoThirdsLeft(), nil, nil},
+  {"Affinity Photo",    nil, thunderboltDisplay, position.twoThirdsLeft(), nil, nil},
 
   -- Music
   {"iTunes",  nil, laptop, layout.maximized, nil, nil},
