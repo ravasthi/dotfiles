@@ -34,6 +34,11 @@ function r() {
   fi
 }
 
+# Like 'bundle exec' for npm
+n() {
+  `npm bin`/$@
+}
+
 # Copy contents of a file to a clipboard
 function cb {
   if [ -e "$@" ]; then
