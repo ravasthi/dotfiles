@@ -32,6 +32,10 @@ excludeInFolderSearch = "{$excludeInFolderSearch,$myExtraExcludes}"
 #
 # excludeInBrowser      = "{$excludeInBrowser,log,vendor,tmp,target}"
 
+# Locale
+#
+TM_LANG = 'en-us'
+
 # Configure git and hg
 #
 TM_HG  = "/usr/local/bin/hg"
