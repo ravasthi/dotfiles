@@ -12,6 +12,7 @@
     "element-case": "lower",
     "eof-newline": true,
     "leading-zero": true,
+    "lines-between-rulesets": 1,
     "quotes": "single",
     "sort-order-fallback": "abc",
     "space-before-colon": "",
