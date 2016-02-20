@@ -38,6 +38,8 @@ Plugin 'kchmck/vim-coffee-script'
 Plugin 'godlygeek/csapprox'
 " CSSComb
 Plugin 'csscomb/vim-csscomb'
+" Editorconfig
+Plugin 'editorconfig/editorconfig-vim'
 " Fuzzy file search
 Plugin 'kien/ctrlp.vim'
 " Dash
