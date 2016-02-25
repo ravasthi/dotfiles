@@ -88,6 +88,11 @@ function relinknode {
   ln -s $(nvm which default) $NVM_DIR/bin/node
 }
 
+function relinknodelatest {
+  rm $NVM_DIR/bin/node
+  ln -s $(nvm which latest) $NVM_DIR/bin/node
+}
+
 # Set $NVM_BIN environment variable
 function setnvmbin {
   export NVM_BIN=$(nvm which default)
