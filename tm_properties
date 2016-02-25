@@ -45,6 +45,10 @@ TM_GIT = "/usr/local/bin/git"
 #
 TM_JAVA_SOURCE_FOLDER_REGEX = java
 
+# Node
+#
+TM_JAVASCRIPT_ESLINT_ESLINT = "$NVM_BIN/eslint"
+
 # RVM ruby
 TM_RUBY = "/Users/ravasthi/.rvm/bin/rvm-auto-ruby"
 

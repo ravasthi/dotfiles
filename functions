@@ -88,6 +88,15 @@ function relinknode {
   ln -s $(nvm which default) $NVM_DIR/bin/node
 }
 
+# Set $NVM_BIN environment variable
+function setnvmbin {
+  export NVM_BIN=$(nvm which default)
+}
+
+function setnvmbinlatest {
+  export NVM_BIN=$(nvm which latest)
+}
+
 # Show files changed in stash at specified position
 function showStashFilesAt {
   git stash show stash@{$1}
