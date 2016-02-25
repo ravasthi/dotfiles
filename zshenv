@@ -72,7 +72,6 @@ if [[ -r $HOME/node_modules ]]; then
   export PATH=$HOME/node_modules/.bin:$PATH
 fi
 
-
 ########
 # Pear #
 if [[ -x $HOME/pear/bin/pear ]]; then
