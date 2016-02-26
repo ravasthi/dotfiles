@@ -47,9 +47,10 @@ TM_JAVA_SOURCE_FOLDER_REGEX = java
 
 # Node
 #
-TM_JAVASCRIPT_ESLINT_ESLINT = "$NVM_BIN/eslint"
+TM_JAVASCRIPT_ESLINT_ESLINT = /Users/ravasthi/.nvm/versions/node/latest/eslint
 
 # RVM ruby
+#
 TM_RUBY = "/Users/ravasthi/.rvm/bin/rvm-auto-ruby"
 
 # Default editing configuration

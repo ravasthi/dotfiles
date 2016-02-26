@@ -82,24 +82,39 @@ function proc {
   ps -ef | grep $1 | grep -v grep
 }
 
-# (Re)create softlink at $NVM_DIR/bin/node pointing to the current default node
-function relinknode {
-  rm $NVM_DIR/bin/node
-  ln -s $(nvm which default) $NVM_DIR/bin/node
+function getnodealias {
+  DEFAULT_ALIAS=default
+
+  if [[ "$1" ]]; then
+    node_alias=$1
+  else
+    node_alias=$DEFAULT_ALIAS
+  fi
+
+  echo $node_alias
 }
 
-function relinknodelatest {
-  rm $NVM_DIR/bin/node
-  ln -s $(nvm which latest) $NVM_DIR/bin/node
+# (Re)create softlink at $NVM_DIR/bin/node
+function relinknode {
+  node_alias=$(getnodealias $1)
+
+  trash $NVM_DIR/bin/node
+  ln -s $(nvm which $node_alias) $NVM_DIR/bin/node
+}
+
+# (Re)create softlink at $NVM_DIR/versions/node/$alias
+function relinknodebin {
+  node_alias=$(getnodealias $1)
+
+  trash $NVM_DIR/versions/node/$node_alias
+  ln -s $(dirname $(nvm which $node_alias)) $NVM_DIR/versions/node/$node_alias
 }
 
 # Set $NVM_BIN environment variable
 function setnvmbin {
-  export NVM_BIN=$(nvm which default)
-}
+  node_alias=$(getnodealias $1)
 
-function setnvmbinlatest {
-  export NVM_BIN=$(nvm which latest)
+  export NVM_BIN=$(dirname $(nvm which $node_alias))
 }
 
 # Show files changed in stash at specified position
