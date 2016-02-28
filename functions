@@ -35,6 +35,7 @@ function r() {
 }
 
 # Like 'bundle exec' for npm
+# Reduces need for `npm install -g`
 n() {
   `npm bin`/$@
 }
@@ -79,9 +80,10 @@ function allerb2html {
 
 # Show any running processes matching input
 function proc {
-  ps -ef | grep $1 | grep -v grep
+  ps -ef | grep "$1" | grep -v grep
 }
 
+# Convenience to get node alias argument from command line parameter. Default: "default"
 function getnodealias {
   DEFAULT_ALIAS=default
 
