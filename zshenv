@@ -5,20 +5,23 @@ if [ -x /usr/libexec/path_helper ]; then
   eval `/usr/libexec/path_helper -s`
 fi
 
-##############
-# Git prompt #
+# --------------------------------------------------------------------------------------------------
+# Git prompt
+# --------------------------------------------------------------------------------------------------
 
 if [[ -f `readlink ~/.zsh-git-prompt/zshrc.sh` ]]; then
   source `readlink ~/.zsh-git-prompt/zshrc.sh`
 fi
 
-############
-# Homebrew #
+# --------------------------------------------------------------------------------------------------
+# Homebrew
+# --------------------------------------------------------------------------------------------------
 
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
-#####################
-# Python virtualenv #
+# --------------------------------------------------------------------------------------------------
+# Python virtualenv
+# --------------------------------------------------------------------------------------------------
 
 if [[ -d ~/.virtualenvs ]]; then
   export WORKON_HOME=$HOME/.virtualenvs
@@ -32,8 +35,9 @@ if [[ -x /usr/local/opt/autoenv/activate.sh ]]; then
   source /usr/local/opt/autoenv/activate.sh
 fi
 
-########################
-# Subversion/Mercurial #
+# --------------------------------------------------------------------------------------------------
+# Subversion/Mercurial
+# --------------------------------------------------------------------------------------------------
 
 if [[ -x ~/.bin/edit ]]; then
   export SVN_EDITOR=~/.bin/edit
@@ -43,8 +47,9 @@ if [[ -f ~/.svn_color ]]; then
   source ~/.svn_color
 fi
 
-####################
-# Java Environment #
+# --------------------------------------------------------------------------------------------------
+# Java environment
+# --------------------------------------------------------------------------------------------------
 
 if [[ -d /Library/Java/JavaVirtualMachines/jdk1.8.0_45.jdk/Contents ]]; then
   export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_45.jdk/Contents/Home
@@ -52,15 +57,17 @@ if [[ -d /Library/Java/JavaVirtualMachines/jdk1.8.0_45.jdk/Contents ]]; then
   export MAVEN_OPTS="-Xmx512m -XX:+HeapDumpOnOutOfMemoryError"
 fi
 
-#########
-# MySQL #
+# --------------------------------------------------------------------------------------------------
+# MySQL
+# --------------------------------------------------------------------------------------------------
 
 if [[ -d /usr/local/mysql/bin ]]; then
   export PATH=/usr/local/mysql/bin:$PATH
 fi
 
-########
-# Node #
+# --------------------------------------------------------------------------------------------------
+# Node
+# --------------------------------------------------------------------------------------------------
 
 # NVM #
 if [[ -x $HOME/.nvm ]]; then
@@ -72,16 +79,19 @@ if [[ -r $HOME/node_modules ]]; then
   export PATH=$HOME/node_modules/.bin:$PATH
 fi
 
-########
-# Pear #
+# --------------------------------------------------------------------------------------------------
+# Pear
+# --------------------------------------------------------------------------------------------------
+
 if [[ -x $HOME/pear/bin/pear ]]; then
   export PATH=$HOME/pear/bin:$PATH
 fi
 
-########
-# Ruby #
+# --------------------------------------------------------------------------------------------------
+# Ruby
+# --------------------------------------------------------------------------------------------------
 
-# Heroku Toolbelt #
+# Heroku toolbelt #
 if [[ -d /usr/local/heroku/bin ]]; then
   export PATH="/usr/local/heroku/bin:$PATH"
 fi
@@ -98,8 +108,9 @@ if [[ -d $HOME/.rvm ]] && [[ -s "$HOME/.rvm/scripts/rvm" ]]; then
   source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 fi
 
-##################
-# Custom Scripts #
+# --------------------------------------------------------------------------------------------------
+# Custom scripts
+# --------------------------------------------------------------------------------------------------
 
 if [[ -d $HOME/.bin ]]; then
   export PATH=$HOME/.bin:$PATH

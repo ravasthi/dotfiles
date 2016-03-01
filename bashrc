@@ -7,32 +7,37 @@ if [ -x /usr/libexec/path_helper ]; then
   eval `/usr/libexec/path_helper -s`
 fi
 
-###################
-# vi key bindings #
+# --------------------------------------------------------------------------------------------------
+# vi key bindings
+# --------------------------------------------------------------------------------------------------
 
 set -o vi
 
-############
-# Homebrew #
+# --------------------------------------------------------------------------------------------------
+# Homebrew
+# --------------------------------------------------------------------------------------------------
 
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
-###########
-# Aliases #
+# --------------------------------------------------------------------------------------------------
+# Aliases
+# --------------------------------------------------------------------------------------------------
 
 if [[ -f ~/.aliases ]]; then
   source ~/.aliases
 fi
 
-#############
-# Functions #
+# --------------------------------------------------------------------------------------------------
+# Functions
+# --------------------------------------------------------------------------------------------------
 
 if [[ -f ~/.functions ]]; then
   source ~/.functions
 fi
 
-###########################
-# History and Completions #
+# --------------------------------------------------------------------------------------------------
+# History and completions
+# --------------------------------------------------------------------------------------------------
 
 export HISTIGNORE="&:ls:l:la:ll:ls -al:exit"
 export HISTCONTROL=erasedups
@@ -47,8 +52,9 @@ if [[ -f `brew --prefix`/etc/bash_completion ]]; then
   . `brew --prefix`/etc/bash_completion
 fi
 
-#######
-# PS1 #
+# --------------------------------------------------------------------------------------------------
+# PS1
+# --------------------------------------------------------------------------------------------------
 
 export LSCOLORS=Dxxxxxxxxxxxxxxxxxxxxx
 # Only show last 2 directories that make up the current path
@@ -62,16 +68,18 @@ fi
 
 export PS1='\[\e[0;30;43m\]$userhost \[\e[0m\]\[\e[1m\]\w$ \[\e[0m\]'
 
-#######
-# Git #
+# --------------------------------------------------------------------------------------------------
+# Git
+# --------------------------------------------------------------------------------------------------
 
 if [[ -f `readlink ~/.bash-git-prompt/gitprompt.sh` ]]; then
   export GIT_PROMPT_THEME=Custom
   source `readlink ~/.bash-git-prompt/gitprompt.sh`
 fi
 
-#####################
-# Python virtualenv #
+# --------------------------------------------------------------------------------------------------
+# Python virtualenv
+# --------------------------------------------------------------------------------------------------
 
 if [[ -d ~/.virtualenvs ]]; then
   export WORKON_HOME=$HOME/.virtualenvs
@@ -85,8 +93,9 @@ if [[ -x /usr/local/opt/autoenv/activate.sh ]]; then
   source /usr/local/opt/autoenv/activate.sh
 fi
 
-########################
-# Subversion/Mercurial #
+# --------------------------------------------------------------------------------------------------
+# Subversion/Mercurial
+# --------------------------------------------------------------------------------------------------
 
 if [[ -x ~/.bin/edit ]]; then
   export SVN_EDITOR=~/.bin/edit
@@ -96,8 +105,9 @@ if [[ -f ~/.svn_color ]]; then
   source ~/.svn_color
 fi
 
-####################
-# Java Environment #
+# --------------------------------------------------------------------------------------------------
+# Java environment
+# --------------------------------------------------------------------------------------------------
 
 if [[ -d /Library/Java/JavaVirtualMachines/jdk1.8.0_45.jdk/Contents ]]; then
   export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_45.jdk/Contents/Home
@@ -105,34 +115,17 @@ if [[ -d /Library/Java/JavaVirtualMachines/jdk1.8.0_45.jdk/Contents ]]; then
   export MAVEN_OPTS="-Xmx512m -XX:+HeapDumpOnOutOfMemoryError"
 fi
 
-#################
-# Oracle Client #
-
-# Assume Oracle Instant Client is installed in /opt/custom/oracle
-# if [[ -d /opt/custom/oracle ]]; then
-#   export ORACLE_CLIENT_HOME=/opt/custom/oracle
-#   export PATH=$ORACLE_CLIENT_HOME:$PATH
-#   export DYLD_LIBRARY_PATH=$ORACLE_CLIENT_HOME
-#   export NLS_LANG=AMERICAN_AMERICA.UTF8
-#   export TWO_TASK=DEVDB
-#   export SQLPATH=${ORACLE_CLIENT_HOME}
-#
-#   # User scripts can be placed in ~/Library/Oracle/
-#   if [[ -d ${HOME}/Library/Oracle/ ]]; then
-#     export SQLPATH=${SQLPATH}:${HOME}/Library/Oracle/Scripts
-#     export TNS_ADMIN=${HOME}/Library/Oracle/Admin
-#   fi
-# fi
-
-#########
-# MySQL #
+# --------------------------------------------------------------------------------------------------
+# MySQL
+# --------------------------------------------------------------------------------------------------
 
 if [[ -d /usr/local/mysql/bin ]]; then
   export PATH=/usr/local/mysql/bin:$PATH
 fi
 
-########
-# Node #
+# --------------------------------------------------------------------------------------------------
+# Node
+# --------------------------------------------------------------------------------------------------
 
 # NVM #
 if [[ -x $HOME/.nvm ]]; then
@@ -148,17 +141,19 @@ if [[ -r $HOME/node_modules ]]; then
   export PATH=$HOME/node_modules/.bin:$PATH
 fi
 
+# --------------------------------------------------------------------------------------------------
+# Pear
+# --------------------------------------------------------------------------------------------------
 
-########
-# Pear #
 if [[ -x $HOME/pear/bin/pear ]]; then
   export PATH=$HOME/pear/bin:$PATH
 fi
 
-########
-# Ruby #
+# --------------------------------------------------------------------------------------------------
+# Ruby
+# --------------------------------------------------------------------------------------------------
 
-# Heroku Toolbelt #
+# Heroku toolbelt #
 if [[ -d /usr/local/heroku/bin ]]; then
   export PATH="/usr/local/heroku/bin:$PATH"
 fi
@@ -175,8 +170,16 @@ if [[ -d $HOME/.rvm ]] && [[ -s "$HOME/.rvm/scripts/rvm" ]]; then
   source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 fi
 
-##################
-# Custom Scripts #
+# --------------------------------------------------------------------------------------------------
+# iTerm shell integration
+# --------------------------------------------------------------------------------------------------
+if [[ "$TERM_PROGRAM" != "iTerm.app" ]] && [[ -s $HOME/.iterm2_shell_integration.bash ]]; then
+  source "$HOME/.iterm2_shell_integration.bash"
+fi
+
+# --------------------------------------------------------------------------------------------------
+# Custom scripts
+# --------------------------------------------------------------------------------------------------
 
 if [[ -d $HOME/.bin ]]; then
   export PATH=$HOME/.bin:$PATH
