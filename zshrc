@@ -67,7 +67,6 @@ fi
 # iTerm shell integration
 # --------------------------------------------------------------------------------------------------
 if [[ "$TERM_PROGRAM" == "iTerm.app" ]] && [[ -s $HOME/.iterm2_shell_integration.zsh ]]; then
-  echo "Activating iTerm integration…"
   source "$HOME/.iterm2_shell_integration.zsh"
 fi
 
