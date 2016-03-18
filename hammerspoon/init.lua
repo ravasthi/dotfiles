@@ -184,6 +184,8 @@ local layoutImac = {
   {"Sketch",            nil, iMac, position.twoThirdsLeft(), nil, nil},
   {"Affinity Designer", nil, iMac, position.twoThirdsLeft(), nil, nil},
   {"Affinity Photo",    nil, iMac, position.twoThirdsLeft(), nil, nil},
+  {"Suitcase Fusion 6", nil, iMac, position.twoThirdsLeft(), nil, nil},
+  {"Zeplin",            nil, iMac, position.twoThirdsLeft(), nil, nil},
 
   -- Music
   {"iTunes",  nil, iMac, position.halfLeft(), nil, nil},
@@ -230,6 +232,8 @@ local layoutLaptopOnly = {
   {"Sketch",            nil, laptop, layout.maximized, nil, nil},
   {"Affinity Designer", nil, laptop, layout.maximized, nil, nil},
   {"Affinity Photo",    nil, laptop, layout.maximized, nil, nil},
+  {"Suitcase Fusion 6", nil, laptop, layout.maximized, nil, nil},
+  {"Zeplin",            nil, laptop, layout.maximized, nil, nil},
 
   -- Music
   {"iTunes",  nil, laptop, layout.maximized, nil, nil},
@@ -276,6 +280,8 @@ local layoutWithThunderboltDisplay = {
   {"Sketch",            nil, thunderboltDisplay, position.twoThirdsLeft(), nil, nil},
   {"Affinity Designer", nil, thunderboltDisplay, position.twoThirdsLeft(), nil, nil},
   {"Affinity Photo",    nil, thunderboltDisplay, position.twoThirdsLeft(), nil, nil},
+  {"Suitcase Fusion 6", nil, thunderboltDisplay, position.twoThirdsLeft(), nil, nil},
+  {"Zeplin",            nil, laptop,             layout.maximized,         nil, nil},
 
   -- Music
   {"iTunes",  nil, laptop, layout.maximized, nil, nil},
