@@ -159,10 +159,11 @@ local layoutImac = {
   {"iTerm",    nil, iMac, position.thirdRight(), nil, nil},
 
   -- Browsers
-  {"Safari",        nil, iMac, position.twoThirdsLeft(), nil, nil},
-  {"Google Chrome", nil, iMac, position.twoThirdsLeft(), nil, nil},
-  {"Firefox",       nil, iMac, position.twoThirdsLeft(), nil, nil},
-  {"WebKit",        nil, iMac, position.twoThirdsLeft(), nil, nil},
+  {"Safari",                    nil, iMac, position.twoThirdsLeft(), nil, nil},
+  {"Google Chrome",             nil, iMac, position.twoThirdsLeft(), nil, nil},
+  {"Firefox",                   nil, iMac, position.twoThirdsLeft(), nil, nil},
+  {"WebKit",                    nil, iMac, position.twoThirdsLeft(), nil, nil},
+  {"Safari Technology Preview", nil, iMac, position.twoThirdsLeft(), nil, nil},
 
   -- Development
   {"TextMate",     nil, iMac, position.twoThirdsLeft(), nil, nil},
@@ -207,10 +208,11 @@ local layoutLaptopOnly = {
   {"iTerm",    nil, laptop, position.halfRight(), nil, nil},
 
   -- Browsers
-  {"Safari",        nil, laptop, layout.maximized, nil, nil},
-  {"Google Chrome", nil, laptop, layout.maximized, nil, nil},
-  {"Firefox",       nil, laptop, layout.maximized, nil, nil},
-  {"WebKit",        nil, laptop, layout.maximized, nil, nil},
+  {"Safari",                    nil, laptop, layout.maximized, nil, nil},
+  {"Google Chrome",             nil, laptop, layout.maximized, nil, nil},
+  {"Firefox",                   nil, laptop, layout.maximized, nil, nil},
+  {"WebKit",                    nil, laptop, layout.maximized, nil, nil},
+  {"Safari Technology Preview", nil, laptop, layout.maximized, nil, nil},
 
   -- Development
   {"TextMate",     nil, laptop, layout.maximized, nil, nil},
@@ -255,10 +257,11 @@ local layoutWithThunderboltDisplay = {
   {"iTerm",    nil, thunderboltDisplay, position.thirdRight(), nil, nil},
 
   -- Browsers
-  {"Safari",        nil, thunderboltDisplay, position.twoThirdsLeft(), nil, nil},
-  {"Google Chrome", nil, thunderboltDisplay, position.twoThirdsLeft(), nil, nil},
-  {"Firefox",       nil, thunderboltDisplay, position.twoThirdsLeft(), nil, nil},
-  {"WebKit",        nil, thunderboltDisplay, position.twoThirdsLeft(), nil, nil},
+  {"Safari",                    nil, thunderboltDisplay, position.twoThirdsLeft(), nil, nil},
+  {"Google Chrome",             nil, thunderboltDisplay, position.twoThirdsLeft(), nil, nil},
+  {"Firefox",                   nil, thunderboltDisplay, position.twoThirdsLeft(), nil, nil},
+  {"WebKit",                    nil, thunderboltDisplay, position.twoThirdsLeft(), nil, nil},
+  {"Safari Technology Preview", nil, thunderboltDisplay, position.twoThirdsLeft(), nil, nil},
 
   -- Development
   {"TextMate",     nil, thunderboltDisplay, position.twoThirdsLeft(), nil, nil},
