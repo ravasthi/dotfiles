@@ -134,3 +134,5 @@ wrapColumn       = 80
 [ text.git-commit ]
 wrapColumn       = 72
 
+[ text.xml.plist ]
+softTabs         = false
