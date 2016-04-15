@@ -152,8 +152,8 @@
         ],
         [
             "opacity",
-            "filter:progid:DXImageTransform.Microsoft.Alpha(Opacity",
-            "-ms-filter:\\'progid:DXImageTransform.Microsoft.Alpha",
+            "filter:progid:DXImageTransform.Microsoft.Alpha(Opacity)",
+            "-ms-filter:'progid:DXImageTransform.Microsoft.Alpha'",
             "-ms-interpolation-mode",
             "color",
             "background",
@@ -180,7 +180,7 @@
             "-moz-box-shadow",
             "box-shadow",
             "filter:progid:DXImageTransform.Microsoft.gradient",
-            "-ms-filter:\\'progid:DXImageTransform.Microsoft.gradient",
+            "-ms-filter:'progid:DXImageTransform.Microsoft.gradient'",
             "text-shadow"
         ],
         [
