@@ -23,8 +23,11 @@ function richa_left_prompt {
 
   ruby_prompt_info=$(rvm_prompt_info || rbenv_prompt_info)
 
+  node_version=`nvm current | sed 's/v\(.*\)/\1/'`
+  node_prompt_info="%{$fg[cyan]%}(node-${node_version})%{$reset_color%}"
+
   prompt="
-$userhost in %{$fg[blue]%}%4(~:…:)%3~%{$reset_color%} %{$fg[red]%}$ruby_prompt_info%{$reset_color%} $(vi_mode_prompt_info)
+$userhost in %{$fg[blue]%}%4(~:…:)%3~%{$reset_color%} %{$fg[red]%}$ruby_prompt_info%{$reset_color%} ${node_prompt_info} $(vi_mode_prompt_info)
 [%{$fg[yellow]%}%T%{$reset_color%}]%(?,%{$fg[green]%},%{$fg[red]%})✽%{$reset_color%} "
 
   echo $prompt
