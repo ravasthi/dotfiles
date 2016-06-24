@@ -157,6 +157,7 @@ local layoutImac = {
   -- Command line
   {"Terminal", nil, iMac, position.thirdRight(), nil, nil},
   {"iTerm",    nil, iMac, position.thirdRight(), nil, nil},
+  {"iTerm2",   nil, iMac, position.thirdRight(), nil, nil},
 
   -- Browsers
   {"Safari",                    nil, iMac, position.twoThirdsLeft(), nil, nil},
@@ -206,6 +207,7 @@ local layoutLaptopOnly = {
   -- Command line
   {"Terminal", nil, laptop, position.halfRight(), nil, nil},
   {"iTerm",    nil, laptop, position.halfRight(), nil, nil},
+  {"iTerm2",   nil, laptop, position.halfRight(), nil, nil},
 
   -- Browsers
   {"Safari",                    nil, laptop, layout.maximized, nil, nil},
@@ -255,6 +257,7 @@ local layoutWithThunderboltDisplay = {
   -- Command line
   {"Terminal", nil, thunderboltDisplay, position.thirdRight(), nil, nil},
   {"iTerm",    nil, thunderboltDisplay, position.thirdRight(), nil, nil},
+  {"iTerm2",   nil, thunderboltDisplay, position.thirdRight(), nil, nil},
 
   -- Browsers
   {"Safari",                    nil, thunderboltDisplay, position.twoThirdsLeft(), nil, nil},
