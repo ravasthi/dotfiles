@@ -80,6 +80,8 @@ Plugin 'tpope/vim-surround'
 Plugin 'godlygeek/tabular'
 " TagBar (symbol browser like TextMate)
 Plugin 'majutsushi/tagbar'
+" Theme: papercolor
+Plugin 'NLKNguyen/papercolor-theme'
 " Tmux syntax
 Plugin 'zaiste/tmux.vim'
 " xTerm color table (!!)
@@ -137,7 +139,7 @@ nnoremap ; :
 set guifont=EspressoMono-Regular:h14
 set t_Co=256 " use 256 colors
 let g:CSApprox_attr_map = { 'bold' : 'bold', 'italic' : '', 'sp' : '' }
-set background=light
+set background=dark
 colorscheme PaperColor
 
 " Show invisibles like TextMate
@@ -170,7 +172,7 @@ hi LineNr cterm=NONE ctermfg=241 guifg=#606060
 
 " Highlight cursor line number
 set cursorline
-hi CursorLine cterm=NONE ctermbg=254 guibg=#e4e4e4
+hi CursorLine cterm=NONE ctermbg=239 guibg=#4e4e4e
 hi clear CursorLineNr
 hi CursorLineNr cterm=NONE ctermfg=247 guifg=#a0a0a0
 
