@@ -116,6 +116,9 @@ fileType         = "source.ruby"
 [ text.html ]
 TM_XHTML         = ""
 
+[ text.html.markdown ]
+tabSize          = 4
+
 # Brace expansion is not supported for file types. Eventually
 # [ "filetype1, filetype2" ] will be supported, but until then, just repeat
 # settings per file type.
