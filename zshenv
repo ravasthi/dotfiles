@@ -97,7 +97,7 @@ if [[ -x /usr/local/bin/pyenv ]]; then
   export PATH=$PYENV_ROOT/bin:$PATH
   eval "$(pyenv init -)"
 
-  [[-x /usr/local/bin/pyenv-virtualenv ]] && eval "$(pyenv virtualenv-init -)"
+  [[ -x /usr/local/bin/pyenv-virtualenv ]] && eval "$(pyenv virtualenv-init -)"
 fi
 
 # --------------------------------------------------------------------------------------------------
