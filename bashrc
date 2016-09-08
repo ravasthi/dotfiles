@@ -78,22 +78,6 @@ if [[ -f `readlink ~/.bash-git-prompt/gitprompt.sh` ]]; then
 fi
 
 # --------------------------------------------------------------------------------------------------
-# Python virtualenv
-# --------------------------------------------------------------------------------------------------
-
-if [[ -d ~/.virtualenvs ]]; then
-  export WORKON_HOME=$HOME/.virtualenvs
-  export PIP_VIRTUALENV_BASE=$WORKON_HOME
-  export VIRTUALENV_USE_DISTRIBUTE=true
-  export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
-  [[ -f /usr/local/bin/virtualenvwrapper.sh ]] && . /usr/local/bin/virtualenvwrapper.sh
-fi
-
-if [[ -x /usr/local/opt/autoenv/activate.sh ]]; then
-  source /usr/local/opt/autoenv/activate.sh
-fi
-
-# --------------------------------------------------------------------------------------------------
 # Subversion/Mercurial
 # --------------------------------------------------------------------------------------------------
 
@@ -152,6 +136,30 @@ fi
 
 if [[ -x $HOME/pear/bin/pear ]]; then
   export PATH=$HOME/pear/bin:$PATH
+fi
+
+# --------------------------------------------------------------------------------------------------
+# Python
+# --------------------------------------------------------------------------------------------------
+
+if [[ -d ~/.virtualenvs ]]; then
+  export WORKON_HOME=$HOME/.virtualenvs
+  export PIP_VIRTUALENV_BASE=$WORKON_HOME
+  export VIRTUALENV_USE_DISTRIBUTE=true
+  export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
+  [[ -f /usr/local/bin/virtualenvwrapper.sh ]] && . /usr/local/bin/virtualenvwrapper.sh
+fi
+
+if [[ -x /usr/local/opt/autoenv/activate.sh ]]; then
+  source /usr/local/opt/autoenv/activate.sh
+fi
+
+if [[ -x /usr/local/bin/pyenv ]]; then
+  export PYENV_ROOT=$HOME/.pyenv
+  export PATH=$PYENV_ROOT/bin:$PATH
+  eval "$(pyenv init -)"
+
+  [[-x /usr/local/bin/pyenv-virtualenv ]] && eval "$(pyenv virtualenv-init -)"
 fi
 
 # --------------------------------------------------------------------------------------------------
