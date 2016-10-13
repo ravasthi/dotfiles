@@ -280,7 +280,8 @@ set linebreak
 set textwidth=0
 set wrapmargin=0
 
-" Show a vertical line/guard at columns 80 and 100
+" Show a vertical line/guard at columns 80 and 10, and change the background
+" past column 120, because that's right out.
 if exists('+colorcolumn')
   let &colorcolumn="80,100,".join(range(120,999),",")
 endif
