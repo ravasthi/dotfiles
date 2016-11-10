@@ -19,9 +19,9 @@ call vundle#begin()
 " Vundle: required
 Plugin 'gmarik/Vundle.vim'
 
-" ag.vim
+" ack.vim using ag as its backend
 " requires 'brew install the_silver_searcher'
-Plugin 'rking/ag.vim'
+Plugin 'mileszs/ack.vim'
 " Auto-pairs
 Plugin 'jiangmiao/auto-pairs'
 " AutoTag
@@ -314,9 +314,13 @@ au Filetype gitcommit setlocal spell textwidth=72
 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" ag
-nnoremap <silent> <leader>f :Ag<space>
-let g:agprg = 'ag --column'
+" ack (using ag as a backend)
+let g:ackprg = 'ag --vimgrep --smart-case'
+cnoreabbrev ag Ack
+cnoreabbrev aG Ack
+cnoreabbrev Ag Ack
+cnoreabbrev AG Ack
+nnoremap <silent> <leader>f :Ack<space>
 
 " BufExplorer
 let g:bufExplorerSortBy = 'fullpath'   " Sort by full file path name.
