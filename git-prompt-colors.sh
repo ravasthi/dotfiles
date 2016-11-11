@@ -4,12 +4,15 @@
 # You just need to override what you want to have changed
 override_git_prompt_colors() {
   if [ -e ~/.rvm/bin/rvm-prompt ]; then
-    RUBY_PROMPT='$(~/.rvm/bin/rvm-prompt i v)'
+    RubyPrompt='$(~/.rvm/bin/rvm-prompt i v)'
   else
     if command -v rbenv > /dev/null; then
-      RUBY_PROMPT='$(rbenv version | sed -e "s/ (set.*$//")'
+      RubyPrompt='$(rbenv version | sed -e "s/ (set.*$//")'
     fi
   fi
+
+  NodeVersion=`nvm current | sed 's/v\(.*\)/\1/'`
+  NodePrompt="${Cyan}(node-${NodeVersion})${ResetColor}"
 
   GIT_PROMPT_THEME_NAME="Richa"
 
@@ -37,7 +40,7 @@ override_git_prompt_colors() {
 
   GIT_PROMPT_VIRTUALENV="(${Blue}_VIRTUALENV_${ResetColor}) "
 
-  GIT_PROMPT_START_USER="\n${UserHost} : ${Blue}${PathShort}${ResetColor} ${Red}(${RUBY_PROMPT})${ResetColor}${White}"
+  GIT_PROMPT_START_USER="\n${UserHost} : ${Blue}${PathShort}${ResetColor} ${Red}(${RubyPrompt})${ResetColor} ${NodePrompt}${White}"
   GIT_PROMPT_END_USER="\n${ResetColor}[${Yellow}\A${ResetColor}]_LAST_COMMAND_INDICATOR_ "
   GIT_PROMPT_START_ROOT="${GIT_PROMPT_START_USER}"
   GIT_PROMPT_END_ROOT="${GIT_PROMPT_END_USER}"
