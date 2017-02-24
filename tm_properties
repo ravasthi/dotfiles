@@ -110,6 +110,9 @@ fileType         = "text.plain"
 [ "Gruntfile"]
 fileType         = "source.js"
 
+[ "Jenkinsfile"]
+fileType         = "source.groovy"
+
 [ "{Vendorfile, Guardfile}"]
 fileType         = "source.ruby"
 
