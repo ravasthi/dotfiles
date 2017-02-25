@@ -53,6 +53,14 @@ if [[ -f `brew --prefix`/etc/bash_completion ]]; then
 fi
 
 # --------------------------------------------------------------------------------------------------
+# iTerm shell integration
+# --------------------------------------------------------------------------------------------------
+
+if [[ "$TERM_PROGRAM" == "iTerm.app" ]] && [[ -s $HOME/.iterm2_shell_integration.bash ]]; then
+  source "$HOME/.iterm2_shell_integration.bash"
+fi
+
+# --------------------------------------------------------------------------------------------------
 # PS1
 # --------------------------------------------------------------------------------------------------
 
@@ -78,15 +86,11 @@ if [[ -f `readlink ~/.bash-git-prompt/gitprompt.sh` ]]; then
 fi
 
 # --------------------------------------------------------------------------------------------------
-# Subversion/Mercurial
+# Groovy
 # --------------------------------------------------------------------------------------------------
 
-if [[ -x ~/.bin/edit ]]; then
-  export SVN_EDITOR=~/.bin/edit
-  export HGEDITOR=~/.bin/edit
-fi
-if [[ -f ~/.svn_color ]]; then
-  source ~/.svn_color
+if [[ -d /usr/local/opt/groovy/libexec ]]; then
+  export GROOVY_HOME=/usr/local/opt/groovy/libexec
 fi
 
 # --------------------------------------------------------------------------------------------------
@@ -184,10 +188,15 @@ if [[ -d $HOME/.rvm ]] && [[ -s "$HOME/.rvm/scripts/rvm" ]]; then
 fi
 
 # --------------------------------------------------------------------------------------------------
-# iTerm shell integration
+# Subversion/Mercurial
 # --------------------------------------------------------------------------------------------------
-if [[ "$TERM_PROGRAM" == "iTerm.app" ]] && [[ -s $HOME/.iterm2_shell_integration.bash ]]; then
-  source "$HOME/.iterm2_shell_integration.bash"
+
+if [[ -x ~/.bin/edit ]]; then
+  export SVN_EDITOR=~/.bin/edit
+  export HGEDITOR=~/.bin/edit
+fi
+if [[ -f ~/.svn_color ]]; then
+  source ~/.svn_color
 fi
 
 # --------------------------------------------------------------------------------------------------
