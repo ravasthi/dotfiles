@@ -107,14 +107,17 @@ tabSize          = 4
 [ "{README,INSTALL,LICENSE,TODO,NOTICE,HISTORY,CHANGES,CHANGELOG}" ]
 fileType         = "text.plain"
 
-[ "Gruntfile"]
+[ "Gruntfile" ]
 fileType         = "source.js"
 
-[ "Jenkinsfile"]
+[ "Jenkinsfile" ]
 fileType         = "source.groovy"
 
 [ "{Vendorfile, Guardfile}"]
 fileType         = "source.ruby"
+
+[ ".localrc" ]
+fileType         = "source.shell"
 
 [ text.html ]
 TM_XHTML         = ""
