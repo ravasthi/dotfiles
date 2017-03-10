@@ -52,6 +52,11 @@ function smallCenter()
   win:moveToUnit(position.smallCenter())
 end
 
+function twoThirdsCenter()
+  local win = window.focusedWindow()
+  win:moveToUnit(position.twoThirdsCenter())
+end
+
 function halfLeft()
   local win = window.focusedWindow()
   win:moveToUnit(position.halfLeft())
@@ -356,6 +361,7 @@ screenwatcher.new(handleScreenChanges):start()
 -- Key bindings ----------------------------------------------------------------
 hotkey.bind({"ctrl"},                 "1",     nil, maximize)
 hotkey.bind({"ctrl", "shift"},        "1",     nil, smallCenter)
+hotkey.bind({"ctrl", "shift", "alt"}, "1",     nil, twoThirdsCenter)
 hotkey.bind({"ctrl"},                 "2",     nil, halfLeft)
 hotkey.bind({"ctrl", "shift"},        "2",     nil, halfRight)
 hotkey.bind({"ctrl"},                 "3",     nil, halfTop)

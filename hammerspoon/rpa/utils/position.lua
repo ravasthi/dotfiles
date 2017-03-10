@@ -15,6 +15,15 @@ function rpa.utils.position.smallCenter()
   }
 end
 
+function rpa.utils.position.twoThirdsCenter()
+  return {
+    x = 1/6,
+    y = 1/6,
+    w = 2/3,
+    h = 2/3
+  }
+end
+
 function rpa.utils.position.halfLeft()
   return {
     x = 0,
