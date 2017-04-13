@@ -67,6 +67,9 @@ alias djm='./manage.py migrate'
 alias djsh='./manage.py shell'
 alias djdbsh='./manage.py dbshell'
 
+# ----------[ grep ]------------------------------------------------------------
+alias grep='grep --color=always'
+
 # ----------[ Node ]------------------------------------------------------------
 alias ntl='npm ls --depth=0'
 
