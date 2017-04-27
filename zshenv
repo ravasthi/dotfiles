@@ -1,7 +1,7 @@
 export LANG=en_US.UTF-8
 
 # Set default paths explicitly, since it doesn't seem to be happening.
-if [ -x /usr/libexec/path_helper ]; then
+if [[ -x /usr/libexec/path_helper ]]; then
   eval `/usr/libexec/path_helper -s`
 fi
 
@@ -11,6 +11,20 @@ fi
 
 if [[ -f `readlink ~/.zsh-git-prompt/zshrc.sh` ]]; then
   source `readlink ~/.zsh-git-prompt/zshrc.sh`
+fi
+
+# --------------------------------------------------------------------------------------------------
+# Go
+# --------------------------------------------------------------------------------------------------
+
+if [[ -x /usr/local/bin/go ]]; then
+  GO_VERSION=$(go version | sed -n -e 's/.*go\([[:digit:].]*\).*/\1/gp')
+  export GOROOT=/usr/local/Cellar/go/$GO_VERSION
+
+  mkdir -p $HOME/.go
+  export GOPATH=$HOME/.go
+
+  export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 fi
 
 # --------------------------------------------------------------------------------------------------
