@@ -30,9 +30,12 @@ log:ext:log,log.1,log.2,log.3
 undo:ext:un~
 
 # Ignores
+--ignore-dir=.build
+--ignore-dir=.happypack
 --ignore-dir=.sass-cache
 --ignore-dir=cache
 --ignore-dir=CACHE
+--ignore-dir=coverage
 --ignore-dir=target
 --ignore-dir=tmp
 --type=noundo
