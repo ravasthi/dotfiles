@@ -18,9 +18,6 @@ fi
 # --------------------------------------------------------------------------------------------------
 
 if [[ -x /usr/local/bin/go ]]; then
-  GO_VERSION=$(go version | sed -n -e 's/.*go\([[:digit:].]*\).*/\1/gp')
-  export GOROOT=/usr/local/Cellar/go/$GO_VERSION
-
   mkdir -p $HOME/.go
   export GOPATH=$HOME/.go
 
