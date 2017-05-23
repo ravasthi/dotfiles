@@ -13,8 +13,10 @@ rpa.utils.monitors = {}
 
 
 -- Find an individual screen by size
+-- Seems to in practice return the first matching screen of that size, though the docs say
+--  you'll get one or more matching screens
 function rpa.utils.monitors.findScreen(w, h)
-  return screen.find(geometry(nil, nil, w, h))
+  return screen.find(geometry.new(nil, nil, w, h))
 end
 
 
@@ -37,5 +39,19 @@ function rpa.utils.monitors.screensWestToEast()
   return screens
 end
 
+-- Returns a west-to-east sorted list of screens matching the desired size.
+function rpa.utils.monitors.sortedScreensBySize(w, h)
+  local screens = rpa.utils.monitors.screensWestToEast()
+  local matchingScreens = {}
+
+  for i,screen in pairs(screens) do
+    local frame = screen:fullFrame()
+    if frame.w == w and frame.h == h then
+      table.insert(matchingScreens, screen)
+    end
+  end
+
+  return matchingScreens
+end
 
 return rpa.utils.monitors
