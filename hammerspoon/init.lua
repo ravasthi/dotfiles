@@ -179,15 +179,16 @@ local layoutImac = {
   {"CodeKit",      nil, iMac, position.thirdRight(),    nil, nil},
 
   -- Productivity
-  {"Calendar",    nil, iMac, position.smallCenter(),   nil, nil},
-  {"Fantastical", nil, iMac, position.smallCenter(),   nil, nil},
-  {"Mail",        nil, iMac, position.twoThirdsLeft(), nil, nil},
-  {"Nylas Mail",  nil, iMac, position.twoThirdsLeft(), nil, nil},
-  {"Spark",       nil, iMac, position.twoThirdsLeft(), nil, nil},
-  {"Slack",       nil, iMac, position.twoThirdsLeft(), nil, nil},
-  {"HipChat",     nil, iMac, position.twoThirdsLeft(), nil, nil},
-  {"MindNode",    nil, iMac, position.twoThirdsLeft(), nil, nil},
-  {"Ulysses",     nil, iMac, position.twoThirdsLeft(), nil, nil},
+  {"Calendar",    nil, iMac, position.smallCenter(),     nil, nil},
+  {"Fantastical", nil, iMac, position.smallCenter(),     nil, nil},
+  {"Mail",        nil, iMac, position.twoThirdsLeft(),   nil, nil},
+  {"Nylas Mail",  nil, iMac, position.twoThirdsLeft(),   nil, nil},
+  {"Spark",       nil, iMac, position.twoThirdsLeft(),   nil, nil},
+  {"Slack",       nil, iMac, position.twoThirdsLeft(),   nil, nil},
+  {"HipChat",     nil, iMac, position.twoThirdsLeft(),   nil, nil},
+  {"MindNode",    nil, iMac, position.twoThirdsLeft(),   nil, nil},
+  {"Ulysses",     nil, iMac, position.twoThirdsLeft(),   nil, nil},
+  {"Things",      nil, iMac, position.twoThirdsCenter(), nil, nil},
 
   -- Design
   {"Sketch",            nil, iMac, position.twoThirdsLeft(), nil, nil},
@@ -240,6 +241,7 @@ local layoutLaptopOnly = {
   {"HipChat",     nil, laptop, layout.maximized, nil, nil},
   {"MindNode",    nil, laptop, layout.maximized, nil, nil},
   {"Ulysses",     nil, laptop, layout.maximized, nil, nil},
+  {"Things",      nil, laptop, layout.maximized, nil, nil},
 
   -- Design
   {"Sketch",            nil, laptop, layout.maximized, nil, nil},
@@ -292,6 +294,7 @@ local layoutWithThunderboltDisplay = {
   {"HipChat",     nil, laptop,              layout.maximized,         nil, nil},
   {"MindNode",    nil, thunderboltDisplays, position.twoThirdsLeft(), nil, nil},
   {"Ulysses",     nil, thunderboltDisplays, position.twoThirdsLeft(), nil, nil},
+  {"Things",      nil, laptop,              layout.maximized,         nil, nil},
 
   -- Design
   {"Sketch",            nil, thunderboltDisplays, position.twoThirdsLeft(), nil, nil},
@@ -344,6 +347,7 @@ local layoutWithTwoThunderboltDisplays = {
   {"HipChat",     nil, laptop,                 layout.maximized,         nil, nil},
   {"MindNode",    nil, thunderboltDisplays[1], position.twoThirdsLeft(), nil, nil},
   {"Ulysses",     nil, thunderboltDisplays[1], position.twoThirdsLeft(), nil, nil},
+  {"Things",      nil, laptop,                 layout.maximized,         nil, nil},
 
   -- Design
   {"Sketch",            nil, thunderboltDisplays[1], position.twoThirdsLeft(), nil, nil},
@@ -354,8 +358,8 @@ local layoutWithTwoThunderboltDisplays = {
 
   -- Music
   {"iTunes",  nil, thunderboltDisplays[2], position.halfRight(), nil, nil},
-  {"Rdio",    nil, thunderboltDisplays[2], layout.maximized,     nil, nil},
-  {"Spotify", nil, thunderboltDisplays[2], layout.maximized,     nil, nil},
+  {"Rdio",    nil, thunderboltDisplays[2], position.halfRight(), nil, nil},
+  {"Spotify", nil, thunderboltDisplays[2], position.halfRight(), nil, nil},
 
   -- Misc
   {"Dash",     nil, thunderboltDisplays[1], position.twoThirdsLeft(), nil, nil},
