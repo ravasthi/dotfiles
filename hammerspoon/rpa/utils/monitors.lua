@@ -39,6 +39,7 @@ function rpa.utils.monitors.screensWestToEast()
   return screens
 end
 
+
 -- Returns a west-to-east sorted list of screens matching the desired size.
 function rpa.utils.monitors.sortedScreensBySize(w, h)
   local screens = rpa.utils.monitors.screensWestToEast()
@@ -53,5 +54,6 @@ function rpa.utils.monitors.sortedScreensBySize(w, h)
 
   return matchingScreens
 end
+
 
 return rpa.utils.monitors
