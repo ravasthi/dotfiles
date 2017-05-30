@@ -215,9 +215,9 @@ local layoutImac = {
 
 local layoutLaptopOnly = {
   -- Command line
-  {"Terminal", nil, laptop, position.halfRight(), nil, nil},
-  {"iTerm",    nil, laptop, position.halfRight(), nil, nil},
-  {"iTerm2",   nil, laptop, position.halfRight(), nil, nil},
+  {"Terminal", nil, laptop, position.twoThirdsRight(), nil, nil},
+  {"iTerm",    nil, laptop, position.twoThirdsRight(), nil, nil},
+  {"iTerm2",   nil, laptop, position.twoThirdsRight(), nil, nil},
 
   -- Browsers
   {"Safari",                    nil, laptop, layout.maximized, nil, nil},
