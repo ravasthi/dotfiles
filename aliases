@@ -72,4 +72,6 @@ alias grep='grep --color=always'
 
 # ----------[ Node ]------------------------------------------------------------
 alias ntl='npm ls --depth=0'
+alias nr='npm run'
+alias yr='yarn run'
 
