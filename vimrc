@@ -119,6 +119,7 @@ set ffs=unix,mac,dos
 
 " Disable backups and swapfiles
 set nobackup
+set nowritebackup
 set noswapfile
 
 " Create undo files
