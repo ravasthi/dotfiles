@@ -191,6 +191,7 @@ local layoutImac = {
   {"Skype for Business",  nil,  iMac,  position.twoThirdsCenter(),  nil,  nil},
   {"MindNode",            nil,  iMac,  position.twoThirdsLeft(),    nil,  nil},
   {"Ulysses",             nil,  iMac,  position.twoThirdsLeft(),    nil,  nil},
+  {"Bear",                nil,  iMac,  position.twoThirdsLeft(),    nil,  nil},
   {"Things",              nil,  iMac,  position.twoThirdsCenter(),  nil,  nil},
 
   -- Design
@@ -247,6 +248,7 @@ local layoutLaptopOnly = {
   {"Skype for Business",  nil,  laptop,  layout.maximized,  nil,  nil},
   {"MindNode",            nil,  laptop,  layout.maximized,  nil,  nil},
   {"Ulysses",             nil,  laptop,  layout.maximized,  nil,  nil},
+  {"Bear",                nil,  laptop,  layout.maximized,  nil,  nil},
   {"Things",              nil,  laptop,  layout.maximized,  nil,  nil},
 
   -- Design
@@ -303,6 +305,7 @@ local layoutWithThunderboltDisplay = {
   {"Skype for Business",  nil,  laptop,                  layout.maximized,          nil,  nil},
   {"MindNode",            nil,  thunderboltDisplays[1],  position.twoThirdsLeft(),  nil,  nil},
   {"Ulysses",             nil,  thunderboltDisplays[1],  position.twoThirdsLeft(),  nil,  nil},
+  {"Bear",                nil,  thunderboltDisplays[1],  position.twoThirdsLeft(),  nil,  nil},
   {"Things",              nil,  laptop,                  layout.maximized,          nil,  nil},
 
   -- Design
@@ -359,6 +362,7 @@ local layoutWithTwoThunderboltDisplays = {
   {"Skype for Business",  nil,  laptop,                  layout.maximized,          nil,  nil},
   {"MindNode",            nil,  thunderboltDisplays[1],  position.twoThirdsLeft(),  nil,  nil},
   {"Ulysses",             nil,  thunderboltDisplays[1],  position.twoThirdsLeft(),  nil,  nil},
+  {"Bear",                nil,  thunderboltDisplays[1],  position.twoThirdsLeft(),  nil,  nil},
   {"Things",              nil,  laptop,                  layout.maximized,          nil,  nil},
 
   -- Design
