@@ -1,4 +1,4 @@
 #!/bin/sh
 
-killall Things; killall Slack; killall HipChat; sleep 1; open /Applications/Things3.app; open /Applications/Slack.app; open /Applications/HipChat.app
+killall Things; killall Slack; sleep 1; open /Applications/Things3.app; open /Applications/Slack.app
 
