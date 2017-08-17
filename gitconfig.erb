@@ -1,7 +1,3 @@
-[user]
-  name = <%= print("Your full name: "); STDOUT.flush; STDIN.gets.chomp %>
-  email = <%= print("Your email: "); STDOUT.flush; STDIN.gets.chomp %>
-
 [core]
   editor = "<%= File.expand_path('~/.bin/edit') %>"
   excludesfile = ~/.gitignore_global
@@ -60,6 +56,8 @@
 [merge]
   tool = opendiff
 
-[github]
-  user = <%= print("Your GitHub username: "); STDOUT.flush; STDIN.gets.chomp %>
+[includeIf "gitdir:<%= print("Code directory for personal git config (e.g. ~/code): "); STDOUT.flush; STDIN.gets.chomp.sub(/\/\z/, '') %>/"]
+  path = .gitconfig-personal
 
+[includeIf "gitdir:<%= print("Code directory for work git config (e.g. ~/code/work): "); STDOUT.flush; STDIN.gets.chomp.sub(/\/\z/, '') %>/"]
+  path = .gitconfig-work
