@@ -172,11 +172,13 @@ local layoutImac = {
   {"Safari Technology Preview", nil, iMac, position.twoThirdsLeft(), nil, nil},
 
   -- Development
-  {"TextMate",     nil, iMac, position.twoThirdsLeft(), nil, nil},
-  {"Sublime Text", nil, iMac, position.twoThirdsLeft(), nil, nil},
-  {"MacVim",       nil, iMac, position.twoThirdsLeft(), nil, nil},
-  {"Atom",         nil, iMac, position.twoThirdsLeft(), nil, nil},
-  {"CodeKit",      nil, iMac, position.thirdRight(),    nil, nil},
+  {"Atom",          nil, iMac, position.twoThirdsLeft(), nil, nil},
+  {"Code",          nil, iMac, position.twoThirdsLeft(), nil, nil},
+  {"CodeKit",       nil, iMac, position.thirdRight(),    nil, nil},
+  {"IntelliJ IDEA", nil, iMac, position.twoThirdsLeft(), nil, nil},
+  {"MacVim",        nil, iMac, position.twoThirdsLeft(), nil, nil},
+  {"Sublime Text",  nil, iMac, position.twoThirdsLeft(), nil, nil},
+  {"TextMate",      nil, iMac, position.twoThirdsLeft(), nil, nil},
 
   -- Productivity
   {"Calendar",            nil,  iMac,  position.twoThirdsCenter(),  nil,  nil},
@@ -229,11 +231,13 @@ local layoutLaptopOnly = {
   {"Safari Technology Preview", nil, laptop, layout.maximized, nil, nil},
 
   -- Development
-  {"TextMate",     nil, laptop, layout.maximized, nil, nil},
-  {"Sublime Text", nil, laptop, layout.maximized, nil, nil},
-  {"MacVim",       nil, laptop, layout.maximized, nil, nil},
-  {"Atom",         nil, laptop, layout.maximized, nil, nil},
-  {"CodeKit",      nil, laptop, layout.maximized, nil, nil},
+  {"Atom",          nil, laptop, layout.maximized, nil, nil},
+  {"Code",          nil, laptop, layout.maximized, nil, nil},
+  {"CodeKit",       nil, laptop, layout.maximized, nil, nil},
+  {"IntelliJ IDEA", nil, laptop, layout.maximized, nil, nil},
+  {"MacVim",        nil, laptop, layout.maximized, nil, nil},
+  {"Sublime Text",  nil, laptop, layout.maximized, nil, nil},
+  {"TextMate",      nil, laptop, layout.maximized, nil, nil},
 
   -- Productivity
   {"Calendar",            nil,  laptop,  layout.maximized,  nil,  nil},
@@ -286,11 +290,13 @@ local layoutWithThunderboltDisplay = {
   {"Safari Technology Preview", nil, thunderboltDisplays[1], position.twoThirdsLeft(), nil, nil},
 
   -- Development
-  {"TextMate",     nil, thunderboltDisplays[1], position.twoThirdsLeft(), nil, nil},
-  {"Sublime Text", nil, thunderboltDisplays[1], position.twoThirdsLeft(), nil, nil},
-  {"MacVim",       nil, thunderboltDisplays[1], position.twoThirdsLeft(), nil, nil},
-  {"Atom",         nil, thunderboltDisplays[1], position.twoThirdsLeft(), nil, nil},
-  {"CodeKit",      nil, thunderboltDisplays[1], position.thirdRight(),    nil, nil},
+  {"Atom",          nil, thunderboltDisplays[1], position.twoThirdsLeft(), nil, nil},
+  {"Code",          nil, thunderboltDisplays[1], position.twoThirdsLeft(), nil, nil},
+  {"CodeKit",       nil, thunderboltDisplays[1], position.thirdRight(),    nil, nil},
+  {"IntelliJ IDEA", nil, thunderboltDisplays[1], position.twoThirdsLeft(), nil, nil},
+  {"MacVim",        nil, thunderboltDisplays[1], position.twoThirdsLeft(), nil, nil},
+  {"Sublime Text",  nil, thunderboltDisplays[1], position.twoThirdsLeft(), nil, nil},
+  {"TextMate",      nil, thunderboltDisplays[1], position.twoThirdsLeft(), nil, nil},
 
   -- Productivity
   {"Calendar",            nil,  laptop,                  layout.maximized,          nil,  nil},
@@ -343,11 +349,13 @@ local layoutWithTwoThunderboltDisplays = {
   {"Safari Technology Preview", nil, thunderboltDisplays[1], position.twoThirdsLeft(), nil, nil},
 
   -- Development
-  {"TextMate",     nil, thunderboltDisplays[1], position.twoThirdsLeft(), nil, nil},
-  {"Sublime Text", nil, thunderboltDisplays[1], position.twoThirdsLeft(), nil, nil},
-  {"MacVim",       nil, thunderboltDisplays[1], position.twoThirdsLeft(), nil, nil},
-  {"Atom",         nil, thunderboltDisplays[1], position.twoThirdsLeft(), nil, nil},
-  {"CodeKit",      nil, thunderboltDisplays[1], position.thirdRight(),    nil, nil},
+  {"Atom",          nil, thunderboltDisplays[1], position.twoThirdsLeft(), nil, nil},
+  {"Code",          nil, thunderboltDisplays[1], position.twoThirdsLeft(), nil, nil},
+  {"CodeKit",       nil, thunderboltDisplays[1], position.thirdRight(),    nil, nil},
+  {"IntelliJ IDEA", nil, thunderboltDisplays[1], position.twoThirdsLeft(), nil, nil},
+  {"MacVim",        nil, thunderboltDisplays[1], position.twoThirdsLeft(), nil, nil},
+  {"Sublime Text",  nil, thunderboltDisplays[1], position.twoThirdsLeft(), nil, nil},
+  {"TextMate",      nil, thunderboltDisplays[1], position.twoThirdsLeft(), nil, nil},
 
   -- Productivity
   {"Calendar",            nil,  laptop,                  layout.maximized,          nil,  nil},
