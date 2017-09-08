@@ -298,6 +298,10 @@ nnoremap <leader>m :silent !open -a Marked.app '%:p'<cr>
 " Adds a global snippet for ^L to insert a hash rocket
 imap <C-L> <Space>=><Space>
 
+" Format JSON nicely
+command! FormatJSON %!python -m json.tool
+nnoremap =j :FormatJSON<cr>
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Custom syntax highlighing settings
