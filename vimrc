@@ -152,7 +152,7 @@ colorscheme PaperColor
 set list
 set listchars=tab:▸\ ,eol:¬,trail:·
 
-" Status line
+" Always show status line
 set laststatus=2
 
 " Height of the command bar
