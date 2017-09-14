@@ -54,6 +54,8 @@ Plugin 'mattn/gist-vim'
 Plugin 'sjl/gundo.vim'
 " HAML, Sass, SCSS
 Plugin 'tpope/vim-haml'
+" Lightline
+Plugin 'itchyny/lightline.vim'
 " Markdown
 Plugin 'tpope/vim-markdown'
 " Mustache
@@ -139,13 +141,19 @@ nnoremap ; :
 " GUI and colors
 set guifont=EspressoMono-Regular:h14
 set t_Co=256 " use 256 colors
+
 let g:CSApprox_attr_map = { 'bold' : 'bold', 'italic' : '', 'sp' : '' }
+let g:lightline = { 'colorscheme': 'PaperColor' }
+
 set background=dark
 colorscheme PaperColor
 
 " Show invisibles like TextMate
 set list
 set listchars=tab:▸\ ,eol:¬,trail:·
+
+" Status line
+set laststatus=2
 
 " Height of the command bar
 set cmdheight=2
@@ -173,9 +181,10 @@ hi LineNr cterm=NONE ctermfg=241 guifg=#606060
 
 " Highlight cursor line number
 set cursorline
-hi CursorLine cterm=NONE ctermbg=239 guibg=#4e4e4e
-hi clear CursorLineNr
-hi CursorLineNr cterm=NONE ctermfg=247 guifg=#a0a0a0
+highlight CursorLine cterm=NONE ctermbg=239 guibg=#4e4e4e
+highlight clear CursorLineNr
+highlight CursorLineNr cterm=NONE ctermfg=247 guifg=#9e9e9e
+highlight Cursor cterm=NONE ctermbg=253 ctermfg=239 guifg=#4e4e4e guibg=#dadada
 
 " Don't blink cursor
 " set guicursor=a:blinkon0
@@ -226,7 +235,8 @@ set visualbell
 set wildmenu
 set wildmode=list,longest
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.o,*~,*.pyc
-set wildignore+=.git,.hg,.svn,.sass-cache
+set wildignore+=*/.build,*/.cache,*/.git,*/.hg,*/.svn,*/.sass-cache,*/.*-cache
+set wildignore+=*/coverage,*/node_modules
 
 " Use w!! when you forget to use sudo before editing a root-privilege-only
 " file.
