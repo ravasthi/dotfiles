@@ -168,6 +168,7 @@ local layoutImac = {
   {"Safari",                    nil, iMac, position.twoThirdsLeft(), nil, nil},
   {"Google Chrome",             nil, iMac, position.twoThirdsLeft(), nil, nil},
   {"Firefox",                   nil, iMac, position.twoThirdsLeft(), nil, nil},
+  {"FirefoxDeveloperEdition",   nil, iMac, position.twoThirdsLeft(), nil, nil},
   {"WebKit",                    nil, iMac, position.twoThirdsLeft(), nil, nil},
   {"Safari Technology Preview", nil, iMac, position.twoThirdsLeft(), nil, nil},
 
@@ -227,6 +228,7 @@ local layoutLaptopOnly = {
   {"Safari",                    nil, laptop, layout.maximized, nil, nil},
   {"Google Chrome",             nil, laptop, layout.maximized, nil, nil},
   {"Firefox",                   nil, laptop, layout.maximized, nil, nil},
+  {"FirefoxDeveloperEdition",   nil, laptop, layout.maximized, nil, nil},
   {"WebKit",                    nil, laptop, layout.maximized, nil, nil},
   {"Safari Technology Preview", nil, laptop, layout.maximized, nil, nil},
 
@@ -286,6 +288,7 @@ local layoutWithThunderboltDisplay = {
   {"Safari",                    nil, thunderboltDisplays[1], position.twoThirdsLeft(), nil, nil},
   {"Google Chrome",             nil, thunderboltDisplays[1], position.twoThirdsLeft(), nil, nil},
   {"Firefox",                   nil, thunderboltDisplays[1], position.twoThirdsLeft(), nil, nil},
+  {"FirefoxDeveloperEdition",   nil, thunderboltDisplays[1], position.twoThirdsLeft(), nil, nil},
   {"WebKit",                    nil, thunderboltDisplays[1], position.twoThirdsLeft(), nil, nil},
   {"Safari Technology Preview", nil, thunderboltDisplays[1], position.twoThirdsLeft(), nil, nil},
 
@@ -345,6 +348,7 @@ local layoutWithTwoThunderboltDisplays = {
   {"Safari",                    nil, thunderboltDisplays[1], position.twoThirdsLeft(), nil, nil},
   {"Google Chrome",             nil, thunderboltDisplays[1], position.twoThirdsLeft(), nil, nil},
   {"Firefox",                   nil, thunderboltDisplays[1], position.twoThirdsLeft(), nil, nil},
+  {"FirefoxDeveloperEdition",   nil, thunderboltDisplays[1], position.twoThirdsLeft(), nil, nil},
   {"WebKit",                    nil, thunderboltDisplays[1], position.twoThirdsLeft(), nil, nil},
   {"Safari Technology Preview", nil, thunderboltDisplays[1], position.twoThirdsLeft(), nil, nil},
 
