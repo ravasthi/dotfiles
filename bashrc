@@ -183,6 +183,7 @@ if [[ -x /usr/local/bin/pyenv ]]; then
   eval "$(pyenv init -)"
 
   [[ -x /usr/local/bin/pyenv-virtualenv ]] && eval "$(pyenv virtualenv-init -)"
+  pyenv virtualenvwrapper
 fi
 
 # --------------------------------------------------------------------------------------------------
