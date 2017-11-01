@@ -62,9 +62,9 @@ fi
 # Java environment
 # --------------------------------------------------------------------------------------------------
 
-if [[ -d /Library/Java/JavaVirtualMachines/jdk1.8.0_45.jdk/Contents ]]; then
-  export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_45.jdk/Contents/Home
-  export JAVA_ROOT=/Library/Java/JavaVirtualMachines/jdk1.8.0_45.jdk/Contents
+if [[ -d /Library/Java/JavaVirtualMachines/jdk-9.0.1.jdk/Contents ]]; then
+  export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-9.0.1.jdk/Contents/Home
+  export JAVA_ROOT=/Library/Java/JavaVirtualMachines/jdk-9.0.1.jdk/Contents
   export MAVEN_OPTS="-Xmx512m -XX:+HeapDumpOnOutOfMemoryError"
 fi
 
