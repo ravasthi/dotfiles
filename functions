@@ -129,3 +129,16 @@ function showStashPatchAt {
   git stash show -p stash@{$1}
 }
 
+# Measure the elapsed time of the desired command in milliseconds.
+function measuredurationof {
+  bold=$(tput bold)
+  normal=$(tput sgr0)
+  ts=$(gdate +%s%N)
+
+  $@
+
+  tt=$((($(gdate +%s%N) - $ts)/1000000))
+  printf "\n--------------------------------------------------\n"
+  printf "Elapsed time: ${bold}$tt${normal} ms"
+  printf "\n--------------------------------------------------\n"
+}
