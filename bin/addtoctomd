@@ -2,9 +2,10 @@
 
 # Add a table of contents to a markdown file based on the level 1 & 2 headers
 # contained within.
-# From https://jennifermack.net/2015/04/01/a-table-of-contents-generator-for-ulysses-and-markdownxl/
+# Based on
+#   https://jennifermack.net/2015/04/01/a-table-of-contents-generator-for-ulysses-and-markdownxl/
 
-toc = "# Table of Contents {#top}\n\n"
+toc = "<div id=\"toc\">\n# Table of Contents {#top}\n\n"
 newmd = ''
 
 ARGF.each_line do |line|
@@ -14,11 +15,11 @@ ARGF.each_line do |line|
     href = sanitized_heading.tr(' ', '-').downcase
 
     newmd << line.strip + " {\##{href}}\n"
-    newmd << "<a href=\"#top\">Back to top</a>\n"
+    newmd << "<a class=\"back-to-top\" href=\"#top\">Back to top</a>\n"
     toc << '    ' * (line.count('#') - 1) + "* [#{heading}](\##{href})\n"
   else
     newmd << line
   end
 end
 
-puts toc + "\n" + newmd
+puts toc + "</div>\n\n" + newmd
