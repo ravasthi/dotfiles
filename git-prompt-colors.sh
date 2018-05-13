@@ -7,7 +7,14 @@ override_git_prompt_colors() {
     RubyPrompt='$(~/.rvm/bin/rvm-prompt i v)'
   else
     if command -v rbenv > /dev/null; then
-      RubyPrompt='$(rbenv version | sed -e "s/ (set.*$//")'
+      CurrentRuby='$(rbenv version-name)'
+      CurrentGemset='$(rbenv gemset active 2>/dev/null | sed -E "s/([^ ]+)( [^ ]+)*/\1/")'
+
+      if [[ -n $CurrentGemset ]]; then
+        RubyPrompt="$CurrentRuby@$CurrentGemset"
+      else
+        RubyPrompt="$CurrentRuby"
+      fi
     fi
   fi
 

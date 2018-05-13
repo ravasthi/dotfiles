@@ -12,7 +12,7 @@ brew update
 brew upgrade
 
 # Needed for Rails development
-brew install autoconf pkg-config git postgresql qt
+brew install autoconf pkg-config git postgresql qt rbenv rbenv-gemset
 
 # Better versions of Mac built-ins
 brew install bash bash-completion colordiff zsh
