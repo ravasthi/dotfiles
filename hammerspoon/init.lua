@@ -156,6 +156,7 @@ end
 local laptop              = monitors.findScreen(1440, 900)
 local thunderboltDisplays = monitors.sortedScreensBySize(2560, 1440)
 local tv                  = monitors.findScreen(1920, 1080)
+local monitor4k           = monitors.findScreen(1920, 1080)
 local iMac                = monitors.findScreen(2560, 1440)
 
 local layoutImac = {
@@ -182,20 +183,20 @@ local layoutImac = {
   {"TextMate",      nil, iMac, position.twoThirdsLeft(), nil, nil},
 
   -- Productivity
-  {"Calendar",            nil,  iMac,  position.twoThirdsCenter(),  nil,  nil},
-  {"Fantastical",         nil,  iMac,  position.twoThirdsCenter(),  nil,  nil},
-  {"Mail",                nil,  iMac,  position.twoThirdsLeft(),    nil,  nil},
-  {"Nylas Mail",          nil,  iMac,  position.twoThirdsLeft(),    nil,  nil},
-  {"Spark",               nil,  iMac,  position.twoThirdsLeft(),    nil,  nil},
-  {"Outlook",             nil,  iMac,  position.twoThirdsLeft(),    nil,  nil},
-  {"Slack",               nil,  iMac,  position.twoThirdsLeft(),    nil,  nil},
-  {"Socialcast",          nil,  iMac,  position.twoThirdsLeft(),    nil,  nil},
-  {"HipChat",             nil,  iMac,  position.twoThirdsLeft(),    nil,  nil},
-  {"Skype for Business",  nil,  iMac,  position.twoThirdsCenter(),  nil,  nil},
-  {"MindNode",            nil,  iMac,  position.twoThirdsLeft(),    nil,  nil},
-  {"Ulysses",             nil,  iMac,  position.twoThirdsLeft(),    nil,  nil},
-  {"Bear",                nil,  iMac,  position.twoThirdsLeft(),    nil,  nil},
-  {"Things",              nil,  iMac,  position.twoThirdsCenter(),  nil,  nil},
+  {"Calendar",           nil, iMac,  position.twoThirdsCenter(), nil, nil},
+  {"Fantastical",        nil, iMac,  position.twoThirdsCenter(), nil, nil},
+  {"Mail",               nil, iMac,  position.twoThirdsLeft(),   nil, nil},
+  {"Nylas Mail",         nil, iMac,  position.twoThirdsLeft(),   nil, nil},
+  {"Spark",              nil, iMac,  position.twoThirdsLeft(),   nil, nil},
+  {"Outlook",            nil, iMac,  position.twoThirdsLeft(),   nil, nil},
+  {"Slack",              nil, iMac,  position.twoThirdsLeft(),   nil, nil},
+  {"Socialcast",         nil, iMac,  position.twoThirdsLeft(),   nil, nil},
+  {"HipChat",            nil, iMac,  position.twoThirdsLeft(),   nil, nil},
+  {"Skype for Business", nil, iMac,  position.twoThirdsCenter(), nil, nil},
+  {"MindNode",           nil, iMac,  position.twoThirdsLeft(),   nil, nil},
+  {"Ulysses",            nil, iMac,  position.twoThirdsLeft(),   nil, nil},
+  {"Bear",               nil, iMac,  position.twoThirdsLeft(),   nil, nil},
+  {"Things",             nil, iMac,  position.twoThirdsCenter(), nil, nil},
 
   -- Design
   {"Sketch",            nil, iMac, position.twoThirdsLeft(), nil, nil},
@@ -242,20 +243,20 @@ local layoutLaptopOnly = {
   {"TextMate",      nil, laptop, layout.maximized, nil, nil},
 
   -- Productivity
-  {"Calendar",            nil,  laptop,  layout.maximized,  nil,  nil},
-  {"Fantastical",         nil,  laptop,  layout.maximized,  nil,  nil},
-  {"Mail",                nil,  laptop,  layout.maximized,  nil,  nil},
-  {"Nylas Mail",          nil,  laptop,  layout.maximized,  nil,  nil},
-  {"Spark",               nil,  laptop,  layout.maximized,  nil,  nil},
-  {"Outlook",             nil,  laptop,  layout.maximized,  nil,  nil},
-  {"Slack",               nil,  laptop,  layout.maximized,  nil,  nil},
-  {"Socialcast",          nil,  laptop,  layout.maximized,  nil,  nil},
-  {"HipChat",             nil,  laptop,  layout.maximized,  nil,  nil},
-  {"Skype for Business",  nil,  laptop,  layout.maximized,  nil,  nil},
-  {"MindNode",            nil,  laptop,  layout.maximized,  nil,  nil},
-  {"Ulysses",             nil,  laptop,  layout.maximized,  nil,  nil},
-  {"Bear",                nil,  laptop,  layout.maximized,  nil,  nil},
-  {"Things",              nil,  laptop,  layout.maximized,  nil,  nil},
+  {"Calendar",           nil, laptop,  layout.maximized, nil, nil},
+  {"Fantastical",        nil, laptop,  layout.maximized, nil, nil},
+  {"Mail",               nil, laptop,  layout.maximized, nil, nil},
+  {"Nylas Mail",         nil, laptop,  layout.maximized, nil, nil},
+  {"Spark",              nil, laptop,  layout.maximized, nil, nil},
+  {"Outlook",            nil, laptop,  layout.maximized, nil, nil},
+  {"Slack",              nil, laptop,  layout.maximized, nil, nil},
+  {"Socialcast",         nil, laptop,  layout.maximized, nil, nil},
+  {"HipChat",            nil, laptop,  layout.maximized, nil, nil},
+  {"Skype for Business", nil, laptop,  layout.maximized, nil, nil},
+  {"MindNode",           nil, laptop,  layout.maximized, nil, nil},
+  {"Ulysses",            nil, laptop,  layout.maximized, nil, nil},
+  {"Bear",               nil, laptop,  layout.maximized, nil, nil},
+  {"Things",             nil, laptop,  layout.maximized, nil, nil},
 
   -- Design
   {"Sketch",            nil, laptop, layout.maximized, nil, nil},
@@ -276,6 +277,66 @@ local layoutLaptopOnly = {
   {"JIRA",     nil, laptop, layout.maximized,     nil, nil},
   {"Pocket",   nil, laptop, layout.maximized,     nil, nil},
   {"Reeder",   nil, laptop, layout.maximized,     nil, nil}
+}
+
+local layoutWith4kDisplay = {
+  -- Command line
+  {"Terminal", nil, monitor4k, position.halfRight(), nil, nil},
+  {"iTerm",    nil, monitor4k, position.halfRight(), nil, nil},
+  {"iTerm2",   nil, monitor4k, position.halfRight(), nil, nil},
+
+  -- Browsers
+  {"Safari",                    nil, monitor4k, position.fiveSixthsLeft(), nil, nil},
+  {"Google Chrome",             nil, monitor4k, position.fiveSixthsLeft(), nil, nil},
+  {"Firefox",                   nil, monitor4k, position.fiveSixthsLeft(), nil, nil},
+  {"FirefoxDeveloperEdition",   nil, monitor4k, position.fiveSixthsLeft(), nil, nil},
+  {"WebKit",                    nil, monitor4k, position.fiveSixthsLeft(), nil, nil},
+  {"Safari Technology Preview", nil, monitor4k, position.fiveSixthsLeft(), nil, nil},
+
+  -- Development
+  {"Atom",          nil, monitor4k, position.fiveSixthsLeft(), nil, nil},
+  {"Code",          nil, monitor4k, position.fiveSixthsLeft(), nil, nil},
+  {"CodeKit",       nil, monitor4k, position.fiveSixthsLeft(), nil, nil},
+  {"IntelliJ IDEA", nil, monitor4k, position.fiveSixthsLeft(), nil, nil},
+  {"MacVim",        nil, monitor4k, position.fiveSixthsLeft(), nil, nil},
+  {"Sublime Text",  nil, monitor4k, position.fiveSixthsLeft(), nil, nil},
+  {"TextMate",      nil, monitor4k, position.fiveSixthsLeft(), nil, nil},
+
+  -- Productivity
+  {"Calendar",           nil, laptop,    layout.maximized,         nil, nil},
+  {"Fantastical",        nil, laptop,    layout.maximized,         nil, nil},
+  {"Mail",               nil, laptop,    layout.maximized,         nil, nil},
+  {"Nylas Mail",         nil, laptop,    layout.maximized,         nil, nil},
+  {"Spark",              nil, laptop,    layout.maximized,         nil, nil},
+  {"Outlook",            nil, laptop,    layout.maximized,         nil, nil},
+  {"Slack",              nil, laptop,    layout.maximized,         nil, nil},
+  {"Socialcast",         nil, laptop,    layout.maximized,         nil, nil},
+  {"HipChat",            nil, laptop,    layout.maximized,         nil, nil},
+  {"Skype for Business", nil, laptop,    layout.maximized,         nil, nil},
+  {"MindNode",           nil, monitor4k, position.fiveSixthsLeft(), nil, nil},
+  {"Ulysses",            nil, monitor4k, position.fiveSixthsLeft(), nil, nil},
+  {"Bear",               nil, monitor4k, position.fiveSixthsLeft(), nil, nil},
+  {"Things",             nil, laptop,    layout.maximized,         nil, nil},
+
+  -- Design
+  {"Sketch",            nil, monitor4k, position.fiveSixthsLeft(), nil, nil},
+  {"Affinity Designer", nil, monitor4k, position.fiveSixthsLeft(), nil, nil},
+  {"Affinity Photo",    nil, monitor4k, position.fiveSixthsLeft(), nil, nil},
+  {"Suitcase Fusion 6", nil, monitor4k, position.fiveSixthsLeft(), nil, nil},
+  {"Zeplin",            nil, laptop,    layout.maximized,         nil, nil},
+
+  -- Music
+  {"iTunes",  nil, laptop, layout.maximized, nil, nil},
+  {"Rdio",    nil, laptop, layout.maximized, nil, nil},
+  {"Spotify", nil, laptop, layout.maximized, nil, nil},
+
+  -- Misc
+  {"Dash",     nil, monitor4k, position.fiveSixthsLeft(), nil, nil},
+  {"Marked 2", nil, monitor4k, position.halfRight(),    nil, nil},
+  {"nvALT",    nil, monitor4k, position.halfRight(),    nil, nil},
+  {"JIRA",     nil, laptop,    layout.maximized,         nil, nil},
+  {"Pocket",   nil, laptop,    layout.maximized,         nil, nil},
+  {"Reeder",   nil, laptop,    layout.maximized,         nil, nil}
 }
 
 local layoutWithThunderboltDisplay = {
@@ -302,27 +363,27 @@ local layoutWithThunderboltDisplay = {
   {"TextMate",      nil, thunderboltDisplays[1], position.twoThirdsLeft(), nil, nil},
 
   -- Productivity
-  {"Calendar",            nil,  laptop,                  layout.maximized,          nil,  nil},
-  {"Fantastical",         nil,  laptop,                  layout.maximized,          nil,  nil},
-  {"Mail",                nil,  laptop,                  layout.maximized,          nil,  nil},
-  {"Nylas Mail",          nil,  laptop,                  layout.maximized,          nil,  nil},
-  {"Spark",               nil,  laptop,                  layout.maximized,          nil,  nil},
-  {"Outlook",             nil,  laptop,                  layout.maximized,          nil,  nil},
-  {"Slack",               nil,  laptop,                  layout.maximized,          nil,  nil},
-  {"Socialcast",          nil,  laptop,                  layout.maximized,          nil,  nil},
-  {"HipChat",             nil,  laptop,                  layout.maximized,          nil,  nil},
-  {"Skype for Business",  nil,  laptop,                  layout.maximized,          nil,  nil},
-  {"MindNode",            nil,  thunderboltDisplays[1],  position.twoThirdsLeft(),  nil,  nil},
-  {"Ulysses",             nil,  thunderboltDisplays[1],  position.twoThirdsLeft(),  nil,  nil},
-  {"Bear",                nil,  thunderboltDisplays[1],  position.twoThirdsLeft(),  nil,  nil},
-  {"Things",              nil,  laptop,                  layout.maximized,          nil,  nil},
+  {"Calendar",           nil, laptop,                 layout.maximized,         nil, nil},
+  {"Fantastical",        nil, laptop,                 layout.maximized,         nil, nil},
+  {"Mail",               nil, laptop,                 layout.maximized,         nil, nil},
+  {"Nylas Mail",         nil, laptop,                 layout.maximized,         nil, nil},
+  {"Spark",              nil, laptop,                 layout.maximized,         nil, nil},
+  {"Outlook",            nil, laptop,                 layout.maximized,         nil, nil},
+  {"Slack",              nil, laptop,                 layout.maximized,         nil, nil},
+  {"Socialcast",         nil, laptop,                 layout.maximized,         nil, nil},
+  {"HipChat",            nil, laptop,                 layout.maximized,         nil, nil},
+  {"Skype for Business", nil, laptop,                 layout.maximized,         nil, nil},
+  {"MindNode",           nil, thunderboltDisplays[1], position.twoThirdsLeft(), nil, nil},
+  {"Ulysses",            nil, thunderboltDisplays[1], position.twoThirdsLeft(), nil, nil},
+  {"Bear",               nil, thunderboltDisplays[1], position.twoThirdsLeft(), nil, nil},
+  {"Things",             nil, laptop,                 layout.maximized,         nil, nil},
 
   -- Design
-  {"Sketch",             nil,  thunderboltDisplays[1],  position.twoThirdsLeft(),  nil,  nil},
-  {"Affinity Designer",  nil,  thunderboltDisplays[1],  position.twoThirdsLeft(),  nil,  nil},
-  {"Affinity Photo",     nil,  thunderboltDisplays[1],  position.twoThirdsLeft(),  nil,  nil},
-  {"Suitcase Fusion 6",  nil,  thunderboltDisplays[1],  position.twoThirdsLeft(),  nil,  nil},
-  {"Zeplin",             nil,  laptop,                  layout.maximized,          nil,  nil},
+  {"Sketch",            nil, thunderboltDisplays[1], position.twoThirdsLeft(), nil, nil},
+  {"Affinity Designer", nil, thunderboltDisplays[1], position.twoThirdsLeft(), nil, nil},
+  {"Affinity Photo",    nil, thunderboltDisplays[1], position.twoThirdsLeft(), nil, nil},
+  {"Suitcase Fusion 6", nil, thunderboltDisplays[1], position.twoThirdsLeft(), nil, nil},
+  {"Zeplin",            nil, laptop,                 layout.maximized,         nil, nil},
 
   -- Music
   {"iTunes",  nil, laptop, layout.maximized, nil, nil},
@@ -330,12 +391,12 @@ local layoutWithThunderboltDisplay = {
   {"Spotify", nil, laptop, layout.maximized, nil, nil},
 
   -- Misc
-  {"Dash",      nil,  thunderboltDisplays[1],  position.twoThirdsLeft(),  nil,  nil},
-  {"Marked 2",  nil,  thunderboltDisplays[1],  position.thirdRight(),     nil,  nil},
-  {"nvALT",     nil,  thunderboltDisplays[1],  position.thirdRight(),     nil,  nil},
-  {"JIRA",      nil,  laptop,                  layout.maximized,          nil,  nil},
-  {"Pocket",    nil,  laptop,                  layout.maximized,          nil,  nil},
-  {"Reeder",    nil,  laptop,                  layout.maximized,          nil,  nil}
+  {"Dash",     nil, thunderboltDisplays[1], position.twoThirdsLeft(), nil, nil},
+  {"Marked 2", nil, thunderboltDisplays[1], position.thirdRight(),    nil, nil},
+  {"nvALT",    nil, thunderboltDisplays[1], position.thirdRight(),    nil, nil},
+  {"JIRA",     nil, laptop,                 layout.maximized,         nil, nil},
+  {"Pocket",   nil, laptop,                 layout.maximized,         nil, nil},
+  {"Reeder",   nil, laptop,                 layout.maximized,         nil, nil}
 }
 
 local layoutWithTwoThunderboltDisplays = {
@@ -362,20 +423,20 @@ local layoutWithTwoThunderboltDisplays = {
   {"TextMate",      nil, thunderboltDisplays[1], position.twoThirdsLeft(), nil, nil},
 
   -- Productivity
-  {"Calendar",            nil,  laptop,                  layout.maximized,          nil,  nil},
-  {"Fantastical",         nil,  laptop,                  layout.maximized,          nil,  nil},
-  {"Mail",                nil,  laptop,                  layout.maximized,          nil,  nil},
-  {"Nylas Mail",          nil,  laptop,                  layout.maximized,          nil,  nil},
-  {"Spark",               nil,  laptop,                  layout.maximized,          nil,  nil},
-  {"Outlook",             nil,  laptop,                  layout.maximized,          nil,  nil},
-  {"Slack",               nil,  laptop,                  layout.maximized,          nil,  nil},
-  {"Socialcast",          nil,  laptop,                  layout.maximized,          nil,  nil},
-  {"HipChat",             nil,  laptop,                  layout.maximized,          nil,  nil},
-  {"Skype for Business",  nil,  laptop,                  layout.maximized,          nil,  nil},
-  {"MindNode",            nil,  thunderboltDisplays[1],  position.twoThirdsLeft(),  nil,  nil},
-  {"Ulysses",             nil,  thunderboltDisplays[1],  position.twoThirdsLeft(),  nil,  nil},
-  {"Bear",                nil,  thunderboltDisplays[1],  position.twoThirdsLeft(),  nil,  nil},
-  {"Things",              nil,  laptop,                  layout.maximized,          nil,  nil},
+  {"Calendar",           nil, laptop,                 layout.maximized,         nil, nil},
+  {"Fantastical",        nil, laptop,                 layout.maximized,         nil, nil},
+  {"Mail",               nil, laptop,                 layout.maximized,         nil, nil},
+  {"Nylas Mail",         nil, laptop,                 layout.maximized,         nil, nil},
+  {"Spark",              nil, laptop,                 layout.maximized,         nil, nil},
+  {"Outlook",            nil, laptop,                 layout.maximized,         nil, nil},
+  {"Slack",              nil, laptop,                 layout.maximized,         nil, nil},
+  {"Socialcast",         nil, laptop,                 layout.maximized,         nil, nil},
+  {"HipChat",            nil, laptop,                 layout.maximized,         nil, nil},
+  {"Skype for Business", nil, laptop,                 layout.maximized,         nil, nil},
+  {"MindNode",           nil, thunderboltDisplays[1], position.twoThirdsLeft(), nil, nil},
+  {"Ulysses",            nil, thunderboltDisplays[1], position.twoThirdsLeft(), nil, nil},
+  {"Bear",               nil, thunderboltDisplays[1], position.twoThirdsLeft(), nil, nil},
+  {"Things",             nil, laptop,                 layout.maximized,         nil, nil},
 
   -- Design
   {"Sketch",            nil, thunderboltDisplays[1], position.twoThirdsLeft(), nil, nil},
@@ -406,6 +467,10 @@ end
 
 function doLayoutLaptopOnly()
   layout.apply(layoutLaptopOnly)
+end
+
+function doLayoutWith4kDisplay()
+  layout.apply(layoutWith4kDisplay)
 end
 
 function doLayoutWithThunderboltDisplay()
@@ -472,6 +537,7 @@ hotkey.bind({"cmd", "alt"},           "right", nil, pushRight)
 hotkey.bind({"cmd", "alt"},           "down",  nil, pushDown)
 hotkey.bind({"cmd", "alt"},           "left",  nil, pushLeft)
 hotkey.bind({"ctrl", "shift"},        "\\",    nil, doLayoutLaptopOnly)
+hotkey.bind({"ctrl", "shift", "alt"}, "\\",    nil, doLayoutWith4kDisplay)
 hotkey.bind({"ctrl", "alt"},          "\\",    nil, doLayoutWithTwoThunderboltDisplays)
 hotkey.bind({"ctrl"},                 "\\",    nil, doLayoutWithThunderboltDisplay)
 hotkey.bind({"ctrl"},                 "/",     nil, doLayoutWithTv)
