@@ -155,6 +155,11 @@ if [[ -r $HOME/node_modules ]]; then
   export PATH=$HOME/node_modules/.bin:$PATH
 fi
 
+# nodenv #
+if [[ -x /usr/local/bin/nodenv ]]; then
+  eval "$(nodenv init -)"
+fi
+
 # AVN #
 # if [[ -s "$HOME/.avn/bin/avn.sh" ]]; then
 #   source "$HOME/.avn/bin/avn.sh"

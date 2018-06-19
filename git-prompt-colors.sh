@@ -3,7 +3,7 @@
 # These are the defaults from the "Default" theme
 # You just need to override what you want to have changed
 override_git_prompt_colors() {
-  if [ -e ~/.rvm/bin/rvm-prompt ]; then
+  if [[ -e ~/.rvm/bin/rvm-prompt ]]; then
     RubyPrompt='$(~/.rvm/bin/rvm-prompt i v)'
   else
     if command -v rbenv > /dev/null; then
@@ -18,7 +18,14 @@ override_git_prompt_colors() {
     fi
   fi
 
-  NodeVersion=`nvm current | sed 's/v\(.*\)/\1/'`
+  if [[ -d $HOME/.nvm ]]; then
+    NodeVersion=`nvm current | sed 's/v\(.*\)/\1/'`
+  else
+    if [[ -x /usr/local/bin/nodenv ]]; then
+      NodeVersion=`nodenv version | sed -E 's/(^([[:digit:]]+\.?)+)( .*)$/\1/'`
+    fi
+  fi
+
   NodePrompt="${Cyan}(node-${NodeVersion})${ResetColor}"
 
   GIT_PROMPT_THEME_NAME="Richa"

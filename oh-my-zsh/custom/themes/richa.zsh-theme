@@ -13,6 +13,18 @@ ZSH_THEME_GIT_PROMPT_CLEAN=" %{$fg_bold[green]%}%{✔%G%} "
 # For vi mode
 MODE_INDICATOR="%{$fg[green]%}[normal]%{$reset_color%}"
 
+function node_version {
+  if [[ -d $HOME/.nvm ]]; then
+    node_version=`nvm current | sed 's/v\(.*\)/\1/'`
+  else
+    if [[ -x /usr/local/bin/nodenv ]]; then
+      node_version=`nodenv version | sed -E 's/(^([[:digit:]]+\.?)+)( .*)$/\1/'`
+    fi
+  fi
+
+  echo $node_version
+}
+
 function richa_left_prompt {
   # Only show host if not on local machine
   userhost="%{$fg[magenta]%}%n%{$reset_color%}"
@@ -21,10 +33,9 @@ function richa_left_prompt {
     userhost="%{$fg[magenta]%}%n%{$reset_color%} at %{$fg[magenta]%}%m%{$reset_color%}"
   fi
 
-  ruby_prompt_info=$(rvm_prompt_info || rbenv_prompt_info)
+  node_prompt_info="%{$fg[cyan]%}(node-$(node_version))%{$reset_color%}"
 
-  node_version=`nvm current | sed 's/v\(.*\)/\1/'`
-  node_prompt_info="%{$fg[cyan]%}(node-${node_version})%{$reset_color%}"
+  ruby_prompt_info=$(rvm_prompt_info || rbenv_prompt_info)
 
   prompt="
 $userhost in %{$fg[blue]%}%4(~:…:)%3~%{$reset_color%} %{$fg[red]%}$ruby_prompt_info%{$reset_color%} ${node_prompt_info} $(vi_mode_prompt_info)
