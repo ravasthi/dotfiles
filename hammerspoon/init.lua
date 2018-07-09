@@ -197,6 +197,7 @@ local layoutImac = {
   {"Ulysses",            nil, iMac,  position.twoThirdsLeft(),   nil, nil},
   {"Bear",               nil, iMac,  position.twoThirdsLeft(),   nil, nil},
   {"Things",             nil, iMac,  position.twoThirdsCenter(), nil, nil},
+  {"Todoist",            nil, iMac,  position.twoThirdsCenter(), nil, nil},
 
   -- Design
   {"Sketch",            nil, iMac, position.twoThirdsLeft(), nil, nil},
@@ -257,6 +258,7 @@ local layoutLaptopOnly = {
   {"Ulysses",            nil, laptop,  layout.maximized, nil, nil},
   {"Bear",               nil, laptop,  layout.maximized, nil, nil},
   {"Things",             nil, laptop,  layout.maximized, nil, nil},
+  {"Todoist",            nil, laptop,  layout.maximized, nil, nil},
 
   -- Design
   {"Sketch",            nil, laptop, layout.maximized, nil, nil},
@@ -317,6 +319,7 @@ local layoutWith4kDisplay = {
   {"Ulysses",            nil, monitor4k, position.fiveSixthsLeft(), nil, nil},
   {"Bear",               nil, monitor4k, position.fiveSixthsLeft(), nil, nil},
   {"Things",             nil, laptop,    layout.maximized,         nil, nil},
+  {"Todoist",            nil, laptop,    layout.maximized,         nil, nil},
 
   -- Design
   {"Sketch",            nil, monitor4k, position.fiveSixthsLeft(), nil, nil},
@@ -377,6 +380,7 @@ local layoutWithThunderboltDisplay = {
   {"Ulysses",            nil, thunderboltDisplays[1], position.twoThirdsLeft(), nil, nil},
   {"Bear",               nil, thunderboltDisplays[1], position.twoThirdsLeft(), nil, nil},
   {"Things",             nil, laptop,                 layout.maximized,         nil, nil},
+  {"Todoist",            nil, laptop,                 layout.maximized,         nil, nil},
 
   -- Design
   {"Sketch",            nil, thunderboltDisplays[1], position.twoThirdsLeft(), nil, nil},
@@ -437,6 +441,7 @@ local layoutWithTwoThunderboltDisplays = {
   {"Ulysses",            nil, thunderboltDisplays[1], position.twoThirdsLeft(), nil, nil},
   {"Bear",               nil, thunderboltDisplays[1], position.twoThirdsLeft(), nil, nil},
   {"Things",             nil, laptop,                 layout.maximized,         nil, nil},
+  {"Todoist",            nil, laptop,                 layout.maximized,         nil, nil},
 
   -- Design
   {"Sketch",            nil, thunderboltDisplays[1], position.twoThirdsLeft(), nil, nil},
