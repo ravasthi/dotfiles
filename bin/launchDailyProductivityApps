@@ -1,4 +1,4 @@
 #!/bin/sh
 
-killall Things; killall Slack; sleep 1; open /Applications/Things3.app; open /Applications/Slack.app
+killall Todoist; killall Slack; killall 'Google Chrome'; sleep 1; open /Applications/Todoist.app; open /Applications/Slack.app; open '/Applications/Google Chrome.app'
 
