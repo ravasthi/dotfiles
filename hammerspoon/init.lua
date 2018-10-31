@@ -504,6 +504,8 @@ function handleScreenChanges()
   elseif #screens == 2 then
     if thunderboltDisplays then
       doLayoutWithThunderboltDisplay()
+    elseif monitor4k and monitor4k:name() == 'LG HDR 4K' then
+      doLayoutWith4kDisplay()
     elseif tv then
       doLayoutWithTv()
     end
