@@ -198,6 +198,8 @@ local layoutImac = {
   {"Bear",               nil, iMac,  position.twoThirdsLeft(),   nil, nil},
   {"Things",             nil, iMac,  position.twoThirdsCenter(), nil, nil},
   {"Todoist",            nil, iMac,  position.twoThirdsCenter(), nil, nil},
+  {"JIRA",               nil, iMac,  position.twoThirdsCenter(), nil, nil},
+  {"Ora",                nil, iMac,  position.twoThirdsCenter(), nil, nil},
 
   -- Design
   {"Sketch",            nil, iMac, position.twoThirdsLeft(), nil, nil},
@@ -215,7 +217,6 @@ local layoutImac = {
   {"Dash",     nil, iMac, position.twoThirdsLeft(), nil, nil},
   {"Marked 2", nil, iMac, position.thirdRight(),    nil, nil},
   {"nvALT",    nil, iMac, position.thirdRight(),    nil, nil},
-  {"JIRA",     nil, iMac, position.smallCenter(),   nil, nil},
   {"Pocket",   nil, iMac, position.twoThirdsLeft(), nil, nil},
   {"Reeder",   nil, iMac, position.twoThirdsLeft(), nil, nil}
 }
@@ -259,6 +260,8 @@ local layoutLaptopOnly = {
   {"Bear",               nil, laptop,  layout.maximized, nil, nil},
   {"Things",             nil, laptop,  layout.maximized, nil, nil},
   {"Todoist",            nil, laptop,  layout.maximized, nil, nil},
+  {"JIRA",               nil, laptop,  layout.maximized, nil, nil},
+  {"Ora",                nil, laptop,  layout.maximized, nil, nil},
 
   -- Design
   {"Sketch",            nil, laptop, layout.maximized, nil, nil},
@@ -276,7 +279,6 @@ local layoutLaptopOnly = {
   {"Dash",     nil, laptop, layout.maximized,     nil, nil},
   {"Marked 2", nil, laptop, position.halfRight(), nil, nil},
   {"nvALT",    nil, laptop, position.halfRight(), nil, nil},
-  {"JIRA",     nil, laptop, layout.maximized,     nil, nil},
   {"Pocket",   nil, laptop, layout.maximized,     nil, nil},
   {"Reeder",   nil, laptop, layout.maximized,     nil, nil}
 }
@@ -305,28 +307,30 @@ local layoutWith4kDisplay = {
   {"TextMate",      nil, monitor4k, position.fiveSixthsLeft(), nil, nil},
 
   -- Productivity
-  {"Calendar",           nil, laptop,    layout.maximized,         nil, nil},
-  {"Fantastical",        nil, laptop,    layout.maximized,         nil, nil},
-  {"Mail",               nil, laptop,    layout.maximized,         nil, nil},
-  {"Nylas Mail",         nil, laptop,    layout.maximized,         nil, nil},
-  {"Spark",              nil, laptop,    layout.maximized,         nil, nil},
-  {"Outlook",            nil, laptop,    layout.maximized,         nil, nil},
-  {"Slack",              nil, laptop,    layout.maximized,         nil, nil},
-  {"Socialcast",         nil, laptop,    layout.maximized,         nil, nil},
-  {"HipChat",            nil, laptop,    layout.maximized,         nil, nil},
-  {"Skype for Business", nil, laptop,    layout.maximized,         nil, nil},
+  {"Calendar",           nil, laptop,    layout.maximized,          nil, nil},
+  {"Fantastical",        nil, laptop,    layout.maximized,          nil, nil},
+  {"Mail",               nil, laptop,    layout.maximized,          nil, nil},
+  {"Nylas Mail",         nil, laptop,    layout.maximized,          nil, nil},
+  {"Spark",              nil, laptop,    layout.maximized,          nil, nil},
+  {"Outlook",            nil, laptop,    layout.maximized,          nil, nil},
+  {"Slack",              nil, laptop,    layout.maximized,          nil, nil},
+  {"Socialcast",         nil, laptop,    layout.maximized,          nil, nil},
+  {"HipChat",            nil, laptop,    layout.maximized,          nil, nil},
+  {"Skype for Business", nil, laptop,    layout.maximized,          nil, nil},
   {"MindNode",           nil, monitor4k, position.fiveSixthsLeft(), nil, nil},
   {"Ulysses",            nil, monitor4k, position.fiveSixthsLeft(), nil, nil},
   {"Bear",               nil, monitor4k, position.fiveSixthsLeft(), nil, nil},
-  {"Things",             nil, laptop,    layout.maximized,         nil, nil},
-  {"Todoist",            nil, laptop,    layout.maximized,         nil, nil},
+  {"Things",             nil, laptop,    layout.maximized,          nil, nil},
+  {"Todoist",            nil, laptop,    layout.maximized,          nil, nil},
+  {"JIRA",               nil, laptop,    layout.maximized,          nil, nil},
+  {"Ora",                nil, laptop,    layout.maximized,          nil, nil},
 
   -- Design
   {"Sketch",            nil, monitor4k, position.fiveSixthsLeft(), nil, nil},
   {"Affinity Designer", nil, monitor4k, position.fiveSixthsLeft(), nil, nil},
   {"Affinity Photo",    nil, monitor4k, position.fiveSixthsLeft(), nil, nil},
   {"Suitcase Fusion 6", nil, monitor4k, position.fiveSixthsLeft(), nil, nil},
-  {"Zeplin",            nil, laptop,    layout.maximized,         nil, nil},
+  {"Zeplin",            nil, laptop,    layout.maximized,          nil, nil},
 
   -- Music
   {"iTunes",  nil, laptop, layout.maximized, nil, nil},
@@ -337,7 +341,6 @@ local layoutWith4kDisplay = {
   {"Dash",     nil, monitor4k, position.fiveSixthsLeft(), nil, nil},
   {"Marked 2", nil, monitor4k, position.halfRight(),    nil, nil},
   {"nvALT",    nil, monitor4k, position.halfRight(),    nil, nil},
-  {"JIRA",     nil, laptop,    layout.maximized,         nil, nil},
   {"Pocket",   nil, laptop,    layout.maximized,         nil, nil},
   {"Reeder",   nil, laptop,    layout.maximized,         nil, nil}
 }
@@ -381,6 +384,8 @@ local layoutWithThunderboltDisplay = {
   {"Bear",               nil, thunderboltDisplays[1], position.twoThirdsLeft(), nil, nil},
   {"Things",             nil, laptop,                 layout.maximized,         nil, nil},
   {"Todoist",            nil, laptop,                 layout.maximized,         nil, nil},
+  {"JIRA",               nil, laptop,                 layout.maximized,         nil, nil},
+  {"Ora",                nil, laptop,                 layout.maximized,         nil, nil},
 
   -- Design
   {"Sketch",            nil, thunderboltDisplays[1], position.twoThirdsLeft(), nil, nil},
@@ -398,7 +403,6 @@ local layoutWithThunderboltDisplay = {
   {"Dash",     nil, thunderboltDisplays[1], position.twoThirdsLeft(), nil, nil},
   {"Marked 2", nil, thunderboltDisplays[1], position.thirdRight(),    nil, nil},
   {"nvALT",    nil, thunderboltDisplays[1], position.thirdRight(),    nil, nil},
-  {"JIRA",     nil, laptop,                 layout.maximized,         nil, nil},
   {"Pocket",   nil, laptop,                 layout.maximized,         nil, nil},
   {"Reeder",   nil, laptop,                 layout.maximized,         nil, nil}
 }
@@ -442,6 +446,8 @@ local layoutWithTwoThunderboltDisplays = {
   {"Bear",               nil, thunderboltDisplays[1], position.twoThirdsLeft(), nil, nil},
   {"Things",             nil, laptop,                 layout.maximized,         nil, nil},
   {"Todoist",            nil, laptop,                 layout.maximized,         nil, nil},
+  {"JIRA",               nil, laptop,                 layout.maximized,         nil, nil},
+  {"Ora",                nil, laptop,                 layout.maximized,         nil, nil},
 
   -- Design
   {"Sketch",            nil, thunderboltDisplays[1], position.twoThirdsLeft(), nil, nil},
@@ -459,7 +465,6 @@ local layoutWithTwoThunderboltDisplays = {
   {"Dash",     nil, thunderboltDisplays[1], position.twoThirdsLeft(), nil, nil},
   {"Marked 2", nil, thunderboltDisplays[1], position.halfLeft(),      nil, nil},
   {"nvALT",    nil, thunderboltDisplays[1], position.thirdRight(),    nil, nil},
-  {"JIRA",     nil, laptop,                 layout.maximized,         nil, nil},
   {"Pocket",   nil, laptop,                 layout.maximized,         nil, nil},
   {"Reeder",   nil, laptop,                 layout.maximized,         nil, nil}
 }
