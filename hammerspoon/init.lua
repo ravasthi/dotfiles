@@ -103,4 +103,3 @@ hotkey.bind({"ctrl"},                 "/",     nil, layouts.doLayoutWithTv)
 hotkey.bind({"ctrl", "shift"},        "/",     nil, layouts.doLayoutImac)
 hotkey.bind({"cmd", "ctrl", "shift"}, "l",     nil, showConsole)
 hotkey.bind({"cmd", "ctrl", "shift"}, "r",     nil, reloadConfig)
-
