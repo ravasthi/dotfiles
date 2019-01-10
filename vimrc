@@ -182,14 +182,17 @@ set showmatch
 set relativenumber
 set number
 set numberwidth=5
-hi LineNr cterm=NONE ctermfg=241 guifg=#606060
+highlight LineNr cterm=NONE ctermfg=241 guifg=#606060
 
 " Highlight cursor line number
 set cursorline
-highlight CursorLine cterm=NONE ctermbg=239 guibg=#4e4e4e
+augroup vimrc
+  autocmd!
+  autocmd ColorScheme * highlight Cursor cterm=NONE ctermbg=253 ctermfg=233 guifg=#121212 guibg=#dadada
+  autocmd ColorScheme * highlight CursorLine cterm=NONE ctermbg=239 guibg=#4e4e4e
+augroup end
 highlight clear CursorLineNr
 highlight CursorLineNr cterm=NONE ctermfg=247 guifg=#9e9e9e
-highlight Cursor cterm=NONE ctermbg=253 ctermfg=239 guifg=#4e4e4e guibg=#dadada
 
 " Don't blink cursor
 " set guicursor=a:blinkon0

@@ -320,26 +320,32 @@ local layoutWithTwoThunderboltDisplays = {
 local layoutWithTv = layoutLaptopOnly
 
 function rpa.utils.layouts.doLayoutImac()
+  print('✨ Applying layout for iMac.')
   layout.apply(layoutImac)
 end
 
 function rpa.utils.layouts.doLayoutLaptopOnly()
+  print('✨ Applying layout for laptop. ✨')
   layout.apply(layoutLaptopOnly)
 end
 
 function rpa.utils.layouts.doLayoutWith4kDisplay()
+  print('✨ Applying layout for laptop + 4K display. ✨')
   layout.apply(layoutWith4kDisplay)
 end
 
 function rpa.utils.layouts.doLayoutWithThunderboltDisplay()
+  print('✨ Applying layout for laptop + Thunderbolt display. ✨')
   layout.apply(layoutWithThunderboltDisplay)
 end
 
 function rpa.utils.layouts.doLayoutWithTwoThunderboltDisplays()
+  print('✨ Applying layout for laptop + two Thunderbolt displays. ✨')
   layout.apply(layoutWithTwoThunderboltDisplays)
 end
 
 function rpa.utils.layouts.doLayoutWithTv()
+  print('✨ Applying layout for laptop + TV. ✨')
   layout.apply(layoutWithTv)
 end
 
