@@ -1,10 +1,11 @@
 -- Hammerspoon utils - layouts
 -- richa@avasthi.name
 -- Functions to move and size windows.
-local layout   = require "hs.layout"
-local monitors = require "rpa.utils.monitors"
-local position = require "rpa.utils.position"
-local window   = require "hs.window"
+local application = require "hs.application"
+local layout      = require "hs.layout"
+local monitors    = require "rpa.utils.monitors"
+local position    = require "rpa.utils.position"
+local window      = require "hs.window"
 
 local rpa        = rpa or {}
 rpa.utils        = rpa.utils or {}
@@ -319,28 +320,43 @@ local layoutWithTwoThunderboltDisplays = {
 
 local layoutWithTv = layoutLaptopOnly
 
+local spotlightSupportEnabled = false
+
+function rpa.utils.layouts.enableSpotlightSupport()
+  if spotlightSupportEnabled == false then
+    print('Enabling Spotlight support for name searches.')
+    application.enableSpotlightForNameSearches(true)
+    spotlightSupportEnabled = true
+  end
+end
+
 function rpa.utils.layouts.doLayoutImac()
   print('✨ Applying layout for iMac.')
+  rpa.utils.layouts.enableSpotlightSupport()
   layout.apply(layoutImac)
 end
 
 function rpa.utils.layouts.doLayoutLaptopOnly()
   print('✨ Applying layout for laptop. ✨')
+  rpa.utils.layouts.enableSpotlightSupport()
   layout.apply(layoutLaptopOnly)
 end
 
 function rpa.utils.layouts.doLayoutWith4kDisplay()
   print('✨ Applying layout for laptop + 4K display. ✨')
+  rpa.utils.layouts.enableSpotlightSupport()
   layout.apply(layoutWith4kDisplay)
 end
 
 function rpa.utils.layouts.doLayoutWithThunderboltDisplay()
   print('✨ Applying layout for laptop + Thunderbolt display. ✨')
+  rpa.utils.layouts.enableSpotlightSupport()
   layout.apply(layoutWithThunderboltDisplay)
 end
 
 function rpa.utils.layouts.doLayoutWithTwoThunderboltDisplays()
   print('✨ Applying layout for laptop + two Thunderbolt displays. ✨')
+  rpa.utils.layouts.enableSpotlightSupport()
   layout.apply(layoutWithTwoThunderboltDisplays)
 end
 
