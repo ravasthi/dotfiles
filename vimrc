@@ -34,7 +34,7 @@ Plugin 'vim-scripts/AutoTag'
 " Better whitespace
 Plugin 'ntpeters/vim-better-whitespace'
 " BufExplorer
-Plugin 'firat/vim-bufexplorer'
+Plugin 'jlanzarotta/bufexplorer'
 " Bundler integration
 Plugin 'tpope/vim-bundler'
 " Coffeescript
