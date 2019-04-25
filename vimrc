@@ -150,7 +150,7 @@ set t_Co=256 " use 256 colors
 let g:CSApprox_attr_map = { 'bold' : 'bold', 'italic' : '', 'sp' : '' }
 let g:lightline = { 'colorscheme': 'PaperColor' }
 
-set background=dark
+set background=light
 colorscheme PaperColor
 
 " Show invisibles like TextMate
