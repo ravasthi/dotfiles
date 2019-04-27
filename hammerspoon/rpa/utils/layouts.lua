@@ -20,9 +20,9 @@ local iMac                = monitors.findScreen(2560, 1440)
 
 local layoutImac = {
   -- Command line
-  {"iTerm",    nil, iMac, position.thirdRight(), nil, nil},
-  {"iTerm2",   nil, iMac, position.thirdRight(), nil, nil},
-  {"Terminal", nil, iMac, position.thirdRight(), nil, nil},
+  {"iTerm",    nil, iMac, position.halfRight(), nil, nil},
+  {"iTerm2",   nil, iMac, position.halfRight(), nil, nil},
+  {"Terminal", nil, iMac, position.halfRight(), nil, nil},
 
   -- Browsers
   {"Firefox",                   nil, iMac, position.twoThirdsLeft(), nil, nil},
