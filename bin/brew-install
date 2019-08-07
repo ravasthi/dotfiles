@@ -7,7 +7,7 @@ set -e
 # https://github.com/phinze/homebrew-cask/issues/309#issuecomment-32470815
 rm -rf "$(brew --cache)" && mkdir -p "$(brew --cache)"
 
-brew cleanup --force
+brew cleanup
 brew update
 brew upgrade
 
@@ -16,13 +16,13 @@ brew install autoconf pkg-config git postgresql qt rbenv rbenv-gemset
 
 # Better versions of Mac built-ins
 brew install bash bash-completion colordiff zsh
-brew install homebrew/dupes/grep --default-names
+brew install grep
 
 # Editors
-brew install vim macvim
+brew install vim
 
 # More nice-to-haves and various development libraries
-brew install ack curl lua mercurial redis s3cmd sqlite ssh-copy-id \
+brew install ack cmake curl lua mercurial redis s3cmd sqlite ssh-copy-id \
              the_silver_searcher tmux trash tree wget yarn
 
 # Brew casks
