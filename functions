@@ -99,17 +99,37 @@ function getnodealias {
 # (Re)create softlink at $NVM_DIR/bin/node
 function relinknode {
   node_alias=$(getnodealias $1)
+  echo "(Re)creating node executable softlink for $node_alias…"
 
-  trash $NVM_DIR/bin/node
+  nvmbindir=$NVM_DIR/bin
+  if [[ ! -d $nvmbindir ]]; then
+    echo "$nvmbindir doesn't exist. Creating…"
+    mkdir -p $nvmbindir
+  fi
+
+  nodelink=$NVM_DIR/bin/node
+  if [[ -h $nodelink ]]; then
+    echo "Removing current symlink at $nodelink"
+    trash $nodelink
+  fi
+
   ln -s $(nvm which $node_alias) $NVM_DIR/bin/node
+  echo "Done"
 }
 
 # (Re)create softlink at $NVM_DIR/versions/node/$alias
-function relinknodebin {
+function relinknodealias {
   node_alias=$(getnodealias $1)
+  echo "(Re)creating softlink for node version alias $node_alias…"
 
-  trash $NVM_DIR/versions/node/$node_alias
-  ln -s $(dirname $(nvm which $node_alias)) $NVM_DIR/versions/node/$node_alias
+  nodealiaslink=$NVM_DIR/versions/node/$node_alias
+  if [[ -h $nodealiaslink ]]; then
+    echo "Removing current symlink at $nodealiaslink"
+    trash $nodealiaslink
+  fi
+
+  ln -s $(dirname $(nvm which $node_alias)) $nodealiaslink
+  echo "Done"
 }
 
 # Set $NVM_BIN environment variable

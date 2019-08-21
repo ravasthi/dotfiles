@@ -59,6 +59,9 @@ alias gau='git ls-files | tr "\n" " " | xargs git update-index --assume-unchange
 # Revert the index to its original state
 alias gnau='git ls-files | tr "\n" " " | xargs git update-index --no-assume-unchanged'
 
+# Pull all subdirectories one level below the working directory
+alias gpall='find . -mindepth 1 -maxdepth 1 -type d -print -exec git -C {} pull \;'
+
 # ----------[ Django ]----------------------------------------------------------
 alias dj='./manage.py '
 alias djs='./manage.py runserver '
