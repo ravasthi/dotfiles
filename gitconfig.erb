@@ -56,8 +56,8 @@
 [merge]
   tool = opendiff
 
-[includeIf "gitdir:<%= print("Code directory for personal git config (e.g. ~/code): "); STDOUT.flush; STDIN.gets.chomp.sub(/\/\z/, '') %>/"]
+[includeIf "gitdir:<%= print("Glob matching code directory for personal git config (e.g. ~/code/personal/**): "); STDOUT.flush; STDIN.gets.chomp.sub(/\/\z/, '') %>/"]
   path = .gitconfig-personal
 
-[includeIf "gitdir:<%= print("Code directory for work git config (e.g. ~/code/work): "); STDOUT.flush; STDIN.gets.chomp.sub(/\/\z/, '') %>/"]
+[includeIf "gitdir:<%= print("Glob matching code directory for work git config (e.g. ~/code/work/**): "); STDOUT.flush; STDIN.gets.chomp.sub(/\/\z/, '') %>/"]
   path = .gitconfig-work
