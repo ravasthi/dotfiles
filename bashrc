@@ -196,7 +196,7 @@ if [[ -x /usr/local/bin/pyenv ]]; then
 
   if [[ -x /usr/local/bin/pyenv-virtualenv ]]; then
     eval "$(pyenv virtualenv-init -)"
-    pyenv virtualenvwrapper
+    pyenv virtualenvwrapper_lazy
   fi
 fi
 
