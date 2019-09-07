@@ -96,7 +96,7 @@ Plugin 'guns/xterm-color-table.vim'
 " YankRing
 Plugin 'vim-scripts/YankRing.vim'
 " YouCompleteMe
-Plugin 'Valloric/YouCompleteMe'
+Plugin 'ycm-core/YouCompleteMe'
 
 " Required by Vundle
 call vundle#end()
