@@ -7,7 +7,7 @@ PATH = $PATH:/usr/texbin:/Users/ravasthi/.rvm/bin:/Users/ravasthi/.nvm/bin
 #
 #fontName         = "Espresso Mono"
 fontName         = "Input Mono Narrow"
-fontSize         = 14
+fontSize         = 15
 
 # Include abbreviated path in window title
 #   1. Strip out leading /Users/.*/code/ or /Users/.*/dev/
