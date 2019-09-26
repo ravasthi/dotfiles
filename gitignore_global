@@ -55,3 +55,8 @@ tmp/
 ################
 bower_components
 node_modules
+
+# Project settings #
+####################
+.project
+.settings
