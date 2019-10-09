@@ -71,9 +71,11 @@ local layoutImac = {
   {"Zeplin",             nil, iMac, position.twoThirdsLeft(), nil, nil},
 
   -- Music
-  {"iTunes",  nil, iMac, position.halfLeft(),    nil, nil},
-  {"Rdio",    nil, iMac, position.smallCenter(), nil, nil},
-  {"Spotify", nil, iMac, position.smallCenter(), nil, nil},
+  {"iTunes",   nil, iMac, position.halfLeft(),    nil, nil},
+  {"Music",    nil, iMac, position.halfLeft(),    nil, nil},
+  {"TV",       nil, iMac, position.halfLeft(),    nil, nil},
+  {"Podcasts", nil, iMac, position.halfLeft(),    nil, nil},
+  {"Spotify",  nil, iMac, position.smallCenter(), nil, nil},
 
   -- Misc
   {"Dash",     nil, iMac, position.twoThirdsLeft(), nil, nil},
@@ -136,9 +138,11 @@ local layoutLaptopOnly = {
   {"Zeplin",             nil, laptop, layout.maximized, nil, nil},
 
   -- Music
-  {"iTunes",  nil, laptop, layout.maximized, nil, nil},
-  {"Rdio",    nil, laptop, layout.maximized, nil, nil},
-  {"Spotify", nil, laptop, layout.maximized, nil, nil},
+  {"iTunes",   nil, laptop, layout.maximized, nil, nil},
+  {"Music",    nil, laptop, layout.maximized, nil, nil},
+  {"TV",       nil, laptop, layout.maximized, nil, nil},
+  {"Podcasts", nil, laptop, layout.maximized, nil, nil},
+  {"Spotify",  nil, laptop, layout.maximized, nil, nil},
 
   -- Misc
   {"Dash",     nil, laptop, layout.maximized,     nil, nil},
@@ -201,9 +205,11 @@ local layoutWith4kDisplay = {
   {"Zeplin",             nil, laptop,    layout.maximized,         nil, nil},
 
   -- Music
-  {"iTunes",  nil, laptop, layout.maximized, nil, nil},
-  {"Rdio",    nil, laptop, layout.maximized, nil, nil},
-  {"Spotify", nil, laptop, layout.maximized, nil, nil},
+  {"iTunes",   nil, laptop, layout.maximized, nil, nil},
+  {"Movies",   nil, laptop, layout.maximized, nil, nil},
+  {"TV",       nil, laptop, layout.maximized, nil, nil},
+  {"Podcasts", nil, laptop, layout.maximized, nil, nil},
+  {"Spotify",  nil, laptop, layout.maximized, nil, nil},
 
   -- Misc
   {"Dash",     nil, monitor4k, position.fiveSixthsLeft(), nil, nil},
@@ -266,9 +272,11 @@ local layoutWithThunderboltDisplay = {
   {"Zeplin",             nil, laptop,                 layout.maximized,         nil, nil},
 
   -- Music
-  {"iTunes",  nil, laptop, layout.maximized, nil, nil},
-  {"Rdio",    nil, laptop, layout.maximized, nil, nil},
-  {"Spotify", nil, laptop, layout.maximized, nil, nil},
+  {"iTunes",   nil, laptop, layout.maximized, nil, nil},
+  {"Music",    nil, laptop, layout.maximized, nil, nil},
+  {"TV",       nil, laptop, layout.maximized, nil, nil},
+  {"Podcasts", nil, laptop, layout.maximized, nil, nil},
+  {"Spotify",  nil, laptop, layout.maximized, nil, nil},
 
   -- Misc
   {"Dash",     nil, thunderboltDisplays[1], position.twoThirdsLeft(), nil, nil},
@@ -331,9 +339,11 @@ local layoutWithTwoThunderboltDisplays = {
   {"Zeplin",             nil, laptop,                 layout.maximized,         nil, nil},
 
   -- Music
-  {"iTunes",  nil, thunderboltDisplays[2], position.halfRight(), nil, nil},
-  {"Rdio",    nil, thunderboltDisplays[2], position.halfRight(), nil, nil},
-  {"Spotify", nil, thunderboltDisplays[2], position.halfRight(), nil, nil},
+  {"iTunes",   nil, thunderboltDisplays[2], position.halfRight(), nil, nil},
+  {"Music",    nil, thunderboltDisplays[2], position.halfRight(), nil, nil},
+  {"TV",       nil, thunderboltDisplays[2], position.halfRight(), nil, nil},
+  {"Podcasts", nil, thunderboltDisplays[2], position.halfRight(), nil, nil},
+  {"Spotify",  nil, thunderboltDisplays[2], position.halfRight(), nil, nil},
 
   -- Misc
   {"Dash",     nil, thunderboltDisplays[1], position.twoThirdsLeft(), nil, nil},
