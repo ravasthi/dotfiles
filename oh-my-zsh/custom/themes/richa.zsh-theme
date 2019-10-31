@@ -35,7 +35,11 @@ function richa_left_prompt {
 
   node_prompt_info="%{$fg[cyan]%}(node-$(node_version))%{$reset_color%}"
 
-  ruby_prompt_info=$(rvm_prompt_info || rbenv_prompt_info)
+  if [[ -o interactive ]]; then
+    ruby_prompt_info=$(rvm_prompt_info || rbenv_prompt_info)
+  else
+    ruby_prompt_info=""
+  fi
 
   prompt="
 $userhost in %{$fg[blue]%}%4(~:…:)%3~%{$reset_color%} %{$fg[red]%}$ruby_prompt_info%{$reset_color%} ${node_prompt_info} $(vi_mode_prompt_info)

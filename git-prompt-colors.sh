@@ -3,19 +3,23 @@
 # These are the defaults from the "Default" theme
 # You just need to override what you want to have changed
 override_git_prompt_colors() {
-  if [[ -e ~/.rvm/bin/rvm-prompt ]]; then
-    RubyPrompt='$(~/.rvm/bin/rvm-prompt i v)'
-  else
-    if command -v rbenv > /dev/null; then
-      CurrentRuby='$(rbenv version-name)'
-      CurrentGemset='$(rbenv gemset active 2>/dev/null | sed -E "s/([^ ]+)( [^ ]+)*/\1/")'
+  if [[ $- == *i* ]]; then
+    if [[ -e ~/.rvm/bin/rvm-prompt ]]; then
+      RubyPrompt='$(~/.rvm/bin/rvm-prompt i v)'
+    else
+      if command -v rbenv > /dev/null; then
+        CurrentRuby='$(rbenv version-name)'
+        CurrentGemset='$(rbenv gemset active 2>/dev/null | sed -E "s/([^ ]+)( [^ ]+)*/\1/")'
 
-      if [[ -n $CurrentGemset ]]; then
-        RubyPrompt="$CurrentRuby@$CurrentGemset"
-      else
-        RubyPrompt="$CurrentRuby"
+        if [[ -n $CurrentGemset ]]; then
+          RubyPrompt="$CurrentRuby@$CurrentGemset"
+        else
+          RubyPrompt="$CurrentRuby"
+        fi
       fi
     fi
+  else
+    RubyPrompt=""
   fi
 
   if [[ -d $HOME/.nvm ]]; then
