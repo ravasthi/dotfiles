@@ -28,9 +28,9 @@ brew install ack cmake curl jq lua mercurial redis s3cmd sqlite ssh-copy-id \
 # Brew casks
 brew tap Caskroom/cask
 brew cask install --force aerial docker hammerspoon qlcolorcode qlstephen \
-                          qlmarkdown quicklook-json \
-                          qlprettypatch quicklook-csv visual-studio-code \
-                          webpquicklook
+                          qlimagesize qlmarkdown quicklook-json qlvideo \
+                          qlprettypatch quicklook-csv quicklookase \
+                          suspicious-package visual-studio-code webpquicklook
 qlmanage -r
 
 brew linkapps
