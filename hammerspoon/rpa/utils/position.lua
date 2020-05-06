@@ -42,6 +42,15 @@ function rpa.utils.position.halfRight()
   }
 end
 
+function rpa.utils.position.halfWidthCenter()
+  return {
+    x = 0.25,
+    y = 0,
+    w = 0.5,
+    h = 1
+  }
+end
+
 function rpa.utils.position.halfTop()
   return {
     x = 0,
@@ -105,7 +114,7 @@ function rpa.utils.position.thirdLeft()
   }
 end
 
-function rpa.utils.position.thirdMiddle()
+function rpa.utils.position.thirdCenter()
   return {
     x = 1/3,
     y = 0,

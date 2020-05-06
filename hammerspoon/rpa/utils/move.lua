@@ -33,6 +33,11 @@ function rpa.utils.move.halfRight()
   win:moveToUnit(position.halfRight())
 end
 
+function rpa.utils.move.halfWidthCenter()
+  local win = window.focusedWindow()
+  win:moveToUnit(position.halfWidthCenter())
+end
+
 function rpa.utils.move.halfTop()
   local win = window.focusedWindow()
   win:moveToUnit(position.halfTop())
@@ -68,9 +73,9 @@ function rpa.utils.move.thirdLeft()
   win:moveToUnit(position.thirdLeft())
 end
 
-function rpa.utils.move.thirdMiddle()
+function rpa.utils.move.thirdCenter()
   local win = window.focusedWindow()
-  win:moveToUnit(position.thirdMiddle())
+  win:moveToUnit(position.thirdCenter())
 end
 
 function rpa.utils.move.thirdRight()
