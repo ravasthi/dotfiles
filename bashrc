@@ -184,6 +184,10 @@ fi
 # Python
 # --------------------------------------------------------------------------------------------------
 
+if [[ -d /usr/local/opt/python/libexec/bin ]]; then
+  export PATH=/usr/local/opt/python/libexec/bin:$PATH
+fi
+
 if [[ -d ~/.virtualenvs ]]; then
   export WORKON_HOME=$HOME/.virtualenvs
   export PIP_VIRTUALENV_BASE=$WORKON_HOME

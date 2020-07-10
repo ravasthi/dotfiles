@@ -4,6 +4,7 @@ export LANG=en_US.UTF-8
 if [[ -x /usr/libexec/path_helper ]]; then
   eval `/usr/libexec/path_helper -s`
 fi
+# echo "After running path_helper: " $PATH
 
 # --------------------------------------------------------------------------------------------------
 # Autojump
@@ -53,6 +54,7 @@ fi
 # --------------------------------------------------------------------------------------------------
 
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+# echo "After homebrew: " $PATH
 
 # --------------------------------------------------------------------------------------------------
 # Subversion/Mercurial
@@ -74,6 +76,7 @@ if [[ -x /usr/local/bin/jenv ]]; then
   export PATH="$HOME/.jenv/bin:$PATH"
   eval "$(jenv init -)"
 fi
+# echo "After jenv init: " $PATH
 
 # --------------------------------------------------------------------------------------------------
 # MySQL
@@ -82,6 +85,7 @@ fi
 if [[ -d /usr/local/mysql/bin ]]; then
   export PATH=/usr/local/mysql/bin:$PATH
 fi
+# echo "After updating for mysql: " $PATH
 
 # --------------------------------------------------------------------------------------------------
 # Node
@@ -96,6 +100,7 @@ fi
 if [[ -r $HOME/node_modules ]]; then
   export PATH=$HOME/node_modules/.bin:$PATH
 fi
+# echo "After updating for nvm/npm: " $PATH
 
 # nodenv #
 if [[ -x /usr/local/bin/nodenv ]]; then
@@ -114,10 +119,16 @@ fi
 if [[ -x $HOME/pear/bin/pear ]]; then
   export PATH=$HOME/pear/bin:$PATH
 fi
+# echo "After pear: " $PATH
 
 # --------------------------------------------------------------------------------------------------
 # Python
 # --------------------------------------------------------------------------------------------------
+
+if [[ -d /usr/local/opt/python/libexec/bin ]]; then
+  export PATH=/usr/local/opt/python/libexec/bin:$PATH
+fi
+# echo "After python setting: " $PATH
 
 if [[ -d ~/.virtualenvs ]]; then
   export WORKON_HOME=$HOME/.virtualenvs
@@ -146,6 +157,7 @@ if [[ -x /usr/local/bin/pyenv ]]; then
     pyenv virtualenvwrapper_lazy
   fi
 fi
+# echo "After pyenv: " $PATH
 
 # --------------------------------------------------------------------------------------------------
 # Ruby
@@ -155,6 +167,7 @@ fi
 if [[ -d /usr/local/heroku/bin ]]; then
   export PATH="/usr/local/heroku/bin:$PATH"
 fi
+# echo "After heroku: " $PATH
 
 # Rbenv #
 if [[ -d $HOME/.rbenv ]]; then
@@ -167,6 +180,7 @@ if [[ -d $HOME/.rvm ]] && [[ -s "$HOME/.rvm/scripts/rvm" ]]; then
   export PATH=$HOME/.rvm/bin:$PATH
   source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 fi
+# echo "After rvm: " $PATH
 
 # --------------------------------------------------------------------------------------------------
 # Custom scripts
@@ -175,6 +189,7 @@ fi
 if [[ -d $HOME/.bin ]]; then
   export PATH=$HOME/.bin:$PATH
 fi
+# echo "After adding ~/.bin: " $PATH
 
 # --------------------------------------------------------------------------------------------------
 # Misc
