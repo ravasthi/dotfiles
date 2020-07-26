@@ -22,6 +22,7 @@
   unstage = reset HEAD
   bl = blame -C
   amend = commit --amend --reuse-message=HEAD
+  new = !git init && git symbolic-ref HEAD refs/heads/main
 
 [color]
   status = auto
