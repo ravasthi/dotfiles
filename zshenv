@@ -13,5 +13,5 @@ source $HOME/.shellrc/pear.bash
 source $HOME/.shellrc/python.bash
 source $HOME/.shellrc/ruby.bash
 source $HOME/.shellrc/svn-hg.bash
-source $HOME/.shellrc/misc.zsh
+source $HOME/.shellrc/yo-completion.zsh
 source $HOME/.shellrc/custom-scripts.bash
