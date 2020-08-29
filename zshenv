@@ -11,7 +11,7 @@ source $HOME/.shellrc/mysql.bash
 source $HOME/.shellrc/node.bash
 source $HOME/.shellrc/pear.bash
 source $HOME/.shellrc/python.bash
-source $HOME/.shellrc/ruby.bash
+source $HOME/.shellrc/ruby.zsh
 source $HOME/.shellrc/svn-hg.bash
 source $HOME/.shellrc/yo-completion.zsh
 source $HOME/.shellrc/custom-scripts.bash
