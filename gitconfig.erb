@@ -63,7 +63,6 @@
   tool = opendiff
 
 [init]
-  templateDir = ~/.config/git/template/
   defaultBranch = main
 
 [includeIf "gitdir:<%= print("Glob matching code directory for personal git config (e.g. ~/code/personal/**): "); STDOUT.flush; STDIN.gets.chomp.sub(/\/\z/, '') %>/"]
