@@ -1,6 +1,21 @@
 #############
 # Functions #
 
+# ------------------------------------------------
+# System
+# ------------------------------------------------
+# Copy contents of a file to a clipboard
+function cb {
+  if [ -e "$@" ]; then
+    cat "$@" | pbcopy
+  else
+    echo $@ "not found."
+  fi
+}
+
+# Print the contents of a directory after changing into it.
+function cdls { cd "$@"; ls -p; }
+
 # Use Apple's man page viewer if we are on a local console
 if [[ "$TERM_PROGRAM" == "Apple_Terminal" || "$TERM_PROGRAM" == "iTerm.app" ]]; then
   function man {
@@ -8,11 +23,59 @@ if [[ "$TERM_PROGRAM" == "Apple_Terminal" || "$TERM_PROGRAM" == "iTerm.app" ]]; 
   }
 fi
 
+# Mark a file as safe so OS X doesn't ask for confirmation when opening
+function marksafe {
+  echo "Marking items in" $@ "safe."
+  xattr -rd com.apple.quarantine "$@"
+}
+
+# Measure the elapsed time of the desired command in milliseconds.
+function measuredurationof {
+  bold=$(tput bold)
+  normal=$(tput sgr0)
+  ts=$(gdate +%s%N)
+
+  $@
+
+  tt=$((($(gdate +%s%N) - $ts)/1000000))
+  printf "\n--------------------------------------------------\n"
+  printf "Elapsed time: ${bold}$tt${normal} ms"
+  printf "\n--------------------------------------------------\n"
+}
+
+function mute {
+  osascript -e 'set volume 0'
+}
+
+# Show any running processes matching input
+function proc {
+  ps -ef | grep "$1" | grep -v grep
+}
+
+function setbasedir {
+  if [ -z "$1" ]; then
+    WD=$(setbasedirhelper);
+  else
+    WD=$(setbasedirhelper "$1");
+  fi
+  echo "Setting base directory to " $WD
+  export WORKING_BASE_DIRECTORY="$WD"
+}
+
 # Print all valid tmux colors and their names
 function tmuxcolors {
   for i in {0..255} ; do
     printf "\x1b[38;5;${i}mcolour${i}\n"
   done
+}
+
+# ------------------------------------------------
+# Ruby
+# ------------------------------------------------
+function allerb2html {
+  ack -g --nocolor erb | xargs ruby -e 'puts %Q(Converting: #{ARGV.join(", ")})'
+  ack -g --nocolor erb | xargs ruby -e 'ARGV.each { |i| puts %Q(html2haml -e #{i} #{i.sub(/erb$/,"haml")}) }' | bash
+  ack -g --nocolor erb | xargs trash
 }
 
 # Shortcut for `bundle exec rails` and `bundle exec rake`.
@@ -34,55 +97,9 @@ function r() {
   fi
 }
 
-# Like 'bundle exec' for npm
-# Reduces need for `npm install -g`
-n() {
-  `npm bin`/$@
-}
-
-# Copy contents of a file to a clipboard
-function cb {
-  if [ -e "$@" ]; then
-    cat "$@" | pbcopy
-  else
-    echo $@ "not found."
-  fi
-}
-
-# Print the contents of a directory after changing into it.
-function cdls { cd "$@"; ls -p; }
-
-function setbasedir {
-  if [ -z "$1" ]; then
-    WD=$(setbasedirhelper);
-  else
-    WD=$(setbasedirhelper "$1");
-  fi
-  echo "Setting base directory to " $WD
-  export WORKING_BASE_DIRECTORY="$WD"
-}
-
-# Mark a file as safe so OS X doesn't ask for confirmation when opening
-function marksafe {
-  echo "Marking items in" $@ "safe."
-  xattr -rd com.apple.quarantine "$@"
-}
-
-function mute {
-  osascript -e 'set volume 0'
-}
-
-function allerb2html {
-  ack -g --nocolor erb | xargs ruby -e 'puts %Q(Converting: #{ARGV.join(", ")})'
-  ack -g --nocolor erb | xargs ruby -e 'ARGV.each { |i| puts %Q(html2haml -e #{i} #{i.sub(/erb$/,"haml")}) }' | bash
-  ack -g --nocolor erb | xargs trash
-}
-
-# Show any running processes matching input
-function proc {
-  ps -ef | grep "$1" | grep -v grep
-}
-
+# ------------------------------------------------
+# Node
+# ------------------------------------------------
 # Convenience to get node alias argument from command line parameter. Default: "default"
 function getnodealias {
   DEFAULT_ALIAS=default
@@ -94,6 +111,23 @@ function getnodealias {
   fi
 
   echo $node_alias
+}
+
+# Like 'bundle exec' for npm
+# Reduces need for `npm install -g`
+function n() {
+  `npm bin`/$@
+}
+
+# Install a new node version, reinstalling packages from another
+function nvmir {
+  if [[ "$2" ]]; then
+    reinstall_packages_from="--reinstall-packages-from=$2"
+  else
+    reinstall_packages_from=""
+  fi
+
+  nvm install $1 $reinstall_packages_from
 }
 
 # (Re)create softlink at $NVM_DIR/bin/node
@@ -139,6 +173,9 @@ function setnvmbin {
   export NVM_BIN=$(dirname $(nvm which $node_alias))
 }
 
+# ------------------------------------------------
+# Git
+# ------------------------------------------------
 # Show files changed in stash at specified position
 function showStashFilesAt {
   git stash show stash@{$1}
@@ -147,18 +184,4 @@ function showStashFilesAt {
 # Show diff in stash at specified position
 function showStashPatchAt {
   git stash show -p stash@{$1}
-}
-
-# Measure the elapsed time of the desired command in milliseconds.
-function measuredurationof {
-  bold=$(tput bold)
-  normal=$(tput sgr0)
-  ts=$(gdate +%s%N)
-
-  $@
-
-  tt=$((($(gdate +%s%N) - $ts)/1000000))
-  printf "\n--------------------------------------------------\n"
-  printf "Elapsed time: ${bold}$tt${normal} ms"
-  printf "\n--------------------------------------------------\n"
 }
