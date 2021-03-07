@@ -329,6 +329,7 @@ au BufWinEnter,BufRead,BufNewFile Guardfile set filetype=ruby
 au BufWinEnter,BufRead,BufNewFile Vendorfile set filetype=ruby
 au BufWinEnter,BufRead,BufNewFile .powenv set filetype=sh
 au BufWinEnter,BufRead,BufNewFile .powrc set filetype=sh
+au BufWinEnter,BufRead,BufNewFile *.zsh-theme set filetype=zsh
 
 au Filetype gitcommit setlocal spell textwidth=72
 

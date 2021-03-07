@@ -12,6 +12,7 @@ ZSH_THEME_GIT_PROMPT_CLEAN=" %{$fg_bold[green]%}%{✔%G%} "
 
 # For vi mode
 MODE_INDICATOR="%{$fg[green]%}[normal]%{$reset_color%}"
+VI_MODE_RESET_PROMPT_ON_MODE_CHANGE=true
 
 function node_version {
   if [[ -d $HOME/.nvm ]]; then
