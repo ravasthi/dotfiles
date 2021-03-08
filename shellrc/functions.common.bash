@@ -1,12 +1,13 @@
-#############
-# Functions #
+# --------------------------------------------------------------------------------------------------
+# Common functions
+# --------------------------------------------------------------------------------------------------
 
 # ------------------------------------------------
 # System
 # ------------------------------------------------
 # Copy contents of a file to a clipboard
 function cb {
-  if [ -e "$@" ]; then
+  if [[ -e "$@" ]]; then
     cat "$@" | pbcopy
   else
     echo $@ "not found."
@@ -53,7 +54,7 @@ function proc {
 }
 
 function setbasedir {
-  if [ -z "$1" ]; then
+  if [[ -z "$1" ]]; then
     WD=$(setbasedirhelper);
   else
     WD=$(setbasedirhelper "$1");
@@ -81,7 +82,7 @@ function allerb2html {
 # Shortcut for `bundle exec rails` and `bundle exec rake`.
 # If script/rails and script/rake are available, use them instead as they are much
 # faster to execute than `bundle exec`.
-function r() {
+function r {
   if [[ "g|generate|c|console|s|server|db|dbconsole|new" =~ $1 ]]; then
     if [[ -x script/rails ]]; then
       script/rails $@
@@ -104,10 +105,10 @@ function r() {
 function getnodealias {
   DEFAULT_ALIAS=default
 
-  if [[ "$1" ]]; then
-    node_alias=$1
-  else
+  if [[ -z "$1" ]]; then
     node_alias=$DEFAULT_ALIAS
+  else
+    node_alias=$1
   fi
 
   echo $node_alias
@@ -115,16 +116,21 @@ function getnodealias {
 
 # Like 'bundle exec' for npm
 # Reduces need for `npm install -g`
-function n() {
+function n {
   `npm bin`/$@
 }
 
 # Install a new node version, reinstalling packages from another
 function nvmir {
-  if [[ "$2" ]]; then
-    reinstall_packages_from="--reinstall-packages-from=$2"
+  if [[ -z "$1" ]]; then
+    echo "Please supply a version to install."
+    exit 1
   else
-    reinstall_packages_from=""
+    if [[ -z "$2" ]]; then
+      reinstall_packages_from=""
+    else
+      reinstall_packages_from="--reinstall-packages-from=$2"
+    fi
   fi
 
   nvm install $1 $reinstall_packages_from
