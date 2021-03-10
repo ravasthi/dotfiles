@@ -17,7 +17,8 @@ source $HOME/.shellrc/pear.bash
 source $HOME/.shellrc/python.bash
 source $HOME/.shellrc/ruby.bash
 source $HOME/.shellrc/svn-hg.bash
-source $HOME/.shellrc/aliases.bash
+source $HOME/.shellrc/aliases.common.bash
+source $HOME/.shellrc/aliases.shell.bash
 source $HOME/.shellrc/functions.common.bash
 source $HOME/.shellrc/functions.shell.bash
 source $HOME/.shellrc/custom-scripts.bash
