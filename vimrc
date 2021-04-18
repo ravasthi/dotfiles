@@ -3,9 +3,9 @@
 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ugh https://github.com/vim/vim/issues/3117#issuecomment-402622616
-if has('python3')
-  silent! python3 1
-endif
+" if has('python3')
+"   silent! python3 1
+" endif
 
 " Turn off vi-compatibility
 set nocompatible

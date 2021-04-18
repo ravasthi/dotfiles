@@ -50,6 +50,7 @@ config.codekit
 #############
 tmp/
 .sass-cache/
+.husky/
 
 # Dependencies #
 ################
