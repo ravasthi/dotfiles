@@ -11,97 +11,89 @@
 set nocompatible
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Vundle, plugins
+" vim-plug, plugins
 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Required by Vundle
-filetype off
-
-" Setup vundle
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-" Vundle: required
-Plugin 'gmarik/Vundle.vim'
+" Set up vim-plug
+let g:plug_timeout = 120
+call plug#begin('~/.vim/plugged')
 
 " ack.vim using ag as its backend
 " requires 'brew install the_silver_searcher'
-Plugin 'mileszs/ack.vim'
+Plug 'mileszs/ack.vim'
 " Auto-pairs
-Plugin 'jiangmiao/auto-pairs'
+Plug 'jiangmiao/auto-pairs'
 " AutoTag
-Plugin 'vim-scripts/AutoTag'
+Plug 'vim-scripts/AutoTag'
 " Better whitespace
-Plugin 'ntpeters/vim-better-whitespace'
+Plug 'ntpeters/vim-better-whitespace'
 " BufExplorer
-Plugin 'jlanzarotta/bufexplorer'
+Plug 'jlanzarotta/bufexplorer'
 " Bundler integration
-Plugin 'tpope/vim-bundler'
+Plug 'tpope/vim-bundler'
 " Coffeescript
-Plugin 'kchmck/vim-coffee-script'
+Plug 'kchmck/vim-coffee-script'
 " CSApprox
-Plugin 'godlygeek/csapprox'
+Plug 'godlygeek/csapprox'
 " CSSComb
-Plugin 'csscomb/vim-csscomb'
+Plug 'csscomb/vim-csscomb'
 " Editorconfig
-Plugin 'editorconfig/editorconfig-vim'
+Plug 'editorconfig/editorconfig-vim'
 " Fuzzy file search
-Plugin 'kien/ctrlp.vim'
+Plug 'kien/ctrlp.vim'
 " Dash
-Plugin 'rizzatti/dash.vim'
+Plug 'rizzatti/dash.vim'
 " Add your ends
-Plugin 'tpope/vim-endwise'
+Plug 'tpope/vim-endwise'
 " Git integration
-Plugin 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive'
 " Gist
-Plugin 'mattn/gist-vim'
+Plug 'mattn/gist-vim'
 " Gundo
-Plugin 'sjl/gundo.vim'
+Plug 'sjl/gundo.vim'
 " HAML, Sass, SCSS
-Plugin 'tpope/vim-haml'
+Plug 'tpope/vim-haml'
 " Lightline
-Plugin 'itchyny/lightline.vim'
+Plug 'itchyny/lightline.vim'
 " Markdown
-Plugin 'tpope/vim-markdown'
+Plug 'tpope/vim-markdown'
 " Mustache
-Plugin 'juvenn/mustache.vim'
+Plug 'juvenn/mustache.vim'
 " Handlebars
-Plugin 'nono/vim-handlebars'
+Plug 'nono/vim-handlebars'
 " The NERD commenter
-Plugin 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdcommenter'
 " File tree explorer
-Plugin 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 " Rails integration
-Plugin 'tpope/vim-rails'
+Plug 'tpope/vim-rails'
 " Repeat even through mappings
-Plugin 'tpope/vim-repeat'
+Plug 'tpope/vim-repeat'
 " Open a temporary scratch buffer
-Plugin 'duff/vim-scratch'
+Plug 'duff/vim-scratch'
 " Sparkup
-Plugin 'rstacruz/sparkup'
+Plug 'rstacruz/sparkup'
 " Speed-dating
-Plugin 'tpope/vim-speeddating'
+Plug 'tpope/vim-speeddating'
 " Surround things with other things
-Plugin 'tpope/vim-surround'
+Plug 'tpope/vim-surround'
 " Text filtering and alignment
-Plugin 'godlygeek/tabular'
+Plug 'godlygeek/tabular'
 " TagBar (symbol browser like TextMate)
-Plugin 'majutsushi/tagbar'
+Plug 'majutsushi/tagbar'
 " Theme: papercolor
-Plugin 'NLKNguyen/papercolor-theme'
+Plug 'NLKNguyen/papercolor-theme'
 " Tmux syntax
-Plugin 'zaiste/tmux.vim'
+Plug 'zaiste/tmux.vim'
 " xTerm color table (!!)
-Plugin 'guns/xterm-color-table.vim'
+Plug 'guns/xterm-color-table.vim'
 " YankRing
-Plugin 'vim-scripts/YankRing.vim'
+Plug 'vim-scripts/YankRing.vim'
 " YouCompleteMe
-Plugin 'ycm-core/YouCompleteMe'
+Plug 'ycm-core/YouCompleteMe', { 'do': './install.py' }
 
-" Required by Vundle
-call vundle#end()
-filetype plugin indent on
-
+" Required by vim-plug
+call plug#end()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Back to basic settings
