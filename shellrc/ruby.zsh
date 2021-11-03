@@ -3,8 +3,8 @@
 # --------------------------------------------------------------------------------------------------
 
 # Heroku toolbelt #
-if [[ -d /usr/local/heroku/bin ]]; then
-  export PATH="/usr/local/heroku/bin:$PATH"
+if [[ -d $HOMEBREW_PREFIX/heroku/bin ]]; then
+  export PATH="$HOMEBREW_PREFIX/heroku/bin:$PATH"
 fi
 # echo "After heroku: " $PATH
 

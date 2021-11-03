@@ -2,6 +2,6 @@
 # Editor
 # --------------------------------------------------------------------------------------------------
 
-if [[ -x /usr/local/bin/vim ]]; then
-  export EDITOR=/usr/local/bin/vim
+if [[ -x $HOMEBREW_PREFIX/bin/vim ]]; then
+  export EDITOR=$HOMEBREW_PREFIX/bin/vim
 fi

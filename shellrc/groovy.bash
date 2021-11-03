@@ -2,6 +2,6 @@
 # Groovy
 # --------------------------------------------------------------------------------------------------
 
-if [[ -d /usr/local/opt/groovy/libexec ]]; then
-  export GROOVY_HOME=/usr/local/opt/groovy/libexec
+if [[ -d $HOMEBREW_PREFIX/opt/groovy/libexec ]]; then
+  export GROOVY_HOME=$HOMEBREW_PREFIX/opt/groovy/libexec
 fi

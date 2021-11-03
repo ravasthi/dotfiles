@@ -2,6 +2,6 @@
 # Autojump
 # --------------------------------------------------------------------------------------------------
 
-if [[ -f /usr/local/etc/profile.d/autojump.sh ]]; then
-  source /usr/local/etc/profile.d/autojump.sh
+if [[ -f $HOMEBREW_PREFIX/etc/profile.d/autojump.sh ]]; then
+  source $HOMEBREW_PREFIX/etc/profile.d/autojump.sh
 fi

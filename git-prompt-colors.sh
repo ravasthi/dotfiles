@@ -25,7 +25,7 @@ override_git_prompt_colors() {
   if [[ -d $HOME/.nvm ]]; then
     NodeVersion=`nvm current | sed 's/v\(.*\)/\1/'`
   else
-    if [[ -x /usr/local/bin/nodenv ]]; then
+    if [[ -x $HOMEBREW_PREFIX/bin/nodenv ]]; then
       NodeVersion=`nodenv version | sed -E 's/(^([[:digit:]]+\.?)+)( .*)$/\1/'`
     fi
   fi

@@ -38,8 +38,8 @@ TM_LANG = 'en-us'
 
 # Configure git and hg
 #
-TM_HG  = "/usr/local/bin/hg"
-TM_GIT = "/usr/local/bin/git"
+TM_HG  = "$HOMEBREW_PREFIX/bin/hg"
+TM_GIT = "$HOMEBREW_PREFIX/bin/git"
 
 # Ensure "Create Package Declaration" command works with Maven-style projects
 #

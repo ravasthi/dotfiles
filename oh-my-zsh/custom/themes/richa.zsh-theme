@@ -18,7 +18,7 @@ function node_version {
   if [[ -d $HOME/.nvm ]]; then
     node_version=`nvm current | sed 's/v\(.*\)/\1/'`
   else
-    if [[ -x /usr/local/bin/nodenv ]]; then
+    if [[ -x $HOMEBREW_PREFIX/bin/nodenv ]]; then
       node_version=`nodenv version | sed -E 's/(^([[:digit:]]+\.?)+)( .*)$/\1/'`
     fi
   fi

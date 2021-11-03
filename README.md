@@ -22,14 +22,12 @@ These dotfiles support both bash and oh my zsh.
 Some features of the `bashrc` may work only with bash version 4.2 and greater with bash-completion, which is not installed by default on the Mac. Consider using these steps to get it:
 
 * `brew install bash bash-completion`
-* Add `/usr/local/bin/bash` to `/etc/shells`
-* Change your shell to `/usr/local/bin/bash` by running `chsh`
+* Add `$HOMEBREW_PREFIX/bin/bash` to `/etc/shells`
+* Change your shell to `$HOMEBREW_PREFIX/bin/bash` by running `chsh`
 
 For oh my zsh setup, do the following:
 
 * Install [oh my zsh](https://github.com/robbyrussell/oh-my-zsh)
-* Install [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
-* Install the [github gem](https://github.com/defunkt/github-gem)—this is preferred over the `hub` brew.
 
 ### Command-line goodness
 

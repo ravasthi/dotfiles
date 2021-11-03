@@ -2,7 +2,7 @@
 # Java environment
 # --------------------------------------------------------------------------------------------------
 
-if [[ -x /usr/local/bin/jenv ]]; then
+if [[ -x $HOMEBREW_PREFIX/bin/jenv ]]; then
   export PATH="$HOME/.jenv/bin:$PATH"
   eval "$(jenv init -)"
 fi

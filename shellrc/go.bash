@@ -2,7 +2,7 @@
 # Go
 # --------------------------------------------------------------------------------------------------
 
-if [[ -x /usr/local/bin/go ]]; then
+if [[ -x $HOMEBREW_PREFIX/bin/go ]]; then
   mkdir -p $HOME/.go
   export GOPATH=$HOME/.go
 

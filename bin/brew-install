@@ -12,10 +12,10 @@ brew update
 brew upgrade
 
 # Needed for Rails development
-brew install autoconf pkg-config git postgresql qt rbenv rbenv-gemset
+brew install autoconf pkg-config git postgresql qt rbenv rbenv-gemset rbenv-aliases
 
 # Better versions of Mac built-ins
-brew install bash bash-completion colordiff zsh
+brew install bash bash-completion colordiff zsh zsh-syntax-highlighting
 brew install grep
 
 # Editors
@@ -27,10 +27,8 @@ brew install ack cmake curl gh jq lua mercurial redis s3cmd sqlite ssh-copy-id \
 
 # Brew casks
 brew tap Caskroom/cask
-brew cask install --force aerial docker github hammerspoon qlcolorcode \
-                          qlstephen qlimagesize qlmarkdown quicklook-json \
-                          qlvideo qlprettypatch quicklook-csv quicklookase \
-                          suspicious-package visual-studio-code webpquicklook
+brew install --force aerial docker github hammerspoon qlcolorcode \
+                    qlstephen qlimagesize qlmarkdown quicklook-json \
+                    qlvideo qlprettypatch quicklook-csv quicklookase \
+                    suspicious-package visual-studio-code webpquicklook
 qlmanage -r
-
-brew linkapps

@@ -14,7 +14,7 @@ fi
 # echo "After updating for nvm/npm: " $PATH
 
 # nodenv #
-if [[ -x /usr/local/bin/nodenv ]]; then
+if [[ -x $HOMEBREW_PREFIX/bin/nodenv ]]; then
   eval "$(nodenv init -)"
 fi
 
