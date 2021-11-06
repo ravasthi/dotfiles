@@ -15,5 +15,4 @@ export PATH="$HOMEBREW_PREFIX/bin:$HOMEBREW_PREFIX/sbin${PATH+:$PATH}";
 export MANPATH="$HOMEBREW_PREFIX/share/man${MANPATH+:$MANPATH}:";
 export INFOPATH="$HOMEBREW_PREFIX/share/info:${INFOPATH:-}";
 
-
 # echo "After homebrew: " $PATH
