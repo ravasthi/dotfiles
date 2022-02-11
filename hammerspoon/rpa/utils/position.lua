@@ -17,10 +17,10 @@ end
 
 function rpa.utils.position.twoThirdsCenter()
   return {
-    x = 1/6,
-    y = 1/6,
-    w = 2/3,
-    h = 2/3
+    x = 1 / 6,
+    y = 1 / 6,
+    w = 2 / 3,
+    h = 2 / 3
   }
 end
 
@@ -109,25 +109,25 @@ function rpa.utils.position.thirdLeft()
   return {
     x = 0,
     y = 0,
-    w = 1/3,
+    w = 1 / 3,
     h = 1
   }
 end
 
 function rpa.utils.position.thirdCenter()
   return {
-    x = 1/3,
+    x = 1 / 3,
     y = 0,
-    w = 1/3,
+    w = 1 / 3,
     h = 1
   }
 end
 
 function rpa.utils.position.thirdRight()
   return {
-    x = 2/3,
+    x = 2 / 3,
     y = 0,
-    w = 1/3,
+    w = 1 / 3,
     h = 1
   }
 end
@@ -136,17 +136,53 @@ function rpa.utils.position.twoThirdsLeft()
   return {
     x = 0,
     y = 0,
-    w = 2/3,
+    w = 2 / 3,
     h = 1
+  }
+end
+
+function rpa.utils.position.twoThirdsTopLeft()
+  return {
+    x = 0,
+    y = 0,
+    w = 2 / 3,
+    h = 0.5
+  }
+end
+
+function rpa.utils.position.twoThirdsBottomLeft()
+  return {
+    x = 0,
+    y = 0.5,
+    w = 2 / 3,
+    h = 0.5
   }
 end
 
 function rpa.utils.position.twoThirdsRight()
   return {
-    x = 1/3,
+    x = 1 / 3,
     y = 0,
-    w = 2/3,
+    w = 2 / 3,
     h = 1
+  }
+end
+
+function rpa.utils.position.twoThirdsTopRight()
+  return {
+    x = 1 / 3,
+    y = 0,
+    w = 2 / 3,
+    h = 0.5
+  }
+end
+
+function rpa.utils.position.twoThirdsBottomRight()
+  return {
+    x = 1 / 3,
+    y = 0.5,
+    w = 2 / 3,
+    h = 0.5
   }
 end
 
@@ -154,16 +190,16 @@ function rpa.utils.position.fiveSixthsLeft()
   return {
     x = 0,
     y = 0,
-    w = 5/6,
+    w = 5 / 6,
     h = 1
   }
 end
 
 function rpa.utils.position.fiveSixthsRight()
   return {
-    x = 1/6,
+    x = 1 / 6,
     y = 0,
-    w = 5/6,
+    w = 5 / 6,
     h = 1
   }
 end

@@ -67,11 +67,11 @@ local layoutImac = {
   {"Suitcase Fusion", nil, iMac, position.fiveSixthsLeft(), nil, nil},
   {"Zeplin", nil, iMac, position.twoThirdsLeft(), nil, nil},
   -- Music
-  {"iTunes", nil, iMac, position.halfLeft(), nil, nil},
-  {"Music", nil, iMac, position.halfLeft(), nil, nil},
-  {"TV", nil, iMac, position.halfLeft(), nil, nil},
-  {"Podcasts", nil, iMac, position.halfLeft(), nil, nil},
-  {"Spotify", nil, iMac, position.smallCenter(), nil, nil},
+  {"iTunes", nil, iMac, position.halfRight(), nil, nil},
+  {"Music", nil, iMac, position.halfRight(), nil, nil},
+  {"TV", nil, iMac, position.halfRight(), nil, nil},
+  {"Podcasts", nil, iMac, position.halfRight(), nil, nil},
+  {"Spotify", nil, iMac, position.halfRight(), nil, nil},
   -- Misc
   {"Dash", nil, iMac, position.twoThirdsLeft(), nil, nil},
   {"Marked 2", nil, iMac, position.thirdRight(), nil, nil},

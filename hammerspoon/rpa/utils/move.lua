@@ -88,6 +88,16 @@ function rpa.utils.move.twoThirdsLeft()
   win:moveToUnit(position.twoThirdsLeft())
 end
 
+function rpa.utils.move.twoThirdsTopLeft()
+  local win = window.focusedWindow()
+  win:moveToUnit(position.twoThirdsTopLeft())
+end
+
+function rpa.utils.move.twoThirdsBottomLeft()
+  local win = window.focusedWindow()
+  win:moveToUnit(position.twoThirdsBottomLeft())
+end
+
 function rpa.utils.move.twoThirdsRight()
   local win = window.focusedWindow()
   win:moveToUnit(position.twoThirdsRight())
