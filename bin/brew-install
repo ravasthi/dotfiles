@@ -11,14 +11,17 @@ brew cleanup
 brew update
 brew upgrade
 
+# Language version managers
+brew install asdf
+
 # Rails development
-brew install autoconf pkg-config git postgresql qt rbenv rbenv-gemset rbenv-aliases
+brew install autoconf pkg-config git postgresql qt
 
 # JS development
-brew install nvm yarn
+brew install yarn
 
 # Better versions of Mac built-ins
-brew install bash bash-completion colordiff zsh zsh-syntax-highlighting
+brew install bash bash-completion colordiff gnu-sed zsh zsh-syntax-highlighting
 brew install grep
 
 # Editors

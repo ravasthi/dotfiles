@@ -2,12 +2,7 @@
 # Homebrew
 # --------------------------------------------------------------------------------------------------
 
-if [[ -d /opt/homebrew/bin ]]; then
-  export HOMEBREW_PREFIX="/opt/homebrew";
-elif [[ -d /usr/local/bin ]]; then
-  export HOMEBREW_PREFIX="/usr/local";
-fi
-
+export HOMEBREW_PREFIX=$(brew --prefix);
 export HOMEBREW_CELLAR="$HOMEBREW_PREFIX/Cellar";
 export HOMEBREW_REPOSITORY="$HOMEBREW_PREFIX";
 export HOMEBREW_SHELLENV_PREFIX="$HOMEBREW_PREFIX";

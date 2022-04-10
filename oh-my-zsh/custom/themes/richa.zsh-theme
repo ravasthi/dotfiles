@@ -15,12 +15,14 @@ MODE_INDICATOR="%{$fg[green]%}[normal]%{$reset_color%}"
 VI_MODE_RESET_PROMPT_ON_MODE_CHANGE=true
 
 function node_version {
-  if [[ -d $HOME/.nvm ]]; then
-    node_version=`nvm current | sed 's/v\(.*\)/\1/'`
+  if command -v asdf > /dev/null; then
+    node_version=`node -v | gsed -E 's/v(.*)/\1/'`
+  elif [[ -d $HOME/.nvm ]]; then
+    node_version=`nvm current | gsed -E 's/v(.*)/\1/'`
+  elif [[ -x $HOMEBREW_PREFIX/bin/nodenv ]]; then
+      node_version=`nodenv version | gsed -E 's/(^([[:digit:]]+\.?)+)( .*)$/\1/'`
   else
-    if [[ -x $HOMEBREW_PREFIX/bin/nodenv ]]; then
-      node_version=`nodenv version | sed -E 's/(^([[:digit:]]+\.?)+)( .*)$/\1/'`
-    fi
+    node_version=""
   fi
 
   echo $node_version
@@ -37,7 +39,11 @@ function richa_left_prompt {
   node_prompt_info="%{$fg[cyan]%}(node-$(node_version))%{$reset_color%}"
 
   if [[ -o interactive ]]; then
-    ruby_prompt_info=$(rvm_prompt_info || rbenv_prompt_info)
+    if command -v asdf > /dev/null; then
+      ruby_prompt_info=`ruby -v | gsed -E 's/ruby\s+v?(\S+)\s+(.*)$/\1/'`
+    else
+      ruby_prompt_info=$(rvm_prompt_info || rbenv_prompt_info)
+    fi
   else
     ruby_prompt_info=""
   fi

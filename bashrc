@@ -4,6 +4,7 @@ source $HOME/.shellrc/vi-key-bindings.bash
 source $HOME/.shellrc/homebrew.bash
 source $HOME/.shellrc/history-completions.bash
 source $HOME/.shellrc/prompt.bash
+source $HOME/.shellrc/asdf.bash
 source $HOME/.shellrc/autojump.bash
 source $HOME/.shellrc/editor.bash
 source $HOME/.shellrc/git-prompt.bash

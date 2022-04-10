@@ -5,7 +5,7 @@ require 'fileutils'
 require 'rake'
 
 IGNORES = %w[
-  Rakefile README.md LICENSE
+  Rakefile README.md LICENSE node_modules package.json package-lock.json
 ]
 
 task default: :install

@@ -8,11 +8,14 @@ if [[ -d $HOMEBREW_PREFIX/heroku/bin ]]; then
 fi
 # echo "After heroku: " $PATH
 
-# Rbenv #
+# ASDF & Rbenv #
 # Only initialize it for interactive shells
-if [[ -z "$PS1" && -d $HOME/.rbenv ]]; then
+if [[ -z "$PS1" ]]; then
   export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
-  eval "$(rbenv init -)"
+
+  if [[ -d $HOME/.rbenv ]]; then
+    eval "$(rbenv init -)"
+  fi
 fi
 # echo "After rbenv init: " $PATH
 

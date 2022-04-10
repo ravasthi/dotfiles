@@ -6,28 +6,30 @@ override_git_prompt_colors() {
   if [[ $- == *i* ]]; then
     if [[ -e ~/.rvm/bin/rvm-prompt ]]; then
       RubyPrompt='$(~/.rvm/bin/rvm-prompt i v)'
-    else
-      if command -v rbenv > /dev/null; then
-        CurrentRuby='$(rbenv version-name)'
-        CurrentGemset='$(rbenv gemset active 2>/dev/null | sed -E "s/([^ ]+)( [^ ]+)*/\1/")'
+    elif command -v rbenv > /dev/null; then
+      CurrentRuby='$(rbenv version-name)'
+      CurrentGemset='$(rbenv gemset active 2>/dev/null | gsed -E "s/([^ ]+)( [^ ]+)*/\1/")'
 
-        if [[ -n $CurrentGemset ]]; then
-          RubyPrompt="$CurrentRuby@$CurrentGemset"
-        else
-          RubyPrompt="$CurrentRuby"
-        fi
+      if [[ -n $CurrentGemset ]]; then
+        RubyPrompt="$CurrentRuby@$CurrentGemset"
+      else
+        RubyPrompt="$CurrentRuby"
       fi
+    elif command -v asdf > /dev/null; then
+      RubyPrompt=`ruby -v | gsed -E 's/ruby\s+v?(\S+)\s+(.*)$/\1/'`
     fi
   else
     RubyPrompt=""
   fi
 
   if [[ -d $HOME/.nvm ]]; then
-    NodeVersion=`nvm current | sed 's/v\(.*\)/\1/'`
+    NodeVersion=`nvm current | gsed 's/v\(.*\)/\1/'`
+  elif [[ -x $HOMEBREW_PREFIX/bin/nodenv ]]; then
+    NodeVersion=`nodenv version | gsed -E 's/(^([[:digit:]]+\.?)+)( .*)$/\1/'`
+  elif command -v asdf > /dev/null; then
+    NodeVersion=`node -v | gsed -E 's/v(.*)/\1/'`
   else
-    if [[ -x $HOMEBREW_PREFIX/bin/nodenv ]]; then
-      NodeVersion=`nodenv version | sed -E 's/(^([[:digit:]]+\.?)+)( .*)$/\1/'`
-    fi
+    NodeVersion=""
   fi
 
   NodePrompt="${Cyan}(node-${NodeVersion})${ResetColor}"
