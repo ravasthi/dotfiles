@@ -11,7 +11,7 @@ These are the command-line setup and configuration files I use for all my comput
 
 ## Prerequisites
 
-These dotfiles assume a Mac with the Xcode command line tools, rvm or rbenv, and Homebrew with the `bash`, `bash-completion` and `git` brews installed. See *Shell support* for details. In addition, the `highline` gem is required to run the installation script.
+These dotfiles assume a Mac with the Xcode command line tools, rvm, rbenv, or asdf, and Homebrew. See *Shell support* for details. In addition, the `highline` gem is required to run the installation script.
 
 ## What’s in the box
 
@@ -19,7 +19,7 @@ These dotfiles assume a Mac with the Xcode command line tools, rvm or rbenv, and
 
 These dotfiles support both bash and oh my zsh.
 
-Some features of the `bashrc` may work only with bash version 4.2 and greater with bash-completion, which is not installed by default on the Mac. Consider using these steps to get it:
+Some features of the `bashrc` may work only with bash version 4.2 and greater with bash-completion, which may not be installed by default on the Mac, depending on the version of your OS. Consider using these steps to get it:
 
 * `brew install bash bash-completion`
 * Add `$HOMEBREW_PREFIX/bin/bash` to `/etc/shells`
@@ -46,12 +46,7 @@ For oh my zsh setup, do the following:
     * Start vim
     * Run `PlugInstall` in command mode.
 
-* An `edit` shim will launch `mate` (TextMate) if you are on your local Mac, and fall back to `vi` if you are logged in via ssh. This shim is used as the git editor and svn editor.
-
-* The `mp` script (short for "(Text)Mate project") opens a directory in TextMate. But unlike the basic `mate` command, if the directory does not already have a `.tm_properties`, a basic one will be created.
-
-**Please note that the TextMate features of these dotfiles are for TextMate 2, currently in beta.**
-
+* An `edit` shim will launch `code` (Visual Studio Code) if you are on your local Mac, and fall back to `vi` if you are logged in via ssh. This shim is used as the git editor and svn editor.
 ### Ruby stuff
 
 An `r` command serves as a shortcut for running `bundle exec rake` or `bundle exec rails`. It's pretty smart, so `r s` will expand to `bundle exec rails server`, and `r db` will expand to `bundle exec rake db:console`. No more fat-finger mistakes of `rails` vs `rake`!
