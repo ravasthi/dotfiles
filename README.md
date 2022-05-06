@@ -33,7 +33,7 @@ For oh my zsh setup, do the following:
 
 * Shell configuration includes a supercharged prompt for both bash and zsh with ruby and git information, with help from the [zsh-git-prompt](https://github.com/olivierverdier/zsh-git-prompt/blob/master/zshrc.sh) and [bash-git-prompt](https://github.com/magicmonty/bash-git-prompt) plugins. To tweak, change the configuration in `git-prompt-colors.sh` for bash and `oh-my-zsh-custom/themes/richa.zsh-theme` for zsh.
 
-    <img style="max-width: 100%;" src="https://s3.amazonaws.com/f.cl.ly/items/1D300k0E3y3F3U392s3r/Screen%20Shot%202015-12-21%20at%209.59.22%20AM.png" alt="fancy prompt!" />
+    <img style="max-width: 100%;" src="https://p198.p4.n0.cdn.getcloudapp.com/items/xQuq1ZYj/eead0696-3847-466a-928c-2811777a5ac4.png?v=89d36a3d24117abb4f55164abc00dee1" alt="fancy prompt!" />
 
 * [vi command mode](http://www.catonmat.net/blog/bash-vi-editing-mode-cheat-sheet/) is enabled by default in both bash and zsh. To switch back to the default emacs mode, remove the `set -o vi` line in `bashrc` and the `vi-mode` plugin from `zshrc`.
 
