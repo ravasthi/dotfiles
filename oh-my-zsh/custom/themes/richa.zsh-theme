@@ -40,7 +40,7 @@ function richa_left_prompt {
 
   if [[ -o interactive ]]; then
     if command -v asdf > /dev/null; then
-      ruby_prompt_info=`ruby -v | gsed -E 's/ruby\s+v?(\S+)\s+(.*)$/\1/'`
+      ruby_prompt_info=`ruby -v | gsed -E 's/(ruby)\s+v?(\S+)\s+(.*)$/\1-\2/'`
     else
       ruby_prompt_info=$(rvm_prompt_info || rbenv_prompt_info)
     fi

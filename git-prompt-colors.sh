@@ -16,7 +16,7 @@ override_git_prompt_colors() {
         RubyPrompt="$CurrentRuby"
       fi
     elif command -v asdf > /dev/null; then
-      RubyPrompt=`ruby -v | gsed -E 's/ruby\s+v?(\S+)\s+(.*)$/\1/'`
+      RubyPrompt=`ruby -v | gsed -E 's/(ruby)\s+v?(\S+)\s+(.*)$/\1-\2/'`
     fi
   else
     RubyPrompt=""
