@@ -13,7 +13,7 @@ if ! brew ls --versions asdf > /dev/null; then
   export NVM_DIR="$HOME/.nvm"
 
   if [[ -s $NVM_DIR/nvm.sh ]]; then
-    source $NVM_DIR/.nvm/nvm.sh
+    source $NVM_DIR/nvm.sh
   elif [[ -s $HOMEBREW_PREFIX/opt/nvm/nvm.sh ]]; then
     source $HOMEBREW_PREFIX/opt/nvm/nvm.sh
   fi
