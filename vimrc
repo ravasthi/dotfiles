@@ -31,8 +31,6 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'jlanzarotta/bufexplorer'
 " Bundler integration
 Plug 'tpope/vim-bundler'
-" Coffeescript
-Plug 'kchmck/vim-coffee-script'
 " CSApprox
 Plug 'godlygeek/csapprox'
 " CSSComb

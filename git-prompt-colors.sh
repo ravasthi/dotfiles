@@ -22,7 +22,7 @@ override_git_prompt_colors() {
     RubyPrompt=""
   fi
 
-  if [[ -d $HOME/.nvm ]]; then
+  if command -v nvm > /dev/null; then
     NodeVersion=`nvm current | gsed 's/v\(.*\)/\1/'`
   elif [[ -x $HOMEBREW_PREFIX/bin/nodenv ]]; then
     NodeVersion=`nodenv version | gsed -E 's/(^([[:digit:]]+\.?)+)( .*)$/\1/'`
