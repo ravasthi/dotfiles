@@ -239,8 +239,8 @@ highlight LineNr cterm=NONE ctermfg=241 guifg=#606060
 set cursorline
 augroup vimrc
   autocmd!
-  autocmd ColorScheme * highlight Cursor cterm=NONE ctermbg=253 ctermfg=233 guifg=#121212 guibg=#dadada
-  autocmd ColorScheme * highlight CursorLine cterm=NONE ctermbg=239 guibg=#4e4e4e
+  autocmd ColorScheme * highlight Cursor cterm=NONE ctermbg=253 ctermfg=233 guibg=#dadada guifg=#121212
+  autocmd ColorScheme * highlight CursorLine cterm=NONE ctermbg=237 guibg=#3a3a3a
 augroup end
 highlight clear CursorLineNr
 highlight CursorLineNr cterm=NONE ctermfg=247 guifg=#9e9e9e
