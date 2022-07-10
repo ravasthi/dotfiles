@@ -169,6 +169,8 @@ map <leader>vr :source $MYVIMRC<CR>:echoe "vimrc reloaded!"<CR>
 nnoremap ; :
 
 " GUI and colors
+nnoremap <silent> <leader>cls :colorscheme<space>
+
 set guifont=EspressoMono-Regular:h14
 "Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
 "If you're using tmux version 2.2 or later, you can remove the outermost
@@ -348,7 +350,7 @@ set linebreak
 set textwidth=0
 set wrapmargin=0
 
-" Show a vertical line/guard at columns 80 and 10, and change the background
+" Show a vertical line/guard at columns 80 and 100, and change the background
 " past column 120, because that's right out.
 if exists('+colorcolumn')
   let &colorcolumn="80,100,".join(range(120,999),",")
@@ -399,9 +401,6 @@ nnoremap <silent> <leader>f :Ack<space>
 let g:bufExplorerSortBy = 'fullpath'   " Sort by full file path name.
 let g:bufExplorerShowRelativePath = 1  " Show relative paths.
 let g:bufExplorerSplitOutPathName = 0  " Don't split the path and file
-
-" Colors
-nnoremap <silent> <leader>cls :colorscheme<space>
 
 " CtrlP
 let g:ctrlp_map = '<leader>p'         " command to invoke the plugin
