@@ -135,9 +135,6 @@ call plug#end()
 " Back to basic settings
 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Turn on syntax highlighting
-syntax enable
-
 " Secure against modelines exploits
 set modelines=0
 
@@ -190,17 +187,20 @@ if (empty($TMUX))
   if (has("termguicolors") && ($TERM_PROGRAM != 'Apple_Terminal'))
     set termguicolors
   else
-    set t_Co=256
+    " set t_Co=256
     " let base16colorspace=256
   endif
 endif
 
 let g:CSApprox_attr_map = { 'bold' : 'bold', 'italic' : '', 'sp' : '' }
-let g:lightline = { 'colorscheme': 'base16' }
+let g:lightline = { 'colorscheme': 'solarized' }
 
 set background=dark
-colorscheme base16-twilight
+colorscheme base16-kanagawa
 " autocmd vimenter * ++nested colorscheme gruvbox
+
+" Turn on syntax highlighting
+syntax enable
 
 " Show invisibles like TextMate
 set list
