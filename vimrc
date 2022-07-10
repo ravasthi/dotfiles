@@ -79,8 +79,46 @@ Plug 'tpope/vim-surround'
 Plug 'godlygeek/tabular'
 " TagBar (symbol browser like TextMate)
 Plug 'majutsushi/tagbar'
+" Theme: aquarium
+Plug 'FrenzyExists/aquarium-vim'
+" Theme: aurora
+Plug 'ray-x/aurora'
+" Theme: ayu
+Plug 'ayu-theme/ayu-vim'
+" Theme: base16
+Plug 'base16-project/base16-vim'
+" Theme: catppuccin
+Plug 'catppuccin/vim'
+" Theme: darcula
+Plug 'doums/darcula'
+" Theme: elly
+Plug 'ulwlu/elly.vim'
+" Theme: everforest
+Plug 'sainnhe/everforest'
+" Theme: gruvbox
+Plug 'morhetz/gruvbox'
+" Theme: gruvbox-material
+Plug 'sainnhe/gruvbox-material'
+" Theme: iceberg
+Plug 'cocopon/iceberg.vim'
+" Theme: lucario
+Plug 'raphamorim/lucario'
+" Theme: melange
+Plug 'savq/melange'
+" Theme: monokai-pro
+Plug 'phanviet/vim-monokai-pro'
+" Theme: onedark
+Plug 'joshdick/onedark.vim'
+" Theme: sonokai
+Plug 'sainnhe/sonokai'
+" Theme: srcery
+Plug 'srcery-colors/srcery-vim'
 " Theme: papercolor
 Plug 'NLKNguyen/papercolor-theme'
+" Theme: vim-deep-space
+Plug 'tyrannicaltoucan/vim-deep-space'
+" Theme: zenbones
+Plug 'mcchrish/zenbones.nvim'
 " Tmux syntax
 Plug 'zaiste/tmux.vim'
 " xTerm color table (!!)
@@ -135,13 +173,33 @@ nnoremap ; :
 
 " GUI and colors
 set guifont=EspressoMono-Regular:h14
-set t_Co=256 " use 256 colors
+"Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
+"If you're using tmux version 2.2 or later, you can remove the outermost
+"$TMUX check and use tmux's 24-bit color support
+"(see < http://sunaku.github.io/tmux-24bit-color.html#usage > for more information.)
+if (empty($TMUX))
+  if (has("nvim"))
+    "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
+    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+  endif
+  "For Neovim > 0.1.5 and Vim > patch 7.4.1799
+  "< https://github.com/vim/vim/commit/61be73bb0f965a895bfb064ea3e55476ac175162 >
+  "Based on Vim patch 7.4.1770 (`guicolors` option)
+  "< https://github.com/vim/vim/commit/8a633e3427b47286869aa4b96f2bfc1fe65b25cd >
+  "< https://github.com/neovim/neovim/wiki/Following-HEAD#20160511 >
+  if (has("termguicolors") && ($TERM_PROGRAM != 'Apple_Terminal'))
+    set termguicolors
+  else
+    set t_Co=256
+  endif
+endif
 
 let g:CSApprox_attr_map = { 'bold' : 'bold', 'italic' : '', 'sp' : '' }
-let g:lightline = { 'colorscheme': 'PaperColor' }
+let g:lightline = { 'colorscheme': 'solarized' }
 
-set background=light
-colorscheme PaperColor
+set background=dark
+colorscheme base16-twilight
+" autocmd vimenter * ++nested colorscheme gruvbox
 
 " Show invisibles like TextMate
 set list
