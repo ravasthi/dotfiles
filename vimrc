@@ -191,11 +191,12 @@ if (empty($TMUX))
     set termguicolors
   else
     set t_Co=256
+    " let base16colorspace=256
   endif
 endif
 
 let g:CSApprox_attr_map = { 'bold' : 'bold', 'italic' : '', 'sp' : '' }
-let g:lightline = { 'colorscheme': 'solarized' }
+let g:lightline = { 'colorscheme': 'base16' }
 
 set background=dark
 colorscheme base16-twilight
