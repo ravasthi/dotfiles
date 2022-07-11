@@ -192,16 +192,25 @@ if (empty($TMUX))
     set termguicolors
   elseif ($TERM == 'xterm-256color')
     set t_Co=256
-    " let base16colorspace=256
   endif
 endif
 
 let g:CSApprox_attr_map = { 'bold' : 'bold', 'italic' : '', 'sp' : '' }
 let g:lightline = { 'colorscheme': 'base16' }
 
-set background=dark
-colorscheme base16-kanagawa
-" autocmd vimenter * ++nested colorscheme gruvbox
+if exists('$BASE16_THEME') && (!exists('g:colors_name') || g:colors_name != 'base16-$BASE16_THEME')
+  let base16colorspace=256
+  colorscheme base16-$BASE16_THEME
+" if full color is supported
+elseif &termguicolors
+  set background=dark
+  colorscheme base16-darkmoss
+" fall back on something that works
+else
+  set background=dark
+  colorscheme gruvbox
+  autocmd vimenter * ++nested colorscheme gruvbox
+endif
 
 " Turn on syntax highlighting
 syntax enable
