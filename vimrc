@@ -53,6 +53,8 @@ Plug 'sjl/gundo.vim'
 Plug 'tpope/vim-haml'
 " Lightline
 Plug 'itchyny/lightline.vim'
+" Base16 Lightline
+Plug 'daviesjamie/vim-base16-lightline'
 " Markdown
 Plug 'tpope/vim-markdown'
 " Mustache
@@ -195,7 +197,7 @@ if (empty($TMUX))
 endif
 
 let g:CSApprox_attr_map = { 'bold' : 'bold', 'italic' : '', 'sp' : '' }
-let g:lightline = { 'colorscheme': 'solarized' }
+let g:lightline = { 'colorscheme': 'base16' }
 
 set background=dark
 colorscheme base16-kanagawa
