@@ -188,8 +188,8 @@ if (empty($TMUX))
   "< https://github.com/neovim/neovim/wiki/Following-HEAD#20160511 >
   if (has("termguicolors") && ($TERM_PROGRAM != 'Apple_Terminal'))
     set termguicolors
-  else
-    " set t_Co=256
+  elseif ($TERM == 'xterm-256color')
+    set t_Co=256
     " let base16colorspace=256
   endif
 endif
