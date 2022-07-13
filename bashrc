@@ -6,6 +6,7 @@ source $HOME/.shellrc/history-completions.bash
 source $HOME/.shellrc/prompt.bash
 source $HOME/.shellrc/asdf.bash
 source $HOME/.shellrc/autojump.bash
+source $HOME/.shellrc/base16-shell.bash
 source $HOME/.shellrc/editor.bash
 source $HOME/.shellrc/git-prompt.bash
 source $HOME/.shellrc/go.bash

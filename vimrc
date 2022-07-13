@@ -196,20 +196,22 @@ if (empty($TMUX))
 endif
 
 let g:CSApprox_attr_map = { 'bold' : 'bold', 'italic' : '', 'sp' : '' }
-let g:lightline = { 'colorscheme': 'base16' }
 
 if exists('$BASE16_THEME') && (!exists('g:colors_name') || g:colors_name != 'base16-$BASE16_THEME')
   let base16colorspace=256
   colorscheme base16-$BASE16_THEME
+  let g:lightline = { 'colorscheme': 'base16' }
 " if full color is supported
 elseif &termguicolors
   set background=dark
   colorscheme base16-darkmoss
+  let g:lightline = { 'colorscheme': 'base16' }
 " fall back on something that works
 else
   set background=dark
   colorscheme gruvbox
   autocmd vimenter * ++nested colorscheme gruvbox
+  let g:lightline = { 'colorscheme': 'solarized' }
 endif
 
 " Turn on syntax highlighting
