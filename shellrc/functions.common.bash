@@ -191,3 +191,24 @@ function showStashFilesAt {
 function showStashPatchAt {
   git stash show -p stash@{$1}
 }
+
+
+# ------------------------------------------------
+# Base16 theme assistant
+# ------------------------------------------------
+function setBase16Theme {
+  theme_name=$1
+  base16_shell_path="$HOME/.config/base16-shell"
+
+  if [[ -z $theme_name ]]; then
+    echo 'Please provide a theme name.'
+    return 1
+  fi
+
+  script_path="$base16_shell_path/scripts/$theme_name.sh"
+  if [[ -f $script_path ]]; then
+    echo "Setting terminal colorscheme to $theme_name."
+    echo "Sourcing $script_path…"
+    source $script_path
+  fi
+}
