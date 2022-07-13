@@ -65,6 +65,8 @@ Plug 'nono/vim-handlebars'
 Plug 'scrooloose/nerdcommenter'
 " File tree explorer
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+" NPM filetypes
+Plug 'rhysd/npm-filetypes.vim'
 " Rails integration
 Plug 'tpope/vim-rails'
 " Repeat even through mappings
@@ -389,6 +391,7 @@ nnoremap =j :FormatJSON<cr>
 " Custom syntax highlighing settings
 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+au BufWinEnter,BufRead,BufNewFile .npmrc-* set filetype=npmrc
 au BufWinEnter,BufRead,BufNewFile Guardfile set filetype=ruby
 au BufWinEnter,BufRead,BufNewFile Vendorfile set filetype=ruby
 au BufWinEnter,BufRead,BufNewFile .powenv set filetype=sh
