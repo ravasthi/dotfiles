@@ -1,0 +1,53 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require 'optparse'
+
+arguments = ARGV
+
+optparse = OptionParser.new do |opts|
+  # Set the banner displayed on the help screen
+  opts.banner = 'Usage: git-ssh-to-https [root URL]'
+
+  opts.on('-h', '--help', 'Display this message') do
+    puts opts
+    exit
+  end
+end
+
+begin
+  optparse.parse!(arguments)
+rescue OptionParser::ParseError => e
+  puts 'ParseError!'
+  puts e
+end
+
+begin
+  case arguments.length
+  when 1
+    root_url = if arguments[0][-1] == '/'
+                 arguments[0].chop
+               else
+                 arguments[0]
+               end
+    puts "Root URL: #{root_url}"
+  else
+    raise ArgumentError, 'Root URL required'
+  end
+
+  current_remotes = `git remote -v`
+
+  %r{^(\S+)\s+.+/([^\s/]+/[^/]+).git}.match(current_remotes.split('\\n')[0]) do |repo|
+    remote = repo[1]
+    new_url = "#{root_url}/#{repo[2]}"
+    puts "Changing remote #{remote} to #{new_url}"
+    `git remote set-url #{remote} #{new_url}`
+    puts 'Success!'
+    puts `git remote -v`
+  end
+
+# exec "open -a safari 'https://encrypted.google.com/search?q=nfl+#{year}+week+#{week}+picks+against+the+spread&ie=utf-8&oe=utf-8'"
+rescue StandardError => e
+  puts e.message
+  exit
+end
