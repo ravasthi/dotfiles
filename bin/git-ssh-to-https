@@ -36,8 +36,9 @@ begin
   end
 
   current_remotes = `git remote -v`
+  remote_re = %r{^(\S+)\s+.+/([^\s/]+/[^/]+)(.git)?\s+\(}
 
-  %r{^(\S+)\s+.+/([^\s/]+/[^/]+).git}.match(current_remotes.split('\\n')[0]) do |repo|
+  remote_re.match(current_remotes.lines.first) do |repo|
     remote = repo[1]
     new_url = "#{root_url}/#{repo[2]}"
     puts "Changing remote #{remote} to #{new_url}"
