@@ -45,8 +45,6 @@ begin
     puts 'Success!'
     puts `git remote -v`
   end
-
-# exec "open -a safari 'https://encrypted.google.com/search?q=nfl+#{year}+week+#{week}+picks+against+the+spread&ie=utf-8&oe=utf-8'"
 rescue StandardError => e
   puts e.message
   exit
