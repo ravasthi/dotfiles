@@ -72,6 +72,7 @@ alias djdbsh='./manage.py dbshell'
 
 # ----------[ grep ]------------------------------------------------------------
 alias grep='grep --color=always'
+alias grepnc='grep --color=never'
 
 # ----------[ Node ]------------------------------------------------------------
 alias backup-npmrc='mv ~/.npmrc ~/.npmrc.bak'
