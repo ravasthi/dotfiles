@@ -33,7 +33,7 @@ brew install ack cmake curl gh jq lua mercurial redis s3cmd sqlite ssh-copy-id \
 
 # Brew casks
 brew tap Caskroom/cask
-brew install --force aerial docker github hammerspoon qlcolorcode \
+brew install --force aerial docker github hammerspoon iterm2 qlcolorcode \
                     qlstephen qlimagesize qlmarkdown quicklook-json \
                     qlvideo qlprettypatch quicklook-csv quicklookase \
                     suspicious-package visual-studio-code webpquicklook

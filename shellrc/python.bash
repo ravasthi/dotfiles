@@ -10,7 +10,7 @@ fi
 if [[ -d ~/.virtualenvs ]]; then
   export WORKON_HOME=$HOME/.virtualenvs
   export PIP_VIRTUALENV_BASE=$WORKON_HOME
-  export VIRTUALENVWRAPPER_PYTHON=$HOMEBREW_PREFIX/bin/python3
+  export VIRTUALENVWRAPPER_PYTHON=$HOMEBREW_PREFIX/opt/python/libexec/bin/python
   export VIRTUALENV_USE_DISTRIBUTE=true
   export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
   [[ -f $HOMEBREW_PREFIX/bin/virtualenvwrapper.sh ]] && . $HOMEBREW_PREFIX/bin/virtualenvwrapper.sh

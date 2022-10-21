@@ -16,6 +16,7 @@ local laptop = monitors.findScreen(1440, 900)
 local thunderboltDisplays = monitors.sortedScreensBySize(2560, 1440)
 local tv = monitors.findScreen(1920, 1080)
 local monitor4k = monitors.findScreen(1920, 1080)
+local monitorExtraWide = monitors.findScreen(3440, 1440)
 local iMac = monitors.findScreen(2560, 1440)
 
 local layoutImac = {
@@ -142,6 +143,68 @@ local layoutLaptopOnly = {
   {"Reeder", nil, laptop, layout.maximized, nil, nil}
 }
 
+local layoutWithExtraWideDisplay = {
+  -- Command line
+  {"iTerm", nil, monitorExtraWide, position.halfRight(), nil, nil},
+  {"iTerm2", nil, monitorExtraWide, position.halfRight(), nil, nil},
+  {"Terminal", nil, monitorExtraWide, position.halfRight(), nil, nil},
+  -- Browsers
+  {"Firefox", nil, monitorExtraWide, position.fiveSixthsLeft(), nil, nil},
+  {"FirefoxDeveloperEdition", nil, monitorExtraWide, position.twoThirdsLeft(), nil, nil},
+  {"Google Chrome", nil, monitorExtraWide, position.fiveSixthsLeft(), nil, nil},
+  {"Safari Technology Preview", nil, monitorExtraWide, position.twoThirdsLeft(), nil, nil},
+  {"Safari", nil, monitorExtraWide, position.twoThirdsLeft(), nil, nil},
+  {"WebKit", nil, monitorExtraWide, position.twoThirdsLeft(), nil, nil},
+  -- Development
+  {"Atom", nil, monitorExtraWide, position.twoThirdsLeft(), nil, nil},
+  {"Code", nil, monitorExtraWide, position.twoThirdsLeft(), nil, nil},
+  {"CodeKit", nil, monitorExtraWide, position.twoThirdsLeft(), nil, nil},
+  {"IntelliJ IDEA", nil, monitorExtraWide, position.twoThirdsLeft(), nil, nil},
+  {"MacVim", nil, monitorExtraWide, position.twoThirdsLeft(), nil, nil},
+  {"Sublime Text", nil, monitorExtraWide, position.twoThirdsLeft(), nil, nil},
+  {"TextMate", nil, monitorExtraWide, position.twoThirdsLeft(), nil, nil},
+  -- Productivity
+  {"Bear", nil, monitorExtraWide, position.twoThirdsLeft(), nil, nil},
+  {"Calendar", nil, laptop, layout.maximized, nil, nil},
+  {"Fantastical", nil, laptop, layout.maximized, nil, nil},
+  {"HipChat", nil, laptop, layout.maximized, nil, nil},
+  {"Jira", nil, laptop, layout.maximized, nil, nil},
+  {"Kiwi for Gmail", nil, laptop, layout.maximized, nil, nil},
+  {"Mail", nil, laptop, layout.maximized, nil, nil},
+  {"Microsoft Excel", nil, monitorExtraWide, position.twoThirdsLeft(), nil, nil},
+  {"Microsoft PowerPoint", nil, monitorExtraWide, position.twoThirdsLeft(), nil, nil},
+  {"Microsoft Word", nil, monitorExtraWide, position.twoThirdsLeft(), nil, nil},
+  {"MindNode", nil, monitorExtraWide, position.twoThirdsLeft(), nil, nil},
+  {"Nylas Mail", nil, laptop, layout.maximized, nil, nil},
+  {"Ora", nil, laptop, layout.maximized, nil, nil},
+  {"Outlook", nil, laptop, layout.maximized, nil, nil},
+  {"Slack", nil, laptop, layout.maximized, nil, nil},
+  {"Spark", nil, laptop, layout.maximized, nil, nil},
+  {"Superhuman", nil, laptop, layout.maximized, nil, nil},
+  {"Things", nil, laptop, layout.maximized, nil, nil},
+  {"Todoist", nil, laptop, layout.maximized, nil, nil},
+  {"Ulysses", nil, monitorExtraWide, position.twoThirdsLeft(), nil, nil},
+  -- Design
+  {"Affinity Designer", nil, monitorExtraWide, position.twoThirdsLeft(), nil, nil},
+  {"Affinity Photo", nil, monitorExtraWide, position.twoThirdsLeft(), nil, nil},
+  {"Affinity Publisher", nil, monitorExtraWide, position.twoThirdsLeft(), nil, nil},
+  {"Sketch", nil, monitorExtraWide, position.twoThirdsLeft(), nil, nil},
+  {"Suitcase Fusion", nil, monitorExtraWide, position.twoThirdsLeft(), nil, nil},
+  {"Zeplin", nil, laptop, layout.maximized, nil, nil},
+  -- Music
+  {"iTunes", nil, laptop, layout.maximized, nil, nil},
+  {"Movies", nil, laptop, layout.maximized, nil, nil},
+  {"TV", nil, laptop, layout.maximized, nil, nil},
+  {"Podcasts", nil, laptop, layout.maximized, nil, nil},
+  {"Spotify", nil, laptop, layout.maximized, nil, nil},
+  -- Misc
+  {"Dash", nil, monitorExtraWide, position.fiveSixthsLeft(), nil, nil},
+  {"Marked 2", nil, monitorExtraWide, position.halfRight(), nil, nil},
+  {"nvALT", nil, monitorExtraWide, position.halfRight(), nil, nil},
+  {"Pocket", nil, laptop, layout.maximized, nil, nil},
+  {"Reeder", nil, laptop, layout.maximized, nil, nil}
+}
+
 local layoutWith4kDisplay = {
   -- Command line
   {"iTerm", nil, monitor4k, position.halfRight(), nil, nil},
@@ -206,9 +269,9 @@ local layoutWith4kDisplay = {
 
 local layoutWithThunderboltDisplay = {
   -- Command line
-  {"iTerm", nil, thunderboltDisplays[1], position.thirdRight(), nil, nil},
-  {"iTerm2", nil, thunderboltDisplays[1], position.thirdRight(), nil, nil},
-  {"Terminal", nil, thunderboltDisplays[1], position.thirdRight(), nil, nil},
+  {"iTerm", nil, thunderboltDisplays[1], position.halfRight(), nil, nil},
+  {"iTerm2", nil, thunderboltDisplays[1], position.halfRight(), nil, nil},
+  {"Terminal", nil, thunderboltDisplays[1], position.halfRight(), nil, nil},
   -- Browsers
   {"Firefox", nil, thunderboltDisplays[1], position.twoThirdsLeft(), nil, nil},
   {"FirefoxDeveloperEdition", nil, thunderboltDisplays[1], position.twoThirdsLeft(), nil, nil},
@@ -350,6 +413,12 @@ function rpa.utils.layouts.doLayoutLaptopOnly()
   print("✨ Applying layout for laptop. ✨")
   rpa.utils.layouts.enableSpotlightSupport()
   layout.apply(layoutLaptopOnly)
+end
+
+function rpa.utils.layouts.doLayoutWithExtraWideDisplay()
+  print("✨ Applying layout for laptop + extra wide display. ✨")
+  rpa.utils.layouts.enableSpotlightSupport()
+  layout.apply(layoutWithExtraWideDisplay)
 end
 
 function rpa.utils.layouts.doLayoutWith4kDisplay()
