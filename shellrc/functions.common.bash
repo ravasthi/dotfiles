@@ -205,7 +205,7 @@ function setBase16Theme {
     return 1
   fi
 
-  script_path="$base16_shell_path/scripts/$theme_name.sh"
+  script_path="$base16_shell_path/scripts/base16-$theme_name.sh"
   if [[ -f $script_path ]]; then
     echo "Setting terminal colorscheme to $theme_name."
     echo "Sourcing $script_path…"
