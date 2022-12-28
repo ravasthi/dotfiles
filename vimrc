@@ -96,7 +96,7 @@ Plug 'catppuccin/vim'
 " Theme: darcula
 Plug 'doums/darcula'
 " Theme: elly
-Plug 'ulwlu/elly.vim'
+Plug 'shiyanhui/elly.vim'
 " Theme: everforest
 Plug 'sainnhe/everforest'
 " Theme: gruvbox
