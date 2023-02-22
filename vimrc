@@ -95,8 +95,6 @@ Plug 'base16-project/base16-vim'
 Plug 'catppuccin/vim'
 " Theme: darcula
 Plug 'doums/darcula'
-" Theme: elly
-Plug 'shiyanhui/elly.vim'
 " Theme: everforest
 Plug 'sainnhe/everforest'
 " Theme: gruvbox
