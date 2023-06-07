@@ -149,9 +149,9 @@ local layoutWithExtraWideDisplay = {
   {"iTerm2", nil, monitorExtraWide, position.halfRight(), nil, nil},
   {"Terminal", nil, monitorExtraWide, position.halfRight(), nil, nil},
   -- Browsers
-  {"Firefox", nil, monitorExtraWide, position.fiveSixthsLeft(), nil, nil},
+  {"Firefox", nil, monitorExtraWide, position.twoThirdsLeft(), nil, nil},
   {"FirefoxDeveloperEdition", nil, monitorExtraWide, position.twoThirdsLeft(), nil, nil},
-  {"Google Chrome", nil, monitorExtraWide, position.fiveSixthsLeft(), nil, nil},
+  {"Google Chrome", nil, monitorExtraWide, position.twoThirdsLeft(), nil, nil},
   {"Safari Technology Preview", nil, monitorExtraWide, position.twoThirdsLeft(), nil, nil},
   {"Safari", nil, monitorExtraWide, position.twoThirdsLeft(), nil, nil},
   {"WebKit", nil, monitorExtraWide, position.twoThirdsLeft(), nil, nil},
