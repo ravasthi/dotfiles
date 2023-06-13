@@ -91,6 +91,8 @@ Plug 'ray-x/aurora'
 Plug 'ayu-theme/ayu-vim'
 " Theme: base16
 Plug 'base16-project/base16-vim'
+" Theme: base2tone
+Plug 'atelierbram/Base2Tone-vim'
 " Theme: catppuccin
 Plug 'catppuccin/vim'
 " Theme: darcula
