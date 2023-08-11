@@ -74,6 +74,17 @@ alias djdbsh='./manage.py dbshell'
 alias grep='grep --color=always'
 alias grepnc='grep --color=never'
 
+# ----------[ asdf ]------------------------------------------------------------
+alias ain='asdf install'
+alias ainru='asdf install ruby'
+alias ainno='asdf install nodejs'
+alias aun='asdf uninstall'
+alias aunru='asdf uninstall ruby'
+alias aunno='asdf uninstall nodejs'
+alias als='asdf list'
+alias alsa='asdf list-all'
+alias apu='asdf plugin update'
+
 # ----------[ Node ]------------------------------------------------------------
 alias backup-npmrc='mv ~/.npmrc ~/.npmrc.bak'
 latestnodeversionregex='[ ]+v[18]+[0-6]?'
