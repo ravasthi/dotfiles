@@ -17,7 +17,8 @@ local thunderboltDisplays = monitors.sortedScreensBySize(2560, 1440)
 local tv = monitors.findScreen(1920, 1080)
 local monitor4k = monitors.findScreen(1920, 1080)
 local monitorExtraWide = monitors.findScreen(3440, 1440)
-local iMac = monitors.findScreen(2560, 1440)
+-- local iMac = monitors.findScreen(2560, 1440)
+local iMac = monitors.findScreen(2240, 1260)
 
 local layoutImac = {
   -- Command line
