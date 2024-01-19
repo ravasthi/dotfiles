@@ -75,6 +75,7 @@ local layoutImac = {
   {"Spotify", nil, iMac, position.halfRight(), nil, nil},
   -- Misc
   {"Dash", nil, iMac, position.twoThirdsLeft(), nil, nil},
+  {"Finder", nil, iMac, position.halfRight(), nil, nil},
   {"Marked 2", nil, iMac, position.thirdRight(), nil, nil},
   {"nvALT", nil, iMac, position.thirdRight(), nil, nil},
   {"Pocket", nil, iMac, position.twoThirdsLeft(), nil, nil},
@@ -136,8 +137,9 @@ local layoutLaptopOnly = {
   {"Spotify", nil, laptop, layout.maximized, nil, nil},
   -- Misc
   {"Dash", nil, laptop, layout.maximized, nil, nil},
-  {"Marked 2", nil, laptop, position.halfRight(), nil, nil},
-  {"nvALT", nil, laptop, position.halfRight(), nil, nil},
+  {"Finder", nil, laptop, position.twoThirdsRight(), nil, nil},
+  {"Marked 2", nil, laptop, position.twoThirdsRight(), nil, nil},
+  {"nvALT", nil, laptop, position.twoThirdsRight(), nil, nil},
   {"Pocket", nil, laptop, layout.maximized, nil, nil},
   {"Reeder", nil, laptop, layout.maximized, nil, nil}
 }
@@ -196,7 +198,8 @@ local layoutWithExtraWideDisplay = {
   {"Podcasts", nil, laptop, layout.maximized, nil, nil},
   {"Spotify", nil, laptop, layout.maximized, nil, nil},
   -- Misc
-  {"Dash", nil, monitorExtraWide, position.fiveSixthsLeft(), nil, nil},
+  {"Dash", nil, monitorExtraWide, position.twoThirdsLeft(), nil, nil},
+  {"Finder", nil, monitorExtraWide, position.halfRight(), nil, nil},
   {"Marked 2", nil, monitorExtraWide, position.halfRight(), nil, nil},
   {"nvALT", nil, monitorExtraWide, position.halfRight(), nil, nil},
   {"Pocket", nil, laptop, layout.maximized, nil, nil},
@@ -258,6 +261,7 @@ local layoutWith4kDisplay = {
   {"Spotify", nil, laptop, layout.maximized, nil, nil},
   -- Misc
   {"Dash", nil, monitor4k, position.fiveSixthsLeft(), nil, nil},
+  {"Finder", nil, monitor4k, position.halfRight(), nil, nil},
   {"Marked 2", nil, monitor4k, position.halfRight(), nil, nil},
   {"nvALT", nil, monitor4k, position.halfRight(), nil, nil},
   {"Pocket", nil, laptop, layout.maximized, nil, nil},
@@ -319,6 +323,7 @@ local layoutWithThunderboltDisplay = {
   {"Spotify", nil, laptop, layout.maximized, nil, nil},
   -- Misc
   {"Dash", nil, thunderboltDisplays[1], position.twoThirdsLeft(), nil, nil},
+  {"Finder", nil, thunderboltDisplays[1], position.thirdRight(), nil, nil},
   {"Marked 2", nil, thunderboltDisplays[1], position.thirdRight(), nil, nil},
   {"nvALT", nil, thunderboltDisplays[1], position.thirdRight(), nil, nil},
   {"Pocket", nil, laptop, layout.maximized, nil, nil},
@@ -380,6 +385,7 @@ local layoutWithTwoThunderboltDisplays = {
   {"Spotify", nil, thunderboltDisplays[2], position.halfRight(), nil, nil},
   -- Misc
   {"Dash", nil, thunderboltDisplays[1], position.twoThirdsLeft(), nil, nil},
+  {"Finder", nil, thunderboltDisplays[1], position.thirdRight(), nil, nil},
   {"Marked 2", nil, thunderboltDisplays[1], position.halfLeft(), nil, nil},
   {"nvALT", nil, thunderboltDisplays[1], position.thirdRight(), nil, nil},
   {"Pocket", nil, laptop, layout.maximized, nil, nil},
