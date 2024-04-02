@@ -17,6 +17,9 @@ brew install asdf
 # Rails development
 brew install autoconf pkg-config git postgresql qt
 
+# Python development
+brew install pipx
+
 # JS development
 brew install yarn
 
