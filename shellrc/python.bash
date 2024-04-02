@@ -5,6 +5,9 @@
 if [[ -d $HOMEBREW_PREFIX/opt/python/libexec/bin ]]; then
   export PATH=$HOMEBREW_PREFIX/opt/python/libexec/bin:$PATH
 fi
+if [[ -d ~/.local/bin ]]; then
+  export PATH=$HOME/.local/bin:$PATH
+fi
 # echo "After python setting: " $PATH
 
 if [[ -d ~/.virtualenvs ]]; then
