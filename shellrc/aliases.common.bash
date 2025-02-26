@@ -82,7 +82,7 @@ alias aun='asdf uninstall'
 alias aunru='asdf uninstall ruby'
 alias aunno='asdf uninstall nodejs'
 alias als='asdf list'
-alias alsa='asdf list-all'
+alias alsa='asdf list all'
 alias apu='asdf plugin update'
 
 # ----------[ Node ]------------------------------------------------------------
