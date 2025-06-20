@@ -3,6 +3,7 @@ source $HOME/.shellrc/default-path.bash
 source $HOME/.shellrc/homebrew.bash
 source $HOME/.shellrc/homebrew-completions.zsh
 source $HOME/.shellrc/asdf.bash
+source $HOME/.shellrc/asdf-completions.zsh
 source $HOME/.shellrc/autojump.bash
 source $HOME/.shellrc/editor.bash
 source $HOME/.shellrc/git-prompt.zsh

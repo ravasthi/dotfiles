@@ -1,7 +1,7 @@
 # --------------------------------------------------------------------------------------------------
-# ASDF Bash completions
+# ASDF ZSH completions
 # --------------------------------------------------------------------------------------------------
 
 if [[ $(type -t asdf) == function ]]; then
-  source <(asdf completion bash)
+  export FPATH=(${ASDF_DATA_DIR:-$HOME/.asdf}/completions $FPATH)
 fi

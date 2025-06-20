@@ -3,8 +3,8 @@
 # https://asdf-vm.com/
 # --------------------------------------------------------------------------------------------------
 
-if [[ -s $(brew --prefix asdf)/libexec/asdf.sh ]]; then
-  source $(brew --prefix asdf)/libexec/asdf.sh
+if [[ $(typeset -f asdf >/dev/null 2>&1) ]]; then
+  export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 
   # Add plugins if they don't exist
   if ! [[ -d $HOME/.asdf/plugins ]]; then
