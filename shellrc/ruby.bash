@@ -11,7 +11,7 @@ fi
 # ASDF & Rbenv #
 # Only initialize it for interactive shells
 if [[ -z "$PS1" ]]; then
-  export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
+  export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl)"
 
   if [[ -d $HOME/.rbenv ]]; then
     eval "$(rbenv init -)"
