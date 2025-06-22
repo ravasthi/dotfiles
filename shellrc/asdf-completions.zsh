@@ -2,6 +2,6 @@
 # ASDF ZSH completions
 # --------------------------------------------------------------------------------------------------
 
-if [[ $(type -t asdf) == function ]]; then
+if [[ $(typeset -f asdf >/dev/null 2>&1) ]]; then
   export FPATH=(${ASDF_DATA_DIR:-$HOME/.asdf}/completions $FPATH)
 fi
