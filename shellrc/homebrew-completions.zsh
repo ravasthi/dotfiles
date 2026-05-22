@@ -1,1 +1,1 @@
-export FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+export FPATH="${HOMEBREW_PREFIX}/share/zsh/site-functions:${FPATH}"

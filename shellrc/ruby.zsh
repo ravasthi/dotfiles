@@ -11,7 +11,13 @@ fi
 # ASDF & Rbenv #
 # Only initialize it for interactive shells
 if [[ -o interactive ]]; then
-  export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl)"
+  for _openssl_ver in openssl@4 openssl@3 openssl@1.1; do
+    if [[ -d ${HOMEBREW_PREFIX}/opt/$_openssl_ver ]]; then
+      export RUBY_CONFIGURE_OPTS="--with-openssl-dir=${HOMEBREW_PREFIX}/opt/$_openssl_ver"
+      break
+    fi
+  done
+  unset _openssl_ver
 
   if [[ -d $HOME/.rbenv ]]; then
     eval "$(rbenv init -)"

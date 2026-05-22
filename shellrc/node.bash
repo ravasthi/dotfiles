@@ -4,7 +4,7 @@
 
 # NVM #
 # Only do this if asdf is not installed
-if ! brew ls --versions asdf > /dev/null; then
+if ! command -v asdf > /dev/null 2>&1; then
   if ! [[ -d $HOME/.nvm ]]; then
     echo "Creating $HOME/.nvm…"
     mkdir -p $HOME/.nvm
