@@ -16,7 +16,10 @@ if [[ -d ~/.virtualenvs ]]; then
   export VIRTUALENVWRAPPER_PYTHON=$HOMEBREW_PREFIX/opt/python/libexec/bin/python
   export VIRTUALENV_USE_DISTRIBUTE=true
   export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
-  [[ -f $HOMEBREW_PREFIX/bin/virtualenvwrapper_lazy.sh ]] && . $HOMEBREW_PREFIX/bin/virtualenvwrapper_lazy.sh
+  if [[ -f $HOMEBREW_PREFIX/bin/virtualenvwrapper_lazy.sh ]]; then
+    export VIRTUALENVWRAPPER_SCRIPT="$HOMEBREW_PREFIX/bin/virtualenvwrapper.sh"
+    . $HOMEBREW_PREFIX/bin/virtualenvwrapper_lazy.sh
+  fi
 fi
 
 if [[ -x $HOMEBREW_PREFIX/opt/autoenv/activate.sh ]]; then
