@@ -3,7 +3,7 @@
 # https://asdf-vm.com/
 # --------------------------------------------------------------------------------------------------
 
-if [[ $(typeset -f asdf >/dev/null 2>&1) ]]; then
+if command -v asdf >/dev/null 2>&1; then
   export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 
   # Add plugins if they don't exist
