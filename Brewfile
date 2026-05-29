@@ -248,8 +248,6 @@ brew "ruby"
 brew "ruby-build"
 # Command-line tool for the Amazon S3 service
 brew "s3cmd"
-# Python 2 and 3 compatibility utilities
-brew "six"
 # Tool to create intelligent and beautiful documentation
 brew "sphinx-doc"
 # Add a public key to a remote machine's authorized_keys file
