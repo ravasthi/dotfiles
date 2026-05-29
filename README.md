@@ -1,33 +1,39 @@
-# Richa’s dotfiles
+# Richa's dotfiles
 
 These are the command-line setup and configuration files I use for all my computers, stored on Github for easier sharing between computers and with other people.
 
 ## Credits
 
 * Inspired by dotfiles from [Ryan Bates](https://github.com/ryanb/dotfiles) and [thoughtbot](http://github.com/thoughtbot/dotfiles).
-* ~~Mostly stolen~~ Tweaked from [Matt’s dotfiles](https://github.com/mbrictson/dotfiles).
-* vim, tmux and zsh setup informed heavily by [Trae’s dotfiles](https://github.com/trobrock)
+* ~~Mostly stolen~~ Tweaked from [Matt's dotfiles](https://github.com/mbrictson/dotfiles).
+* vim, tmux and zsh setup informed heavily by [Trae's dotfiles](https://github.com/trobrock)
 * Other utilities repurposed, tweaked or outright stolen from around the internet.
 
 ## Prerequisites
 
-These dotfiles assume a Mac with the Xcode command line tools, rvm, rbenv, or asdf, and Homebrew. See *Shell support* for details. In addition, the `highline` gem is required to run the installation script.
+* macOS on Apple Silicon (ARM64) — Intel Macs are still supported but ARM is the primary target
+* Xcode command line tools: `xcode-select --install`
+* [Homebrew](https://brew.sh) installed natively at `/opt/homebrew` (ARM) or `/usr/local` (Intel) — see *Installation* below
+* asdf for managing language runtimes (Ruby, Node) — installed via Homebrew as part of `rake install`
+* The `highline` gem for the installation script: `gem install highline`
 
-## What’s in the box
+## What's in the box
 
 ### Shell support
 
-These dotfiles support both bash and oh my zsh.
+These dotfiles support both bash and zsh, with zsh (via oh my zsh) as the primary shell.
 
-Some features of the `bashrc` may work only with bash version 4.2 and greater with bash-completion, which may not be installed by default on the Mac, depending on the version of your OS. Consider using these steps to get it:
+The default shell is `/bin/zsh` — the macOS system zsh, which is a universal binary that runs natively on both ARM and Intel. Homebrew-installed zsh is also supported but not required; note that Homebrew zsh at `/usr/local/bin/zsh` is x86_64 only and will run under Rosetta on Apple Silicon.
+
+For oh my zsh setup:
+
+* Install [oh my zsh](https://ohmyz.sh)
+
+Some features of the `bashrc` may work only with bash 4.2+ with bash-completion, which may not be installed by default on the Mac. These can be installed via Homebrew:
 
 * `brew install bash bash-completion`
 * Add `$HOMEBREW_PREFIX/bin/bash` to `/etc/shells`
 * Change your shell to `$HOMEBREW_PREFIX/bin/bash` by running `chsh`
-
-For oh my zsh setup, do the following:
-
-* Install [oh my zsh](https://github.com/robbyrussell/oh-my-zsh)
 
 ### Command-line goodness
 
@@ -47,16 +53,14 @@ For oh my zsh setup, do the following:
     * Run `PlugInstall` in command mode.
 
 * An `edit` shim will launch `code` (Visual Studio Code) if you are on your local Mac, and fall back to `vi` if you are logged in via ssh. This shim is used as the git editor and svn editor.
+
 ### Ruby stuff
 
 An `r` command serves as a shortcut for running `bundle exec rake` or `bundle exec rails`. It's pretty smart, so `r s` will expand to `bundle exec rails server`, and `r db` will expand to `bundle exec rake db:console`. No more fat-finger mistakes of `rails` vs `rake`!
 
 ### Other goodies
 
-* This repo also comes with tmux configuration, for you terminal purists. To use:
-
-    * `brew install tmux`
-    * `brew install reattach-to-user-namespace`
+* This repo also comes with tmux configuration, for you terminal purists. `brew install tmux` is included in the Brewfile.
 
 * Multi-monitor window management setup files are available for [Hammerspoon](http://www.hammerspoon.org):
     * Download and install the [latest release](https://github.com/Hammerspoon/hammerspoon/releases/latest)
@@ -65,17 +69,35 @@ An `r` command serves as a shortcut for running `bundle exec rake` or `bundle ex
 
 ## Installation
 
-1. Install the `highline` gem:
+1. Install Xcode command line tools:
+
+        xcode-select --install
+
+2. Install [Homebrew](https://brew.sh) natively for your architecture. On Apple Silicon, make sure to run the installer under native ARM — not Rosetta — by prefixing with `arch -arm64`:
+
+        arch -arm64 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+    On Intel, just run the standard installer:
+
+        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+3. Clone this repo:
+
+        git clone git@github.com:ravasthi/dotfiles.git ~/Library/dotfiles
+        cd ~/Library/dotfiles
+        git submodule init
+        git submodule update
+
+4. Install the `highline` gem:
 
         gem install highline
 
-2. Choose a place to store the dotfiles, like `~/Library/dotfiles`.
+5. Run the installer, which installs all Homebrew packages (via `Brewfile`) and symlinks dotfiles into your home directory:
 
-    ```
-    git clone git://github.com/ravasthi/dotfiles ~/Library/dotfiles
-    cd ~/Library/dotfiles
-    git submodule init
-    git submodule update
-    rake install
-    ```
+        rake install
 
+6. Change your default shell to `/bin/zsh`:
+
+        chsh -s /bin/zsh
+
+    Open a new terminal window or tab to pick up the new shell.
