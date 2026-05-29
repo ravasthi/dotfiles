@@ -5,7 +5,7 @@ require 'fileutils'
 require 'rake'
 
 IGNORES = %w[
-  Brewfile Rakefile README.md LICENSE node_modules package.json package-lock.json
+  ARM_MIGRATION_PRIMER.md Brewfile Rakefile README.md LICENSE node_modules package.json package-lock.json
 ]
 
 task default: :install
