@@ -1,41 +1,31 @@
 #!/bin/bash
 
-# This script will delete all local git branches that have been merged into master,
-# and then prompt before doing the same for all remote branches that have been merged into master.
-#
-# Code taken from http://devblog.springest.com/a-script-to-remove-old-git-branches,
-# with modifications.
+# Deletes local branches merged into the given target branch (main, master, develop, or release*),
+# then prompts before doing the same for remote branches.
 
 BRANCH=$1
 
-if [[ "$BRANCH" == "master" || "$BRANCH" == "develop" || "$BRANCH" =~ release.+ ]]; then
+PROTECTED='main$|master$|develop$|^hotfix.+$|^release.+$'
+
+if [[ "$BRANCH" == "main" || "$BRANCH" == "master" || "$BRANCH" == "develop" || "$BRANCH" =~ release.+ || "$BRANCH" =~ hotfix.+ ]]; then
   printf "Reaping branches merged into %s\n\n" "$BRANCH"
 
-  # This has to be run from the branch we're comparing to
   git checkout $BRANCH
-
-  # Update our list of remotes
   git fetch
   git remote prune origin
 
   echo "Remove fully merged local branches..."
+  git branch --merged $BRANCH | grep -E -v "$PROTECTED" | xargs git branch -d
 
-  # Remove local fully merged branches (ignoring those named "develop", "hotfix" and "release*")
-  git branch --merged $BRANCH | grep -E -v 'master$|develop$|^hotfix.+$|^release.+$' | xargs git branch -d
-  git branch --merged $BRANCH | grep -E '^release.+$' | xargs echo "! Ignoring release branch:"
-
-  # Show remote fully merged branches
   echo "The following remote branches are fully merged and will be removed:"
-  git branch -r --merged $BRANCH | sed 's/ *origin\///' | grep -E -v 'master$|develop$|^hotfix.+$|^release.+$'
+  git branch -r --merged $BRANCH | sed 's/ *origin\///' | grep -E -v "$PROTECTED"
 
   read -p "Continue (y/n)? "
-  if [ "$REPLY" == "y" ]
-  then
-     # Remove remote fully merged branches
-     git branch -r --merged $BRANCH | sed 's/ *origin\///' \
-               | grep -E -v 'master$|develop$|^hotfix.+$|^release.+$' | xargs -I% git push origin :%
-     echo "Done!"
+  if [ "$REPLY" == "y" ]; then
+    git branch -r --merged $BRANCH | sed 's/ *origin\///' \
+      | grep -E -v "$PROTECTED" | xargs -I% git push origin :%
+    echo "Done!"
   fi
 else
-  printf "No branch name provided; exiting.\n\n"
+  printf "Usage: git reap <main|master|develop|hotfix*|release*>\n\n"
 fi
