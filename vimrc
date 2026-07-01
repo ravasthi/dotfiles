@@ -130,7 +130,7 @@ Plug 'guns/xterm-color-table.vim'
 " YankRing
 Plug 'vim-scripts/YankRing.vim'
 " YouCompleteMe
-Plug 'ycm-core/YouCompleteMe', { 'do': './install.py' }
+Plug 'ycm-core/YouCompleteMe', { 'do': 'EXTRA_CMAKE_ARGS="-DUSE_SYSTEM_ABSEIL=ON -DPython3_EXECUTABLE=/opt/homebrew/bin/python3" ./install.py' }
 
 " Required by vim-plug
 call plug#end()
