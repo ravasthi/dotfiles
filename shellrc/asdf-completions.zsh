@@ -2,6 +2,6 @@
 # ASDF ZSH completions
 # --------------------------------------------------------------------------------------------------
 
-if command -v asdf >/dev/null 2>&1; then
+if [[ -o interactive ]] && command -v asdf >/dev/null 2>&1; then
   fpath=(${ASDF_DATA_DIR:-$HOME/.asdf}/completions $fpath)
 fi

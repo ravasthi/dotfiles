@@ -2,6 +2,6 @@
 # Autojump
 # --------------------------------------------------------------------------------------------------
 
-if [[ -f $HOMEBREW_PREFIX/etc/profile.d/autojump.sh ]]; then
+if [[ -o interactive ]] && [[ -f $HOMEBREW_PREFIX/etc/profile.d/autojump.sh ]]; then
   source $HOMEBREW_PREFIX/etc/profile.d/autojump.sh
 fi

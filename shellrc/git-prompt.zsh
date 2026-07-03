@@ -2,6 +2,6 @@
 # Git prompt
 # --------------------------------------------------------------------------------------------------
 
-if [[ -f `readlink ~/.zsh-git-prompt/zshrc.sh` ]]; then
+if [[ -o interactive ]] && [[ -f `readlink ~/.zsh-git-prompt/zshrc.sh` ]]; then
   source `readlink ~/.zsh-git-prompt/zshrc.sh`
 fi
