@@ -18,3 +18,8 @@ source $HOME/.shellrc/ruby.zsh
 source $HOME/.shellrc/svn-hg.bash
 source $HOME/.shellrc/yo-completion.zsh
 source $HOME/.shellrc/custom-scripts.bash
+
+# /etc/zprofile runs path_helper unconditionally right after this file, which
+# reorders PATH and pushes /usr/bin, /usr/sbin, etc. ahead of everything set
+# up above. Snapshot the correct order here so ~/.zprofile can restore it.
+export _DOTFILES_ZSHENV_PATH="$PATH"
