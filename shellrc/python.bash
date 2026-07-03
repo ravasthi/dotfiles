@@ -22,22 +22,29 @@ if [[ -d ~/.virtualenvs ]]; then
   fi
 fi
 
-if [[ -x $HOMEBREW_PREFIX/opt/autoenv/activate.sh ]]; then
+if [[ -o interactive ]] && [[ -x $HOMEBREW_PREFIX/opt/autoenv/activate.sh ]]; then
   source $HOMEBREW_PREFIX/opt/autoenv/activate.sh
 fi
 
+# Not installed by default (see Brewfile) — kept ready in case pyenv is
+# reinstalled later. eval "$(pyenv init -)" costs ~400ms and is only useful
+# interactively (completions, shell function, .python-version hooks); the
+# shims dir on PATH is enough for python/pip to resolve correctly everywhere
+# else.
 if [[ -x $HOMEBREW_PREFIX/bin/pyenv ]]; then
   export PYENV_ROOT=$HOME/.pyenv
-  export PATH=$PYENV_ROOT/bin:$PATH
-  eval "$(pyenv init -)"
+  export PATH=$PYENV_ROOT/shims:$PYENV_ROOT/bin:$PATH
 
-  if [[ -x $HOMEBREW_PREFIX/bin/pyenv-virtualenv ]]; then
-    eval "$(pyenv virtualenv-init -)"
-  fi
+  if [[ -o interactive ]]; then
+    eval "$(pyenv init -)"
 
-  if [[ -x $HOMEBREW_PREFIX/bin/pyenv-virtualenvwrapper ]]; then
-    export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
-    pyenv virtualenvwrapper_lazy
+    if [[ -x $HOMEBREW_PREFIX/bin/pyenv-virtualenv ]]; then
+      eval "$(pyenv virtualenv-init -)"
+    fi
+
+    if [[ -x $HOMEBREW_PREFIX/bin/pyenv-virtualenvwrapper ]]; then
+      export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
+      pyenv virtualenvwrapper_lazy
+    fi
   fi
 fi
-# echo "After pyenv: " $PATH

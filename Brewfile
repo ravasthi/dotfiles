@@ -232,8 +232,6 @@ brew "pipx"
 brew "postgresql@14"
 # GNU Portable THreads
 brew "pth"
-# Python version management
-brew "pyenv"
 # Cross-platform application and UI framework
 brew "qt"
 # Persistent key-value database, with built-in net interface
