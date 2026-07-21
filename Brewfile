@@ -252,8 +252,6 @@ brew "sphinx-doc"
 brew "ssh-copy-id", link: true
 # Tool Command Language
 brew "tcl-tk"
-# Multi-platform code-search similar to ack and ag
-brew "the_platinum_searcher", link: false
 # Code-search similar to ack
 brew "the_silver_searcher"
 # Terminal multiplexer
